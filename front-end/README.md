@@ -20,12 +20,13 @@ Open command prompt inside the cloned repository and run:
 npm install
 ```
 
-If you have an error saying that npm is not a known command, it means that NodeJS is not installed. 
+If you have an error saying that npm is not a known command, it means that NodeJS is not installed.   
 
 4) Install angular/cli
 
 ```
 npm install -g @angular/cli
+
 ```
 
 ## Run the app
