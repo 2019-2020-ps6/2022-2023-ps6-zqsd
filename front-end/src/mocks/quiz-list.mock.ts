@@ -1,5 +1,5 @@
-import { Quiz } from '../models/quiz.model';
-import { Question } from '../models/question.model';
+import { Quiz } from '../models/quiz.model.model';
+import { Question } from '../models/subQuiz';
 
 export const QUESTION_ACTOR: Question = {
     id: '1',

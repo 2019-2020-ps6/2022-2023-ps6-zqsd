@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { QUIZ_LIST } from '../mocks/quiz-list.mock';
-import { Quiz } from '../models/quiz.model';
+import { Quiz } from '../models/quiz.model.model';
 
 
 @Injectable({
