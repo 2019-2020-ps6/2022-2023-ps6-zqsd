@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { QUIZ_LIST } from '../mocks/quiz-list.mock';
+import { BehaviorSubject, Subject, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { serverUrl } from '../configs/server.config';
+import { QuizExample } from '../mocks/quizz.mock';
 import { Quiz } from '../models/quiz.model';
+
 
 
 @Injectable({
@@ -9,7 +12,20 @@ import { Quiz } from '../models/quiz.model';
 })
 export class GameService {
   public currentQuestion$: Subject<any> = new Subject<any>();
-  public quizList: Quiz[] = QUIZ_LIST;
+  public quizList: Quiz[] = QuizExample;
+  public quizList$ : BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizList);
+
+  constructor(private http: HttpClient) {
+    this.retrieveQuizzes();
+  }
+
+  retrieveQuizzes(): void {
+    this.http.get<Quiz[]>(this.quizUrl).subscribe((quizList) => {
+      this.quizzes = quizList;
+      this.quizzes$.next(this.quizzes);
+    });
+  }
+
 
   getCurrentQuestion(): Observable<any> {
     return this.currentQuestion$.asObservable();
