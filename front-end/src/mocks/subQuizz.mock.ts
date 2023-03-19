@@ -98,7 +98,7 @@ export const TextSearchingHenri4: TextSearching[] = [
     }
 ];
 
-export const QUIZ_LIST: SubQuiz[] = [
+export const SubQuizzList: SubQuiz[] = [
     {
         id: '1',
         label : "chronological",

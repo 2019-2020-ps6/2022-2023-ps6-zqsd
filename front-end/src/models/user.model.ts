@@ -10,3 +10,8 @@ export interface User {
     motDePasse : string;
     status: string;
 }
+
+export interface TimeToAnswer {
+    id : string; //id of the subQuizz
+    time : Date; //time to answer
+}
