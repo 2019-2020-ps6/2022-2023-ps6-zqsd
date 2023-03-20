@@ -8,6 +8,7 @@ import { Question } from '../../models/subQuiz.model';
   styleUrls: ['./GameQuestion.component.scss']
 })
 export class GameQuestionComponent implements OnInit {
+  
   currentQuestion$: Question = {id:'', value: ''};
 
   constructor(private gameService: GameService) {

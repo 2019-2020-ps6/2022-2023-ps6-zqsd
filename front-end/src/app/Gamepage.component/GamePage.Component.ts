@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class GamepageComponent implements OnInit {
+    
     public number: Number=15;
     ngOnInit(): void {}
 } 
