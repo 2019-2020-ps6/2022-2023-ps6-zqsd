@@ -5,6 +5,7 @@ import { serverUrl } from '../configs/server.config';
 import { QuizExample } from '../mocks/quizz.mock';
 import { Quiz } from '../models/quiz.model';
 import { Question } from 'src/models/subQuiz.model';
+import { QuestionQuizz } from 'src/mocks/subQuizz.mock';
 
 
 
@@ -12,7 +13,7 @@ import { Question } from 'src/models/subQuiz.model';
   providedIn: 'root'
 })
 export class GameService {
-  public currentQuestion$: Subject<Question> = new Subject<Question>();
+  public AllQuestions$: BehaviorSubject<Question> = new BehaviorSubject(QuestionQuizz[1]);
   public quizList: Quiz[] = QuizExample;
   public quizList$ : BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizList);
 
@@ -22,16 +23,16 @@ export class GameService {
 
 
   getCurrentQuestion(): Observable<Question> {
-    return this.currentQuestion$.asObservable();
+    return this.AllQuestions$.asObservable();
   }
 
   setCurrentQuestion(question: Question) {
-    this.currentQuestion$.next(question);
+    this.AllQuestions$.next(question);
   }
   getQuizList(): Quiz[] {
     return this.quizList;
   }
   getCurrentAnswer(): Observable<any> {
-    return this.currentQuestion$.asObservable();
+    return this.AllQuestions$.asObservable();
   }
 }
