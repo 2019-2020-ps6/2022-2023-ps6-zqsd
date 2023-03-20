@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../../services/GameService';
-import { Question } from '../../models/subQuiz';
+import { Question } from '../../models/subQuiz.model';
 
 @Component({
   selector: 'app-game-question',
@@ -8,7 +8,7 @@ import { Question } from '../../models/subQuiz';
   styleUrls: ['./GameQuestion.component.scss']
 })
 export class GameQuestionComponent implements OnInit {
-  currentQuestion$: Question = {id: '', label: '', answers: []};
+  currentQuestion$: Question = {id:'', value: ''};
 
   constructor(private gameService: GameService) {
     this.gameService.currentQuestion$.subscribe((question: Question) => {

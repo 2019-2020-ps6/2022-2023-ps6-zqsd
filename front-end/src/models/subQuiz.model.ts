@@ -12,6 +12,7 @@ Puzzle 3x3 order :
 */
 
 export interface Question {
+    id:string;
     value : string;
 }
 
