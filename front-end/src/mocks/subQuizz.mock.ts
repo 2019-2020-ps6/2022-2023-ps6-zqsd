@@ -79,15 +79,19 @@ export const AnswerPuzzle1: Answer[] = [
 
 export const QuestionQuizz: Question[] = [
     {
+        id:"1",
         value: "Remettez dans l'ordre chronologique les éléments.",
     },
     {
+        id:"2",
         value: "Quels sont les 3 états de la matière ?"
     },
     {
+        id:"3",
         value: "Quelle est la couleur du cheval d'Henri IV ?"
     },
     {
+        id:"4",
         value: "Completez le puzzle."
     }
 ];
