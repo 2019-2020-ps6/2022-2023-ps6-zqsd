@@ -17,5 +17,9 @@ export class GameAnswer_Component implements OnInit {
       this.currentAnswer$ = answer;
     });
   }
+
+  getAnswerResult(){
+    return this.currentAnswer$.isCorrect;
+  }
     ngOnInit(): void {}
 }

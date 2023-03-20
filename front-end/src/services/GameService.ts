@@ -1,3 +1,4 @@
+import { AnswerClassic1 } from './../mocks/subQuizz.mock';
 import { Answer } from './../models/subQuiz.model';
 import { GameAnswer_Component } from './../app/GameAnswer.component/GameAnswer.Component';
 import { Injectable } from '@angular/core';
@@ -17,9 +18,9 @@ export class GameService {
   public currentQuestion$: Subject<Question> = new Subject<Question>();
   public currentAnswer$: Subject<Answer> = new Subject<Answer>();
   public quizList: Quiz[] = QuizExample;
-  public answerResult = ;
+  public answerResult = AnswerClassic1[0].isCorrect;
   public quizList$ : BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizList);
-  public answerResult$ : BehaviorSubject<boolean> = new BehaviorSubject(this.answerResult);
+  public answerResult$ : BehaviorSubject<boolean | undefined> = new BehaviorSubject(this.answerResult);
 
 
   constructor() {

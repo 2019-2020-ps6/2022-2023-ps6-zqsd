@@ -27,3 +27,5 @@ export interface SubQuiz {
     answers: Answer[];
     textSearchign?: TextSearching;
 }
+
+
