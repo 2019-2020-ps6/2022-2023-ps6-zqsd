@@ -11,19 +11,16 @@ Puzzle 3x3 order :
 7   8   9
 */
 
-export interface Question {
-    id:string;
-    value : string;
-}
+
 
 export interface TextSearching {
     value : string;
 }
 
-export interface SubQuiz {
+export interface Question {
     id: string;
     label: string;
-    question: Question;
+    value: String;
     answers: Answer[];
     textSearchign?: TextSearching;
 }

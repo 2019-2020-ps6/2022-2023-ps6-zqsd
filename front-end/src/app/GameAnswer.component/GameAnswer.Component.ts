@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../../services/GameService';
-import { Answer } from 'src/models/subQuiz.model';
+import { Answer } from 'src/models/Question.model';
 
 @Component({
     selector: 'app-GameAnswer',
     templateUrl: './GameAnswer.Component.html',
-    styleUrls: ['./GameAnswer.component.scss']
+    styleUrls: ['./GameAnswer.Component.scss']
 })
 
 export class GameAnswer_Component implements OnInit {
@@ -23,3 +23,4 @@ export class GameAnswer_Component implements OnInit {
   }
     ngOnInit(): void {}
 }
+

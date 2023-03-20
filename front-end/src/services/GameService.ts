@@ -1,5 +1,4 @@
 import { AnswerClassic1 } from './../mocks/subQuizz.mock';
-import { Answer } from './../models/subQuiz.model';
 import { GameAnswer_Component } from './../app/GameAnswer.component/GameAnswer.Component';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject, Observable } from 'rxjs';
@@ -7,7 +6,8 @@ import { HttpClient } from '@angular/common/http';
 import { serverUrl } from '../configs/server.config';
 import { QuizExample } from '../mocks/quizz.mock';
 import { Quiz } from '../models/quiz.model';
-import { Question } from 'src/models/subQuiz.model';
+import { Question,Answer } from 'src/models/Question.model';
+import { QuestionQuizz } from 'src/mocks/question.mock';
 
 
 
@@ -15,7 +15,8 @@ import { Question } from 'src/models/subQuiz.model';
   providedIn: 'root'
 })
 export class GameService {
-  public currentQuestion$: Subject<Question> = new Subject<Question>();
+
+  public AllQuestions$: BehaviorSubject<Question> = new BehaviorSubject(QuestionQuizz[1]);
   public currentAnswer$: Subject<Answer> = new Subject<Answer>();
   public quizList: Quiz[] = QuizExample;
   public answerResult = AnswerClassic1[0].isCorrect;
@@ -28,21 +29,25 @@ export class GameService {
 
 
   getCurrentQuestion(): Observable<Question> {
-    return this.currentQuestion$.asObservable();
+    return this.AllQuestions$.asObservable();
   }
 
   setCurrentQuestion(question: Question) {
-    this.currentQuestion$.next(question);
+    this.AllQuestions$.next(question);
   }
   getQuizList(): Quiz[] {
     return this.quizList;
   }
   getCurrentAnswer(): Observable<any> {
-    return this.currentAnswer$.asObservable();
+    return this.AllQuestions$.asObservable();
   }
 
-  getAnswerResult(): Observable<any> {
-    return this.answerResult$.asObservable();
+  add(quiz:Quiz) : void {
+    this.quizList.push(quiz)
+    this.quizList$.next(this.quizList)
+  }
+  getcurrentAnswer(): Observable<any> {
+    return this.currentAnswer$.asObservable();
   }
 
 }

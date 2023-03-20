@@ -1,6 +1,6 @@
 import { GameService } from './../../services/GameService';
 import { Component, OnInit, Output } from '@angular/core';
-import { AnswerClassic1 } from 'src/mocks/subQuizz.mock';
+import { AnswerClassic1 } from 'src/mocks/question.mock';
 @Component({
     selector: 'app-game-result',
     templateUrl: './GameResult.component.html',

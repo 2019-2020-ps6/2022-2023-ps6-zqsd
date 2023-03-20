@@ -1,4 +1,4 @@
-import { SubQuiz,Answer,Question,TextSearching } from '../models/subQuiz.model';
+import { Answer,Question,TextSearching } from '../models/Question.model';
 
 export const AnswerChronologicalHistory1: Answer[] = [
     {
@@ -77,54 +77,36 @@ export const AnswerPuzzle1: Answer[] = [
     }
 ];
 
-export const QuestionQuizz: Question[] = [
-    {
-        id:"1",
-        value: "Remettez dans l'ordre chronologique les éléments.",
-    },
-    {
-        id:"2",
-        value: "Quels sont les 3 états de la matière ?"
-    },
-    {
-        id:"3",
-        value: "Quelle est la couleur du cheval d'Henri IV ?"
-    },
-    {
-        id:"4",
-        value: "Completez le puzzle."
-    }
-];
-
 export const TextSearchingHenri4: TextSearching[] = [
     {
         value: "Henri IV, est un roi Français. Son cheval blanc s’appellait GrisCiel. Le blason d’Henri IV était principalement de couleur bleu et rouge.",
     }
 ];
 
-export const SubQuizzList: SubQuiz[] = [
+export const QuestionQuizz: Question[] = [
     {
         id: '1',
         label : "chronological",
-        question: QuestionQuizz[0],
+        value:"Remettez dans l'ordre chronologique les éléments.",
+        
         answers: AnswerChronologicalHistory1,
     },
     {
         id: '2',
         label : "puzzle",
-        question: QuestionQuizz[3],
+        value:"Completez le puzzle.",
         answers: AnswerPuzzle1,
     },
     {
         id: '3',
         label : "classical",
-        question: QuestionQuizz[1],
+        value:"Quels sont les 3 états de la matière ?",
         answers: AnswerClassic1,
     },
     {
         id: '4',
         label : "textSearching",
-        question: QuestionQuizz[2],
+        value:"Quelle est la couleur du cheval d'Henri IV ?",
         answers: AnswerSearching1,
     }
 ];
