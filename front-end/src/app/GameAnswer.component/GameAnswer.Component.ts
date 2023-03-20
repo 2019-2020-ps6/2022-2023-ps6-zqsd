@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../../services/GameService';
-import { Answer } from 'src/models/subQuiz.model';
+import { Answer } from 'src/models/Question.model';
 
 @Component({
     selector: 'app-GameAnswer',
