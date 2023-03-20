@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { GameService } from '../../services/GameService';
-import { Question } from '../../models/question.model';
+import { Question } from '../../models/subQuiz';
 
 @Component({
   selector: 'app-game-question',
