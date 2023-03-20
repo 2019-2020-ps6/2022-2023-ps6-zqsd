@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { GamepageComponent } from './Gamepage.component/GamePage.Component';
 
 @Component({
   selector: 'app-root',
