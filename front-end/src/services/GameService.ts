@@ -15,17 +15,8 @@ export class GameService {
   public quizList: Quiz[] = QuizExample;
   public quizList$ : BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizList);
 
-  private quizUrl = serverUrl + '/quiz';
 
-  constructor(private http: HttpClient) {
-    this.retrieveQuizzes();
-  }
-
-  retrieveQuizzes(): void {
-    this.http.get<Quiz[]>(this.quizUrl).subscribe((quizz) => {
-      this.quizList = quizz;
-      this.quizList$.next(this.quizList);
-    });
+  constructor() {
   }
 
 
