@@ -1,3 +1,4 @@
+import { GameResultComponent } from './GameResult.component/GameResult.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,6 +10,7 @@ import { GamepageComponent } from './Gamepage.component/GamePage.Component';
   declarations: [
     AppComponent,
     GamepageComponent,
+    GameResultComponent
   ],
   imports: [
     BrowserModule,
