@@ -33,4 +33,9 @@ export class GameService {
   getCurrentAnswer(): Observable<any> {
     return this.currentQuestion$.asObservable();
   }
+
+  add(quiz:Quiz) : void {
+    this.quizList.push(quiz)
+    this.quizList$.next(this.quizList)
+  }
 }
