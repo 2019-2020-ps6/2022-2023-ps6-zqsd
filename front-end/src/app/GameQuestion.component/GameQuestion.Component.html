@@ -1,3 +1,7 @@
 <h2>{{currentQuestion.value}}</h2>
 
-<app-GameAnswer></app-GameAnswer>
+<tr *ngFor="let answer of currentQuestion.answers">
+    <td>{{answer.value}}</td>
+    <app-GameAnswer></app-GameAnswer>
+</tr>
+

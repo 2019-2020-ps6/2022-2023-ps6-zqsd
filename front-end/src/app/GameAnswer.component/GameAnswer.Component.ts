@@ -16,6 +16,7 @@ export class GameAnswer_Component implements OnInit {
     this.gameService.currentAnswer$.subscribe((answer: Answer) => {
       this.currentAnswer$ = answer;
     });
+    
   }
     ngOnInit(): void {}
 }
