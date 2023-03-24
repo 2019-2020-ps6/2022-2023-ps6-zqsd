@@ -18,6 +18,10 @@ export class GameAnswer_Component implements OnInit {
     });
     
   }
+
+  getAnswerResult(){
+    return this.currentAnswer$.isCorrect;
+  }
     ngOnInit(): void {}
 }
 

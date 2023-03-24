@@ -24,3 +24,5 @@ export interface Question {
     answers: Answer[];
     textSearchign?: TextSearching;
 }
+
+
