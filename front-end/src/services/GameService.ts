@@ -1,5 +1,5 @@
 import { AnswerClassic1 } from './../mocks/question.mock';
-import { GameAnswer_Component } from './../app/GameAnswer.component/GameAnswer.Component';
+import { GameAnswerComponent } from './../app/GameAnswer.component/GameAnswer.Component';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';

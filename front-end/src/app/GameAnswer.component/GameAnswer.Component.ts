@@ -8,7 +8,7 @@ import { Answer } from 'src/models/Question.model';
     styleUrls: ['./GameAnswer.Component.scss']
 })
 
-export class GameAnswer_Component implements OnInit {
+export class GameAnswerComponent implements OnInit {
 
   currentAnswer$: Answer = {label:'', value:'', isCorrect: undefined, order: undefined};
 
