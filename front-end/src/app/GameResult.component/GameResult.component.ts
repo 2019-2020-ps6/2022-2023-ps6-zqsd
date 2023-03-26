@@ -9,10 +9,13 @@ import { AnswerClassic1 } from 'src/mocks/question.mock';
 })
 export class GameResultComponent implements OnInit {
   score: number;
+  nbQuestions: number;
+  /*nbMaxQuestions: number;*/
   result: string;
 
   constructor(private gameService: GameService) {
     this.score = 0;
+    this.nbQuestions = 0;
     this.result = '';
   }
 
@@ -21,6 +24,7 @@ export class GameResultComponent implements OnInit {
           if (isCorrect) {
               this.score++;
           }
+          this.nbQuestions++;
       });
   }
 
