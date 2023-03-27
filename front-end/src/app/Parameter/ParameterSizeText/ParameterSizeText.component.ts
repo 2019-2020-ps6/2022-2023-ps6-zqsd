@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Parameter } from 'src/models/Parameter/parameter.model';
+import { ConfigurationService } from 'src/services/ConfigurationService';
 import { ParameterService } from 'src/services/ParameterService';
 
 @Component({
@@ -10,8 +11,18 @@ import { ParameterService } from 'src/services/ParameterService';
 
 export class ParameterSizeTextComponent implements OnInit {
    
+    disabled = false;
+    max = 100;
+    min = 0;
+    showTicks = false;
+    step = 1;
+    thumbLabel = false;
+    value = 0;
+
     currentSize: Parameter['size'] = ''; 
-    constructor(private parameterService: ParameterService) {
+    constructor(
+        private parameterService: ParameterService, 
+        private configurationService : ConfigurationService) {
         this.parameterService.currentSize$.subscribe((size: Parameter['size']) => {
             this.currentSize = size;
         });
@@ -21,10 +32,14 @@ export class ParameterSizeTextComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    taillePolice: number = 16;
+    updateValue(){
+        this.configurationService.updateTextSize(this.value);
+    }
 
-    augmenterTaillePolice() {
-        this.taillePolice += 2;
+
+    onThumbValueChange(event: number) {
+        console.log(event);
+        // Do something with the new value of the thumb
     }
 
 }

@@ -32,6 +32,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
     setCurrentSize(size: Parameter['size']) {
         this.currentSize$.next(size);
+        console.log("tretre");
+        
     }
 
     getMusicUrl() : Observable<string> {
