@@ -17,31 +17,51 @@ import { QuestionQuizz } from 'src/mocks/question.mock';
 })
 export class GameService {
 
-  public AllQuestions$: BehaviorSubject<Question> = new BehaviorSubject(QuestionQuizz[1]);
-  public currentAnswer$: Subject<Answer> = new Subject<Answer>();
   public quizList: Quiz[] = QuizExample;
-  public currentQuiz$: BehaviorSubject<Quiz> = new BehaviorSubject(Quiz1);
+
   public answerResult = AnswerClassic1[0].isCorrect;
   public quizList$ : BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizList);
+  private currentQuiz: Quiz=this.quizList[0];
+  public currentQuiz$: BehaviorSubject<Quiz> = new BehaviorSubject<Quiz>(this.currentQuiz)
+  private index:number=0;
+  private currentQuestion: Question=this.currentQuiz.questions[this.index];
+  public currentQuestion$: BehaviorSubject<Question> = new BehaviorSubject(this.currentQuestion);
+  public currentAnswer$: Subject<Answer> = new Subject<Answer>();
   public answerResult$ : BehaviorSubject<boolean | undefined> = new BehaviorSubject(this.answerResult);
-
+  
 
   constructor() {
   }
 
 
   getCurrentQuestion(): Observable<Question> {
-    return this.AllQuestions$.asObservable();
+    return this.currentQuestion$.asObservable();
   }
 
-  setCurrentQuestion(question: Question) {
-    this.AllQuestions$.next(question);
+  nextQuestion(): number  {
+    this.setCurrentQuestion(this.index+1)
+    this.index+=1;
+    return this.index;
+  }
+
+  setCurrentQuestion(index: number) {
+    const question = this.currentQuiz.questions[index];
+    
+    if(question) {
+      this.currentQuestion  = question;
+      this.currentQuestion$.next(this.currentQuestion);
+    }
   }
   getQuizList(): Quiz[] {
     return this.quizList;
   }
   getCurrentAnswer(): Observable<any> {
-    return this.AllQuestions$.asObservable();
+    return this.currentQuestion$.asObservable();
+  }
+
+  setCurrentQuiz(quiz: Quiz) {
+    this.currentQuiz = quiz;
+    this.currentQuiz$.next(this.currentQuiz);
   }
 
   add(quiz:Quiz) : void {

@@ -58,21 +58,25 @@ export const AnswerPuzzle1: Answer[] = [
     {
         label: "puzzle",
         value: "linkImage1",
+        isCorrect:false,
         order : "1"
     },
     {
         label: "puzzle",
         value: "linkImage2",
+        isCorrect:false,
         order : "2"
     },
     {
         label: "puzzle",
         value: "linkImage3",
+        isCorrect:false,
         order : "3"
     },
     {
         label: "puzzle",
         value: "linkImage4",
+        isCorrect:true,
         order : "4"
     }
 ];

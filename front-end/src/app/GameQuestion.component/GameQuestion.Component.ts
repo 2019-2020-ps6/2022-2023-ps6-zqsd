@@ -12,9 +12,10 @@ export class GameQuestionComponent implements OnInit {
   
   currentQuestion: Question = {id:'', value: '',label:"",answers: [] as Answer[]}; 
   constructor(private gameService: GameService) {
-    this.gameService.AllQuestions$.subscribe((question: Question) => {
+    this.gameService.currentQuestion$.subscribe((question: Question) => {
       this.currentQuestion = question;
-    });
+      
+    })
   }
 
   questionAnswered(goodAnswer:boolean){
@@ -23,8 +24,8 @@ export class GameQuestionComponent implements OnInit {
   }
   
   getNextQuestion(){
-    this.gameService.setCurrentQuestion(this.currentQuestion);
-    console.log("question asked");
+    this.gameService.nextQuestion();
+    console.log();
 
   } 
   ngOnInit() {
