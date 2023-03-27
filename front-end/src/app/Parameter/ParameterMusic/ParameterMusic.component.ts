@@ -11,16 +11,13 @@ import { ParameterService } from 'src/services/ParameterService';
 export class ParameterMusicComponent implements OnInit {
 
     currentMusic: Parameter['music'] = false; 
-    absolutePathToSRC : string = "../../../"
-    currentMusicPicturePath : string = "./assets/Parameter/Son_Disabled.png"
-    resultPictureUrl = "../../../../src/assets/Parameter/Son_Disabled.png"
+    resultPictureUrl = "Son_Disabled.png"
     constructor(private parameterService: ParameterService) {
         this.parameterService.currentMusic$.subscribe((musicEnable: Parameter['music']) => {
             this.currentMusic = musicEnable;
         });
         this.parameterService.currentMusicPicturePath$.subscribe((url: string) => {
-            this.currentMusicPicturePath = url;
-            this.setUpUrlPicture();
+            this.resultPictureUrl = url;
         });
     }
 
@@ -31,6 +28,7 @@ export class ParameterMusicComponent implements OnInit {
 
 
     public setMusic(){
+        
         if (this.currentMusic==false){
             this.parameterService.setCurrentMusic(true);
         } else {
@@ -38,8 +36,5 @@ export class ParameterMusicComponent implements OnInit {
         }
     }
 
-    private setUpUrlPicture(){
-        this.resultPictureUrl = this.absolutePathToSRC + this.currentMusicPicturePath;
-    }
     
 } 

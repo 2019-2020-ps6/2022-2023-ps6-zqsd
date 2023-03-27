@@ -10,7 +10,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
   
     public currentSize$: BehaviorSubject<Parameter['size']> = new BehaviorSubject(PARAMETER.size)
     public currentMusic$: BehaviorSubject<Parameter['music']> = new BehaviorSubject(PARAMETER.music)
-    public currentMusicPicturePath$ : BehaviorSubject<string> = new BehaviorSubject("./assets/Parameter/Son_Disabled")
+    public currentMusicPicturePath$ : BehaviorSubject<string> = new BehaviorSubject("Son_Disabled.png")
   
     constructor() {
     }
@@ -27,6 +27,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
   
     setCurrentMusic(musicEnable: Parameter['music']) {
       this.currentMusic$.next(musicEnable);
+      this.setMusicUrl()
     }
 
     setCurrentSize(size: Parameter['size']) {
@@ -39,9 +40,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
     setMusicUrl() {
         if(this.currentMusic$.value == false){
-            this.currentMusicPicturePath$.next("./assets/Parameter/Son_Disabled.png");
+            this.currentMusicPicturePath$.next("Son_Disabled.png");
         } else {
-            this.currentMusicPicturePath$.next("./assets/Parameter/Son_Enable.png");
+            this.currentMusicPicturePath$.next("Son_Enable.png");
         }
     }
   
