@@ -9,7 +9,7 @@ import { ParameterService } from 'src/services/ParameterService';
 })
 
 export class ParameterSizeTextComponent implements OnInit {
-    
+   
     currentSize: Parameter['size'] = ''; 
     constructor(private parameterService: ParameterService) {
         this.parameterService.currentSize$.subscribe((size: Parameter['size']) => {
@@ -20,5 +20,11 @@ export class ParameterSizeTextComponent implements OnInit {
     
     ngOnInit(): void {
     }
-    
-} 
+
+    taillePolice: number = 16;
+
+    augmenterTaillePolice() {
+        this.taillePolice += 2;
+    }
+
+}
