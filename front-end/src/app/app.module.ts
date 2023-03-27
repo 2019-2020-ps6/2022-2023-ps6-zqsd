@@ -6,15 +6,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GamepageComponent } from './Gamepage.component/GamePage.Component';
 import { GameQuestionComponent } from './GameQuestion.component/GameQuestion.Component';
-import { GameAnswer_Component } from './GameAnswer.component/GameAnswer.Component';
+import { GameAnswerComponent } from './GameAnswer.component/GameAnswer.Component';
+import { GameQuizComponent } from './GameQuiz.component/GameQuiz.component';
+import { HeaderComponent } from './header.component/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GamepageComponent,
     GameQuestionComponent,
-    GameAnswer_Component,
-    GameResultComponent
+    GameAnswerComponent,
+    GameResultComponent,
+    GameQuizComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -8,18 +8,14 @@ import { Answer } from 'src/models/Question.model';
     styleUrls: ['./GameAnswer.Component.scss']
 })
 
-export class GameAnswer_Component implements OnInit {
+export class GameAnswerComponent implements OnInit {
 
 
   @Input() currentAnswer: Answer|undefined;
   @Output() answerEvent: EventEmitter<boolean>= new EventEmitter<boolean>();
 
   constructor(private gameService: GameService) {
-    };
-    
-  
-  
-
+  }
 
   getAnswerResult(){
     if (this.currentAnswer!=undefined)

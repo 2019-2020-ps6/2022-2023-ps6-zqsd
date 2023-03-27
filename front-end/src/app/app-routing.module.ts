@@ -9,9 +9,9 @@ const routes: Routes = [
   {
     path: "Gamepage",
     component: GamepageComponent },
-    {
-      path: "GameResult",
-      component: GameResultComponent },
+  {
+    path: "GameResult",
+    component: GameResultComponent },
 ];
 
 @NgModule({
