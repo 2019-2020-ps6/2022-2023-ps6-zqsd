@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Parameter } from 'src/models/Parameter/parameter.model';
+import { ParameterService } from 'src/services/ParameterService';
 
 @Component({
     selector: 'app-ParameterSizeText',
@@ -7,8 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ParameterSizeTextComponent implements OnInit {
+    
+    currentSize: Parameter['size'] = ''; 
+    constructor(private parameterService: ParameterService) {
+        this.parameterService.currentSize$.subscribe((size: Parameter['size']) => {
+            this.currentSize = size;
+        });
+    }
+
+    
     ngOnInit(): void {
-        throw new Error('Method not implemented.');
     }
     
 } 

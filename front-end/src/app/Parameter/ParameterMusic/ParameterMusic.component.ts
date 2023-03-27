@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Parameter } from 'src/models/Parameter/parameter.model';
+import { ParameterService } from 'src/services/ParameterService';
 
 @Component({
     selector: 'app-ParameterMusic',
@@ -7,8 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ParameterMusicComponent implements OnInit {
+
+    currentMusic: Parameter['music'] = false; 
+    constructor(private parameterService: ParameterService) {
+        this.parameterService.currentMusic$.subscribe((musicEnable: Parameter['music']) => {
+            this.currentMusic = musicEnable;
+        });
+    }
+
+
+
     ngOnInit(): void {
-        throw new Error('Method not implemented.');
+    }
+
+
+    private setMusic(doesMusicIsEnable : Parameter['music']){
+        this.parameterService.setCurrentMusic(doesMusicIsEnable)
     }
     
 } 

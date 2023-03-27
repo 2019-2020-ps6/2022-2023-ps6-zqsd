@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable({
     providedIn: 'root'
   })
-  export class GameService {
+  export class ParameterService {
   
     public currentSize$: BehaviorSubject<Parameter['size']> = new BehaviorSubject(PARAMETER.size)
     public currentMusic$: BehaviorSubject<Parameter['music']> = new BehaviorSubject(PARAMETER.music)
