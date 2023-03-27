@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ParameterSizeTextComponent implements OnInit {
-    ngOnInit(): void {
+  taillePolice: number = 16;
+
+  augmenterTaillePolice() {
+    this.taillePolice += 2;
+  }
+  
+  ngOnInit(): void {
         throw new Error('Method not implemented.');
     }
-    
-} 
+
+}
