@@ -1,4 +1,17 @@
 <div class="parametres">
   <div class="label">Taille de police :</div>
-  <button (click)="augmenterTaillePolice()">Augmenter</button>
+  <mat-slider
+    class="example-margin"
+        [disabled]="disabled"
+        [max]="max"
+        [min]="min"
+        [step]="step"
+        [discrete]="thumbLabel"
+        [showTickMarks]="showTicks">
+      <input matSliderThumb [(ngModel)]="value" (ngModelChange)="updateValue()">
+    </mat-slider> 
+    <div class="label">{{value}}</div>
+    <span class="title" appAdaptFontSize>My text</span>
 </div>
+
+
