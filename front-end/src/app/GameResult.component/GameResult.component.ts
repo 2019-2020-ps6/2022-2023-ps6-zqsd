@@ -1,6 +1,7 @@
 import { GameService } from './../../services/GameService';
 import { Component, OnInit, Output } from '@angular/core';
 import { AnswerClassic1 } from 'src/mocks/question.mock';
+import { Quiz } from 'src/models/quiz.model';
 
 @Component({
   selector: 'app-game-result',
@@ -10,16 +11,20 @@ import { AnswerClassic1 } from 'src/mocks/question.mock';
 export class GameResultComponent implements OnInit {
   score: number;
   nbQuestions: number;
-  /*nbMaxQuestions: number;*/
+  nbMaxQuestions: number;
   result: string;
 
   constructor(private gameService: GameService) {
     this.score = 0;
     this.nbQuestions = 0;
+    this.nbMaxQuestions=0;
     this.result = '';
   }
 
   ngOnInit(): void {
+      this.gameService.currentQuiz$.subscribe((quiz : Quiz) => {
+        this.nbMaxQuestions = quiz.questions.length;
+      });
       this.gameService.answerResult$.subscribe((isCorrect: boolean|undefined) => {
           if (isCorrect) {
               this.score++;
