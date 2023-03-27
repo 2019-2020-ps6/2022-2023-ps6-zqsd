@@ -17,6 +17,16 @@ export class GameQuestionComponent implements OnInit {
     });
   }
 
+  questionAnswered(goodAnswer:boolean){
+    console.log(goodAnswer);
+    this.getNextQuestion();
+  }
+  
+  getNextQuestion(){
+    this.gameService.setCurrentQuestion(this.currentQuestion);
+    console.log("question asked");
+
+  } 
   ngOnInit() {
     
   }

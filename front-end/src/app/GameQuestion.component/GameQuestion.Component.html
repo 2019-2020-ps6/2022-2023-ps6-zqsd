@@ -1,7 +1,7 @@
 <h2>{{currentQuestion.value}}</h2>
 
 <tr *ngFor="let answer of currentQuestion.answers">
-    <td>{{answer.value}}</td>
-    <app-GameAnswer></app-GameAnswer>
+    <app-GameAnswer [currentAnswer]="answer" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
 </tr>
 
+<button (click)="getNextQuestion()">next question</button>

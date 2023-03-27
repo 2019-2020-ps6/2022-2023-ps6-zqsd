@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
 import { GameService } from '../../services/GameService';
 import { Answer } from 'src/models/Question.model';
 
@@ -10,17 +10,22 @@ import { Answer } from 'src/models/Question.model';
 
 export class GameAnswer_Component implements OnInit {
 
-  currentAnswer$: Answer = {label:'', value:'', isCorrect: undefined, order: undefined};
+
+  @Input() currentAnswer: Answer|undefined;
+  @Output() answerEvent: EventEmitter<boolean>= new EventEmitter<boolean>();
 
   constructor(private gameService: GameService) {
-    this.gameService.currentAnswer$.subscribe((answer: Answer) => {
-      this.currentAnswer$ = answer;
-    });
+    };
     
-  }
+  
+  
+
 
   getAnswerResult(){
-    return this.currentAnswer$.isCorrect;
+    if (this.currentAnswer!=undefined)
+      this.answerEvent.emit(this.currentAnswer.isCorrect)
+    else
+      this.answerEvent.emit(false);
   }
     ngOnInit(): void {}
 }
