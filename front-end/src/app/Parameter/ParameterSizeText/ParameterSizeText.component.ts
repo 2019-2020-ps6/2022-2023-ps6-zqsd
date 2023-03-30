@@ -12,8 +12,8 @@ import { ParameterService } from 'src/services/Parameter/ParameterService';
 export class ParameterSizeTextComponent implements OnInit {
    
     disabled = false;
-    max = 100;
-    min = 0;
+    max = 52;
+    min = 14;
     showTicks = false;
     step = 1;
     thumbLabel = false;

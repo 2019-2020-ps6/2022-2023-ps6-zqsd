@@ -13,10 +13,7 @@ import { AdvancedParameterChronometer } from 'src/models/Parameter/advancedParam
 })
 export class ConfigurationService {
 
-    private defaultTextSize : number = 14;
-    private maxValue : number = 52;
-
-    private textSize : number = this.defaultTextSize;
+    private textSize : number = 20;
     private chronometerTime : number = 60; //in seconds
 
     public textSize$ : BehaviorSubject<number>  = new BehaviorSubject(this.chronometerTime);
@@ -33,17 +30,9 @@ export class ConfigurationService {
     }
 
     updateTextSize(size : number){
-        size = this.convertPercentToNumberValue(size)
-        this.textSize = size + this.defaultTextSize;
+        this.textSize = size;
         this.textSize$.next(this.textSize)
     }
-
-    convertPercentToNumberValue(numberToConvert : number) : number{
-        let temporary : number = (numberToConvert*this.maxValue)/100;
-        temporary = Math.round(temporary)
-        return temporary;
-    }
-
 
     updateChronometerTime(time : number){
         this.chronometerTime = time;
