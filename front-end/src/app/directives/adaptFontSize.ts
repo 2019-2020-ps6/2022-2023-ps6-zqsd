@@ -1,5 +1,5 @@
 import { Directive, ElementRef } from "@angular/core";
-import { ConfigurationService } from "src/services/Parameter/ConfigurationPlayingExperienceService";
+import { ParameterService } from "src/services/Parameter/ParameterService";
 
 @Directive({
     selector: '[appAdaptFontSize]',
@@ -8,9 +8,9 @@ import { ConfigurationService } from "src/services/Parameter/ConfigurationPlayin
 export class AdaptFontSizeDirective {
     constructor(
         private el: ElementRef,
-        private configurationService : ConfigurationService
+        private parameterService : ParameterService
     ) {
-        this.configurationService.textSize$.subscribe(
+        this.parameterService.currentSize$.subscribe(
             (size : number) => {
                 this.el.nativeElement.style.fontSize = size + 'px';
                 console.log("eazeze");

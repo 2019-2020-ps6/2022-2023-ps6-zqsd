@@ -2,7 +2,7 @@ import { AdvancedParameterChronometer, AdvancedParameterFocusWork, AdvancedParam
 
 
 export const ADVANCED_PARAMETER_CHRONOMETER: AdvancedParameterChronometer = {
-    chronometer: '30',
+    chronometer: 30,
 };
 
 export const ADVANCED_PARAMETER_MEMORY_WORK: AdvancedParameterMemoryWork = {

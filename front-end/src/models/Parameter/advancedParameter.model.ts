@@ -1,5 +1,5 @@
 export interface AdvancedParameterChronometer {
-    chronometer: string; //in second
+    chronometer: number; //in second
 }
 
 export interface AdvancedParameterMemoryWork {

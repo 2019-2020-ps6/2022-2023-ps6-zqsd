@@ -1,4 +1,4 @@
 export interface Parameter {
-    size: string;
+    size: number;
     music: boolean;
 }

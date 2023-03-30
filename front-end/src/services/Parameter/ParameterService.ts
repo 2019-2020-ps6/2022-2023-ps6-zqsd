@@ -8,16 +8,33 @@ import { Parameter } from 'src/models/Parameter/parameter.model';
   })
   export class ParameterService {
   
-    public currentSize$: BehaviorSubject<Parameter['size']> = new BehaviorSubject(PARAMETER.size)
-    public currentMusic$: BehaviorSubject<Parameter['music']> = new BehaviorSubject(PARAMETER.music)
-    public currentMusicPicturePath$ : BehaviorSubject<string> = new BehaviorSubject("Son_Disabled.png")
+    private currentSize : Parameter['size'] = PARAMETER.size;
+    private currentMusic : Parameter['music'] = PARAMETER.music;
+    private currentMusicPicture : string = "Son_Disabled.png"; //this.getMusicString(this.currentMusic);
+
+    public currentSize$: BehaviorSubject<Parameter['size']> = new BehaviorSubject(this.currentSize)
+    public currentMusic$: BehaviorSubject<Parameter['music']> = new BehaviorSubject(this.currentMusic)
+    public currentMusicPicturePath$ : BehaviorSubject<string> = new BehaviorSubject(this.currentMusicPicture)
   
-    constructor() {
+
+    constructor () {
+      
     }
+
+/*
+    constructor(private parameterService: ParameterService) {
+      this.parameterService.currentSize$.subscribe((size: Parameter['size']) => {
+        this.updateTextSize(Number(size))
+      });
+    }*/
   
   
-    getCurrentSize(): Observable<Parameter['size']> {
+    getCurrentSizeOBS(): Observable<Parameter['size']> {
       return this.currentSize$.asObservable();
+    }
+
+    getCurrentSize(): number{
+      return this.currentSize;
     }
 
 
@@ -41,11 +58,19 @@ import { Parameter } from 'src/models/Parameter/parameter.model';
     }
 
     setMusicUrl() {
-        if(this.currentMusic$.value == false){
-            this.currentMusicPicturePath$.next("Son_Disabled.png");
-        } else {
-            this.currentMusicPicturePath$.next("Son_Enable.png");
-        }
+      this.currentMusicPicturePath$.next(this.getMusicString(this.currentMusic$.value))
     }
-  
+
+    getMusicString(isEnable : boolean) : string {
+      if(isEnable == false){
+        return "Son_Disabled.png";
+      } else {
+        return "Son_Enable.png";
+      }
+    }
+
+    updateTextSize(size : number){
+      this.currentSize = size;
+      this.currentSize$.next(this.currentSize)
+    }  
   }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdvancedParameterChronometer } from 'src/models/Parameter/advancedParameter.model';
 import { AdvancedParameterService } from 'src/services/Parameter/AdvancedParameterService';
-import { ConfigurationService } from 'src/services/Parameter/ConfigurationPlayingExperienceService';
 
 
 @Component({
@@ -18,14 +17,12 @@ export class ChronometerAdvancedParameterComponent implements OnInit {
     showTicks = false;
     step = 1;
     thumbLabel = false;
-    value = 0;
+    value : AdvancedParameterChronometer['chronometer'] = this.advancedParameterService.getCurrentChronometer(); 
 
-    currentChronometerTime: AdvancedParameterChronometer['chronometer'] = ""; 
     constructor(
-        private advancedParameterService: AdvancedParameterService, 
-        private configurationService : ConfigurationService) {
+        private advancedParameterService: AdvancedParameterService) {
         this.advancedParameterService.currentChronometer$.subscribe((chronometerTime: AdvancedParameterChronometer['chronometer']) => {
-            this.currentChronometerTime = chronometerTime;
+            this.value = chronometerTime;
         });
     }
 
@@ -34,6 +31,6 @@ export class ChronometerAdvancedParameterComponent implements OnInit {
     }
 
     updateValue(){
-        this.configurationService.updateChronometerTime(this.value);
+        this.advancedParameterService.updateChronometerTime(this.value);
     }
 }
