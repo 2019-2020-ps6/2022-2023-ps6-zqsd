@@ -1,5 +1,5 @@
 import { Directive, ElementRef } from "@angular/core";
-import { ConfigurationService } from "src/services/ConfigurationService";
+import { ConfigurationService } from "src/services/Parameter/ConfigurationPlayingExperienceService";
 
 @Directive({
     selector: '[appAdaptFontSize]',

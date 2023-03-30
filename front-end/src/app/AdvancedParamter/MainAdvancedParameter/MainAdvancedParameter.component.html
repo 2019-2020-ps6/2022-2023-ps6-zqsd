@@ -1,0 +1,16 @@
+<span class="titlte" >My text fixed 2</span>
+<a (click)="ActivateChronometer()"> RER</a>
+<button (click)="ActivateChronometer()">AZERTY</button>
+<div *ngIf = "ChronometerisEnable">
+    <app-ChonometerAdvancedParameter></app-ChonometerAdvancedParameter>
+</div>
+
+<button (click)="ActivateMemoryWork()">AZERTY</button>
+<div *ngIf = "MemoryWorkisEnable">
+    <app-ChonometerAdvancedParameter></app-ChonometerAdvancedParameter>
+</div>
+
+<button (click)="ActivateFocusWork()">AZERTY</button>
+<div *ngIf = "FocusWorkisEnable">
+    <app-ChonometerAdvancedParameter></app-ChonometerAdvancedParameter>
+</div>

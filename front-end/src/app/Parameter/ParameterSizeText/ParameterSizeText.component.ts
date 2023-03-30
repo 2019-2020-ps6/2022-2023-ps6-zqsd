@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Parameter } from 'src/models/Parameter/parameter.model';
-import { ConfigurationService } from 'src/services/ConfigurationService';
-import { ParameterService } from 'src/services/ParameterService';
+import { ConfigurationService } from 'src/services/Parameter/ConfigurationPlayingExperienceService';
+import { ParameterService } from 'src/services/Parameter/ParameterService';
 
 @Component({
     selector: 'app-ParameterSizeText',

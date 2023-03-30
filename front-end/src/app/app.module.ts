@@ -10,13 +10,18 @@ import { ParameterMusicComponent } from './Parameter/ParameterMusic/ParameterMus
 import { ParameterSizeTextComponent } from './Parameter/ParameterSizeText/ParameterSizeText.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdaptFontSizeDirective } from './directives/adaptFontSize';
+import { MainAdvancedParamterComponent } from './AdvancedParamter/MainAdvancedParameter/MainAdvancedParameter.component'
+import { ChronometerAdvancedParameterComponent } from './AdvancedParamter/Chronometer/Chronometer.component'
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ParameterMusicComponent,
     ParameterSizeTextComponent,
-    AdaptFontSizeDirective
+    AdaptFontSizeDirective,
+    MainAdvancedParamterComponent,
+    ChronometerAdvancedParameterComponent
   ],
   imports: [
     BrowserModule,

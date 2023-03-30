@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Parameter } from 'src/models/Parameter/parameter.model';
-import { ParameterService } from 'src/services/ParameterService';
+import { ParameterService } from 'src/services/Parameter/ParameterService';
 
 @Component({
     selector: 'app-ParameterMusic',
