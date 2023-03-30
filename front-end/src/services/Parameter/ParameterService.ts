@@ -10,11 +10,11 @@ import { Parameter } from 'src/models/Parameter/parameter.model';
   
     private currentSize : Parameter['size'] = PARAMETER.size;
     private currentMusic : Parameter['music'] = PARAMETER.music;
-    private currentMusicPicture : string = "Son_Disabled.png"; //this.getMusicString(this.currentMusic);
+    private currentMusicPicturePath : Parameter['nameMusicPicture'] = "Son_Disabled.png"; //this.getMusicString(this.currentMusic);
 
     public currentSize$: BehaviorSubject<Parameter['size']> = new BehaviorSubject(this.currentSize)
     public currentMusic$: BehaviorSubject<Parameter['music']> = new BehaviorSubject(this.currentMusic)
-    public currentMusicPicturePath$ : BehaviorSubject<string> = new BehaviorSubject(this.currentMusicPicture)
+    public currentMusicPicturePath$ : BehaviorSubject<Parameter['nameMusicPicture']> = new BehaviorSubject(this.currentMusicPicturePath)
   
 
     constructor () {
@@ -33,12 +33,15 @@ import { Parameter } from 'src/models/Parameter/parameter.model';
       return this.currentSize$.asObservable();
     }
 
-    getCurrentSize(): number{
+    getCurrentSize(): Parameter['size'] {
       return this.currentSize;
     }
 
+    getCurrentMusic(): Parameter["music"] {
+      return this.currentMusic;
+  }
 
-    getCurrentMusic(): Observable<Parameter['music']> {
+    getCurrentMusicOBS(): Observable<Parameter['music']> {
         return this.currentMusic$.asObservable();
     }
   
@@ -53,15 +56,19 @@ import { Parameter } from 'src/models/Parameter/parameter.model';
         
     }
 
-    getMusicUrl() : Observable<string> {
+    getMusicUrlOBS() : Observable<Parameter['nameMusicPicture']> {
         return this.currentMusicPicturePath$.asObservable();
     }
+
+    getMusicUrl() : Parameter['nameMusicPicture'] {
+      return this.currentMusicPicturePath;
+  }
 
     setMusicUrl() {
       this.currentMusicPicturePath$.next(this.getMusicString(this.currentMusic$.value))
     }
 
-    getMusicString(isEnable : boolean) : string {
+    getMusicString(isEnable : boolean) : Parameter['nameMusicPicture'] {
       if(isEnable == false){
         return "Son_Disabled.png";
       } else {

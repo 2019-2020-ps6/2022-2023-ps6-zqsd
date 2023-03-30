@@ -12,6 +12,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdaptFontSizeDirective } from './directives/adaptFontSize';
 import { MainAdvancedParamterComponent } from './AdvancedParamter/MainAdvancedParameter/MainAdvancedParameter.component'
 import { ChronometerAdvancedParameterComponent } from './AdvancedParamter/Chronometer/Chronometer.component'
+import { MemoryWorkAdvancedParameterComponent } from './AdvancedParamter/MemoryWork/MemoryWorkAdvancedParameter.component';
+import { FocusWorkAdvancedParameterComponent } from './AdvancedParamter/FocusWork/FocusWorkAdvancedParameter.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { ChronometerAdvancedParameterComponent } from './AdvancedParamter/Chrono
     ParameterSizeTextComponent,
     AdaptFontSizeDirective,
     MainAdvancedParamterComponent,
-    ChronometerAdvancedParameterComponent
+    ChronometerAdvancedParameterComponent,
+    MemoryWorkAdvancedParameterComponent,
+    FocusWorkAdvancedParameterComponent
   ],
   imports: [
     BrowserModule,

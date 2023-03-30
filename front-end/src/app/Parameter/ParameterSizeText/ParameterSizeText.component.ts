@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Parameter } from 'src/models/Parameter/parameter.model';
+import { AdvancedParameterService } from 'src/services/Parameter/AdvancedParameterService';
 import { ParameterService } from 'src/services/Parameter/ParameterService';
 
 @Component({
@@ -16,7 +17,7 @@ export class ParameterSizeTextComponent implements OnInit {
     showTicks = false;
     step = 1;
     thumbLabel = false;
-    value = 0;
+    value : Parameter['size'] = this.parameterService.getCurrentSize();
 
     constructor(private parameterService : ParameterService) {
         this.parameterService.currentSize$.subscribe((size: Parameter['size']) => {

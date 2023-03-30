@@ -37,7 +37,7 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
 
 
     constructor () {
-      
+
     }
 
     /*constructor(private advancedParameterService : AdvancedParameterService) {
@@ -47,6 +47,11 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
     }*/
     
 
+    updateChronometerTime(time : AdvancedParameterChronometer['chronometer']){
+      this.currentChronometerTime = time;
+      this.currentChronometer$.next(this.currentChronometerTime)
+    }
+
     setCurrentComplexQuestion(complexQuestion : AdvancedParameterMemoryWork['complexQuestion']) {
       this.currentComplexQuestion = complexQuestion;
       this.currentComplexQuestion$.next(this.currentComplexQuestion);
@@ -54,7 +59,7 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
 
     setCurrentPuzzle(puzzle : AdvancedParameterMemoryWork['puzzle']) {
       this.currentPuzzle = puzzle;
-      this.currentPuzzle$.next(puzzle);
+      this.currentPuzzle$.next(this.currentPuzzle);
     }
 
     setCurrentReflection(reflection : AdvancedParameterMemoryWork['reflection']) {
@@ -92,56 +97,143 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
       this.currentWrongAnswerAnimation$.next(this.currentWrongAnswerAnimation);
     }
 
+    
+
+
+
+    switchCurrentComplexQuestion() {
+      this.currentComplexQuestion = !this.currentComplexQuestion;
+      this.currentComplexQuestion$.next(this.currentComplexQuestion);
+    }
+
+    switchCurrentPuzzle() {
+      this.currentPuzzle = !this.currentPuzzle;
+      this.currentPuzzle$.next(this.currentPuzzle);
+    }
+
+    switchCurrentReflection() {
+      this.currentReflection = !this.currentReflection;
+      this.currentReflection$.next(this.currentReflection);
+    }
+
+    switchCurrentMemory() {
+      this.currentMemory = !this.currentMemory;
+      this.currentMemory$.next(this.currentMemory);
+    }
+
+    switchCurrentLogic() {
+      this.currentLogic = !this.currentLogic;
+      this.currentLogic$.next(this.currentLogic);
+    }
+
+    switchCurrentBackground() {
+      this.currentBackGround = !this.currentBackGround;
+      this.currentBackGround$.next(this.currentBackGround);
+      console.log(this.currentBackGround);
+      
+    }
+
+    switchCurrentQuestionAnimation() {
+      this.currentQuestionAnimation = !this.currentQuestionAnimation;
+      this.currentQuestionAnimation$.next(this.currentQuestionAnimation);
+    }
+
+    switchCurrentRightAnswerAnimation() {
+      this.currentRightAnswerAnimation = !this.currentRightAnswerAnimation;
+      this.currentRightAnswerAnimation$.next(this.currentRightAnswerAnimation);
+    }
+
+    switchCurrentWrongAnswerAnimatino() {
+      this.currentWrongAnswerAnimation = !this.currentWrongAnswerAnimation;
+      this.currentWrongAnswerAnimation$.next(this.currentWrongAnswerAnimation);
+    }
+
+
+
 
 
     getCurrentChronometerOBS() : Observable<AdvancedParameterChronometer['chronometer']> {
       return this.currentChronometer$.asObservable();
     }
 
-    getCurrentChronometer() : number {
-      return this.currentChronometerTime;
-    }
-
-    getCurrentComplexQuestion() : Observable<AdvancedParameterMemoryWork['complexQuestion']> {
+    getCurrentComplexQuestionOBS() : Observable<AdvancedParameterMemoryWork['complexQuestion']> {
       return this.currentComplexQuestion$.asObservable();
     }
 
-    getCurrentPuzzle() : Observable<AdvancedParameterMemoryWork['puzzle']> {
+    getCurrentPuzzleOBS() : Observable<AdvancedParameterMemoryWork['puzzle']> {
       return this.currentPuzzle$.asObservable();
     }
 
-    getCurrentReflection() : Observable<AdvancedParameterMemoryWork['reflection']> {
+    getCurrentReflectionOBS() : Observable<AdvancedParameterMemoryWork['reflection']> {
       return this.currentReflection$.asObservable();
     }
 
-    getCurrentMemory() : Observable<AdvancedParameterMemoryWork['memory']> {
+    getCurrentMemoryOBS() : Observable<AdvancedParameterMemoryWork['memory']> {
       return this.currentMemory$.asObservable();
     }
 
-    getCurrentLogic() : Observable<AdvancedParameterMemoryWork['logic']> {
+    getCurrentLogicOBS() : Observable<AdvancedParameterMemoryWork['logic']> {
       return this.currentLogic$.asObservable();
     }
 
-    getCurrentBackground() : Observable<AdvancedParameterFocusWork['background']> {
+    getCurrentBackgroundOBS() : Observable<AdvancedParameterFocusWork['background']> {
       return this.currentBackGround$.asObservable();
     }
 
-    getCurrentQuestionAnimation() : Observable<AdvancedParameterFocusWork['questionAnimation']> {
+    getCurrentQuestionAnimationOBS() : Observable<AdvancedParameterFocusWork['questionAnimation']> {
       return this.currentQuestionAnimation$.asObservable();
     }
 
-    getCurrentRightAnswerAnimation() : Observable<AdvancedParameterFocusWork['rightAnswerAnimation']> {
+    getCurrentRightAnswerAnimationOBS() : Observable<AdvancedParameterFocusWork['rightAnswerAnimation']> {
       return this.currentRightAnswerAnimation$.asObservable();
     }
 
-    getCurrentWrongAnswerAnimatino() : Observable<AdvancedParameterFocusWork['wrongAnswerAnimation']> {
+    getCurrentWrongAnswerAnimatinoOBS() : Observable<AdvancedParameterFocusWork['wrongAnswerAnimation']> {
       return this.currentWrongAnswerAnimation$.asObservable();
     }
 
 
-    updateChronometerTime(time : number){
-      this.currentChronometerTime = time;
-      this.currentChronometer$.next(this.currentChronometerTime)
+
+
+
+    getCurrentChronometer() : number {
+      return this.currentChronometerTime;
+    }
+
+    getCurrentComplexQuestion() : AdvancedParameterMemoryWork['complexQuestion'] {
+      return this.currentComplexQuestion;
+    }
+
+    getCurrentPuzzle() : AdvancedParameterMemoryWork['puzzle'] {
+      return this.currentPuzzle;
+    }
+
+    getCurrentReflection() : AdvancedParameterMemoryWork['reflection'] {
+      return this.currentReflection;
+    }
+
+    getCurrentMemory() : AdvancedParameterMemoryWork['memory'] {
+      return this.currentMemory;
+    }
+
+    getCurrentLogic() : AdvancedParameterMemoryWork['logic'] {
+      return this.currentLogic;
+    }
+
+    getCurrentBackground() : AdvancedParameterFocusWork['background'] {
+      return this.currentBackGround;
+    }
+
+    getCurrentQuestionAnimation() : AdvancedParameterFocusWork['questionAnimation'] {
+      return this.currentQuestionAnimation;
+    }
+
+    getCurrentRightAnswerAnimation() : AdvancedParameterFocusWork['rightAnswerAnimation'] {
+      return this.currentRightAnswerAnimation;
+    }
+
+    getCurrentWrongAnswerAnimatino() : AdvancedParameterFocusWork['wrongAnswerAnimation'] {
+      return this.currentWrongAnswerAnimation;
     }
   }
 

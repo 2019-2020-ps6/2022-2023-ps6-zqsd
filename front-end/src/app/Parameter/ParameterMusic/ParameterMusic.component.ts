@@ -10,8 +10,8 @@ import { ParameterService } from 'src/services/Parameter/ParameterService';
 
 export class ParameterMusicComponent implements OnInit {
 
-    currentMusic: Parameter['music'] = false; 
-    resultPictureUrl = "Son_Disabled.png"
+    currentMusic: Parameter['music'] = this.parameterService.getCurrentMusic(); 
+    resultPictureUrl : Parameter["nameMusicPicture"] = this.parameterService.getMusicUrl();
     constructor(private parameterService: ParameterService) {
         this.parameterService.currentMusic$.subscribe((musicEnable: Parameter['music']) => {
             this.currentMusic = musicEnable;
