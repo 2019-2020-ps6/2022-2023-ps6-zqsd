@@ -13,6 +13,9 @@ import { HomePageComponent } from './home-page/home-page.component';
 import {CreateQuiz} from "./CreateQuiz.component/CreateQuiz.component";
 import {CreateQuestion} from "./CreateQuestion.component/CreateQuestion.component";
 import {ReactiveFormsModule} from "@angular/forms";
+import {PuzzleAnswerComponent} from "./Puzzle/PuzzleAnswer/PuzzleAnswer.component";
+import {PuzzleGridComponent} from "./Puzzle/PuzzleGrid/PuzzleGrid.component";
+import {MainPuzzleComponent} from "./Puzzle/PuzzleMain/PuzzleMain.component";
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import {ReactiveFormsModule} from "@angular/forms";
     HeaderComponent,
     HomePageComponent,
     CreateQuiz,
-
+    PuzzleAnswerComponent,
+    PuzzleGridComponent,
+    MainPuzzleComponent
   ],
   imports: [
     BrowserModule,
