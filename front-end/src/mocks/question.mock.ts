@@ -4,22 +4,22 @@ export const AnswerChronologicalHistory1: Answer[] = [
     {
         label: "chronological",
         value: "Découverte de Neptune",
-        order : "3"
+        order : 3
     },
     {
         label: "chronological",
         value: "Invention de la poudre à canon",
-        order : "1"
+        order : 1
     },
     {
         label: "chronological",
         value: "Découverte de l'Amérique",
-        order : "2"
+        order : 2
     },
     {
         label: "chronological",
         value: "Chute du mur de Berlin",
-        order : "4"
+        order : 4
     }
 ];
 
@@ -57,27 +57,27 @@ export const AnswerSearching1: Answer[] = [
 export const AnswerPuzzle1: Answer[] = [
     {
         label: "puzzle",
-        value: "linkImage1",
+        value: "assets/Puzzle/Github/image_part_001.jpg",
         isCorrect:false,
-        order : "1"
+        order : 1
     },
     {
         label: "puzzle",
-        value: "linkImage2",
+        value: "assets/Puzzle/Github/image_part_002.jpg",
         isCorrect:false,
-        order : "2"
+        order : 2
     },
     {
         label: "puzzle",
-        value: "linkImage3",
+        value: "assets/Puzzle/Github/image_part_003.jpg",
         isCorrect:false,
-        order : "3"
+        order : 3
     },
     {
         label: "puzzle",
-        value: "linkImage4",
+        value: "assets/Puzzle/Github/image_part_004.jpg",
         isCorrect:true,
-        order : "4"
+        order : 4
     }
 ];
 
@@ -92,7 +92,7 @@ export const QuestionQuizz: Question[] = [
         id: '1',
         label : "chronological",
         value:"Remettez dans l'ordre chronologique les éléments.",
-        
+
         answers: AnswerChronologicalHistory1,
     },
     {

@@ -1,0 +1,11 @@
+<app-puzzle-grid
+  [size]="currentAnswer.length">
+</app-puzzle-grid>
+<app-puzzle-answer
+  *ngFor="let answer of currentAnswer; let i = index"
+  [imageUrl]="answer.value"
+  [numberOfPicture]="currentAnswer.length"
+  [indexOfThePicture]="i"
+  [rightPosition]="orderOfPieces[i]"
+  (placedCorrectly)="onPiecePlacedCorrectly($event)">
+</app-puzzle-answer>
