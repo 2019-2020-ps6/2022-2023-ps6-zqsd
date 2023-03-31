@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GamepageComponent } from './Gamepage.component/GamePage.Component';
-import { GameQuestionComponent } from './GameQuestion.component/GameQuestion.Component';
+import { GameQuestionComponent } from './GameQuestionClassical.component/GameQuestionClassical.Component';
 import { GameAnswerComponent } from './GameAnswer.component/GameAnswer.Component';
 import { GameQuizComponent } from './GameQuiz.component/GameQuiz.component';
 import { HeaderComponent } from './header.component/header.component';

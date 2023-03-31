@@ -4,9 +4,9 @@ import { Question,Answer } from '../../models/Question.model';
 import { QuestionQuizz } from '../../mocks/question.mock';
 
 @Component({
-  selector: 'app-game-question',
-  templateUrl: './GameQuestion.component.html',
-  styleUrls: ['./GameQuestion.component.scss']
+  selector: 'app-game-question-classical',
+  templateUrl: './GameQuestionClassical.component.html',
+  styleUrls: ['./GameQuestionClassical.component.scss']
 })
 export class GameQuestionComponent implements OnInit {
   
@@ -19,13 +19,12 @@ export class GameQuestionComponent implements OnInit {
   }
 
   questionAnswered(goodAnswer:boolean){
-    console.log(goodAnswer);
+    console.log(goodAnswer);  //quand on aura le back remplacer cette fonction
     this.getNextQuestion();
   }
   
   getNextQuestion(){
     this.gameService.nextQuestion();
-    console.log();
 
   } 
   ngOnInit() {
