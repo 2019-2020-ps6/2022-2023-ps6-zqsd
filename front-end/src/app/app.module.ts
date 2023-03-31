@@ -14,6 +14,9 @@ import { MainAdvancedParamterComponent } from './AdvancedParamter/MainAdvancedPa
 import { ChronometerAdvancedParameterComponent } from './AdvancedParamter/Chronometer/Chronometer.component'
 import { MemoryWorkAdvancedParameterComponent } from './AdvancedParamter/MemoryWork/MemoryWorkAdvancedParameter.component';
 import { FocusWorkAdvancedParameterComponent } from './AdvancedParamter/FocusWork/FocusWorkAdvancedParameter.component';
+import { ReturnButtonComponent } from './Parameter/Return/returnButton.component';
+import { ParameterPageComponent } from './Parameter/ParameterPage.component/ParameterPage.component';
+import { ButtonNavigationAdvancedParameter } from './Parameter/ButtonNavigationAdvancedParameter/ButtonNavigationAdvancedParameter.component';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { FocusWorkAdvancedParameterComponent } from './AdvancedParamter/FocusWor
     MainAdvancedParamterComponent,
     ChronometerAdvancedParameterComponent,
     MemoryWorkAdvancedParameterComponent,
-    FocusWorkAdvancedParameterComponent
+    FocusWorkAdvancedParameterComponent,
+    ReturnButtonComponent,
+    ParameterPageComponent,
+    ButtonNavigationAdvancedParameter
   ],
   imports: [
     BrowserModule,
@@ -35,7 +41,7 @@ import { FocusWorkAdvancedParameterComponent } from './AdvancedParamter/FocusWor
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

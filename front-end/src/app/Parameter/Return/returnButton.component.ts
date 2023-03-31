@@ -4,7 +4,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-back-button',
+  selector: 'app-return-button',
   templateUrl: './returnButton.component.html',
   styleUrls: ['./returnButton.component.scss']
 })
@@ -31,3 +31,7 @@ export class ReturnButtonComponent {
     return event instanceof NavigationEnd
   }
 }
+
+//bootstrap
+//flaticon
+//lordicon

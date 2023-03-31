@@ -13,6 +13,8 @@ export class MainAdvancedParamterComponent implements OnInit {
     MemoryWorkisEnable = false;
     FocusWorkisEnable = false;
 
+    constructor() { }
+
     ngOnInit(): void {
     }
 
