@@ -9,6 +9,10 @@ import { GameQuestionComponent } from './GameQuestion.component/GameQuestion.Com
 import { GameAnswerComponent } from './GameAnswer.component/GameAnswer.Component';
 import { GameQuizComponent } from './GameQuiz.component/GameQuiz.component';
 import { HeaderComponent } from './header.component/header.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import {CreateQuiz} from "./CreateQuiz.component/CreateQuiz.component";
+import {CreateQuestion} from "./CreateQuestion.component/CreateQuestion.component";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,11 +22,15 @@ import { HeaderComponent } from './header.component/header.component';
     GameAnswerComponent,
     GameResultComponent,
     GameQuizComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomePageComponent,
+    CreateQuiz,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
