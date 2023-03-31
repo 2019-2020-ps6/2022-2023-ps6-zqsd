@@ -4,7 +4,13 @@ import { ParameterPageComponent } from './Parameter/ParameterPage.component/Para
 import { MainAdvancedParamterComponent } from './AdvancedParamter/MainAdvancedParameter/MainAdvancedParameter.component';
 import { MemoryWorkAdvancedParameterComponent } from './AdvancedParamter/MemoryWork/MemoryWorkAdvancedParameter.component';
 
+import { GamepageComponent } from "./Gamepage.component/GamePage.Component";
+
+
 const routes: Routes = [
+  {
+    path: "Gamepage",
+    component: GamepageComponent },
   { path: '**', component: ParameterPageComponent }, //mettre page d'acceuil
   { path: 'AdvancedParameterMainPage', component: MainAdvancedParamterComponent },
   { path: 'ParameterPage', component: ParameterPageComponent },
