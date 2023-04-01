@@ -6,6 +6,7 @@ import { GameResultComponent } from "./GameResult.component/GameResult.component
 import { HomePageComponent } from "./home-page/home-page.component";
 import {CreateQuiz} from "./CreateQuiz.component/CreateQuiz.component";
 import {MainPuzzleComponent} from "./Puzzle/PuzzleMain/PuzzleMain.component";
+import {ResultsComponent} from "./results/results.component";
 
 
 const routes: Routes = [
@@ -16,13 +17,15 @@ const routes: Routes = [
     path: "GameResult",
     component: GameResultComponent },
 
-  { path: '', redirectTo: '/MainPuzzle', pathMatch: 'full' },
+  { path: '', redirectTo: '/homePage', pathMatch: 'full' },
 
   { path: 'homePage', component: HomePageComponent },
 
   {path: 'CreateQuiz', component: CreateQuiz},
 
-  { path: 'MainPuzzle', component: MainPuzzleComponent }
+  { path: 'MainPuzzle', component: MainPuzzleComponent },
+
+  { path: 'results', component: ResultsComponent }
 
 
 ];

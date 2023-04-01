@@ -21,14 +21,14 @@ export class GameService {
 
   public answerResult = AnswerClassic1[0].isCorrect;
   public quizList$ : BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizList);
-  private currentQuiz: Quiz=this.quizList[0];
+  currentQuiz: Quiz=this.quizList[0];
   public currentQuiz$: BehaviorSubject<Quiz> = new BehaviorSubject<Quiz>(this.currentQuiz)
   private index:number=0;
   private currentQuestion: Question=this.currentQuiz.questions[this.index];
   public currentQuestion$: BehaviorSubject<Question> = new BehaviorSubject(this.currentQuestion);
   public currentAnswer$: Subject<Answer> = new Subject<Answer>();
   public answerResult$ : BehaviorSubject<boolean | undefined> = new BehaviorSubject(this.answerResult);
-  
+  score = { goodAnswers: 0, badAnswers: 0 };
 
   constructor() {
   }
@@ -46,7 +46,7 @@ export class GameService {
 
   setCurrentQuestion(index: number) {
     const question = this.currentQuiz.questions[index];
-    
+
     if(question) {
       this.currentQuestion  = question;
       this.currentQuestion$.next(this.currentQuestion);
@@ -74,5 +74,19 @@ export class GameService {
   getCurrentQuiz(): Observable<Quiz> {
     return this.currentQuiz$.asObservable();
   }
+
+
+  allQuestionsAnswered(): boolean {
+    for (let i = 0; i < this.currentQuiz.questions.length; i++) {
+      const question = this.currentQuiz.questions[i];
+      if (!question.answered) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+
+
 
 }

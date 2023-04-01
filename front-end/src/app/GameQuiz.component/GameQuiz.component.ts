@@ -11,7 +11,7 @@ import { GameService } from 'src/services/GameService';
 export class GameQuizComponent {
 
   currentQuiz : Quiz = {id:'', name:'', theme:'', questions: [] as Question[]};
-  constructor(private gameService : GameService){
+  constructor(public gameService : GameService){
     this.gameService.getCurrentQuiz().subscribe((quiz : Quiz)=>{
       this.currentQuiz = quiz;
     });

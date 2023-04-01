@@ -22,7 +22,8 @@ export interface Question {
     label: string;
     value: String;
     answers: Answer[];
-    textSearchign?: TextSearching;
+    textSearching?: TextSearching;
+    answered?: boolean;
 }
 
 
