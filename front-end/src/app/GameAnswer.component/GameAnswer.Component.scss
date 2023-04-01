@@ -1,0 +1,24 @@
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e0e0e0;
+    border: 2px solid #bfbfbf;
+  }
+
+  &:active {
+    background-color: #d6d6d6;
+    border: 2px solid #b3b3b3;
+    box-shadow: none;
+  }
+}
