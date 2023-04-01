@@ -1,4 +1,4 @@
-import { SubQuiz,Answer,Question,TextSearching } from '../models/subQuiz.model';
+import { SubQuiz,Answer,Question,TextSearching } from '../models/Question';
 
 export const AnswerChronologicalHistory1: Answer[] = [
     {

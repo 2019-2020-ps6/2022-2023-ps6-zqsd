@@ -1,4 +1,4 @@
-import { SubQuiz } from './subQuiz.model';
+import { SubQuiz } from './Question';
 
 
 //Model for the quiz, possess a list of subQuiz that comport the question and answers
