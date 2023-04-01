@@ -16,6 +16,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {PuzzleAnswerComponent} from "./Puzzle/PuzzleAnswer/PuzzleAnswer.component";
 import {PuzzleGridComponent} from "./Puzzle/PuzzleGrid/PuzzleGrid.component";
 import {MainPuzzleComponent} from "./Puzzle/PuzzleMain/PuzzleMain.component";
+import { ResultsComponent } from './results/results.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {MainPuzzleComponent} from "./Puzzle/PuzzleMain/PuzzleMain.component";
     CreateQuiz,
     PuzzleAnswerComponent,
     PuzzleGridComponent,
-    MainPuzzleComponent
+    MainPuzzleComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,

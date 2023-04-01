@@ -19,7 +19,9 @@ if all right : puzzlemain -> gameQuestion
 export class GameQuestionComponent implements OnInit {
 
   currentQuestion: Question = {id:'', value: '',label:"",answers: [] as Answer[]};
-  constructor(private gameService: GameService) {
+  showResult =false;
+
+  constructor(public gameService: GameService) {
     this.gameService.currentQuestion$.subscribe((question: Question) => {
       this.currentQuestion = question;
 
@@ -27,17 +29,32 @@ export class GameQuestionComponent implements OnInit {
   }
 
   questionAnswered(goodAnswer:boolean){
-    console.log(goodAnswer);
-    this.getNextQuestion();
+    if (goodAnswer) {
+      this.gameService.score.goodAnswers++;
+    } else {
+      this.gameService.score.badAnswers++;
+    }
+    if (this.gameService.allQuestionsAnswered()) {
+      this.showResult = true;
+    } else {
+      this.getNextQuestion();
+    }
   }
 
   getNextQuestion(){
-    this.gameService.nextQuestion();
+    this.currentQuestion.answered = true;
+    this.gameService.score.badAnswers++;
+    if (this.gameService.allQuestionsAnswered()) {
+      this.showResult = true;
+    } else {
+      this.gameService.nextQuestion();
+    }
     console.log();
 
   }
-  ngOnInit() {
 
+  ngOnInit() {
   }
+
 
 }

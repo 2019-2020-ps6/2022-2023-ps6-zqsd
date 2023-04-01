@@ -1,7 +1,9 @@
 <h2>{{currentQuestion.value}}</h2>
 
 <tr *ngFor="let answer of currentQuestion.answers">
-    <app-GameAnswer [currentAnswer]="answer" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
+  <app-GameAnswer [currentAnswer]="answer" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
 </tr>
 
-<button (click)="getNextQuestion()">next question</button>
+<button *ngIf="!showResult" (click)="getNextQuestion()">Next Question</button>
+<button *ngIf="showResult" routerLink="/results">Voir les résultats</button>
+
