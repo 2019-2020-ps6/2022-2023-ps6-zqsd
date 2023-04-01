@@ -1,9 +1,9 @@
+import { GamepageComponent } from './Gamepage.component/GamePage.Component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import {MatSliderModule} from '@angular/material/slider';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms'; 
-
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ParameterMusicComponent } from './Parameter/ParameterMusic/ParameterMusic.component';
@@ -31,7 +31,8 @@ import { ButtonNavigationAdvancedParameter } from './Parameter/ButtonNavigationA
     FocusWorkAdvancedParameterComponent,
     ReturnButtonComponent,
     ParameterPageComponent,
-    ButtonNavigationAdvancedParameter
+    ButtonNavigationAdvancedParameter,
+    GamepageComponent
   ],
   imports: [
     BrowserModule,
