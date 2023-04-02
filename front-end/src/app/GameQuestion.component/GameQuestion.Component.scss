@@ -1,0 +1,29 @@
+tr {
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  background-color: #f2f2f25b;
+
+  &:hover {
+    background-color: #e6e6e6;
+  }
+
+  app-GameAnswer {
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    margin: 5px;
+
+    &:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+
+
+
+
+
+
