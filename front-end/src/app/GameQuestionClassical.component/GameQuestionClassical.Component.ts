@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GameService } from '../../services/GameService';
 import { Question,Answer } from '../../models/Question.model';
 import { QuestionQuizz } from '../../mocks/question.mock';
@@ -8,9 +8,11 @@ import { QuestionQuizz } from '../../mocks/question.mock';
   templateUrl: './GameQuestionClassical.component.html',
   styleUrls: ['./GameQuestionClassical.component.scss']
 })
+
+
 export class GameQuestionComponent implements OnInit {
   
-  currentQuestion: Question = {id:'', value: '',label:"",answers: [] as Answer[]}; 
+  @Input() currentQuestion: Question|undefined;
   constructor(private gameService: GameService) {
     this.gameService.currentQuestion$.subscribe((question: Question) => {
       this.currentQuestion = question;
