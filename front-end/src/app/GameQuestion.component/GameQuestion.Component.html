@@ -4,6 +4,11 @@
   <app-GameAnswer [currentAnswer]="answer" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
 </tr>
 
-<button *ngIf="!showResult" (click)="getNextQuestion()">Next Question</button>
-<button *ngIf="showResult" routerLink="/results">Voir les résultats</button>
+<tr>
+  <td colspan="2">
+    <button class="game-question-button" *ngIf="!showResult" (click)="getNextQuestion()">Next Question</button>
+    <button class="game-question-button" *ngIf="showResult" routerLink="/results">Voir les résultats</button>
+  </td>
+</tr>
+
 
