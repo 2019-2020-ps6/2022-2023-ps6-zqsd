@@ -3,6 +3,7 @@ import { GameService } from '../../services/GameService';
 import { Question,Answer } from '../../models/Question.model';
 import { QuestionQuizz } from '../../mocks/question.mock';
 import {CdkDragDrop,moveItemInArray,CdkDrag} from "@angular/cdk/drag-drop";
+import * as _ from 'underscore';
 
 @Component({
   selector: 'app-game-question-order',
@@ -53,13 +54,8 @@ export class GameQuestionOrderComponent implements OnInit {
   }
 
   getNextQuestion(){
-    if (this.currentQuestion != undefined) {
-      this.currentQuestion.answered = true;
-    }
-    if (this.gameService.allQuestionsAnswered()) {
-      this.showResult = true;
-    }
-    this.answerEvent.emit(true);
+    console.log(_.isEqual(this.answers,this.currentQuestion?.answers));
+    this.answerEvent.emit(_.isEqual(this.answers,this.currentQuestion?.answers));
     this.gameService.nextQuestion();
     console.log(this.gameService.allQuestionsAnswered())
     console.log(this.currentQuestion)
@@ -67,6 +63,7 @@ export class GameQuestionOrderComponent implements OnInit {
   ngOnInit() {
     if (this.currentQuestion)
     this.answers = [...this.currentQuestion?.answers];
+    this.answers=_.shuffle(this.answers);
   }
 
 }
