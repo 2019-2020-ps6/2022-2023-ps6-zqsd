@@ -78,6 +78,33 @@ html, body, app-root {
   height: 745.6;
 }
 
+.button-parametre {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid #000;
+  background-color: #f5f5f5;
+  color: #000;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    background-color: #e0e0e0;
+    border: 2px solid #bfbfbf;
+  }
+
+  &:active {
+    background-color: #d6d6d6;
+    border: 2px solid #b3b3b3;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  }
+}
+
+
 
 
 

@@ -28,7 +28,7 @@ const routes: Routes = [
 
   { path: 'MainPuzzle', component: MainPuzzleComponent },
 
-  { path: 'results', component: ResultsComponent }
+  { path: 'results', component: ResultsComponent },
 
 
   { path: '**', component: ParameterPageComponent }, //mettre page d'acceuil
