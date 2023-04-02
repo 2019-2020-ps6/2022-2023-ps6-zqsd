@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { GameService } from '../../services/GameService';
 import { Question,Answer } from '../../models/Question.model';
 import { QuestionQuizz } from '../../mocks/question.mock';
@@ -14,15 +14,15 @@ export class GameQuestionComponent implements OnInit {
   
   @Input() currentQuestion: Question|undefined;
   showResult =false;
+  @Output() answerEvent: EventEmitter<boolean>= new EventEmitter<boolean>();
+
 
   constructor(private gameService: GameService) {
-    this.gameService.currentQuestion$.subscribe((question: Question) => {
-      this.currentQuestion = question;
-      
-    })
+    
   }
 
   questionAnswered(goodAnswer:boolean){
+    if (this.currentQuestion=undefined)
     if (goodAnswer) {
       this.gameService.score.goodAnswers++;
     } else {
@@ -36,16 +36,7 @@ export class GameQuestionComponent implements OnInit {
   }
   
   getNextQuestion(){
-    if (this.currentQuestion)
-    this.currentQuestion.answered = true;
-    this.gameService.score.badAnswers++;
-    if (this.gameService.allQuestionsAnswered()) {
-      this.showResult = true;
-    } else {
-      this.gameService.nextQuestion();
-    }
-    console.log();
-
+    this.answerEvent.emit(true);
   }
   ngOnInit() {
     

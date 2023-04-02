@@ -16,7 +16,25 @@ export class GameQuizComponent {
     this.gameService.getCurrentQuiz().subscribe((quiz : Quiz)=>{
       this.currentQuiz = quiz;
     });
+    this.gameService.currentQuestion$.subscribe((question: Question) => {
+      this.currentQuestion = question;
+      
+    })
     
+  }
+
+
+  getNextQuestion(x:boolean){
+    if (this.currentQuestion)
+    this.currentQuestion.answered = true;
+    this.gameService.score.badAnswers++;
+    if (this.gameService.allQuestionsAnswered()) {
+      //show the result function
+    } else {
+      this.gameService.nextQuestion();
+    }
+    console.log();
+
   }
   ngOnInit(){
     this.currentQuestion=this.currentQuiz.questions[0];
