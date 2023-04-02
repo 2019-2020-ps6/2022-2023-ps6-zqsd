@@ -117,6 +117,52 @@ html, body, app-root {
   font-family: sans-serif;
 }
 
+.subtitle-parameter{
+  font-size: 20px;
+  margin: 15px;
+  margin-bottom: 30px;
+  text-decoration: underline;
+}
+
+.button-home{
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid #000;
+  background-color: #f5f5f5;
+  color: #000;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  outline: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 20px;
+}
+.button-return{
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid #000;
+  background-color: #f5f5f5;
+  color: #000;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  outline: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 
 
 

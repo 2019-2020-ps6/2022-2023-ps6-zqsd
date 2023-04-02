@@ -10,10 +10,10 @@ import { ParameterService } from 'src/services/Parameter/ParameterService';
 })
 
 export class ParameterSizeTextComponent implements OnInit {
-   
+
     disabled = false;
-    max = 52;
-    min = 14;
+    max = 30;
+    min = 15;
     showTicks = false;
     step = 1;
     thumbLabel = false;
@@ -25,7 +25,7 @@ export class ParameterSizeTextComponent implements OnInit {
         });
     }
 
-    
+
     ngOnInit(): void {
     }
 
