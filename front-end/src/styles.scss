@@ -92,6 +92,10 @@ html, body, app-root {
   cursor: pointer;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
   outline: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-left: 20px;
 
   &:hover {
     background-color: #e0e0e0;
