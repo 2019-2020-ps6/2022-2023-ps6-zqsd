@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import {MatSliderModule} from '@angular/material/slider';
 import { FormsModule} from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ParameterMusicComponent } from './Parameter/ParameterMusic/ParameterMusic.component';
@@ -18,6 +17,7 @@ import { FocusWorkAdvancedParameterComponent } from './AdvancedParamter/FocusWor
 import { ReturnButtonComponent } from './Parameter/Return/returnButton.component';
 import { ParameterPageComponent } from './Parameter/ParameterPage.component/ParameterPage.component';
 import { ButtonNavigationAdvancedParameter } from './Parameter/ButtonNavigationAdvancedParameter/ButtonNavigationAdvancedParameter.component';
+
 
 import { GamepageComponent } from './Gamepage.component/GamePage.Component';
 import { GameQuestionComponent } from './GameQuestionClassical.component/GameQuestionClassical.Component';
@@ -74,7 +74,8 @@ import { GameQuestionOrderComponent } from './GameQuestionOrder.component/GameQu
     ReactiveFormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    DragDropModule
+    DragDropModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
