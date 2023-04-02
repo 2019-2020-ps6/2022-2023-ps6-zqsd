@@ -30,7 +30,7 @@ export class GameQuestionOrderComponent implements OnInit {
   answers: Answer[] = [];
 
   constructor(private gameService: GameService) {
-    
+
   }
 
   questionAnswered(goodAnswer:boolean){
@@ -52,11 +52,13 @@ export class GameQuestionOrderComponent implements OnInit {
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.answers, event.previousIndex, event.currentIndex);
   }
-  
+
   getNextQuestion(){
     console.log(_.isEqual(this.answers,this.currentQuestion?.answers));
-    
-    this.answerEvent.emit(true);
+    this.answerEvent.emit(_.isEqual(this.answers,this.currentQuestion?.answers));
+    this.gameService.nextQuestion();
+    console.log(this.gameService.allQuestionsAnswered())
+    console.log(this.currentQuestion)
   }
   ngOnInit() {
     if (this.currentQuestion)
