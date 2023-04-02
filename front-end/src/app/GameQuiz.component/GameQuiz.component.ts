@@ -12,7 +12,7 @@ export class GameQuizComponent {
 
   currentQuiz : Quiz = {id:'', name:'', theme:'', questions: [] as Question[]};
   currentQuestion:Question =  {id:'', value: '',label:"",answers: [] as Answer[]};
-  constructor(private gameService : GameService){
+  constructor(public gameService : GameService){
     this.gameService.getCurrentQuiz().subscribe((quiz : Quiz)=>{
       this.currentQuiz = quiz;
     });

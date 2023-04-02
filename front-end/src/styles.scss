@@ -1,1 +1,78 @@
 /* You can add global styles to this file, and also import other style files */
+button {
+  background-color: #eee;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: black;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+button:hover {
+  background-color: black;
+  color: white;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+.game-question-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid #000;
+  background-color: #f5f5f5;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    background-color: #e0e0e0;
+    border: 2px solid #bfbfbf;
+  }
+
+  &:active {
+    background-color: #d6d6d6;
+    border: 2px solid #b3b3b3;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  }
+}
+
+html, body, app-root {
+  height: 100%;
+  background-color: #F5F5DC;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.answer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.answer-option {
+  width: 45%;
+}
+
+.full-height {
+  height: 745.6;
+}
+
+
+
+
+
+
