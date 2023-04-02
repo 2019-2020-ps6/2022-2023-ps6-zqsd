@@ -46,6 +46,26 @@ export const AnswerClassic1: Answer[] = [
     }
 ];
 
+export const AnswerClassic2: Answer[] = [
+  { label: "classical", value: "Le pancréas", isCorrect: true },
+  { label: "classical", value: "Le foie", isCorrect: false },
+  { label: "classical", value: "Les reins", isCorrect: false },
+  { label: "classical", value: "Le cerveau", isCorrect: false },
+];
+
+export const AnswerClassic3: Answer[] = [
+  { label: "classical", value: "Solide, liquide et gazeux", isCorrect: true },
+  { label: "classical", value: "Solide, liquide et plasma", isCorrect: false },
+  { label: "classical", value: "Solide, gazeux et plasma", isCorrect: false },
+  { label: "classical", value: "Liquide, gazeux et plasma", isCorrect: false },
+];
+
+export const AnswerClassic4: Answer[] = [
+  { label: "classical", value: "Le blanc", isCorrect: false },
+  { label: "classical", value: "Le noir", isCorrect: true },
+  { label: "classical", value: "Le gris", isCorrect: false },
+  { label: "classical", value: "Le transparent", isCorrect: false },
+];
 export const AnswerSearching1: Answer[] = [
     {
         label: "textSearching",
@@ -128,4 +148,107 @@ export const QuestionQuizz: Question[] = [
         value:"Quelle est la couleur du cheval d'Henri IV ?",
         answers: AnswerSearching1,
     }
+];
+
+export const QuestionQuizz2: Question[] = [
+  {
+    id: '1',
+    label: "classical",
+    value: "Quels sont les 3 états de la matière ?",
+    answers: AnswerClassic1,
+  },
+  {
+    id: '5',
+    label: "classical",
+    value: "Qui a écrit 'Les Misérables' ?",
+    answers: AnswerClassic2,
+  },
+  {
+    id: '6',
+    label: "classical",
+    value: "Quelle est la capitale de l'Australie ?",
+    answers: AnswerClassic3,
+  },
+  {
+    id: '7',
+    label: "classical",
+    value: "Quelle est la plus haute montagne du monde ?",
+    answers: AnswerClassic4,
+  },
+];
+
+export const Question1: Question = {
+  id: '1',
+  label: "classical",
+  value: "Quel est l'élément chimique de numéro atomique 1 ?",
+  answers: [
+    { label: "classical", value: "Hydrogène", isCorrect: true },
+    { label: "classical", value: "Hélium", isCorrect: false },
+    { label: "classical", value: "Carbone", isCorrect: false },
+    { label: "classical", value: "Azote", isCorrect: false },
+  ],
+};
+
+
+export const Question2: Question = {
+  id: '2',
+  label: "classical",
+  value: "Quel est l'organe responsable de la production d'insuline dans le corps humain ?",
+  answers: [
+    { label: "classical", value: "Le pancréas", isCorrect: true },
+    { label: "classical", value: "Le foie", isCorrect: false },
+    { label: "classical", value: "Les reins", isCorrect: false },
+    { label: "classical", value: "Le cerveau", isCorrect: false },
+  ],
+};
+
+export const Question3: Question = {
+  id: '3',
+  label: "classical",
+  value: "Quels sont les 3 états de la matière ?",
+  answers: [
+    { label: "classical", value: "Solide, liquide et gazeux", isCorrect: true },
+    { label: "classical", value: "Solide, liquide et plasma", isCorrect: false },
+    { label: "classical", value: "Solide, gazeux et plasma", isCorrect: false },
+    { label: "classical", value: "Liquide, gazeux et plasma", isCorrect: false },
+  ],
+};
+
+export const Question4: Question = {
+  id: '4',
+  label: "classical",
+  value: "Quelle est la couleur de l'absence de couleur ?",
+  answers: [
+    { label: "classical", value: "Le blanc", isCorrect: false },
+    { label: "classical", value: "Le noir", isCorrect: true },
+    { label: "classical", value: "Le gris", isCorrect: false },
+    { label: "classical", value: "Le transparent", isCorrect: false },
+  ],
+};
+
+export const QuestionQuizz3: Question[] = [
+  {
+    id: '1',
+    label: "classical",
+    value: "Quel est l'élément chimique de numéro atomique 1 ?",
+    answers: AnswerClassic1,
+  },
+  {
+    id: '2',
+    label: "classical",
+    value: "Quel est l'organe responsable de la production d'insuline dans le corps humain ?",
+    answers: AnswerClassic2,
+  },
+  {
+    id: '3',
+    label: "classical",
+    value: "Quels sont les 3 états de la matière ?",
+    answers: AnswerClassic3,
+  },
+  {
+    id: '4',
+    label: "classical",
+    value: "Quelle est la couleur de l'absence de couleur ?",
+    answers: AnswerClassic4,
+  },
 ];

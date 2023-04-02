@@ -33,6 +33,7 @@ import {PuzzleGridComponent} from "./Puzzle/PuzzleGrid/PuzzleGrid.component";
 import {MainPuzzleComponent} from "./Puzzle/PuzzleMain/PuzzleMain.component";
 import { ResultsComponent } from './results/results.component';
 import { GameQuestionOrderComponent } from './GameQuestionOrder.component/GameQuestionOrder.component';
+import { QuizzListComponent } from './quizz-list/quizz-list.component';
 
 
 
@@ -62,6 +63,7 @@ import { GameQuestionOrderComponent } from './GameQuestionOrder.component/GameQu
     PuzzleGridComponent,
     MainPuzzleComponent,
     ResultsComponent,
+    QuizzListComponent,
     
   ],
   imports: [
