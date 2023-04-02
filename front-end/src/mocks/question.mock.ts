@@ -105,7 +105,7 @@ export const TextSearchingHenri4: TextSearching[] = [
 export const QuestionQuizz: Question[] = [
     {
         id: '1',
-        label : "chronological",
+        label : "order",
         value:"Remettez dans l'ordre chronologique les éléments.",
 
         answers: AnswerChronologicalHistory1,
@@ -124,7 +124,7 @@ export const QuestionQuizz: Question[] = [
     },
     {
         id: '4',
-        label : "textSearching",
+        label : "searching",
         value:"Quelle est la couleur du cheval d'Henri IV ?",
         answers: AnswerSearching1,
     }

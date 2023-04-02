@@ -1,6 +1,7 @@
 import { GameResultComponent } from './GameResult.component/GameResult.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {DragDropModule} from "@angular/cdk/drag-drop";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,12 +18,16 @@ import {PuzzleAnswerComponent} from "./Puzzle/PuzzleAnswer/PuzzleAnswer.componen
 import {PuzzleGridComponent} from "./Puzzle/PuzzleGrid/PuzzleGrid.component";
 import {MainPuzzleComponent} from "./Puzzle/PuzzleMain/PuzzleMain.component";
 import { ResultsComponent } from './results/results.component';
+import { GameQuestionOrderComponent } from './GameQuestionOrder.component/GameQuestionOrder.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     GamepageComponent,
     GameQuestionComponent,
+    GameQuestionOrderComponent,
     GameAnswerComponent,
     GameResultComponent,
     GameQuizComponent,
@@ -32,12 +37,14 @@ import { ResultsComponent } from './results/results.component';
     PuzzleAnswerComponent,
     PuzzleGridComponent,
     MainPuzzleComponent,
-    ResultsComponent
+    ResultsComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

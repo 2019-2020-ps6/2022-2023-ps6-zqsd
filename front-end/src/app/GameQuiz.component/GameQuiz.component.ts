@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Question,Answer } from 'src/models/Question.model';
 import { GameService } from 'src/services/GameService';
 
+
 @Component({
   selector: 'app-game-quiz',
   templateUrl: './GameQuiz.component.html',
