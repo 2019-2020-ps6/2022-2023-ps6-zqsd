@@ -1,16 +1,17 @@
-<span class="titlte" >My text fixed 2</span>
-<a (click)="ActivateChronometer()"> RER</a>
-<button (click)="ActivateChronometer()">AZERTY</button>
+<h1 style="text-align:center; margin-bottom: 50px;">PARAMÈTRES AVANCÉS</h1>
+<button class="button-advended-parameter"(click)="ActivateChronometer()">CHRONOMÈTRE</button>
 <div *ngIf = "ChronometerisEnable">
     <app-ChonometerAdvancedParameter></app-ChonometerAdvancedParameter>
 </div>
 
-<button (click)="ActivateMemoryWork()">AZERTY</button>
+<button class="button-advended-parameter"(click)="ActivateMemoryWork()">MÉMOIRE</button>
 <div *ngIf = "MemoryWorkisEnable">
     <app-MemoryWorkAdvancedParameter></app-MemoryWorkAdvancedParameter>
 </div>
 
-<button (click)="ActivateFocusWork()">AZERTY</button>
+<button class="button-advended-parameter"(click)="ActivateFocusWork()">ATTENTION</button>
 <div *ngIf = "FocusWorkisEnable">
     <app-FocusWorkAdvancedParameter></app-FocusWorkAdvancedParameter>
 </div>
+<button routerLink="/homePage" class="button-home"> Accueil</button>
+<button class = "button-parametre">Retour</button>
