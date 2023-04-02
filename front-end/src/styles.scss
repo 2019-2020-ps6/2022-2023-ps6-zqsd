@@ -22,12 +22,13 @@ button:disabled {
 }
 .game-question-button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 20px 35px;
   border-radius: 20px;
   border: 2px solid #000;
   background-color: #f5f5f5;
   color: #000;
   text-align: center;
+  font-weight: bold;
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
@@ -60,16 +61,62 @@ html, body, app-root {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 10px;
+  gap: 1px;
+  text-align: center;
 }
 
 .answer-option {
-  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
 }
+
 
 .full-height {
   height: 745.6;
 }
+
+.button-parametre {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 2px solid #000;
+  background-color: #f5f5f5;
+  color: #000;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  outline: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-left: 20px;
+
+  &:hover {
+    background-color: #e0e0e0;
+    border: 2px solid #bfbfbf;
+  }
+
+  &:active {
+    background-color: #d6d6d6;
+    border: 2px solid #b3b3b3;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  }
+}
+.quiz-name-zqsd {
+  font-size: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
 
 
 

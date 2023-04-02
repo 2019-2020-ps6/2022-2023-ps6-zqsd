@@ -12,23 +12,29 @@
   border-radius: 4px;
   cursor: pointer;
   color: black;
+  border: 2px solid #000;
   font-size: 1.2rem;
   padding: 1rem;
   margin-right: 1rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
   flex-grow: 1;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+  width: 200px;
+  height: 75px;
 }
 
 .btn-jouer:hover {
   background-color: black;
   color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .btn-jouer:disabled {
   background-color: #eee;
   color: #aaa;
   cursor: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .btn-creer {
@@ -37,21 +43,44 @@
   border-radius: 4px;
   cursor: pointer;
   color: black;
+  border: 2px solid #000;
   font-size: 1.2rem;
   padding: 1rem;
   margin-right: 1rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
   flex-grow: 1;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+  width: 200px;
+  height: 75px;
 }
 
 .btn-creer:hover {
   background-color: black;
   color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .btn-creer:disabled {
   background-color: #eee;
   color: #aaa;
   cursor: auto;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+}
+.btn-liste {
+  background-color: #eee;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: black;
+  border: 2px solid #000;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  flex-grow: 1;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+  width: 200px;
+  height: 75px;
 }

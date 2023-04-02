@@ -1,6 +1,6 @@
 .game-answer-button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 50px 20px;
   border-radius: 5px;
   border: 2px solid #000;
   background-color: #f5f5f5;
@@ -10,6 +10,7 @@
   font-size: 16px;
   cursor: pointer;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  min-width: 350px;
 
   &:hover {
     background-color: #e0e0e0;
