@@ -77,7 +77,11 @@ export class GameService {
 
 
   allQuestionsAnswered(): boolean {
-    for (let i = 0; i < this.currentQuiz.questions.length; i++) {
+    const lastIndex = this.currentQuiz.questions.length - 1;
+    if (this.index === lastIndex || this.currentQuiz.questions.length === 0) {
+      return true;
+    }
+    for (let i = 0; i <= lastIndex; i++) {
       const question = this.currentQuiz.questions[i];
       if (!question.answered) {
         return false;
@@ -85,6 +89,8 @@ export class GameService {
     }
     return true;
   }
+
+
 
 
 

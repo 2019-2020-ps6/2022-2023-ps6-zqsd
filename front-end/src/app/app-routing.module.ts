@@ -10,6 +10,7 @@ import { HomePageComponent } from "./home-page/home-page.component";
 import {CreateQuiz} from "./CreateQuiz.component/CreateQuiz.component";
 import {MainPuzzleComponent} from "./Puzzle/PuzzleMain/PuzzleMain.component";
 import {ResultsComponent} from "./results/results.component";
+import {QuizzListComponent} from "./quizz-list/quizz-list.component";
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'AdvancedParameterMainPage', component: MainAdvancedParamterComponent },
   { path: 'ParameterPage', component: ParameterPageComponent },
   { path: 'MemoryWork', component: MemoryWorkAdvancedParameterComponent },
+  { path : 'QuizList', component: QuizzListComponent},
 ];
 
 @NgModule({

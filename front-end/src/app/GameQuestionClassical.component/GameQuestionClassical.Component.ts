@@ -11,22 +11,29 @@ import { QuestionQuizz } from '../../mocks/question.mock';
 
 
 export class GameQuestionComponent implements OnInit {
-  
+
   @Input() currentQuestion: Question|undefined;
   showResult =false;
   @Output() answerEvent: EventEmitter<boolean>= new EventEmitter<boolean>();
 
 
   constructor(private gameService: GameService) {
-    
+
   }
 
   questionAnswered(goodAnswer:boolean){
-    if (this.currentQuestion=undefined)
     if (goodAnswer) {
       this.gameService.score.goodAnswers++;
+      if (this.currentQuestion != undefined) {
+        this.currentQuestion.answered = true;
+        this.answerEvent.emit(true);
+      }
     } else {
       this.gameService.score.badAnswers++;
+      if (this.currentQuestion != undefined) {
+        this.currentQuestion.answered = true;
+        this.answerEvent.emit(true);
+      }
     }
     if (this.gameService.allQuestionsAnswered()) {
       this.showResult = true;
@@ -34,12 +41,24 @@ export class GameQuestionComponent implements OnInit {
       this.getNextQuestion();
     }
   }
-  
+
   getNextQuestion(){
+    if (this.currentQuestion != undefined) {
+      this.currentQuestion.answered = true;
+    }
+    if (this.gameService.allQuestionsAnswered()) {
+      this.showResult = true;
+    }
     this.answerEvent.emit(true);
+    this.gameService.nextQuestion();
+    console.log(this.gameService.allQuestionsAnswered())
+    console.log(this.currentQuestion)
+    console.log(this.showResult)
+    console.log(this.gameService.currentQuiz.questions)
   }
+
   ngOnInit() {
-    
+
   }
 
 }
