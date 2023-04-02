@@ -91,6 +91,7 @@ html, body, app-root {
   font-size: 16px;
   cursor: pointer;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  outline: none;
 
   &:hover {
     background-color: #e0e0e0;
