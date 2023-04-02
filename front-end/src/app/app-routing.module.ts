@@ -29,7 +29,6 @@ const routes: Routes = [
   { path: 'MainPuzzle', component: MainPuzzleComponent },
 
   { path: 'results', component: ResultsComponent },
-
   { path: 'AdvancedParameterMainPage', component: MainAdvancedParamterComponent },
   { path: 'ParameterPage', component: ParameterPageComponent },
   { path: 'MemoryWork', component: MemoryWorkAdvancedParameterComponent },

@@ -1,3 +1,4 @@
+<h1 class ="subtitle-parameter">TAILLE DU TEXTE</h1>
 <div class="parametres">
   <div class="label">Taille de police :</div>
   <mat-slider
@@ -9,11 +10,9 @@
         [discrete]="thumbLabel"
         [showTickMarks]="showTicks">
       <input matSliderThumb [(ngModel)]="value" (ngModelChange)="updateValue()">
-    </mat-slider> 
+    </mat-slider>
     <div class="label">{{value}}</div>
-    <span class="title" appAdaptFontSize>My text</span>
-    <span class="titlte" >My text fixed</span>
-    <span class="titlte2" >My text fixed</span>
+    <span class="title" appAdaptFontSize>Ceci est un texte pour tester la taille.</span>
 </div>
 
 

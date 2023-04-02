@@ -18,6 +18,7 @@ export class ReturnButtonComponent {
         this.previousUrl = (event as NavigationEnd).url;
       });
   }
+  
 
   goBack(): void {
     if (this.previousUrl) {
