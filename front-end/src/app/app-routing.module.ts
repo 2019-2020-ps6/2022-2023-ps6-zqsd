@@ -30,8 +30,6 @@ const routes: Routes = [
 
   { path: 'results', component: ResultsComponent },
 
-
-  { path: '**', component: HomePageComponent }, //mettre page d'acceuil
   { path: 'AdvancedParameterMainPage', component: MainAdvancedParamterComponent },
   { path: 'ParameterPage', component: ParameterPageComponent },
   { path: 'MemoryWork', component: MemoryWorkAdvancedParameterComponent },
