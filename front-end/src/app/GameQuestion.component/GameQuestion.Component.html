@@ -1,14 +1,28 @@
-<h2>{{currentQuestion.value}}</h2>
-
-<tr *ngFor="let answer of currentQuestion.answers">
-  <app-GameAnswer [currentAnswer]="answer" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
-</tr>
-
-<tr>
-  <td colspan="2">
+<div class="question-container">
+  <h2>{{currentQuestion.value}}</h2>
+  <div class="answers-container">
+    <div class="answer-row">
+      <div class="answer-option">
+        <app-GameAnswer [currentAnswer]="currentQuestion.answers[0]" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
+      </div>
+      <div class="answer-option">
+        <app-GameAnswer [currentAnswer]="currentQuestion.answers[1]" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
+      </div>
+    </div>
+    <div class="answer-row">
+      <div class="answer-option">
+        <app-GameAnswer [currentAnswer]="currentQuestion.answers[2]" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
+      </div>
+      <div class="answer-option">
+        <app-GameAnswer [currentAnswer]="currentQuestion.answers[3]" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
+      </div>
+    </div>
+  </div>
+  <div class="button-container">
     <button class="game-question-button" *ngIf="!showResult" (click)="getNextQuestion()">Next Question</button>
     <button class="game-question-button" *ngIf="showResult" routerLink="/results">Voir les résultats</button>
-  </td>
-</tr>
+  </div>
+</div>
+
 
 

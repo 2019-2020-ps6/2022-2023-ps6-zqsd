@@ -51,6 +51,21 @@ export const AnswerSearching1: Answer[] = [
         label: "textSearching",
         value: "Blanc",
         isCorrect : true
+    },
+    {
+      label: "textSearching",
+      value: "Bleu",
+      isCorrect : true
+    },
+    {
+      label: "textSearching",
+      value: "Noir",
+      isCorrect : true
+    },
+    {
+      label: "textSearching",
+      value: "Marron",
+      isCorrect : true
     }
 ];
 
