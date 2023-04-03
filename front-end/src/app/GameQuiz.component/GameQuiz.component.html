@@ -7,7 +7,7 @@
 </div>
 <div *ngIf="currentQuestion.label=='classical'">
     <app-game-question-classical [currentQuestion]="currentQuestion" (answerEvent)="getNextQuestion($event)"></app-game-question-classical>
-</div>y
+</div>
 <div *ngIf="currentQuestion.label=='searching'">
     <app-game-question-classical [currentQuestion]="currentQuestion" (answerEvent)="getNextQuestion($event)"></app-game-question-classical>
 </div>
@@ -16,3 +16,4 @@
         <app-game-question-classical [currentQuestion]="currentQuestion" (answerEvent)="getNextQuestion($event)"></app-game-question-classical>
     </div>
 </ng-template>
+<button routerLink="/homePage" class="button-home"> Accueil</button>
