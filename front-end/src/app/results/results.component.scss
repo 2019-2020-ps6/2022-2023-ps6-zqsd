@@ -1,0 +1,16 @@
+@keyframes grossir {
+  0%{
+    font-size: 40px;
+  }
+  50%{
+    font-size: 80px;
+  }
+  100%{
+    font-size: 40px;
+  }
+}
+p {
+  animation-name: grossir;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+}
