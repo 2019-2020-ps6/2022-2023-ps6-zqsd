@@ -1,17 +1,19 @@
-<h1 style="text-align:center; margin-bottom: 50px;">PARAMÈTRES AVANCÉS</h1>
-<button class="button-advended-parameter"(click)="ActivateChronometer()">CHRONOMÈTRE</button>
-<div *ngIf = "ChronometerisEnable">
-    <app-ChonometerAdvancedParameter></app-ChonometerAdvancedParameter>
-</div>
+<div style="height: auto;">
+  <h1 style="text-align:center; margin-bottom: 50px;">PARAMÈTRES AVANCÉS</h1>
+  <button class="button-advended-parameter"(click)="ActivateChronometer()">CHRONOMÈTRE</button>
+  <div *ngIf = "ChronometerisEnable">
+      <app-ChonometerAdvancedParameter></app-ChonometerAdvancedParameter>
+  </div>
 
-<button class="button-advended-parameter"(click)="ActivateMemoryWork()">MÉMOIRE</button>
-<div *ngIf = "MemoryWorkisEnable">
-    <app-MemoryWorkAdvancedParameter></app-MemoryWorkAdvancedParameter>
-</div>
+  <button class="button-advended-parameter"(click)="ActivateMemoryWork()">MÉMOIRE</button>
+  <div *ngIf = "MemoryWorkisEnable">
+      <app-MemoryWorkAdvancedParameter></app-MemoryWorkAdvancedParameter>
+  </div>
 
-<button class="button-advended-parameter"(click)="ActivateFocusWork()">ATTENTION</button>
-<div *ngIf = "FocusWorkisEnable">
-    <app-FocusWorkAdvancedParameter></app-FocusWorkAdvancedParameter>
+  <button class="button-advended-parameter"(click)="ActivateFocusWork()">ATTENTION</button>
+  <div *ngIf = "FocusWorkisEnable">
+      <app-FocusWorkAdvancedParameter></app-FocusWorkAdvancedParameter>
+  </div>
+  <button routerLink="/homePage" class="button-home"> Accueil</button>
+  <button class = "button-parametre">Retour</button>
 </div>
-<button routerLink="/homePage" class="button-home"> Accueil</button>
-<button class = "button-parametre">Retour</button>
