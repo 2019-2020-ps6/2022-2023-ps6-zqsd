@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Parameter } from 'src/models/Parameter/parameter.model';
 import { AdvancedParameterService } from 'src/services/Parameter/AdvancedParameterService';
 import { ParameterService } from 'src/services/Parameter/ParameterService';
+import { MatSliderModule } from '@angular/material/slider';
 
 @Component({
     selector: 'app-ParameterSizeText',
