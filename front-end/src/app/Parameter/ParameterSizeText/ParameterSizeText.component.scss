@@ -1,3 +1,19 @@
 mat-slider {
     width: 400px;
 }
+.parametres{
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.button-advanced-P{
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 50px;
+  border-radius: 10px;
+  box-shadow: 0 3px #666;
+}
