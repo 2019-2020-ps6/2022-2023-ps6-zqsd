@@ -187,5 +187,36 @@ body {
   background-size: cover;
 }
 
+.answer-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 100px;
+  margin: 20px auto; /*centrer le bloc horizontalement*/
+  text-align: center; /*centrer le texte horizontalement*/
+  border: solid 2px #000;
+  border-radius: 15px;
+  background-color: #ffd17a;
+  box-shadow: 0 6px #efa424;
+  font-size: var(--currentSize);
+
+
+
+  &:hover {
+    box-shadow: 0 4px #efa424;
+    top: 2px;
+  }
+
+  &:active {
+    box-shadow: 0 0 #efa424;
+    top: 6px;
+  }
+}
+
+:root {
+  --currentSize: var(--ts-currentSize);
+}
+
 
 
