@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {PuzzleResult} from "../PuzzleAnswer/PuzzleAnswer-Interface.component";
-import {Answer, Question} from "../../../models/Question.model";
+import {Answer} from "../../../models/Question.model";
 import {AnswerPuzzle1} from "../../../mocks/question.mock";
 
 @Component({
@@ -10,13 +10,12 @@ import {AnswerPuzzle1} from "../../../mocks/question.mock";
 })
 export class MainPuzzleComponent {
 
-  @Input() currentQuestion: Question | undefined;
-  currentAnswer : Answer[] = AnswerPuzzle1;
+  @Input() currentAnswer: Answer[] = AnswerPuzzle1;
   @Output() answerEvent: EventEmitter<boolean>= new EventEmitter<boolean>();
 
   list_puzzlePieces_areCorrectlyPlaced : boolean[] = Array.from({length: this.currentAnswer.length}, () => false);
   numberOfWrongPlaced: number = this.list_puzzlePieces_areCorrectlyPlaced.length;
-  orderOfPieces: number[] = Array.from({length: this.currentAnswer.length}, (_, i) => -1);
+  orderOfPieces: number[] = Array.from({length: this.currentAnswer.length}, (_, i) => 0);
 
   checkIfOrderIsNumber(): void {
     for (let i = 0; i < this.orderOfPieces.length; i++) {
@@ -28,8 +27,6 @@ export class MainPuzzleComponent {
   }
 
   onInit(): void {
-    if (this.currentQuestion)
-    this.currentAnswer = this.currentQuestion.answers;
     this.checkIfOrderIsNumber();
   }
 

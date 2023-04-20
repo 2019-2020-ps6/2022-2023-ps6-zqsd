@@ -1,4 +1,4 @@
-<div class="grid-puzzle">
+<div id="grid-puzzle" class="grid-puzzle" style="--size: {{getRangeSQRT(size).length}}" style="--puzzleGridHeight: {{puzzleGridHeight}}">
   <div *ngFor="let i of getRangeSQRT(size)" class="row-grid-puzzle">
     <div *ngFor="let i of getRangeSQRT(size)" class="items-grid-puzzle"></div>
   </div>

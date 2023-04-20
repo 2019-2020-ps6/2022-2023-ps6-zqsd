@@ -7,10 +7,24 @@ import './_variables_puzzle.scss';
   styleUrls: ['./PuzzleGrid.component.scss']
 })
 export class PuzzleGridComponent {
-  @Input() size: number = 4;
+  @Input() size: number = 9;
+
+  public puzzleGridHeight: number = 50;
+
 
   constructor() { }
   ngOnInit() {
+    this.adjustParentContainerSize();
+  }
+
+  ngAfterViewInit() {
+    this.adjustParentContainerSize();
+  }
+
+
+
+  getSQRT(num: number): number {
+    return Math.sqrt(num);
   }
 
   getRangeSQRT(num: number): number[] {
@@ -23,6 +37,20 @@ export class PuzzleGridComponent {
      * i : the index of the element in the array that we are manipulating right now
      */
   }
+
+
+  adjustParentContainerSize() {
+
+    const puzzleGridElement = document.getElementById('grid-puzzle');
+    if (puzzleGridElement!=null) {
+      document.documentElement.style.setProperty('--puzzleGridHeight', (puzzleGridElement.getBoundingClientRect().top ) + 'px');
+      this.puzzleGridHeight = puzzleGridElement.getBoundingClientRect().top;
+      console.log(puzzleGridElement.getBoundingClientRect().top +  window.pageYOffset )
+      console.log(puzzleGridElement.getBoundingClientRect().top )
+    }
+  }
+
+
 }
 
 /*

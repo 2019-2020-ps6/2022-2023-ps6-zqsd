@@ -32,7 +32,10 @@ export class PuzzleAnswerComponent implements OnInit {
   constructor(private elRef: ElementRef) {
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.imageLeft = this.generateImagePosition()[0];
+    this.imageTop = this.generateImagePosition()[1];
+  }
 
   startDrag(event: MouseEvent): void {
     this.startX = event.clientX - this.imageLeft;
@@ -58,8 +61,16 @@ export class PuzzleAnswerComponent implements OnInit {
     const sumY = PuzzleAnswerComponent.yBottomRightCorner - PuzzleAnswerComponent.yTopLeftCorner;
     const sectionX = sumX / Math.sqrt(this.numberOfPicture);
     const sectionY = sumY / Math.sqrt(this.numberOfPicture);
-    return [PuzzleAnswerComponent.xTopLeftCorner + sectionX * (this.indexOfThePicture % 3 ),
-      PuzzleAnswerComponent.yTopLeftCorner + sectionY * (Math.floor(this.indexOfThePicture/3))];
+    console.log(sumX);
+    console.log(sumY);
+    console.log(Math.sqrt(this.numberOfPicture))
+    console.log(sectionX);
+    console.log(sectionY);
+    console.log(this.indexOfThePicture);
+    console.log(this.indexOfThePicture % 3);
+    console.log(Math.floor(this.indexOfThePicture/3));
+    return [PuzzleAnswerComponent.xTopLeftCorner + sectionX * (this.indexOfThePicture % 2 ),
+      PuzzleAnswerComponent.yTopLeftCorner + sectionY * (Math.floor(this.indexOfThePicture/2))];
   }
 
 
