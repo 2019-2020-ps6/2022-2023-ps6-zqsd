@@ -1,17 +1,15 @@
-
-
 <div class="question-container">
-    <h2>{{currentQuestion?.value}}</h2>
-    
+    <h2 style="margin-bottom: 75px;">{{currentQuestion?.value}}</h2>
+
 
 
     <div class="answer-list" cdkDropList (cdkDropListDropped)="drop($event)">
       <div class="answer-block" *ngFor="let answer of this.answers" cdkDrag>
           {{answer.value}}
       </div>
-      
+
     </div>
-       
+
 <div class="button-container">
     <button class="game-question-button" *ngIf="!showResult" (click)="getNextQuestion()">Next Question</button>
     <button class="game-question-button" *ngIf="showResult" routerLink="/results">Voir les résultats</button>

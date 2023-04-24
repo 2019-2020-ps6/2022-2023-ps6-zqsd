@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Parameter } from 'src/models/Parameter/parameter.model';
 import { ParameterService } from 'src/services/Parameter/ParameterService';
 
 @Component({
@@ -10,31 +9,17 @@ import { ParameterService } from 'src/services/Parameter/ParameterService';
 
 export class ParameterMusicComponent implements OnInit {
 
-    currentMusic: Parameter['music'] = this.parameterService.getCurrentMusic(); 
-    resultPictureUrl : Parameter["nameMusicPicture"] = this.parameterService.getMusicUrl();
-    constructor(private parameterService: ParameterService) {
-        this.parameterService.currentMusic$.subscribe((musicEnable: Parameter['music']) => {
-            this.currentMusic = musicEnable;
-        });
-        this.parameterService.currentMusicPicturePath$.subscribe((url: string) => {
+    resultPictureUrl: string = "";
+
+    constructor(private parameterService: ParameterService) { }
+
+    ngOnInit(): void {
+        this.parameterService.getMusicUrlOBS().subscribe((url: string) => {
             this.resultPictureUrl = url;
         });
     }
 
-
-
-    ngOnInit(): void {
+    public toggleMusic() {
+        this.parameterService.toggleMusic();
     }
-
-
-    public setMusic(){
-        
-        if (this.currentMusic==false){
-            this.parameterService.setCurrentMusic(true);
-        } else {
-            this.parameterService.setCurrentMusic(false);
-        }
-    }
-
-    
-} 
+}

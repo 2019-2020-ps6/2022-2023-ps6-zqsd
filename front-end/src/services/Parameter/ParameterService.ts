@@ -7,18 +7,18 @@ import { Parameter } from 'src/models/Parameter/parameter.model';
     providedIn: 'root'
   })
   export class ParameterService {
-  
+
     private currentSize : Parameter['size'] = PARAMETER.size;
-    private currentMusic : Parameter['music'] = PARAMETER.music;
-    private currentMusicPicturePath : Parameter['nameMusicPicture'] = "Son_Disabled.png"; //this.getMusicString(this.currentMusic);
+    private musicEnabled = true;
+    public currentMusic$ = new BehaviorSubject<boolean>(this.musicEnabled);
+    private currentMusicPicturePath : Parameter['nameMusicPicture'] = this.getMusicString(this.musicEnabled);
 
     public currentSize$: BehaviorSubject<Parameter['size']> = new BehaviorSubject(this.currentSize)
-    public currentMusic$: BehaviorSubject<Parameter['music']> = new BehaviorSubject(this.currentMusic)
     public currentMusicPicturePath$ : BehaviorSubject<Parameter['nameMusicPicture']> = new BehaviorSubject(this.currentMusicPicturePath)
-  
+
 
     constructor () {
-      
+
     }
 
 /*
@@ -27,8 +27,8 @@ import { Parameter } from 'src/models/Parameter/parameter.model';
         this.updateTextSize(Number(size))
       });
     }*/
-  
-  
+
+
     getCurrentSizeOBS(): Observable<Parameter['size']> {
       return this.currentSize$.asObservable();
     }
@@ -38,34 +38,38 @@ import { Parameter } from 'src/models/Parameter/parameter.model';
     }
 
     getCurrentMusic(): Parameter["music"] {
-      return this.currentMusic;
+      return this.musicEnabled;
   }
+  public toggleMusic() {
+    console.log("before toggle:", this.musicEnabled);
+    this.musicEnabled = !this.musicEnabled;
+    console.log("after toggle:", this.musicEnabled);
+    this.currentMusic$.next(this.musicEnabled);
+    this.currentMusicPicturePath = this.getMusicString(this.musicEnabled);
+    this.currentMusicPicturePath$.next(this.currentMusicPicturePath);
+  }
+
+
 
     getCurrentMusicOBS(): Observable<Parameter['music']> {
         return this.currentMusic$.asObservable();
-    }
-  
-    setCurrentMusic(musicEnable: Parameter['music']) {
-      this.currentMusic$.next(musicEnable);
-      this.setMusicUrl()
     }
 
     setCurrentSize(size: Parameter['size']) {
         this.currentSize$.next(size);
         console.log("tretre");
-        
+
     }
+    public setCurrentMusic(isEnabled: boolean) {
+      this.musicEnabled = isEnabled;
+      this.currentMusic$.next(isEnabled);
+      this.currentMusicPicturePath = this.getMusicString(isEnabled);
+      this.currentMusicPicturePath$.next(this.currentMusicPicturePath);
+    }
+
 
     getMusicUrlOBS() : Observable<Parameter['nameMusicPicture']> {
         return this.currentMusicPicturePath$.asObservable();
-    }
-
-    getMusicUrl() : Parameter['nameMusicPicture'] {
-      return this.currentMusicPicturePath;
-  }
-
-    setMusicUrl() {
-      this.currentMusicPicturePath$.next(this.getMusicString(this.currentMusic$.value))
     }
 
     getMusicString(isEnable : boolean) : Parameter['nameMusicPicture'] {
@@ -79,5 +83,5 @@ import { Parameter } from 'src/models/Parameter/parameter.model';
     updateTextSize(size : number){
       this.currentSize = size;
       this.currentSize$.next(this.currentSize)
-    }  
+    }
   }

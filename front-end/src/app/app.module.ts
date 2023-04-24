@@ -64,7 +64,6 @@ import { QuizzListComponent } from './quizz-list/quizz-list.component';
     MainPuzzleComponent,
     ResultsComponent,
     QuizzListComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -77,7 +76,7 @@ import { QuizzListComponent } from './quizz-list/quizz-list.component';
     AppRoutingModule,
     ReactiveFormsModule,
     DragDropModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
