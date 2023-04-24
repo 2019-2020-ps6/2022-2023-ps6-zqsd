@@ -1,6 +1,6 @@
 import { Quiz } from './../../models/quiz.model';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Question,Answer } from 'src/models/Question.model';
 import { GameService } from 'src/services/GameService';
 
@@ -14,7 +14,7 @@ export class GameQuizComponent {
 
   currentQuiz : Quiz = {id:'', name:'', theme:'', questions: [] as Question[]};
   currentQuestion:Question =  {id:'', value: '',label:"",answers: [] as Answer[]};
-  constructor(public gameService : GameService){
+  constructor(public gameService : GameService, private router:Router){
     this.gameService.getCurrentQuiz().subscribe((quiz : Quiz)=>{
       this.currentQuiz = quiz;
     });
@@ -23,13 +23,16 @@ export class GameQuizComponent {
       
     })
     
+  
   }
 
 
   getNextQuestion(x:boolean){
     this.currentQuestion.answered = true;
+    console.log("jej");
     if (this.gameService.allQuestionsAnswered()) {
-      //todo charge the results page
+      
+      this.router.navigate(['/results'])
     } else {
       this.gameService.nextQuestion();
     }

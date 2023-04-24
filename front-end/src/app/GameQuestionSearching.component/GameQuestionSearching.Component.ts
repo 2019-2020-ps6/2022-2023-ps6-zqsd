@@ -4,9 +4,9 @@ import { Question,Answer } from '../../models/Question.model';
 import { QuestionQuizz } from '../../mocks/question.mock';
 
 @Component({
-  selector: 'app-game-question-classical',
-  templateUrl: './GameQuestionClassical.component.html',
-  styleUrls: ['./GameQuestionClassical.component.scss']
+  selector: 'app-game-question-searching',
+  templateUrl: './GameQuestionSearching.component.html',
+  styleUrls: ['./GameQuestionSearching.component.scss']
 })
 
 
@@ -27,8 +27,11 @@ export class GameQuestionComponent implements OnInit {
     } else {
       this.gameService.score.badAnswers++;
     }
+    if (this.gameService.allQuestionsAnswered()) {
+      this.showResult = true;
+    } else {
       this.getNextQuestion();
-    
+    }
   }
 
   getNextQuestion(){
