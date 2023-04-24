@@ -1,5 +1,6 @@
 import { Quiz } from './../../models/quiz.model';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Question,Answer } from 'src/models/Question.model';
 import { GameService } from 'src/services/GameService';
 
@@ -27,9 +28,8 @@ export class GameQuizComponent {
 
   getNextQuestion(x:boolean){
     this.currentQuestion.answered = true;
-    this.gameService.score.badAnswers++;
     if (this.gameService.allQuestionsAnswered()) {
-      //show the result function
+      //todo charge the results page
     } else {
       this.gameService.nextQuestion();
     }

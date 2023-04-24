@@ -7,13 +7,8 @@
       <div class="answer-block" *ngFor="let answer of this.answers" cdkDrag>
           {{answer.value}}
       </div>
-
     </div>
-
-<div class="button-container">
-    <button class="game-question-button" *ngIf="!showResult" (click)="getNextQuestion()">Next Question</button>
-    <button class="game-question-button" *ngIf="showResult" routerLink="/results">Voir les résultats</button>
-  </div>
-</div>
-
-
+</div>    
+    <div class="button-container">
+      <button class="game-question-button" *ngIf="!showResult" (click)="getNextQuestion()">validate</button>
+    </div>

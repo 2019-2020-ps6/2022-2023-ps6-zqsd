@@ -16,4 +16,8 @@
         <app-game-question-classical [currentQuestion]="currentQuestion" (answerEvent)="getNextQuestion($event)"></app-game-question-classical>
     </div>
 </ng-template>
+<div class="button-container">
+  <button class="game-question-button" *ngIf="!this.gameService.allQuestionsAnswered()" (click)="getNextQuestion(true)">Next Question</button>
+  <button class="game-question-button" *ngIf="this.gameService.allQuestionsAnswered()" routerLink="/results">Voir les résultats</button>
+</div>
 

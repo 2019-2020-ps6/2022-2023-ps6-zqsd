@@ -24,16 +24,8 @@ export class GameQuestionComponent implements OnInit {
   questionAnswered(goodAnswer:boolean){
     if (goodAnswer) {
       this.gameService.score.goodAnswers++;
-      if (this.currentQuestion != undefined) {
-        this.currentQuestion.answered = true;
-        this.answerEvent.emit(true);
-      }
     } else {
       this.gameService.score.badAnswers++;
-      if (this.currentQuestion != undefined) {
-        this.currentQuestion.answered = true;
-        this.answerEvent.emit(true);
-      }
     }
     if (this.gameService.allQuestionsAnswered()) {
       this.showResult = true;
