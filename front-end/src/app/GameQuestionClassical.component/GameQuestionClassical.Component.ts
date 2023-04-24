@@ -50,7 +50,6 @@ export class GameQuestionComponent implements OnInit {
       this.showResult = true;
     }
     this.answerEvent.emit(true);
-    this.gameService.nextQuestion();
     console.log(this.gameService.allQuestionsAnswered())
     console.log(this.currentQuestion)
     console.log(this.showResult)

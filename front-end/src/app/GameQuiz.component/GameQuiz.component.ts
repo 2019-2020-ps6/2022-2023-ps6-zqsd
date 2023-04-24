@@ -26,7 +26,6 @@ export class GameQuizComponent {
 
 
   getNextQuestion(x:boolean){
-    if (this.currentQuestion)
     this.currentQuestion.answered = true;
     this.gameService.score.badAnswers++;
     if (this.gameService.allQuestionsAnswered()) {

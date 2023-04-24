@@ -46,7 +46,8 @@ export class GameService {
 
   setCurrentQuestion(index: number) {
     const question = this.currentQuiz.questions[index];
-
+    console.log(index);
+    
     if(question) {
       this.currentQuestion  = question;
       this.currentQuestion$.next(this.currentQuestion);
