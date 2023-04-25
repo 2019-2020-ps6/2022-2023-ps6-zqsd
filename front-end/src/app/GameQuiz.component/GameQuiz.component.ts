@@ -1,6 +1,6 @@
 import { Quiz } from './../../models/quiz.model';
 import { Component } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { Question,Answer } from 'src/models/Question.model';
 import { GameService } from 'src/services/GameService';
 
@@ -14,32 +14,24 @@ export class GameQuizComponent {
 
   currentQuiz : Quiz = {id:'', name:'', theme:'', questions: [] as Question[]};
   currentQuestion:Question =  {id:'', value: '',label:"",answers: [] as Answer[]};
-  constructor(public gameService : GameService, private router:Router){
+  constructor(public gameService : GameService){
     this.gameService.getCurrentQuiz().subscribe((quiz : Quiz)=>{
       this.currentQuiz = quiz;
     });
     this.gameService.currentQuestion$.subscribe((question: Question) => {
       this.currentQuestion = question;
-      
+
     })
-    
-  
   }
 
 
+  //on go next, pas de badAnswer donc pas de ++ a faire
   getNextQuestion(x:boolean){
-    this.currentQuestion.answered = true;
-    console.log("jej");
-    if (this.gameService.allQuestionsAnswered()) {
-      
-      this.router.navigate(['/results'])
-    } else {
-      this.gameService.nextQuestion();
-    }
-    console.log();
-
+    this.gameService.nextQuestion();
   }
+
   ngOnInit(){
-    this.currentQuestion=this.currentQuiz.questions[0];
+    this.gameService.resetQuiz();
+    console.log("init");
   }
 }

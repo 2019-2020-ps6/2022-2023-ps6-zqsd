@@ -28,7 +28,7 @@ export class GameService {
   public currentQuestion$: BehaviorSubject<Question> = new BehaviorSubject(this.currentQuestion);
   public currentAnswer$: Subject<Answer> = new Subject<Answer>();
   public answerResult$ : BehaviorSubject<boolean | undefined> = new BehaviorSubject(this.answerResult);
-  score = { goodAnswers: 0, badAnswers: 0 };
+  score = 0;
 
   constructor() {
   }
@@ -47,12 +47,13 @@ export class GameService {
   setCurrentQuestion(index: number) {
     const question = this.currentQuiz.questions[index];
     console.log(index);
-    
+
     if(question) {
       this.currentQuestion  = question;
       this.currentQuestion$.next(this.currentQuestion);
     }
   }
+
   getQuizList(): Quiz[] {
     return this.quizList;
   }
@@ -78,21 +79,28 @@ export class GameService {
 
 
   allQuestionsAnswered(): boolean {
-    const lastIndex = this.currentQuiz.questions.length - 1;
+    const lastIndex = this.currentQuiz.questions.length;
     if (this.index === lastIndex || this.currentQuiz.questions.length === 0) {
       return true;
     }
-    for (let i = 0; i <= lastIndex; i++) {
-      const question = this.currentQuiz.questions[i];
-      if (!question.answered) {
-        return false;
-      }
-    }
-    return true;
+    return false;
   }
 
-
-
+  resetQuiz() {
+    this.score = 0;
+    this.index = 0;
+    this.currentQuestion = this.currentQuiz.questions[this.index];
+    this.answerResult$.next(undefined);
+    this.currentQuiz$.next(this.currentQuiz);
+    this.currentQuestion$.next(this.currentQuestion);
+    //this.currentAnswer$.next(undefined);
+    this.quizList$.next(this.quizList);
+    this.quizList.forEach((quiz) => {
+      quiz.questions.forEach((question) => {
+        question.answered = false;
+      });
+    });
+  }
 
 
 

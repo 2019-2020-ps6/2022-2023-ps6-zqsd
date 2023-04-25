@@ -13,7 +13,7 @@ import * as _ from 'underscore';
 
 
 export class GameQuestionOrderComponent implements OnInit {
- 
+
   @Input() currentQuestion: Question|undefined;
   showResult =false;
   @Output() answerEvent: EventEmitter<boolean>= new EventEmitter<boolean>();
@@ -23,28 +23,19 @@ export class GameQuestionOrderComponent implements OnInit {
 
   }
 
-  questionAnswered(goodAnswer:boolean){
-    if (goodAnswer) {
-      this.gameService.score.goodAnswers++;
-    } else {
-      this.gameService.score.badAnswers++;
-    }
-    if (this.gameService.allQuestionsAnswered()) {
-      this.getNextQuestion();
-    }
-
-  }
-
-
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.answers, event.previousIndex, event.currentIndex);
   }
 
-  getNextQuestion(){
-    console.log(_.isEqual(this.answers,this.currentQuestion?.answers));
+  validate(){
+    if (_.isEqual(this.answers,this.currentQuestion?.answers)){
+      this.gameService.score++;
+      console.log("Answer is correct")
+    }
     this.answerEvent.emit(_.isEqual(this.answers,this.currentQuestion?.answers));
   }
+
   ngOnInit() {
     if (this.currentQuestion)
     this.answers = [...this.currentQuestion?.answers];

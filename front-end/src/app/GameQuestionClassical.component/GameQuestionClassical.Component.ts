@@ -21,32 +21,20 @@ export class GameQuestionComponent implements OnInit {
 
   }
 
-  questionAnswered(goodAnswer:boolean){
+  questionAnswered(goodAnswer:boolean) {
     if (goodAnswer) {
-      this.gameService.score.goodAnswers++;
-    } else {
-      this.gameService.score.badAnswers++;
-    }
-      this.getNextQuestion();
-    
-  }
-
-  getNextQuestion(){
-    if (this.currentQuestion != undefined) {
-      this.currentQuestion.answered = true;
+      this.gameService.score++;
     }
     if (this.gameService.allQuestionsAnswered()) {
       this.showResult = true;
+    } else {
+      this.answerEvent.emit(true); // émet l'événement pour passer à la question suivante
     }
-    this.answerEvent.emit(true);
-    console.log(this.gameService.allQuestionsAnswered())
-    console.log(this.currentQuestion)
-    console.log(this.showResult)
-    console.log(this.gameService.currentQuiz.questions)
   }
 
-  ngOnInit() {
 
+
+  ngOnInit() {
   }
 
 }
