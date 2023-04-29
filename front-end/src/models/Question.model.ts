@@ -22,7 +22,7 @@ export interface Question {
     label: string;
     value: String;
     answers: Answer[];
-    textSearching?: TextSearching;
+    imageSearching?: string;
     answered?: boolean;
 }
 

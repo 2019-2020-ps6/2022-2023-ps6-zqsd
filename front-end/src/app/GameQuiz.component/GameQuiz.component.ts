@@ -1,5 +1,6 @@
 import { Quiz } from './../../models/quiz.model';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Question,Answer } from 'src/models/Question.model';
 import { GameService } from 'src/services/GameService';
 import { GamepageComponent } from '../Gamepage.component/GamePage.Component';
@@ -26,18 +27,13 @@ export class GameQuizComponent {
   }
 
 
+  //on go next, pas de badAnswer donc pas de ++ a faire
   getNextQuestion(x:boolean){
-    if (this.currentQuestion)
-    this.currentQuestion.answered = true;
-    this.gameService.score.badAnswers++;
-    if (this.gameService.allQuestionsAnswered()) {
-      //show the result function
-    } else {
-      this.gameService.nextQuestion();
-    }
-    console.log();
+    this.gameService.nextQuestion();
   }
+
   ngOnInit(){
-    this.currentQuestion=this.currentQuiz.questions[0];
+    this.gameService.resetQuiz();
+    console.log("init");
   }
 }

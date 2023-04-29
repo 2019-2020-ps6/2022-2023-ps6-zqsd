@@ -21,53 +21,20 @@ export class GameQuestionComponent implements OnInit, AfterViewInit {
     this.gameAnswers = new QueryList<ElementRef>();
   }
 
-  questionAnswered(goodAnswer: boolean) {
+  questionAnswered(goodAnswer:boolean) {
     if (goodAnswer) {
-      this.gameService.score.goodAnswers++;
-      if (this.currentQuestion != undefined) {
-        this.currentQuestion.answered = true;
-        this.answerEvent.emit(true);
-      }
-    } else {
-      this.gameService.score.badAnswers++;
-      if (this.currentQuestion != undefined) {
-        this.currentQuestion.answered = true;
-        this.answerEvent.emit(true);
-      }
+      this.gameService.score++;
     }
     if (this.gameService.allQuestionsAnswered()) {
       this.showResult = true;
     } else {
-      this.getNextQuestion();
+      this.answerEvent.emit(true); // émet l'événement pour passer à la question suivante
     }
   }
 
-  getNextQuestion() {
-    if (this.currentQuestion != undefined) {
-      this.currentQuestion.answered = true;
-    }
-    if (this.gameService.allQuestionsAnswered()) {
-      this.showResult = true;
-    }
-    this.answerEvent.emit(true);
-    this.gameService.nextQuestion();
-    console.log(this.gameService.allQuestionsAnswered())
-    console.log(this.currentQuestion)
-    console.log(this.showResult)
-    console.log(this.gameService.currentQuiz.questions)
-  }
 
-  ngOnInit() { }
 
-  ngAfterViewInit() {
-    let maxWidth = 0;
-    this.gameAnswers.forEach(answer => {
-      const width = answer.nativeElement.offsetWidth;
-      if (width > maxWidth) {
-        maxWidth = width;
-      }
-    });
-    console.log(`La largeur maximale est ${maxWidth}px`);
+  ngOnInit() {
   }
 
 

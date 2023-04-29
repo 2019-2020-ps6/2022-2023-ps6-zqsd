@@ -1,5 +1,6 @@
 <div class="question-container">
     <h2 style="margin-bottom: 75px;">{{currentQuestion?.value}}</h2>
+
     <div class="answer-list" cdkDropList (cdkDropListDropped)="drop($event)">
       <div #myDiv class="answer-block" *ngFor="let answer of this.answers" cdkDrag>
           {{answer.value}}
@@ -10,5 +11,6 @@
     <button class="game-question-button" *ngIf="showResult" routerLink="/results">Voir les résultats</button>
   </div>
 </div>
-
-
+    <div class="button-container">
+      <button class="game-question-button" (click)="validate()">Validate</button>
+    </div>

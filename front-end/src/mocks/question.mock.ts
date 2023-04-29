@@ -3,11 +3,6 @@ import { Answer,Question,TextSearching } from '../models/Question.model';
 export const AnswerChronologicalHistory1: Answer[] = [
     {
         label: "chronological",
-        value: "Découverte de Neptune",
-        order : 3
-    },
-    {
-        label: "chronological",
         value: "Invention de la poudre à canon",
         order : 1
     },
@@ -16,6 +11,12 @@ export const AnswerChronologicalHistory1: Answer[] = [
         value: "Découverte de l'Amérique",
         order : 2
     },
+    
+    {
+      label: "chronological",
+      value: "Découverte de Neptune",
+      order : 3
+  },
     {
         label: "chronological",
         value: "Chute du mur de Berlin",
@@ -116,11 +117,6 @@ export const AnswerPuzzle1: Answer[] = [
     }
 ];
 
-export const TextSearchingHenri4: TextSearching[] = [
-    {
-        value: "Henri IV, est un roi Français. Son cheval blanc s’appellait GrisCiel. Le blason d’Henri IV était principalement de couleur bleu et rouge.",
-    }
-];
 
 export const QuestionQuizz: Question[] = [
     {
@@ -146,6 +142,7 @@ export const QuestionQuizz: Question[] = [
         id: '4',
         label : "searching",
         value:"Quelle est la couleur du cheval d'Henri IV ?",
+        imageSearching: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Henri_IV%2C_roi_de_France%2C_%C3%A0_cheval_devant_Paris_%E2%80%93_Mus%C3%A9e_Carnavalet_CARP1671_%E2%80%93_Collections_Paris%28dot%29fr_%28adjusted%29.jpg/1144px-Henri_IV%2C_roi_de_France%2C_%C3%A0_cheval_devant_Paris_%E2%80%93_Mus%C3%A9e_Carnavalet_CARP1671_%E2%80%93_Collections_Paris%28dot%29fr_%28adjusted%29.jpg",
         answers: AnswerSearching1,
     }
 ];

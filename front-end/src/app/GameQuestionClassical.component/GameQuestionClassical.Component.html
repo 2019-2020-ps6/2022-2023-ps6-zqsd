@@ -17,10 +17,5 @@
               <app-GameAnswer [currentAnswer]="currentQuestion.answers[3]" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
             </div>
         </div>
-    </div>
-    <div class="button-container">
-      <button class="game-question-button" *ngIf="!showResult" (click)="getNextQuestion()">Next Question</button>
-      <button class="game-question-button" *ngIf="showResult" routerLink="/results">Voir les résultats</button>
-    </div>
 </div>
 
