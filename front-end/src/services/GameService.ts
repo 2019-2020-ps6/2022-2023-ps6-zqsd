@@ -141,10 +141,4 @@ export class GameService {
   stopCountdown(): void {
     clearInterval(this.intervalId);
   }
-
-
-
-
-
-
 }
