@@ -127,5 +127,9 @@ export class GameService {
       }, 1000);
     });
   }
+  stopCountdown(): void {
+    clearInterval(this.intervalId);
+  }
+
 
 }
