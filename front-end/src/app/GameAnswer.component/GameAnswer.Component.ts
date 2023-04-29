@@ -25,12 +25,10 @@ export class GameAnswerComponent implements OnInit {
     setTimeout(() => {
       if (this.currentAnswer != undefined) {
         this.answerEvent.emit(this.currentAnswer.isCorrect);
-        // Ajouter ici le code pour rediriger vers la page souhaitée
-        this.router.navigate(['/autre-page']);
       } else {
         this.answerEvent.emit(false);
       }
-    }, 1000); // délai de 3 secondes
+    }, 1000);
   }
 
   ngOnInit(): void { }

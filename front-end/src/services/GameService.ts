@@ -1,3 +1,4 @@
+import { GamepageComponent } from './../app/Gamepage.component/GamePage.Component';
 import { Quiz1 } from './../mocks/quizz.mock';
 import { AnswerClassic1 } from './../mocks/question.mock';
 import { GameAnswerComponent } from './../app/GameAnswer.component/GameAnswer.Component';
@@ -9,6 +10,7 @@ import { QuizExample } from '../mocks/quizz.mock';
 import { Quiz } from '../models/quiz.model';
 import { Question,Answer } from 'src/models/Question.model';
 import { QuestionQuizz } from 'src/mocks/question.mock';
+import { AdvancedParameterService } from './Parameter/AdvancedParameterService';
 
 
 
@@ -30,7 +32,17 @@ export class GameService {
   public answerResult$ : BehaviorSubject<boolean | undefined> = new BehaviorSubject(this.answerResult);
   score = { goodAnswers: 0, badAnswers: 0 };
 
-  constructor() {
+  public deadline: number = 30;
+  public intervalId: any;
+  public remainingTime: number = 30;
+  public remainingTime$: BehaviorSubject<number> = new BehaviorSubject(this.remainingTime);
+
+  constructor(private aps : AdvancedParameterService) {
+    // Abonnez-vous aux changements de deadline
+    this.aps.getCurrentChronometerOBS().subscribe((deadline) => {
+      // Réinitialise le compte à rebours avec la nouvelle deadline
+      this.deadline =deadline;
+    });
   }
 
 
@@ -89,10 +101,31 @@ export class GameService {
     }
     return true;
   }
+  public resetCountdown(countdown: any): void {
+    clearInterval(this.intervalId);
+    let remainingTime = this.deadline;
+    // Met à jour le compte à rebours toutes les secondes
+    this.intervalId = setInterval(() => {
+      // Calcule le temps restant
+      remainingTime--;
+      console.log(remainingTime);
+      this.remainingTime = remainingTime;
+      // Si le temps est écoulé, arrête le compte à rebours
+      if (remainingTime == 0) {
+        clearInterval(this.intervalId);
+        this.score.badAnswers++;
+        this.nextQuestion();
+        this.resetCountdown(countdown);
+      }
+    }, 1000); // Exécute la fonction toutes les 1000ms (1s)
+  }
 
-
-
-
-
+  getRemainingTime(): Observable<number> {
+    return new Observable<number>(observer => {
+      setInterval(() => {
+        observer.next(this.remainingTime);
+      }, 1000);
+    });
+  }
 
 }

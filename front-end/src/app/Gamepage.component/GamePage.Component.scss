@@ -1,3 +1,33 @@
-.game-page {
-  background-color: #0953a3;
+.timer{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #555;
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 25px;
+  border: 2px solid transparent;
+  animation: timer-border 1s linear infinite;
+}
+.main-content{
+  position: relative;
+}
+@keyframes timer-border {
+  0% {
+    border: 2px solid transparent; /* première étape de l'animation: une bordure transparente */
+  }
+  50% {
+    border: 2px solid orange; /* deuxième étape de l'animation: une bordure orange */
+    border-radius: 40%; /* réduire légèrement le rayon pour donner une impression de vibration */
+  }
+  100% {
+    border: 2px solid transparent; /* dernière étape de l'animation: une bordure transparente */
+    border-radius: 50%; /* remettre le rayon à 50% */
+  }
 }

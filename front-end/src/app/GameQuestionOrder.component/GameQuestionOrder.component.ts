@@ -50,8 +50,8 @@ export class GameQuestionOrderComponent implements OnInit {
     console.log(_.isEqual(this.answers,this.currentQuestion?.answers));
     this.answerEvent.emit(_.isEqual(this.answers,this.currentQuestion?.answers));
     this.gameService.nextQuestion();
-    console.log(this.gameService.allQuestionsAnswered())
-    console.log(this.currentQuestion)
+    console.log(this.gameService.allQuestionsAnswered());
+    console.log(this.currentQuestion);
   }
 
   ngOnInit() {

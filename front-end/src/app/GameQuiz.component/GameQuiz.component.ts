@@ -2,6 +2,7 @@ import { Quiz } from './../../models/quiz.model';
 import { Component } from '@angular/core';
 import { Question,Answer } from 'src/models/Question.model';
 import { GameService } from 'src/services/GameService';
+import { GamepageComponent } from '../Gamepage.component/GamePage.Component';
 
 
 @Component({
@@ -19,9 +20,9 @@ export class GameQuizComponent {
     });
     this.gameService.currentQuestion$.subscribe((question: Question) => {
       this.currentQuestion = question;
-      
+
     })
-    
+
   }
 
 
@@ -35,7 +36,6 @@ export class GameQuizComponent {
       this.gameService.nextQuestion();
     }
     console.log();
-
   }
   ngOnInit(){
     this.currentQuestion=this.currentQuiz.questions[0];
