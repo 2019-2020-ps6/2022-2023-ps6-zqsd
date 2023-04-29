@@ -8,7 +8,7 @@ import { QuestionQuizz } from '../../mocks/question.mock';
   templateUrl: './GameQuestionClassical.component.html',
   styleUrls: ['./GameQuestionClassical.component.scss']
 })
-export class GameQuestionComponent implements OnInit, AfterViewInit {
+export class GameQuestionComponent implements OnInit{
 
   @Input() currentQuestion: Question | undefined;
   showResult = false;
