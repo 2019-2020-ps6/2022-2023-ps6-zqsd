@@ -19,7 +19,6 @@ export class GameQuestionOrderComponent implements OnInit {
 
   constructor(private gameService: GameService,) {}
 
-  }
 
 
   drop(event: CdkDragDrop<string[]>) {
