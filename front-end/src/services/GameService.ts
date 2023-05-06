@@ -37,6 +37,9 @@ export class GameService {
   public remainingTime: number = 30;
   public remainingTime$: BehaviorSubject<number> = new BehaviorSubject(this.remainingTime);
 
+  private showDialogSubject = new BehaviorSubject<boolean>(false);
+  public showDialog$ = this.showDialogSubject.asObservable();
+
   constructor(private aps : AdvancedParameterService) {
     // Abonnez-vous aux changements de deadline
     this.aps.getCurrentChronometerOBS().subscribe((deadline) => {
@@ -126,7 +129,7 @@ export class GameService {
       if (remainingTime == 0) {
         clearInterval(this.intervalId);
         this.nextQuestion();
-        this.resetCountdown(countdown);
+        this.showDialogSubject.next(true);
       }
     }, 1000); // Exécute la fonction toutes les 1000ms (1s)
   }
@@ -141,4 +144,11 @@ export class GameService {
   stopCountdown(): void {
     clearInterval(this.intervalId);
   }
+  getShowDialog() : Observable<boolean>{
+    return this.showDialog$;
+  }
+  setShowDialog(bool: boolean): void {
+    this.showDialogSubject.next(bool);
+  }
+
 }
