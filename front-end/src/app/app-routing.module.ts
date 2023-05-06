@@ -12,11 +12,10 @@ import {MainPuzzleComponent} from "./Puzzle/PuzzleMain/PuzzleMain.component";
 import {ResultsComponent} from "./results/results.component";
 import {QuizzListComponent} from "./quizz-list/quizz-list.component";
 
-
 const routes: Routes = [
   {
     path: "Gamepage",
-    component: GamepageComponent },
+    component: MainPuzzleComponent },//GamepageComponent
   {
     path: "GameResult",
     component: GameResultComponent },

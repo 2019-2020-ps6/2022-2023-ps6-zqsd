@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {PuzzleResult} from "../PuzzleAnswer/PuzzleAnswer-Interface.component";
-import {Answer} from "../../../models/Question.model";
+import {Answer, Question} from "../../../models/Question.model";
 import {AnswerPuzzle1} from "../../../mocks/question.mock";
 
 @Component({
@@ -10,8 +10,10 @@ import {AnswerPuzzle1} from "../../../mocks/question.mock";
 })
 export class MainPuzzleComponent {
 
-  @Input() currentAnswer: Answer[] = AnswerPuzzle1;
+  @Input() currentQuestion: Question = {id:'', value: '',label:"",answers: AnswerPuzzle1};
   @Output() answerEvent: EventEmitter<boolean>= new EventEmitter<boolean>();
+
+  currentAnswer: Answer[] = this.currentQuestion.answers;
 
   list_puzzlePieces_areCorrectlyPlaced : boolean[] = Array.from({length: this.currentAnswer.length}, () => false);
   numberOfWrongPlaced: number = this.list_puzzlePieces_areCorrectlyPlaced.length;

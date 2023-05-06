@@ -129,5 +129,6 @@ export class PuzzleAnswerComponent implements OnInit {
     this.placedCorrectly.emit(result);
   }
 
+
 }
 

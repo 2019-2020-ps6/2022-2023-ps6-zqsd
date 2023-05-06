@@ -1,15 +1,14 @@
 @import 'variables_puzzle';
 
-.root-grid-puzzle {
-  --puzzleGridHeight : 50px ;
-}
+
 
 .grid-puzzle {
   position: relative;
   display: grid;
   top : 50px;
+  left: 50px;
   aspect-ratio: 1/1;
-  height: calc(100% - 1px * var(--puzzleGridHeight) - 50px);
+  height: calc( 1px * var(--puzzleGridHeight) );
 }
 
 .row-grid-puzzle {
