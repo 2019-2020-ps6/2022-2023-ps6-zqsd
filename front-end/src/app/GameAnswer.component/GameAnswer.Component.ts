@@ -13,6 +13,8 @@ export class GameAnswerComponent implements OnInit {
   @Input() currentAnswer: Answer | undefined;
   @Output() answerEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  public questionType : string="";
+
   constructor(
     private gameService: GameService,
     private router: Router
@@ -31,7 +33,12 @@ export class GameAnswerComponent implements OnInit {
     }, 50); // délai de 3 secondes
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.gameService.getCurrentQuestion().subscribe((question) =>{
+      this.questionType = question.label;
+      console.log(this.questionType);
+    })
+  }
 
 }
 
