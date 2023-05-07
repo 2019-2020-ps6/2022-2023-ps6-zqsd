@@ -10,7 +10,7 @@ import { QuestionQuizz } from '../../mocks/question.mock';
 })
 
 
-export class GameQuestionComponent implements OnInit {
+export class GameQuestionSearchingComponent implements OnInit {
 
   @Input() currentQuestion: Question|undefined;
   showResult =false;
@@ -22,16 +22,7 @@ export class GameQuestionComponent implements OnInit {
   }
 
   questionAnswered(goodAnswer:boolean){
-    if (goodAnswer) {
-      this.gameService.score.goodAnswers++;
-    } else {
-      this.gameService.score.badAnswers++;
-    }
-    if (this.gameService.allQuestionsAnswered()) {
-      this.showResult = true;
-    } else {
       this.getNextQuestion();
-    }
   }
 
   getNextQuestion(){

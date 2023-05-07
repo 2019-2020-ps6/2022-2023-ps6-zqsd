@@ -21,6 +21,7 @@ import { ButtonNavigationAdvancedParameter } from './Parameter/ButtonNavigationA
 
 import { GamepageComponent } from './Gamepage.component/GamePage.Component';
 import { GameQuestionComponent } from './GameQuestionClassical.component/GameQuestionClassical.Component';
+import { GameQuestionSearchingComponent } from './GameQuestionSearching.component/GameQuestionSearching.Component';
 import { GameAnswerComponent } from './GameAnswer.component/GameAnswer.Component';
 import { GameQuizComponent } from './GameQuiz.component/GameQuiz.component';
 import { HeaderComponent } from './header.component/header.component';
@@ -64,6 +65,7 @@ import { QuizzListComponent } from './quizz-list/quizz-list.component';
     MainPuzzleComponent,
     ResultsComponent,
     QuizzListComponent,
+    GameQuestionSearchingComponent,
   ],
   imports: [
     BrowserModule,
