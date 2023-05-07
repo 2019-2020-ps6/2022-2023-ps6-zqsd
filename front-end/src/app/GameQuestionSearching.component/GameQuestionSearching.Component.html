@@ -2,8 +2,9 @@
     <div *ngIf="currentQuestion!=undefined" class="Info">
         <img src="{{currentQuestion.imageSearching}}"/>
     </div>
-</div>
-<div *ngIf="currentQuestion!=undefined" class="questionandAnswer">
-    <app-game-question-classical [currentQuestion]="currentQuestion" (answerEvent)="questionAnswered($event)"> </app-game-question-classical>
+
+    <div *ngIf="currentQuestion!=undefined" class="questionandAnswer">
+        <app-game-question-classical [currentQuestion]="currentQuestion" (answerEvent)="questionAnswered($event)"> </app-game-question-classical>
+    </div>
 </div>
 
