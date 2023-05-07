@@ -33,10 +33,6 @@ export class GameQuestionSearchingComponent implements OnInit {
       this.showResult = true;
     }
     this.answerEvent.emit(true);
-    console.log(this.gameService.allQuestionsAnswered())
-    console.log(this.currentQuestion)
-    console.log(this.showResult)
-    console.log(this.gameService.currentQuiz.questions)
   }
 
   ngOnInit() {
