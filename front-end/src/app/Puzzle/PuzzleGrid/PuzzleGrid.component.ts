@@ -11,24 +11,11 @@ import {DisplayService} from "../../../services/DisplayService";
 })
 export class PuzzleGridComponent {
   @Input() size: number = 9;
-
-  public puzzleGridHeight: number = 500;
-  public puzzlePieceHeight: number = this.puzzleGridHeight / this.getSQRT(this.size);
-  public headerHeight : number = 175;
-
-  constructor(public displayService : DisplayService){
-    this.displayService.getHearderHeight().subscribe((headerHeight : number)=>{
-      this.headerHeight = headerHeight;
-    });
-  }
+  @Input() puzzleGridHeight: number = 500;
+  @Input() puzzlePieceHeight: number = this.puzzleGridHeight / this.getSQRT(this.size);
 
 
   ngOnInit() {
-    this.setSize();
-  }
-
-  ngAfterViewInit() {
-    this.setSize();
   }
 
 
@@ -47,31 +34,6 @@ export class PuzzleGridComponent {
      * i : the index of the element in the array that we are manipulating right now
      */
   }
-
-
-  adjustParentContainerSize() {
-    const puzzleGridElement = document.getElementById('grid-puzzle');
-    if (puzzleGridElement!=null) {
-      document.documentElement.style.setProperty('--puzzleGridHeight', (puzzleGridElement.getBoundingClientRect().top ) + 'px');
-      this.puzzleGridHeight = puzzleGridElement.getBoundingClientRect().top;
-      console.log(puzzleGridElement.getBoundingClientRect().top +  window.pageYOffset )
-      console.log(puzzleGridElement.getBoundingClientRect().top )
-      console.log(this.puzzleGridHeight)
-      console.log(this.size)
-    }
-  }
-
-  setSize() : void {
-    var w = window.innerWidth ;
-    var h = window.innerHeight - this.headerHeight;
-    var size = Math.min(w,h);
-    var sizePuzzle = size - 100;
-    var subPiece = sizePuzzle / this.getSQRT(this.size);
-    this.puzzleGridHeight = sizePuzzle;
-    this.puzzlePieceHeight = subPiece;
-  }
-
-
 }
 
 /*

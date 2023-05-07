@@ -6,5 +6,5 @@
   (mousedown)="startDrag($event)"
   (document:mousemove)="drag($event)"
   (document:mouseup)="endDrag()">
-  <img [src]="imageUrl" />
+  <img [src]="imageUrl" [style.--size]="this.puzzlePieceHeight"/>
 </div>

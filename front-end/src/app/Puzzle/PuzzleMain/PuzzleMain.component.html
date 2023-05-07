@@ -1,5 +1,7 @@
 <app-puzzle-grid
-  [size]="currentAnswer.length">
+  [size]="currentAnswer.length"
+  [puzzleGridHeight] = "puzzleGridHeight"
+  [puzzlePieceHeight] = "puzzlePieceHeight">
 </app-puzzle-grid>
 <app-puzzle-answer
   *ngFor="let answer of currentAnswer; let i = index"
@@ -7,5 +9,10 @@
   [numberOfPicture]="currentAnswer.length"
   [indexOfThePicture]="i"
   [rightPosition]="orderOfPieces[i]"
-  (placedCorrectly)="onPiecePlacedCorrectly($event)">
+  (placedCorrectly)="onPiecePlacedCorrectly($event)"
+  [spaceTop] = "spaceTop"
+  [spaceLeft] = "spaceLeft"
+  [headerHeight]="headerHeight"
+  [puzzlePieceHeight] = "puzzlePieceHeight"
+  [puzzleGridHeight] = "puzzleGridHeight">
 </app-puzzle-answer>

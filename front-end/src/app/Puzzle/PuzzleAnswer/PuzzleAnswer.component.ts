@@ -16,14 +16,20 @@ export class PuzzleAnswerComponent implements OnInit {
   @Input() numberOfPicture: number = 9;
   @Input() indexOfThePicture: number = 0; //must start at 0 for the first one and thus 8 for the last one
   @Input() rightPosition: number = 0;
+  @Input() spaceTop: number = 50;
+  @Input() spaceLeft: number = 50;
+  @Input() headerHeight: number = 175;
+  @Input() puzzleGridHeight: number = 500;
+  @Input() puzzlePieceHeight: number = this.puzzleGridHeight / Math.sqrt(this.numberOfPicture);
+
 
   private static xTopLeftCorner = 600;
   private static yTopLeftCorner = 100;
   private static xBottomRightCorner = 1100;
   private static yBottomRightCorner = 600;
 
-  public imageLeft: number = this.generateImagePosition()[0];
-  public imageTop: number = this.generateImagePosition()[1];
+  public imageLeft: number = this.generateImagePosition(this.generateFirstPositionXY())[0];
+  public imageTop: number = this.generateImagePosition(this.generateFirstPositionXY())[1];
 
   private startX: number = 0;
   private startY: number = 0;
@@ -32,9 +38,26 @@ export class PuzzleAnswerComponent implements OnInit {
   constructor(private elRef: ElementRef) {
   }
 
+  generateFirstPositionXY(): number[] {
+    var w = window.innerWidth - this.spaceLeft - this.puzzleGridHeight;
+    var h = this.headerHeight + this.spaceTop;
+    return [w, h];
+  }
+
+  generateImagePosition(coordinates : number[]): number[] {
+    var x = coordinates[0] + this.puzzlePieceHeight * (this.indexOfThePicture % Math.sqrt(this.numberOfPicture));
+    var y = coordinates[1] + this.puzzlePieceHeight * Math.floor(this.indexOfThePicture / Math.sqrt(this.numberOfPicture));
+    return [x, y];
+  }
+
+  public getSizePicture(): number {
+    return this.puzzlePieceHeight;
+  }
+
   ngOnInit(): void {
-    this.imageLeft = this.generateImagePosition()[0];
-    this.imageTop = this.generateImagePosition()[1];
+    var coordinates : number[]  = this.generateFirstPositionXY();
+    this.imageLeft = this.generateImagePosition(coordinates)[0];
+    this.imageTop = this.generateImagePosition(coordinates)[1];
   }
 
   startDrag(event: MouseEvent): void {
@@ -54,23 +77,6 @@ export class PuzzleAnswerComponent implements OnInit {
 
   get imagePosition(): string {
     return `${this.imageLeft}px ${this.imageTop}px`;
-  }
-
-  generateImagePosition(): number[] {
-    const sumX = PuzzleAnswerComponent.xBottomRightCorner - PuzzleAnswerComponent.xTopLeftCorner;
-    const sumY = PuzzleAnswerComponent.yBottomRightCorner - PuzzleAnswerComponent.yTopLeftCorner;
-    const sectionX = sumX / Math.sqrt(this.numberOfPicture);
-    const sectionY = sumY / Math.sqrt(this.numberOfPicture);
-    console.log(sumX);
-    console.log(sumY);
-    console.log(Math.sqrt(this.numberOfPicture))
-    console.log(sectionX);
-    console.log(sectionY);
-    console.log(this.indexOfThePicture);
-    console.log(this.indexOfThePicture % 3);
-    console.log(Math.floor(this.indexOfThePicture/3));
-    return [PuzzleAnswerComponent.xTopLeftCorner + sectionX * (this.indexOfThePicture % 2 ),
-      PuzzleAnswerComponent.yTopLeftCorner + sectionY * (Math.floor(this.indexOfThePicture/2))];
   }
 
 
