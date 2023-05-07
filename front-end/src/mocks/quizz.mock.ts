@@ -9,6 +9,18 @@ export const QuizExample: Quiz[] = [
         name: "Example",
         theme : "classic",
         questions: QuestionQuizz
+    },
+    {
+      id:"2",
+      name:"Quiz2",
+      theme:"classic",
+      questions:QuestionQuizz2
+    },
+    {
+      id:"3",
+      name:"Quiz3",
+      theme:"classic",
+      questions:QuestionQuizz3
     }
 ];
 
