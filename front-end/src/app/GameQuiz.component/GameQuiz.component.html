@@ -17,7 +17,7 @@
     </div>
 </ng-template>
 <div class="button-container">
-  <button class="game-question-button" *ngIf="!this.gameService.allQuestionsAnswered()" (click)="getNextQuestion(true)">Next Question</button>
-  <button class="game-question-button" *ngIf="this.gameService.allQuestionsAnswered()" routerLink="/results">Voir les résultats</button>
+  <button class="game-question-button" *ngIf="!this.gameService.allQuestionsAnswered()" (click)="getNextQuestion(true); resetCountdown(countdown)">Next Question</button>
+  <button class="game-question-button" *ngIf="this.gameService.allQuestionsAnswered()" (click)="stopCountdown()"routerLink="/results">Voir les résultats</button>
 </div>
 

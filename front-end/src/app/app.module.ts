@@ -35,6 +35,8 @@ import {MainPuzzleComponent} from "./Puzzle/PuzzleMain/PuzzleMain.component";
 import { ResultsComponent } from './results/results.component';
 import { GameQuestionOrderComponent } from './GameQuestionOrder.component/GameQuestionOrder.component';
 import { QuizzListComponent } from './quizz-list/quizz-list.component';
+import { PopUpComponent } from './PopUp/PopUp.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -66,6 +68,7 @@ import { QuizzListComponent } from './quizz-list/quizz-list.component';
     ResultsComponent,
     QuizzListComponent,
     GameQuestionSearchingComponent,
+    PopUpComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,6 +81,7 @@ import { QuizzListComponent } from './quizz-list/quizz-list.component';
     AppRoutingModule,
     ReactiveFormsModule,
     DragDropModule,
+    MatDialogModule,
 
   ],
   providers: [],
