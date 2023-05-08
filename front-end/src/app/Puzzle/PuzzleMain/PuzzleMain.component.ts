@@ -20,7 +20,6 @@ export class MainPuzzleComponent {
   currentAnswer: Answer[] = this.currentQuestion.answers;
 
   list_puzzlePieces_areCorrectlyPlaced : boolean[] = Array.from({length: this.currentAnswer.length}, () => false);
-  numberOfWrongPlaced: number = this.list_puzzlePieces_areCorrectlyPlaced.length;
   orderOfPieces: number[] = Array.from({length: this.currentAnswer.length}, (_, i) => 0);
 
   public puzzleGridHeight: number = 500;
@@ -32,10 +31,10 @@ export class MainPuzzleComponent {
 
   private coordsAvailable: number[][] = [];
 
-  public copyAnswer = this.currentAnswer.slice();
   public dictID_TO_Index : MyDictionary = {};
   public dictIndex_TO_ID : MyDictionary = {};
   public dictUnique : MyDictionary = {0 : 0, 1 : 0, 2 : 0, 3 : 0};
+  public dictChecking : MyDictionary = {0 : 0, 1 : 0, 2 : 0, 3 : 0}; //0 false, 1 true
 
   constructor(public displayService : DisplayService){
     this.setSize();
@@ -47,9 +46,9 @@ export class MainPuzzleComponent {
   }
 
   setupPuzzle(): void {
-    this.copyAnswer = _.shuffle(this.copyAnswer);
+    this.currentAnswer = _.shuffle(this.currentAnswer);
     const coordDefault = this.generateFirstPositionXY();
-    for (let i = 0; i < this.copyAnswer.length; i++) {
+    for (let i = 0; i < this.currentAnswer.length; i++) {
       var id = this.generateIdNewPosition(this.generateImagePosition(coordDefault, i));
       this.dictID_TO_Index[id] = i;
       this.dictIndex_TO_ID[i] = id;
@@ -62,12 +61,31 @@ export class MainPuzzleComponent {
     this.setupPuzzle();
   }
 
-  onPiecePlacedCorrectly(result : PuzzleResult): void {
-    //this.list_puzzlePieces_areCorrectlyPlaced[result.index] = result.isCorrect;
-    if (this.numberOfWrongPlaced === 0) {
-      alert("You won!");
-      this.answerEvent.emit(true);
+  onPiecePlacedCorrectly(indexPosition : number, indexPicture : number): void {
+    if (this.currentAnswer[indexPicture].order == indexPosition){
+      this.dictChecking[indexPicture] = 1;
     }
+    for (let i = 0; i < this.currentAnswer.length; i++) {
+      if (this.dictChecking[i] == 0) {
+        return ;
+      }
+    }
+    console.log("You won!");
+    this.answerEvent.emit(true);
+  }
+
+  launchVerificationPlacement(x : number, y : number) : void {
+    var indexPosition : number = 1;
+    for (let i = 1; i < this.coordsAvailable[0].length; i++) {
+      if (x == this.coordsAvailable[0][i]) {
+        indexPosition += i;
+      }
+      if (y == this.coordsAvailable[1][i]) {
+        indexPosition += i * Math.sqrt(this.numberOfPicture);
+      }
+    }
+    this.onPiecePlacedCorrectly(indexPosition, this.dictID_TO_Index[this.generateIdNewPosition([x, y])]);
+    return ;
   }
 
   setSize() : void {
@@ -150,19 +168,16 @@ export class MainPuzzleComponent {
       var indexOfThePicture : number = puzzleChanged.index;
       var X : number = puzzleChanged.x;
       var Y : number = puzzleChanged.y;
-      console.log(X, Y);
       var coord : number[] = this.getClosestBox(X, Y);
-      console.log(coord);
       var id : number = this.generateIdNewPosition(coord);
-      console.log(id);
       var oldId : number = this.dictIndex_TO_ID[indexOfThePicture];
-      console.log(oldId);
-      console.log(id !== oldId);
       if (id !== oldId) {
         this.switchPosition(indexOfThePicture, coord[0], coord[1]);
       }
       this.clock(indexOfThePicture);
+      this.launchVerificationPlacement(coord[0], coord[1])
     }
+
   }
 
   clock(index : number) {
