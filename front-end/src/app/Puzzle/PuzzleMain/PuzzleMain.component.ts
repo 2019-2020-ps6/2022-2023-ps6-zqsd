@@ -3,7 +3,7 @@ import {PuzzleResult} from "../PuzzleAnswer/PuzzleAnswer-Interface.component";
 import {Answer, Question} from "../../../models/Question.model";
 import {AnswerPuzzle1} from "../../../mocks/question.mock";
 import {DisplayService} from "../../../services/DisplayService";
-import * as _ from "lodash";
+import * as _ from "underscore";
 
 @Component({
   selector: 'app-puzzle-main',
@@ -119,7 +119,7 @@ export class MainPuzzleComponent {
         X = this.coordsAvailable[0][i];
         xDiff = Math.abs(x - X);
       }
-      if (Math.abs(y - this.coordsAvailable[1][i]) < yDiff || yDiff === 0) {
+      if ((Math.abs(y - this.coordsAvailable[1][i]) < yDiff && yDiff!==0) || yDiff === 0) {
         Y = this.coordsAvailable[1][i];
         yDiff = Math.abs(y - Y);
       }
@@ -131,12 +131,12 @@ export class MainPuzzleComponent {
   switchPosition(indexOfThePicture : number, X : number, Y : number): void {
     console.log(this.dictIndex_TO_ID);
 
-    var oldIndexAssociated : number = _.get(this.dictID_TO_Index, _.toNumber([X, Y])) ?? -1;
-    var oldCoords : number[] = _.get(this.dictIndex_TO_ID, _.toNumber(indexOfThePicture)) ?? [0,0];
+    var oldIndexAssociated : number = this.dictID_TO_Index.get([X, Y]) ?? -1;
+    var oldCoords : number[] = this.dictIndex_TO_ID.get(indexOfThePicture) ?? [0,0];
     this.dictID_TO_Index.set([X, Y], indexOfThePicture);
     this.dictIndex_TO_ID.set(indexOfThePicture, [X, Y]);
-    const keyExists = _.some(Array.from(this.dictIndex_TO_ID.keys()), k => _.isEqual(k, oldIndexAssociated));
-    if (keyExists){
+
+    if (this.dictIndex_TO_ID.has(oldIndexAssociated)){
       this.dictID_TO_Index.set(oldCoords, oldIndexAssociated);
       this.dictIndex_TO_ID.set(oldIndexAssociated, oldCoords);
     }
@@ -144,30 +144,30 @@ export class MainPuzzleComponent {
   }
 
   calculateAfterDraging(puzzleChanged : PuzzleResult): void {
+    var repeat : boolean = true;
     if (puzzleChanged.draging){
-      const indexOfThePicture : number = puzzleChanged.index;
+      var indexOfThePicture : number = puzzleChanged.index;
       var X : number = puzzleChanged.x;
       var Y : number = puzzleChanged.y;
       console.log(X, Y);
       var coord : number[] = this.getClosestBox(X, Y);
       console.log(coord);
-      var oldCoords : number[] = _.get(this.dictIndex_TO_ID, _.toNumber(indexOfThePicture)) ?? [0,0];
+      var oldCoords : number[] = this.dictIndex_TO_ID.get(indexOfThePicture) ?? [0,0];
       console.log("eeee")
       console.log(oldCoords);
       console.log(coord);
       if (oldCoords[0] !== coord[0] || oldCoords[1] !== coord[1]) {
         this.switchPosition(indexOfThePicture, coord[0], coord[1]);
+        repeat = false;
       }
     }
-    this.clock();
+    if (repeat) {
+      this.clock();
+    }
   }
 
   clock() {
-    const now = new Date();
-    const minute : number = now.getMinutes();
-    const second : number = now.getSeconds();
-    const time : number = minute * 60 + second;
-    this.unique = time;
+    this.unique = this.unique;
   }
 
 }
