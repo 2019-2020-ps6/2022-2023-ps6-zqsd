@@ -35,6 +35,7 @@ export class MainPuzzleComponent {
   public copyAnswer = this.currentAnswer.slice();
   public dictID_TO_Index : MyDictionary = {};
   public dictIndex_TO_ID : MyDictionary = {};
+  public dictUnique : MyDictionary = {0 : 0, 1 : 0, 2 : 0, 3 : 0};
 
   constructor(public displayService : DisplayService){
     this.setSize();
@@ -92,7 +93,7 @@ export class MainPuzzleComponent {
   }
 
   generateIdNewPosition(coord : number[]): number {
-    var id : number = coord[0] * 100000 + coord[1];
+    var id : number = Math.floor(coord[0]) * 100000 + coord[1];
     return id;
   }
 
@@ -160,9 +161,12 @@ export class MainPuzzleComponent {
       if (id !== oldId) {
         this.switchPosition(indexOfThePicture, coord[0], coord[1]);
       }
+      this.clock(indexOfThePicture);
     }
   }
 
-
+  clock(index : number) {
+    this.dictUnique[index] += 1;
+  }
 
 }

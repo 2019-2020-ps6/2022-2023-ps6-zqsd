@@ -16,6 +16,7 @@ export class PuzzleAnswerComponent implements OnInit {
   @Input() indexOfThePicture: number = 0; //must start at 0 for the first one and thus 8 for the last one
   @Input() id : number = 0;
   @Input() puzzlePieceHeight: number = 10;
+  @Input() unique: number = 0; //only to make sure noOnChange is refreshed
 
   public imageLeft: number = this.getCoordinateWithId(this.id)[0];
   public imageTop: number = this.getCoordinateWithId(this.id)[1];
