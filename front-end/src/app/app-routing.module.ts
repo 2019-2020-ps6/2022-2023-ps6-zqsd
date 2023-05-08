@@ -15,7 +15,7 @@ import {QuizzListComponent} from "./quizz-list/quizz-list.component";
 const routes: Routes = [
   {
     path: "Gamepage",
-    component: MainPuzzleComponent },//GamepageComponent
+    component: GamepageComponent },
   {
     path: "GameResult",
     component: GameResultComponent },
