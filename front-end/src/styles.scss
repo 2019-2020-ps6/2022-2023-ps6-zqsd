@@ -255,15 +255,36 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin: 10px;
 }
 
-.questionTitle{
-  font-size: calc(var(--currentSize) + 15px);
+.questionTitle {
+  font-size: calc(var(--currentSize) + 5px);
   text-align: center;
   font-weight: bold;
   margin-top: 25px;
   margin-bottom: 25px ;
   text-decoration: underline;
   text-underline-offset: 10px;
+  animation: pulse 7s ease-in-out infinite;
+
+  @keyframes pulse {
+    0%, 25% {
+      font-size: calc(var(--currentSize) + 5px);
+    }
+    50% {
+      font-size: calc(var(--currentSize) + 8px);
+    }
+    75%, 100% {
+      font-size: calc(var(--currentSize) + 5px);
+    }
+  }
 }
+
+
+
+
+
+
+
+
 
 
 
