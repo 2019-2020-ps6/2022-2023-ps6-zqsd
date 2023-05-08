@@ -16,6 +16,7 @@ export class PuzzleAnswerComponent implements OnInit {
   @Input() indexOfThePicture: number = 0; //must start at 0 for the first one and thus 8 for the last one
   @Input() coords : number[] = [0,0];
   @Input() puzzlePieceHeight: number = 10;
+  @Input() unique : number = 0; //only to make ngOnChange work anytime
 
   public imageLeft: number = this.coords[0];
   public imageTop: number = this.coords[1];
@@ -38,6 +39,7 @@ export class PuzzleAnswerComponent implements OnInit {
   }
 
   ngOnChanges(): void {
+    console.log(this.coords)
     this.imageLeft = this.coords[0];
     this.imageTop = this.coords[1];
   }
