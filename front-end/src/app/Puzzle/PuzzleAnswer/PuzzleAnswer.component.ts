@@ -22,12 +22,6 @@ export class PuzzleAnswerComponent implements OnInit {
   @Input() puzzleGridHeight: number = 500;
   @Input() puzzlePieceHeight: number = this.puzzleGridHeight / Math.sqrt(this.numberOfPicture);
 
-
-  private static xTopLeftCorner = 600;
-  private static yTopLeftCorner = 100;
-  private static xBottomRightCorner = 1100;
-  private static yBottomRightCorner = 600;
-
   public imageLeft: number = this.generateImagePosition(this.generateFirstPositionXY())[0];
   public imageTop: number = this.generateImagePosition(this.generateFirstPositionXY())[1];
 
@@ -35,7 +29,10 @@ export class PuzzleAnswerComponent implements OnInit {
   private startY: number = 0;
   private isDragging = false;
 
+  public coordsAvailable : number[][] = [];
+
   constructor(private elRef: ElementRef) {
+    this.generateCoordAvailable();
   }
 
   generateFirstPositionXY(): number[] {
@@ -55,6 +52,7 @@ export class PuzzleAnswerComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.generateCoordAvailable();
     var coordinates : number[]  = this.generateFirstPositionXY();
     this.imageLeft = this.generateImagePosition(coordinates)[0];
     this.imageTop = this.generateImagePosition(coordinates)[1];
@@ -70,7 +68,6 @@ export class PuzzleAnswerComponent implements OnInit {
     if (!this.isDragging) {
       return;
     }
-
     this.imageLeft = event.clientX - this.startX;
     this.imageTop = event.clientY - this.startY;
   }
@@ -79,10 +76,41 @@ export class PuzzleAnswerComponent implements OnInit {
     return `${this.imageLeft}px ${this.imageTop}px`;
   }
 
+  generateCoordAvailable(): void {
+    var coord = [];
+    var Y = [];
+    var X = [];
+    for (let i = 0; i < Math.sqrt(this.numberOfPicture); i++) {
+      Y.push(this.spaceTop + this.puzzlePieceHeight * i);
+      X.push(this.spaceLeft + this.puzzlePieceHeight * i);
+    }
+    coord.push(X)
+    coord.push(Y)
+    this.coordsAvailable = coord;
+  }
+
+  getClosestBox(x: number, y: number): number[] {
+    var X : number = this.coordsAvailable[0][0];
+    var Y : number = this.coordsAvailable[1][0];
+    var xDiff : number = Math.abs(x - X);
+    var yDiff : number = Math.abs(y - Y);
+    for (let i = 1; i < this.coordsAvailable[0].length; i++) {
+      if (Math.abs(x - this.coordsAvailable[0][i]) < xDiff) {
+        X = this.coordsAvailable[0][i];
+        xDiff = Math.abs(x - X);
+      }
+      if (Math.abs(y - this.coordsAvailable[1][i]) < yDiff) {
+        Y = this.coordsAvailable[1][i];
+        yDiff = Math.abs(y - Y);
+      }
+    }
+    return [X, Y];
+  }
 
 
 
-  generate_all_coord() : number[][] {
+
+  /**generate_all_coord() : number[][] {
     const x1 = getComputedStyle(this.elRef.nativeElement).getPropertyValue('--x1');
     const y1 = getComputedStyle(this.elRef.nativeElement).getPropertyValue('--y1');
     const x2 = getComputedStyle(this.elRef.nativeElement).getPropertyValue('--x2');
@@ -120,19 +148,27 @@ export class PuzzleAnswerComponent implements OnInit {
      * 4 5 6
      * 7 8 9
      * Exemple : si on a 9 cases, on a 3 lignes et 3 colonnes
-     */
-  }
+
+  }*/
+
 
   endDrag(): void {
     this.isDragging = false;
     const coord = this.getClosestBox(this.imageLeft, this.imageTop);
+    var id = this.generateIdNewPosition(coord);
     this.imageLeft = coord[1];
     this.imageTop = coord[2];
     const result: PuzzleResult = {
       isCorrect : coord[0] === this.rightPosition,
-      index: this.indexOfThePicture
+      index: this.indexOfThePicture,
+      id: id
     };
     this.placedCorrectly.emit(result);
+  }
+
+  generateIdNewPosition(coord : number[]): number {
+    var id : number = coord[0] * 100000 + coord[1];
+    return id;
   }
 
 
