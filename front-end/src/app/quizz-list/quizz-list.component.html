@@ -1,20 +1,10 @@
 <div class="container">
   <h1>Ma liste de quizz</h1>
-  <ul class="quizz-list">
+  <ul class="quizz-list" *ngFor="let q of QuizzList">
     <li class="quizz-item">
-      <h2>Quiz1</h2>
-      <p>Thème: classic</p>
-      <button class="btn-jouer">Jouer</button>
-    </li>
-    <li class="quizz-item">
-      <h2>Quiz2</h2>
-      <p>Thème: classic</p>
-      <button class="btn-jouer">Jouer</button>
-    </li>
-    <li class="quizz-item">
-      <h2>Quiz3</h2>
-      <p>Thème: classic</p>
-      <button class="btn-jouer">Jouer</button>
+      <h2>{{q.name}}</h2>
+      <p>Thème: {{q.theme}}</p>
+      <button routerLink="/Gamepage" class="btn-jouer" (click)="jouerQuizz(q.id)">Jouer</button>
     </li>
   </ul>
 </div>

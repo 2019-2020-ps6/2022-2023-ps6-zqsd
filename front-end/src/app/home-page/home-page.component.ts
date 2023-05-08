@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import * as _ from 'underscore' ;
+
+import { GameService } from 'src/services/GameService';
+import { Quiz } from 'src/models/quiz.model';
 
 @Component({
   selector: 'app-home-page',
@@ -9,5 +13,20 @@ import { Location } from '@angular/common';
 })
 export class HomePageComponent {
 
+  QuizzList: Quiz[] ; 
+  chosenQuizz: Quiz|undefined;
 
+  constructor( public gameService:GameService){
+    this.QuizzList=gameService.getQuizList();
+
+  }
+  jouerQuizz() {
+    
+    this.chosenQuizz = _.sample(this.QuizzList)
+    if (this.chosenQuizz)
+      this.gameService.currentQuiz = this.chosenQuizz
+    else
+      this.gameService.currentQuiz = this.QuizzList[0]
+  }
+  
 }

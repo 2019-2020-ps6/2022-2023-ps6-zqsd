@@ -13,6 +13,8 @@ export class GameAnswerComponent implements OnInit {
   @Input() currentAnswer: Answer | undefined;
   @Output() answerEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  public questionType : string="";
+
   constructor(
     private gameService: GameService,
     private router: Router
@@ -25,15 +27,17 @@ export class GameAnswerComponent implements OnInit {
     setTimeout(() => {
       if (this.currentAnswer != undefined) {
         this.answerEvent.emit(this.currentAnswer.isCorrect);
-        // Ajouter ici le code pour rediriger vers la page souhaitée
-        this.router.navigate(['/autre-page']);
       } else {
         this.answerEvent.emit(false);
       }
-    }, 1000); // délai de 3 secondes
+    }, 50);
   }
 
-  ngOnInit(): void { }
-
+  ngOnInit(): void {
+    this.gameService.getCurrentQuestion().subscribe((question) =>{
+      this.questionType = question.label;
+      console.log(this.questionType);
+    })
+  }
 }
 
