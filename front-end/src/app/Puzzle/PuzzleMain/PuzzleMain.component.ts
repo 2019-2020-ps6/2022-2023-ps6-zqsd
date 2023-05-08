@@ -5,8 +5,6 @@ import {AnswerPuzzle1} from "../../../mocks/question.mock";
 import {DisplayService} from "../../../services/DisplayService";
 import * as _ from "underscore";
 
-interface MyDictionary extends Record<number, number> {}
-
 @Component({
   selector: 'app-puzzle-main',
   templateUrl: './PuzzleMain.component.html',
@@ -33,8 +31,8 @@ export class MainPuzzleComponent {
   private coordsAvailable: number[][] = [];
 
   public copyAnswer = this.currentAnswer.slice();
-  public dictID_TO_Index : MyDictionary = {};
-  public dictIndex_TO_ID : MyDictionary = {};
+  public dictID_TO_Index : Map<number[],number> = new Map<number[],number>();
+  public dictIndex_TO_ID : Map<number,number[]> = new Map<number,number[]>();
 
   constructor(public displayService : DisplayService){
     this.setSize();
@@ -49,9 +47,9 @@ export class MainPuzzleComponent {
     this.copyAnswer = _.shuffle(this.copyAnswer);
     const coordDefault = this.generateFirstPositionXY();
     for (let i = 0; i < this.copyAnswer.length; i++) {
-      var id = this.generateIdNewPosition(this.generateImagePosition(coordDefault, i));
-      this.dictID_TO_Index[id] = i;
-      this.dictIndex_TO_ID[i] = id;
+      var coords = this.generateImagePosition(coordDefault, i);
+      this.dictID_TO_Index.set(coords,i);
+      this.dictIndex_TO_ID.set(i,coords);
     }
   }
 
@@ -130,18 +128,15 @@ export class MainPuzzleComponent {
 
   switchPosition(indexOfThePicture : number, X : number, Y : number): void {
     console.log(this.dictIndex_TO_ID);
-    var id : number = this.generateIdNewPosition([X, Y]);
-    var oldIndexAssociated : number = this.dictID_TO_Index[id];
-    var oldId : number = this.dictIndex_TO_ID[indexOfThePicture];
-    this.dictID_TO_Index[id] = indexOfThePicture;
-    this.dictIndex_TO_ID[indexOfThePicture] = id;
-    console.log(oldIndexAssociated)
-    console.log(oldId)
-    if (oldIndexAssociated in this.dictIndex_TO_ID){
-      this.dictID_TO_Index[oldId] = oldIndexAssociated;
-      this.dictIndex_TO_ID[oldIndexAssociated] = oldId;
+
+    var oldIndexAssociated : number = this.dictID_TO_Index.get([X, Y]) ?? 0;
+    var oldCoords : number[] = this.dictIndex_TO_ID.get(indexOfThePicture) ?? [0,0];
+    this.dictID_TO_Index.set([X, Y], indexOfThePicture);
+    this.dictIndex_TO_ID.set(indexOfThePicture, [X, Y]);
+    if (this.dictIndex_TO_ID.has(oldIndexAssociated)){
+      this.dictID_TO_Index.set(oldCoords, oldIndexAssociated);
+      this.dictIndex_TO_ID.set(oldIndexAssociated, oldCoords);
     }
-    console.log(this.dictIndex_TO_ID);
   }
 
   calculateAfterDraging(puzzleChanged : PuzzleResult): void {
@@ -152,12 +147,8 @@ export class MainPuzzleComponent {
       console.log(X, Y);
       var coord : number[] = this.getClosestBox(X, Y);
       console.log(coord);
-      var id : number = this.generateIdNewPosition(coord);
-      console.log(id);
-      var oldId : number = this.dictIndex_TO_ID[indexOfThePicture];
-      console.log(oldId);
-      console.log(id !== oldId);
-      if (id !== oldId) {
+      var oldCoords : number[] = this.dictIndex_TO_ID.get(indexOfThePicture) ?? [0,0];
+      if (oldCoords[0] !== coord[0] || oldCoords[1] !== coord[1]) {
         this.switchPosition(indexOfThePicture, coord[0], coord[1]);
       }
     }

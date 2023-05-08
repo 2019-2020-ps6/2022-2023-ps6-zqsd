@@ -14,11 +14,11 @@ export class PuzzleAnswerComponent implements OnInit {
 
   @Input() imageUrl: string = AnswerPuzzle1[0].value;
   @Input() indexOfThePicture: number = 0; //must start at 0 for the first one and thus 8 for the last one
-  @Input() id : number = 0;
+  @Input() coords : number[] = [0,0];
   @Input() puzzlePieceHeight: number = 10;
 
-  public imageLeft: number = this.getCoordinateWithId(this.id)[0];
-  public imageTop: number = this.getCoordinateWithId(this.id)[1];
+  public imageLeft: number = this.coords[0];
+  public imageTop: number = this.coords[1];
 
   private startX: number = 0;
   private startY: number = 0;
@@ -33,13 +33,13 @@ export class PuzzleAnswerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.imageLeft = this.getCoordinateWithId(this.id)[0];
-    this.imageTop = this.getCoordinateWithId(this.id)[1];
+    this.imageLeft = this.coords[0];
+    this.imageTop = this.coords[1];
   }
 
   ngOnChanges(): void {
-    this.imageLeft = this.getCoordinateWithId(this.id)[0];
-    this.imageTop = this.getCoordinateWithId(this.id)[1];
+    this.imageLeft = this.coords[0];
+    this.imageTop = this.coords[1];
   }
 
   startDrag(event: MouseEvent): void {
@@ -74,15 +74,5 @@ export class PuzzleAnswerComponent implements OnInit {
     this.hasBeenDragged = false;
     this.placedCorrectly.emit(result);
   }
-
-
-  getCoordinateWithId(id : number): number[] {
-    var y : number = id % 10000;
-    var x : number = Math.floor((id - y) / 100000);
-
-    return [x,y];
-  }
-
-
 }
 
