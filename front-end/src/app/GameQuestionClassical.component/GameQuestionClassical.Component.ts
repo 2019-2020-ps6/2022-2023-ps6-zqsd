@@ -37,7 +37,6 @@ export class GameQuestionComponent implements OnInit{
   ngOnInit() {
   }
 
-
 }
 
 

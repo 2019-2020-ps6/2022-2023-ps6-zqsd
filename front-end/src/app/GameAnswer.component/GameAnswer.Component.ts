@@ -30,7 +30,7 @@ export class GameAnswerComponent implements OnInit {
       } else {
         this.answerEvent.emit(false);
       }
-    }, 50); // délai de 3 secondes
+    }, 50);
   }
 
   ngOnInit(): void {
@@ -39,6 +39,5 @@ export class GameAnswerComponent implements OnInit {
       console.log(this.questionType);
     })
   }
-
 }
 
