@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S4 - Make grid of the puzzle Responsible">
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S4 - Make piece of the puzzle Responsible">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleAnswer/PuzzleAnswer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleAnswer/PuzzleAnswer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleAnswer/PuzzleAnswer.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleAnswer/PuzzleAnswer.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleAnswer/PuzzleAnswer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleAnswer/PuzzleAnswer.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleGrid/PuzzleGrid.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleGrid/PuzzleGrid.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +50,7 @@
       <option name="presentableId" value="Default" />
       <updated>1680262237272</updated>
       <workItem from="1680262255651" duration="20487000" />
-      <workItem from="1683042234167" duration="14066000" />
+      <workItem from="1683042234167" duration="15880000" />
     </task>
     <task id="LOCAL-00001" summary="S1 - Merge Master into Parameter #9">
       <created>1680262725544</created>
@@ -85,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683367884620</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="S4 - Make piece of the puzzle Responsible">
+      <created>1683478476849</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683478476849</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +122,7 @@
     <MESSAGE value="S1 - Push system files" />
     <MESSAGE value="S3 - Fix bug in grid and Fix part of the bug in the display of the images" />
     <MESSAGE value="S4 - Make grid of the puzzle Responsible" />
-    <option name="LAST_COMMIT_MESSAGE" value="S4 - Make grid of the puzzle Responsible" />
+    <MESSAGE value="S4 - Make piece of the puzzle Responsible" />
+    <option name="LAST_COMMIT_MESSAGE" value="S4 - Make piece of the puzzle Responsible" />
   </component>
 </project>

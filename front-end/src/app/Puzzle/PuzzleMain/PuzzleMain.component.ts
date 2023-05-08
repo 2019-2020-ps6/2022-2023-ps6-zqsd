@@ -28,6 +28,7 @@ export class MainPuzzleComponent {
 
 
   constructor(public displayService : DisplayService){
+    this.setSize();
     this.displayService.getHearderHeight().subscribe((headerHeight : number)=>{
       this.headerHeight = headerHeight;
     });
@@ -44,6 +45,7 @@ export class MainPuzzleComponent {
   }
 
   onInit(): void {
+    this.setSize();
     this.checkIfOrderIsNumber();
   }
 
