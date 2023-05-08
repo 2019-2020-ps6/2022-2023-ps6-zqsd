@@ -1,5 +1,6 @@
 export interface PuzzleResult {
-  isCorrect: boolean;
+  draging: boolean;
   index: number;
-  id : number;
+  x : number;
+  y : number;
 }

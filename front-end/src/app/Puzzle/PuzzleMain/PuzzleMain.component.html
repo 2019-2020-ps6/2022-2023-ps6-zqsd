@@ -5,14 +5,9 @@
 </app-puzzle-grid>
 <app-puzzle-answer
   *ngFor="let answer of currentAnswer; let i = index"
+  (placedCorrectly)="this.calculateAfterDraging($event)"
   [imageUrl]="answer.value"
-  [numberOfPicture]="currentAnswer.length"
+  [id]="dictIndex_TO_ID[i]"
   [indexOfThePicture]="i"
-  [rightPosition]="orderOfPieces[i]"
-  (placedCorrectly)="onPiecePlacedCorrectly($event)"
-  [spaceTop] = "spaceTop"
-  [spaceLeft] = "spaceLeft"
-  [headerHeight]="headerHeight"
-  [puzzlePieceHeight] = "puzzlePieceHeight"
-  [puzzleGridHeight] = "puzzleGridHeight">
+  [puzzlePieceHeight] = "puzzlePieceHeight">
 </app-puzzle-answer>

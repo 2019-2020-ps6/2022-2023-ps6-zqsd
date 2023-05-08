@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S4 - Fix bug in size">
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S4 - Update on draging picture">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleAnswer/PuzzleAnswer-Interface.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleAnswer/PuzzleAnswer-Interface.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleAnswer/PuzzleAnswer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleAnswer/PuzzleAnswer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1680262237272</updated>
       <workItem from="1680262255651" duration="20487000" />
-      <workItem from="1683042234167" duration="18862000" />
+      <workItem from="1683042234167" duration="25448000" />
     </task>
     <task id="LOCAL-00001" summary="S1 - Merge Master into Parameter #9">
       <created>1680262725544</created>
@@ -95,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683553406397</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="S4 - Update on draging picture">
+      <created>1683565430388</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683565430388</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,13 +121,28 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/PuzzleQuestion" />
+                        <option value="origin/Puzzle" />
                       </list>
                     </value>
                   </entry>
                 </map>
               </option>
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/Puzzle" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -132,6 +156,7 @@
     <MESSAGE value="S4 - Make grid of the puzzle Responsible" />
     <MESSAGE value="S4 - Make piece of the puzzle Responsible" />
     <MESSAGE value="S4 - Fix bug in size" />
-    <option name="LAST_COMMIT_MESSAGE" value="S4 - Fix bug in size" />
+    <MESSAGE value="S4 - Update on draging picture" />
+    <option name="LAST_COMMIT_MESSAGE" value="S4 - Update on draging picture" />
   </component>
 </project>
