@@ -18,6 +18,11 @@ export class DisplayService {
    */
   public hearderHeight$: BehaviorSubject<number> = new BehaviorSubject(this.hearderHeight);
 
+  public TopRightMargin_Timer : number[] = [0,0,25];
+  public TopRightMargin_Timer$ : BehaviorSubject<number[]> = new BehaviorSubject(this.TopRightMargin_Timer);
+
+
+
   constructor() {
   }
 
@@ -30,5 +35,12 @@ export class DisplayService {
     this.hearderHeight$.next(this.hearderHeight);
   }
 
+  getTopRightMargin_Timer(): Observable<number[]> {
+    return this.TopRightMargin_Timer$.asObservable();
+  }
 
+  setTopRightMargin_Timer(top: number, right: number, margin: number) {
+    this.TopRightMargin_Timer = [top, right, margin];
+    this.TopRightMargin_Timer$.next(this.TopRightMargin_Timer);
+  }
 }

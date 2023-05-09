@@ -1,8 +1,6 @@
 import {Component, ElementRef, Input} from '@angular/core';
 import './_variables_puzzle.scss';
-import {Quiz} from "../../../models/quiz.model";
-import {Question} from "../../../models/Question.model";
-import {DisplayService} from "../../../services/DisplayService";
+
 
 @Component({
   selector: 'app-puzzle-grid',
