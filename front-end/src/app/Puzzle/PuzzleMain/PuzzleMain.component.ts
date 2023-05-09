@@ -64,7 +64,10 @@ export class MainPuzzleComponent {
   onPiecePlacedCorrectly(indexPosition : number, indexPicture : number): void {
     if (this.currentAnswer[indexPicture].order == indexPosition){
       this.dictChecking[indexPicture] = 1;
+    } else {
+      this.dictChecking[indexPicture] = 0;
     }
+    console.log(this.dictChecking)
     for (let i = 0; i < this.currentAnswer.length; i++) {
       if (this.dictChecking[i] == 0) {
         return ;
@@ -159,6 +162,10 @@ export class MainPuzzleComponent {
     if (oldIndexAssociated in this.dictIndex_TO_ID){
       this.dictID_TO_Index[oldId] = oldIndexAssociated;
       this.dictIndex_TO_ID[oldIndexAssociated] = oldId;
+      this.launchVerificationPlacement(this.getCoordinateWithId(oldId)[0], this.getCoordinateWithId(oldId)[1])
+    } else {
+      delete this.dictID_TO_Index[oldId];
+      delete this.dictIndex_TO_ID[oldIndexAssociated];
     }
     console.log(this.dictIndex_TO_ID);
   }
@@ -176,12 +183,20 @@ export class MainPuzzleComponent {
       }
       this.clock(indexOfThePicture);
       this.launchVerificationPlacement(coord[0], coord[1])
+      //this.launchVerificationPlacement(coord[1], coord[0])
     }
 
   }
 
   clock(index : number) {
     this.dictUnique[index] += 1;
+  }
+
+  getCoordinateWithId(id : number): number[] {
+    var y : number = id % 10000;
+    var x : number = Math.floor((id - y) / 100000);
+
+    return [x,y];
   }
 
 }

@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S4 - Make puzzle working">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/b/cbbd5548e4b509932b01bb560f9fb05e9b3f7df5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/b/cbbd5548e4b509932b01bb560f9fb05e9b3f7df5" beforeDir="false" />
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S4 - Make timer position according to quiz">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/GameQuiz.component/GameQuiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/GameQuiz.component/GameQuiz.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/Gamepage.component/GamePage.Component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Gamepage.component/GamePage.Component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/Gamepage.component/GamePage.Component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Gamepage.component/GamePage.Component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/Gamepage.component/GamePage.Component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Gamepage.component/GamePage.Component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleGrid/PuzzleGrid.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleGrid/PuzzleGrid.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/services/DisplayService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/DisplayService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683581616409</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="S4 - Make timer position according to quiz">
+      <created>1683668953196</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1683668953196</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +190,7 @@
     <MESSAGE value="S4 - Fix bug draging useless" />
     <MESSAGE value="S4 - Fix bug dragging useless" />
     <MESSAGE value="S4 - Make puzzle working" />
-    <option name="LAST_COMMIT_MESSAGE" value="S4 - Make puzzle working" />
+    <MESSAGE value="S4 - Make timer position according to quiz" />
+    <option name="LAST_COMMIT_MESSAGE" value="S4 - Make timer position according to quiz" />
   </component>
 </project>
