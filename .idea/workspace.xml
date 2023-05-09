@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S4 - Make puzzle working">
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/app-routing.module.ts" afterDir="false" />
-    </list>
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S4 - Resolve Merging" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,7 +10,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="7bb7e9bbff8eb1d7a680c1ca93c3df08392d417e" />
+        <entry key="$PROJECT_DIR$" value="puzzle_adaptive" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -131,7 +129,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="puzzle_adaptive" />
+                        <option value="puzzle_merging" />
                       </list>
                     </value>
                   </entry>
@@ -149,7 +147,22 @@
             <list>
               <RecentGroup>
                 <option name="FILTER_VALUES">
+                  <option value="puzzle_merging" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
                   <option value="puzzle_adaptive" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/puzzle_adaptive" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/Jouer" />
                 </option>
               </RecentGroup>
               <RecentGroup>
@@ -175,6 +188,8 @@
     <MESSAGE value="S4 - Fix bug draging useless" />
     <MESSAGE value="S4 - Fix bug dragging useless" />
     <MESSAGE value="S4 - Make puzzle working" />
-    <option name="LAST_COMMIT_MESSAGE" value="S4 - Make puzzle working" />
+    <MESSAGE value="S4 - Push merge" />
+    <MESSAGE value="S4 - Resolve Merging" />
+    <option name="LAST_COMMIT_MESSAGE" value="S4 - Resolve Merging" />
   </component>
 </project>
