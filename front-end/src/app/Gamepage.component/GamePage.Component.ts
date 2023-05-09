@@ -4,7 +4,7 @@ import { GameQuizComponent } from '../GameQuiz.component/GameQuiz.component';
 import { GameService } from 'src/services/GameService';
 import { MatDialog } from '@angular/material/dialog';
 import { PopUpComponent } from '../PopUp/PopUp.component';
-
+import { DisplayService } from 'src/services/DisplayService';
 
 @Component({
     selector: 'app-GamePage',
@@ -17,7 +17,12 @@ export class GamepageComponent implements OnInit {
     public remainingTime: number = 30;
     public showPopUp: boolean = false;
 
-    constructor(private aps: AdvancedParameterService, private gameService: GameService, private cdRef: ChangeDetectorRef, public dialog: MatDialog) { }
+    public topValue: number = 0;
+    public rightValue: number = 0;
+    public marginValue: number = 25;
+
+
+    constructor(private aps: AdvancedParameterService, private gameService: GameService, private cdRef: ChangeDetectorRef, public dialog: MatDialog, private displayService : DisplayService) { }
 
     ngOnInit(): void {
         // Récupère l'élément HTML pour afficher le compte à rebours
@@ -35,6 +40,12 @@ export class GamepageComponent implements OnInit {
           if (showDialog) {
             this.openDialog();
           }
+        })
+        this.displayService.getTopRightMargin_Timer().subscribe((topRightMargin_Timer) => {
+          this.topValue = topRightMargin_Timer[0];
+          this.rightValue = topRightMargin_Timer[1];
+          this.marginValue = topRightMargin_Timer[2];
+          this.cdRef.detectChanges();
         })
     }
     openDialog(): void {
