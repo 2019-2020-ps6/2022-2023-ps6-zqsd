@@ -21,6 +21,7 @@ import { ButtonNavigationAdvancedParameter } from './Parameter/ButtonNavigationA
 
 import { GamepageComponent } from './Gamepage.component/GamePage.Component';
 import { GameQuestionComponent } from './GameQuestionClassical.component/GameQuestionClassical.Component';
+import { GameQuestionSearchingComponent } from './GameQuestionSearching.component/GameQuestionSearching.Component';
 import { GameAnswerComponent } from './GameAnswer.component/GameAnswer.Component';
 import { GameQuizComponent } from './GameQuiz.component/GameQuiz.component';
 import { HeaderComponent } from './header.component/header.component';
@@ -34,6 +35,8 @@ import {MainPuzzleComponent} from "./Puzzle/PuzzleMain/PuzzleMain.component";
 import { ResultsComponent } from './results/results.component';
 import { GameQuestionOrderComponent } from './GameQuestionOrder.component/GameQuestionOrder.component';
 import { QuizzListComponent } from './quizz-list/quizz-list.component';
+import { PopUpComponent } from './PopUp/PopUp.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -64,6 +67,8 @@ import { QuizzListComponent } from './quizz-list/quizz-list.component';
     MainPuzzleComponent,
     ResultsComponent,
     QuizzListComponent,
+    GameQuestionSearchingComponent,
+    PopUpComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,6 +81,7 @@ import { QuizzListComponent } from './quizz-list/quizz-list.component';
     AppRoutingModule,
     ReactiveFormsModule,
     DragDropModule,
+    MatDialogModule,
 
   ],
   providers: [],

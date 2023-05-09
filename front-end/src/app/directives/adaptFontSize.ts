@@ -13,9 +13,7 @@ export class AdaptFontSizeDirective {
         this.parameterService.currentSize$.subscribe(
             (size : number) => {
                 this.el.nativeElement.style.fontSize = size + 'px';
-                console.log("eazeze");
-                
             }
         );
     }
-} 
+}

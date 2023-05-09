@@ -9,11 +9,15 @@
     <app-game-question-classical [currentQuestion]="currentQuestion" (answerEvent)="getNextQuestion($event)"></app-game-question-classical>
 </div>
 <div *ngIf="currentQuestion.label=='searching'">
-    <app-game-question-classical [currentQuestion]="currentQuestion" (answerEvent)="getNextQuestion($event)"></app-game-question-classical>
+    <app-game-question-searching [currentQuestion]="currentQuestion" (answerEvent)="getNextQuestion($event)"></app-game-question-searching>
 </div>
 <ng-template #elseBlock>
     <div class="essai" >
         <app-game-question-classical [currentQuestion]="currentQuestion" (answerEvent)="getNextQuestion($event)"></app-game-question-classical>
     </div>
 </ng-template>
+<div class="button-container">
+  <button class="game-question-button" *ngIf="!this.gameService.allQuestionsAnswered()" (click)="getNextQuestion(true); resetCountdown(countdown)">Next Question</button>
+  <button class="game-question-button" *ngIf="this.gameService.allQuestionsAnswered()" (click)="stopCountdown()"routerLink="/results">Voir les résultats</button>
+</div>
 

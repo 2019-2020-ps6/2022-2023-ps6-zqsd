@@ -11,7 +11,7 @@ import { MatSliderModule } from '@angular/material/slider';
 })
 
 export class ParameterSizeTextComponent implements OnInit {
-
+    public currentSize: number = 0;
     disabled = false;
     max = 30;
     min = 15;
@@ -21,13 +21,16 @@ export class ParameterSizeTextComponent implements OnInit {
     value : Parameter['size'] = this.parameterService.getCurrentSize();
 
     constructor(private parameterService : ParameterService) {
-        this.parameterService.currentSize$.subscribe((size: Parameter['size']) => {
-            this.value = size;
-        });
-    }
+        }
 
 
-    ngOnInit(): void {
+
+    ngOnInit() {
+      this.parameterService.currentSize$.subscribe((size: number) => {
+        this.currentSize = size;
+        console.log('Current size:', this.currentSize);
+        document.documentElement.style.setProperty('--ts-currentSize', this.currentSize + 'px');
+      });
     }
 
     updateValue(){

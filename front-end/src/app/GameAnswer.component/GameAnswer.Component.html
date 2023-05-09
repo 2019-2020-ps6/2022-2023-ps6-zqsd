@@ -1,2 +1,2 @@
-<button class="game-answer-button" (click)="getAnswerResult()">{{currentAnswer?.value}}</button>
+<button [ngClass]="{'game-answer-button': questionType == 'classical', 'game-answer-button-smaller': questionType == 'searching'}" (click)="getAnswerResult()">{{currentAnswer?.value}}</button>
 
