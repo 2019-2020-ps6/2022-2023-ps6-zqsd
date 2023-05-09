@@ -1,13 +1,14 @@
-<h2>{{currentQuestion?.value}}</h2>
-
 <app-puzzle-grid
-  [size]="currentAnswer.length">
+  [size]="currentAnswer.length"
+  [puzzleGridHeight] = "puzzleGridHeight"
+  [puzzlePieceHeight] = "puzzlePieceHeight">
 </app-puzzle-grid>
 <app-puzzle-answer
   *ngFor="let answer of currentAnswer; let i = index"
+  (placedCorrectly)="this.calculateAfterDraging($event)"
   [imageUrl]="answer.value"
-  [numberOfPicture]="currentAnswer.length"
+  [id]="dictIndex_TO_ID[i]"
   [indexOfThePicture]="i"
-  [rightPosition]="orderOfPieces[i]"
-  (placedCorrectly)="onPiecePlacedCorrectly($event)">
+  [puzzlePieceHeight] = "puzzlePieceHeight"
+  [unique] = "dictUnique[i]">
 </app-puzzle-answer>

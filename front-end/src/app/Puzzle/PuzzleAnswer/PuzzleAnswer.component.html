@@ -1,5 +1,4 @@
 <div
-  [style.background-image]="'url(' + imageUrl + ')'"
   [style.background-position]="imagePosition"
   [style.position]="'absolute'"
   [style.top.px]="imageTop"
@@ -7,4 +6,5 @@
   (mousedown)="startDrag($event)"
   (document:mousemove)="drag($event)"
   (document:mouseup)="endDrag()">
+  <img [src]="imageUrl" [style.--size]="this.puzzlePieceHeight"/>
 </div>

@@ -1,5 +1,15 @@
+
+.root {
+  --size : 100;
+}
+
 div {
   background-repeat: no-repeat;
   background-size: contain;
   cursor: move;
+}
+
+img {
+  width: calc( 1px * var(--size) );
+  height: calc( 1px * var(--size) );
 }
