@@ -1,5 +1,8 @@
 import {Component, ElementRef, Input} from '@angular/core';
 import './_variables_puzzle.scss';
+import {Quiz} from "../../../models/quiz.model";
+import {Question} from "../../../models/Question.model";
+import {DisplayService} from "../../../services/DisplayService";
 
 @Component({
   selector: 'app-puzzle-grid',
@@ -7,10 +10,18 @@ import './_variables_puzzle.scss';
   styleUrls: ['./PuzzleGrid.component.scss']
 })
 export class PuzzleGridComponent {
-  @Input() size: number = 4;
+  @Input() size: number = 9;
+  @Input() puzzleGridHeight: number = 500;
+  @Input() puzzlePieceHeight: number = this.puzzleGridHeight / this.getSQRT(this.size);
 
-  constructor() { }
+
   ngOnInit() {
+  }
+
+
+
+  getSQRT(num: number): number {
+    return Math.sqrt(num);
   }
 
   getRangeSQRT(num: number): number[] {
