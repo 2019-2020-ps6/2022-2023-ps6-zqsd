@@ -14,6 +14,7 @@ export class PopUpComponent {
 
   onClose(result: boolean): void {
     this.dialogRef.close(result);
+    console.log("pop up fermé");
   }
 }
 

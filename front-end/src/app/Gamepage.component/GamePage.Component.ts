@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { AdvancedParameterService } from 'src/services/Parameter/AdvancedParameterService';
 import { GameQuizComponent } from '../GameQuiz.component/GameQuiz.component';
 import { GameService } from 'src/services/GameService';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef} from '@angular/material/dialog';
 import { PopUpComponent } from '../PopUp/PopUp.component';
 import { DisplayService } from 'src/services/DisplayService';
 
@@ -49,21 +49,24 @@ export class GamepageComponent implements OnInit {
           this.cdRef.detectChanges();
         })
     }
-    openDialog(): void {
+    openDialog(): MatDialogRef<PopUpComponent> {
       const dialogRef = this.dialog.open(PopUpComponent, {
-        width:'600px',
-        height:'400px',
+        width: '600px',
+        height: '400px',
         disableClose: true,
-
       });
-
-      dialogRef.afterClosed().subscribe(result => {
+      this.gameService.stopCountdown();
+    
+      dialogRef.afterClosed().subscribe(() => {
         this.gameService.setShowDialog(false);
         setTimeout(() => {
           this.gameService.resetCountdown(this.countdown);
         }, 100);
       });
+    
+      return dialogRef;
     }
+    
 
 
 
