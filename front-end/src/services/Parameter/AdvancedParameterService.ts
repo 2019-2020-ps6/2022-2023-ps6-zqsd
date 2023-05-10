@@ -9,13 +9,13 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
   export class AdvancedParameterService {
 
     private currentChronometerTime : AdvancedParameterChronometer['chronometer'] = ADVANCED_PARAMETER_CHRONOMETER.chronometer; //in seconds
-    
+
     private currentComplexQuestion : AdvancedParameterMemoryWork['complexQuestion'] = ADVANCED_PARAMETER_MEMORY_WORK.complexQuestion;
     private currentPuzzle : AdvancedParameterMemoryWork['puzzle'] = ADVANCED_PARAMETER_MEMORY_WORK.puzzle;
     private currentReflection : AdvancedParameterMemoryWork['reflection'] = ADVANCED_PARAMETER_MEMORY_WORK.reflection;
     private currentMemory : AdvancedParameterMemoryWork['memory'] = ADVANCED_PARAMETER_MEMORY_WORK.memory;
     private currentLogic : AdvancedParameterMemoryWork['logic'] = ADVANCED_PARAMETER_MEMORY_WORK.logic;
-    
+
     private currentBackGround : AdvancedParameterFocusWork['background'] = ANDVANCED_PARAMETER_FOCUS_WORK.background;
     private currentQuestionAnimation : AdvancedParameterFocusWork['questionAnimation'] = ANDVANCED_PARAMETER_FOCUS_WORK.questionAnimation;
     private currentRightAnswerAnimation : AdvancedParameterFocusWork['rightAnswerAnimation'] = ANDVANCED_PARAMETER_FOCUS_WORK.rightAnswerAnimation;
@@ -23,7 +23,7 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
 
 
     public currentChronometer$: BehaviorSubject<AdvancedParameterChronometer['chronometer']> = new BehaviorSubject(this.currentChronometerTime)
-    
+
     public currentComplexQuestion$: BehaviorSubject<AdvancedParameterMemoryWork['complexQuestion']> = new BehaviorSubject(this.currentComplexQuestion)
     public currentPuzzle$: BehaviorSubject<AdvancedParameterMemoryWork['puzzle']> = new BehaviorSubject(this.currentPuzzle)
     public currentReflection$: BehaviorSubject<AdvancedParameterMemoryWork['reflection']> = new BehaviorSubject(this.currentReflection)
@@ -45,7 +45,7 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
         this.updateChronometerTime(Number(chronometer));
       });
     }*/
-    
+
 
     updateChronometerTime(time : AdvancedParameterChronometer['chronometer']){
       this.currentChronometerTime = time;
@@ -97,7 +97,7 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
       this.currentWrongAnswerAnimation$.next(this.currentWrongAnswerAnimation);
     }
 
-    
+
 
 
 
@@ -107,6 +107,7 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
     }
 
     switchCurrentPuzzle() {
+      console.log("rrrrr");
       this.currentPuzzle = !this.currentPuzzle;
       this.currentPuzzle$.next(this.currentPuzzle);
     }
@@ -130,7 +131,7 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
       this.currentBackGround = !this.currentBackGround;
       this.currentBackGround$.next(this.currentBackGround);
       console.log(this.currentBackGround);
-      
+
     }
 
     switchCurrentQuestionAnimation() {

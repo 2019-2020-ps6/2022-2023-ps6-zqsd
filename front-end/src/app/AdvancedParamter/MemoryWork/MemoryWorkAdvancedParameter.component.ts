@@ -25,25 +25,25 @@ export class MemoryWorkAdvancedParameterComponent implements OnInit {
 
     constructor(
         private advancedParameterService: AdvancedParameterService) {
-        this.advancedParameterService.currentBackGround$.subscribe((complexQuestionIsEnable: AdvancedParameterMemoryWork['complexQuestion']) => {
+        this.advancedParameterService.getCurrentComplexQuestionOBS().subscribe((complexQuestionIsEnable: AdvancedParameterMemoryWork['complexQuestion']) => {
             this.complexQuestionIsEnable = complexQuestionIsEnable;
-            this.textDisplayComplexeQuestionButton = this.setTextDisplayButton(this.complexQuestionIsEnable)
+            this.textDisplayComplexeQuestionButton = this.setTextDisplayButton(this.complexQuestionIsEnable);
         });
-        this.advancedParameterService.currentQuestionAnimation$.subscribe((puzzleIsEnable: AdvancedParameterMemoryWork['puzzle']) => {
+        this.advancedParameterService.getCurrentPuzzleOBS().subscribe((puzzleIsEnable: AdvancedParameterMemoryWork['puzzle']) => {
             this.puzzleIsEnable = puzzleIsEnable;
-            this.textDisplayPuzzleButton = this.setTextDisplayButton(this.puzzleIsEnable)
+            this.textDisplayPuzzleButton = this.setTextDisplayButton(this.puzzleIsEnable);
         });
-        this.advancedParameterService.currentRightAnswerAnimation$.subscribe((reflexionIsEnable: AdvancedParameterMemoryWork['reflection']) => {
+        this.advancedParameterService.getCurrentReflectionOBS().subscribe((reflexionIsEnable: AdvancedParameterMemoryWork['reflection']) => {
             this.reflexionIsEnable = reflexionIsEnable;
-            this.textDisplayReflexionButton = this.setTextDisplayButton(this.reflexionIsEnable)
+            this.textDisplayReflexionButton = this.setTextDisplayButton(this.reflexionIsEnable);
         });
-        this.advancedParameterService.currentWrongAnswerAnimation$.subscribe((memoryIsEnable: AdvancedParameterMemoryWork['memory']) => {
+        this.advancedParameterService.getCurrentMemoryOBS().subscribe((memoryIsEnable: AdvancedParameterMemoryWork['memory']) => {
             this.memoryIsEnable = memoryIsEnable;
-            this.textDisplayMemoryButton = this.setTextDisplayButton(this.memoryIsEnable)
+            this.textDisplayMemoryButton = this.setTextDisplayButton(this.memoryIsEnable);
         });
-        this.advancedParameterService.currentWrongAnswerAnimation$.subscribe((logicIsEnable: AdvancedParameterMemoryWork['logic']) => {
+        this.advancedParameterService.getCurrentLogicOBS().subscribe((logicIsEnable: AdvancedParameterMemoryWork['logic']) => {
             this.logicIsEnable = logicIsEnable;
-            this.textDisplayLogicButton = this.setTextDisplayButton(this.logicIsEnable)
+            this.textDisplayLogicButton = this.setTextDisplayButton(this.logicIsEnable);
         });
     }
 
@@ -51,29 +51,30 @@ export class MemoryWorkAdvancedParameterComponent implements OnInit {
     }
 
     switchCurrentComplexQuestion(){
-        this.advancedParameterService.switchCurrentComplexQuestion()
+        this.advancedParameterService.switchCurrentComplexQuestion();
     }
 
-    switchCurrentPuzzle(){
-        this.advancedParameterService.switchCurrentPuzzle()
+    public switchCurrentPuzzle(){
+      console.log("aaaaaaa");
+      this.advancedParameterService.switchCurrentPuzzle();
     }
 
     switchCurrentReflection(){
-        this.advancedParameterService.switchCurrentReflection()
+        this.advancedParameterService.switchCurrentReflection();
     }
 
     switchCurrentMemory(){
-        this.advancedParameterService.switchCurrentMemory()
+        this.advancedParameterService.switchCurrentMemory();
     }
 
     switchCurrentLogic(){
-        this.advancedParameterService.switchCurrentLogic()
+        this.advancedParameterService.switchCurrentLogic();
     }
 
     setTextDisplayButton(isEnable : boolean) {
         if (isEnable){
-            return "Activé" //We print the state of the button
+            return "Activé"; //We print the state of the button
         }
-        return "Desactivé" //We print the state of the button
+        return "Desactivé"; //We print the state of the button
     }
 }

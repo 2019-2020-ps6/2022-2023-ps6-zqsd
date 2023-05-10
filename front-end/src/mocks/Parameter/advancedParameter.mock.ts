@@ -6,16 +6,16 @@ export const ADVANCED_PARAMETER_CHRONOMETER: AdvancedParameterChronometer = {
 };
 
 export const ADVANCED_PARAMETER_MEMORY_WORK: AdvancedParameterMemoryWork = {
-    complexQuestion: false,
-    logic : false,
-    puzzle : false ,
-    reflection : false,
-    memory : false,
+    complexQuestion: true,
+    logic : true,
+    puzzle : true ,
+    reflection : true,
+    memory : true,
 };
 
 export const ANDVANCED_PARAMETER_FOCUS_WORK: AdvancedParameterFocusWork = {
-    background: false,
-    questionAnimation : false,
-    rightAnswerAnimation : false ,
-    wrongAnswerAnimation : false,
+    background: true,
+    questionAnimation : true,
+    rightAnswerAnimation : true ,
+    wrongAnswerAnimation : true,
 };
