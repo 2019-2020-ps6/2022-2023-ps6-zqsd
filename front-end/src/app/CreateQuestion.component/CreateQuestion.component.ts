@@ -23,6 +23,8 @@ import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
 //Remarque
 //Classe à retravailler, pour l'instant impossible de jouer le quiz, il y a un problème avec la création des questions
 //Toutes les questions sont de types searching, trouver un moyen d'intégrer l'image dans la question.
+//Faire la question Puzzle pas du tout faite
+//Reset l'image a chaque fois que showSearchingSection = false ou showPuzzleSection = false;
 
 
 export class CreateQuestion implements OnInit, AfterViewInit{
@@ -40,6 +42,7 @@ export class CreateQuestion implements OnInit, AfterViewInit{
   answer2Order: number = 2;
   answer3Order: number = 3;
   answer4Order: number = 4;
+  puzzleSplitNumber: number = 0;
 
   showClassic() {
     this.showSearchingSection = false;
