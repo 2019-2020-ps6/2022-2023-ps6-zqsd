@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S4 - Make change on button when clicked on">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/7/4720e0f52a7e1dd25948d0b0ba9a268c192bbdf3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/7/572a7abd9ae7707737decff70500aef6654c437e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/e/7e4e0b04d5668af188ffa11753fd2bc20fee2689" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d1a555c5dfbdf773def903f6cacd6c27d07800ed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/7/4720e0f52a7e1dd25948d0b0ba9a268c192bbdf3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/7/572a7abd9ae7707737decff70500aef6654c437e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/e/7e4e0b04d5668af188ffa11753fd2bc20fee2689" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/1/d1a555c5dfbdf773def903f6cacd6c27d07800ed" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/GameQuiz.component/GameQuiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/GameQuiz.component/GameQuiz.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/GameQuiz.component/GameQuiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/GameQuiz.component/GameQuiz.component.ts" afterDir="false" />
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S4 - Fix bug in condition">
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/AdvancedParamter/MemoryWork/MemoryWorkAdvancedParameter.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/AdvancedParamter/MemoryWork/MemoryWorkAdvancedParameter.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +53,7 @@
       <workItem from="1683042234167" duration="25448000" />
       <workItem from="1683649423331" duration="1523000" />
       <workItem from="1683664850970" duration="808000" />
-      <workItem from="1683752106980" duration="2294000" />
+      <workItem from="1683752106980" duration="2626000" />
     </task>
     <task id="LOCAL-00001" summary="S1 - Merge Master into Parameter #9">
       <created>1680262725544</created>
@@ -142,7 +132,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683754662102</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="S4 - Make questions adapted with the parameters">
+      <created>1683755094926</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1683755094926</updated>
+    </task>
+    <task id="LOCAL-00013" summary="S4 - Fix bug in condition">
+      <created>1683755305875</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1683755305875</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +219,8 @@
     <MESSAGE value="S4 - Make puzzle working" />
     <MESSAGE value="S4 - Make timer position according to quiz" />
     <MESSAGE value="S4 - Make change on button when clicked on" />
-    <option name="LAST_COMMIT_MESSAGE" value="S4 - Make change on button when clicked on" />
+    <MESSAGE value="S4 - Make questions adapted with the parameters" />
+    <MESSAGE value="S4 - Fix bug in condition" />
+    <option name="LAST_COMMIT_MESSAGE" value="S4 - Fix bug in condition" />
   </component>
 </project>
