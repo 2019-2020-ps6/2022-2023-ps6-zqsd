@@ -10,6 +10,8 @@ import {FormGroupDirective} from "@angular/forms";
 import {Answer} from "../../models/Question.model";
 import { ChangeDetectorRef } from '@angular/core';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
+import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
+
 
 
 @Component({
@@ -33,6 +35,12 @@ export class CreateQuestion implements OnInit, AfterViewInit{
   id = 5;
   questionType = ''; // Ajout de la variable questionType
   selectedImage: File | null = null;
+  answers: Answer[] = [];
+
+  answer1Order: number = 1;
+  answer2Order: number = 2;
+  answer3Order: number = 3;
+  answer4Order: number = 4;
 
   showClassic() {
     this.showSearchingSection = false;
@@ -216,5 +224,6 @@ export class CreateQuestion implements OnInit, AfterViewInit{
   ngAfterViewInit() {
     this.questionType = ''; // Déplacez la logique ici
   }
+
 
 }
