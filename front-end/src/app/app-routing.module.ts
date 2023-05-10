@@ -11,6 +11,7 @@ import {CreateQuiz} from "./CreateQuiz.component/CreateQuiz.component";
 import {MainPuzzleComponent} from "./Puzzle/PuzzleMain/PuzzleMain.component";
 import {ResultsComponent} from "./results/results.component";
 import {QuizzListComponent} from "./quizz-list/quizz-list.component";
+import {CreateQuestion} from "./CreateQuestion.component/CreateQuestion.component";
 
 const routes: Routes = [
   {
