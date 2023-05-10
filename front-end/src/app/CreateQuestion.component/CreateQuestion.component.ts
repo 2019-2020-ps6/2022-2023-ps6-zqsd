@@ -27,7 +27,6 @@ import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
 
 export class CreateQuestion implements OnInit, AfterViewInit{
   public questionForm!: FormGroup;
-  public theme_list = ['Actor', 'Sport', 'Music', 'Movie', 'TV Show', 'Video Game', 'Other'];
   showClassicSection = false;
   showSearchingSection = false;
   showPuzzleSection = false;

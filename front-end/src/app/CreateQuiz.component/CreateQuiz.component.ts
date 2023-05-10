@@ -15,7 +15,7 @@ import {QuestionService} from "../../services/QuestionService";
 export class CreateQuiz implements OnInit {
   currentQuestion: number = 1;
   public quizForm: FormGroup;
-  public theme_list = ['Actor', 'Sport', 'Music', 'Movie', 'TV Show', 'Video Game', 'Other'];
+  public theme_list = ['Acteur', 'Sport', 'Musique', 'Film', 'Séries Télévisées', 'Jeux vidéos', 'Autre'];
   numberOfQuestions: number = 0;
   buttons: number[] = [];
   blueButton: number = 1; // par défaut, le premier bouton est en bleu
