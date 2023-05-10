@@ -1,42 +1,42 @@
 <div class="listOfButton" id="listOfButtonFocusWork">
-    <div class="container" id="complexeQuestionMemoryWork">
+  <div class="container" id="complexeQuestionMemoryWork">
         <span class="textButton">
           Question Complexe
         </span>
-        <button (click)="switchCurrentComplexQuestion()">
-          Activer/Désactiver
-        </button>
-    </div>
-    <div class="container" id="puzzleMemoryWork">
+    <button [ngClass]="{'blue-button': isComplexQuestionActive}" (click)="switchCurrentComplexQuestion()">
+      Activer/Désactiver
+    </button>
+  </div>
+  <div class="container" id="puzzleMemoryWork">
         <span class="textButton">
             Question Puzzle
         </span>
-        <button (click)="switchCurrentPuzzle()">
-          Activer/Désactiver
-        </button>
-    </div>
-    <div class="container" id="reflexionMemoryWork">
+    <button [ngClass]="{'blue-button': isPuzzleActive}" (click)="switchCurrentPuzzle()">
+      Activer/Désactiver
+    </button>
+  </div>
+  <div class="container" id="reflexionMemoryWork">
         <span class="textButton">
             Question Réflexion
         </span>
-        <button (click)="switchCurrentReflection()">
-          Activer/Désactiver
-        </button>
-    </div>
-    <div class="container" id="memoryMemoryWork">
+    <button [ngClass]="{'blue-button': isReflectionActive}" (click)="switchCurrentReflection()">
+      Activer/Désactiver
+    </button>
+  </div>
+  <div class="container" id="memoryMemoryWork">
         <span class="textButton">
             Question Mémoire
         </span>
-        <button (click)="switchCurrentMemory()">
-          Activer/Désactiver
-        </button>
-    </div>
-    <div class="container" id="logicMemoryWork">
+    <button [ngClass]="{'blue-button': isMemoryActive}" (click)="switchCurrentMemory()">
+      Activer/Désactiver
+    </button>
+  </div>
+  <div class="container" id="logicMemoryWork">
         <span class="textButton">
             Question Logique
         </span>
-        <button (click)="switchCurrentLogic()">
-          Activer/Désactiver
-        </button>
-    </div>
+    <button [ngClass]="{'blue-button': isLogicActive}" (click)="switchCurrentLogic()">
+      Activer/Désactiver
+    </button>
+  </div>
 </div>
