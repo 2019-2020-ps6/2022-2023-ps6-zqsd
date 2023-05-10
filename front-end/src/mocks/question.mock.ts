@@ -231,7 +231,7 @@ export const Question5: Question = {
     { label: "order", value: "un atome", isCorrect: false },
     { label: "order", value: "un tabouret", isCorrect: false },
     { label: "order", value: "les Pyramides de Gizeh", isCorrect: true },
-    { label: "order", value: "ta maman", isCorrect: false },
+    { label: "order", value: "une étoile", isCorrect: false },
   ],
 };
 
