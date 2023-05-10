@@ -61,6 +61,7 @@ export class CreateQuiz implements OnInit {
     this.quizService.addQuiz(quiz);
     console.log(quiz);
     this.quizForm.reset();
+    this.questionService.resetQuestions();
   }
 
   nextQuestion() {
