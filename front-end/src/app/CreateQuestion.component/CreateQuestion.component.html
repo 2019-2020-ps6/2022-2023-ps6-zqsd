@@ -123,7 +123,7 @@
 
 
 <div *ngIf="showChronologicalSection">
-  <label for="answer1">Réponse 1 :</label>
+  <label for="answer1">Réponses 1 :</label>
   <input type="text" id="answer1C" formControlName="answer1" required>
   <select [(ngModel)]="answer1Order">
     <option value="1">1</option>
@@ -131,37 +131,38 @@
     <option value="3">3</option>
     <option value="4">4</option>
   </select>
-<div>
-  <label for="answer2">Réponse 2 :</label>
-  <input type="text" id="answer2C" formControlName="answer2" required>
-  <select [(ngModel)]="answer2Order">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-  </select>
-</div>
-<div>
-  <label for="answer3">Réponse 3 :</label>
-  <input type="text" id="answer3C" formControlName="answer3" required>
-  <select [(ngModel)]="answer3Order">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-  </select>
-</div>
-<div>
-  <label for="answer3">Réponse 4 :</label>
-  <input type="text" id="answer4C" formControlName="answer4" required>
-  <select [(ngModel)]="answer4Order">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-  </select>
+  <div>
+    <label for="answer2">Réponses 2 :</label>
+    <input type="text" id="answer2C" formControlName="answer2" required>
+    <select [(ngModel)]="answer2Order">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+  </div>
+  <div>
+    <label for="answer3">Réponses 3 :</label>
+    <input type="text" id="answer3C" formControlName="answer3" required>
+    <select [(ngModel)]="answer3Order">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+  </div>
+  <div>
+    <label for="answer4">Réponses 4 :</label>
+    <input type="text" id="answer4C" formControlName="answer4" required>
+    <select [(ngModel)]="answer4Order">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
   </div>
 </div>
+
 
 
 <button (click)="addQuestion()">Ajouter la question</button>
