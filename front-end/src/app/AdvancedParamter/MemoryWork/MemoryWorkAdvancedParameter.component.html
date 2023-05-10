@@ -1,18 +1,15 @@
 <div class="listOfButton" id="listOfButtonFocusWork">
-    <div class="container" id="complexeQuestionMemoryWork">
-        <span class="textButton">
-          Question Complexe
-        </span>
-        <button (click)="switchCurrentComplexQuestion()">
-          Activer/Désactiver
-        </button>
-    </div>
     <div class="container" id="puzzleMemoryWork">
         <span class="textButton">
             Question Puzzle
         </span>
         <button (click)="switchCurrentPuzzle()">
-          Activer/Désactiver
+          <div *ngIf="puzzleIsEnable; else alternative">
+            Activé
+          </div>
+          <ng-template #alternative>
+            Désactiver
+          </ng-template>
         </button>
     </div>
     <div class="container" id="reflexionMemoryWork">
@@ -20,15 +17,7 @@
             Question Réflexion
         </span>
         <button (click)="switchCurrentReflection()">
-          Activer/Désactiver
-        </button>
-    </div>
-    <div class="container" id="memoryMemoryWork">
-        <span class="textButton">
-            Question Mémoire
-        </span>
-        <button (click)="switchCurrentMemory()">
-          Activer/Désactiver
+          {{textDisplayReflexionButton}}
         </button>
     </div>
     <div class="container" id="logicMemoryWork">
@@ -36,7 +25,7 @@
             Question Logique
         </span>
         <button (click)="switchCurrentLogic()">
-          Activer/Désactiver
+          {{textDisplayLogicButton}}
         </button>
     </div>
 </div>

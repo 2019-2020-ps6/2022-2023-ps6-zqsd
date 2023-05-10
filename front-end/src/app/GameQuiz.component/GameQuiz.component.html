@@ -1,14 +1,14 @@
 
-<div *ngIf="currentQuestion.label=='order'">
+<div *ngIf="currentQuestion.label=='order' && logicIsEnable">
     <app-game-question-order [currentQuestion]="currentQuestion" (answerEvent)="getNextQuestion($event)"></app-game-question-order>
 </div>
-<div *ngIf="currentQuestion.label=='puzzle'">
+<div *ngIf="currentQuestion.label=='puzzle' && puzzleIsEnable">
     <app-puzzle-main [currentQuestion]="currentQuestion" (answerEvent)="getNextQuestion($event)"></app-puzzle-main>
 </div>
 <div *ngIf="currentQuestion.label=='classical'">
     <app-game-question-classical [currentQuestion]="currentQuestion" (answerEvent)="getNextQuestion($event)"></app-game-question-classical>
 </div>
-<div *ngIf="currentQuestion.label=='searching'">
+<div *ngIf="currentQuestion.label=='searching' && reflexionIsEnable">
     <app-game-question-searching [currentQuestion]="currentQuestion" (answerEvent)="getNextQuestion($event)"></app-game-question-searching>
 </div>
 <ng-template #elseBlock>
