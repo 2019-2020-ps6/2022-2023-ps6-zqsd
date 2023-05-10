@@ -28,6 +28,7 @@ export class GamepageComponent implements OnInit {
         // Récupère l'élément HTML pour afficher le compte à rebours
         this.countdown = document.getElementById('countdown');
         if(this.countdown){
+          this.gameService.countdown = this.countdown;
             this.gameService.resetCountdown(this.countdown);
         }
         this.gameService.getRemainingTime().subscribe((remainingTime) =>{

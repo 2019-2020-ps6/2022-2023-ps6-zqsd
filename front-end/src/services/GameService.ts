@@ -36,6 +36,7 @@ export class GameService {
   public intervalId: any;
   public remainingTime: number = 30;
   public remainingTime$: BehaviorSubject<number> = new BehaviorSubject(this.remainingTime);
+  public countdown: HTMLElement|null = null;
 
   private showDialogSubject = new BehaviorSubject<boolean>(false);
   public showDialog$ = this.showDialogSubject.asObservable();
@@ -56,6 +57,7 @@ export class GameService {
   nextQuestion(): number  {
     this.setCurrentQuestion(this.index+1)
     this.index+=1;
+    this.resetCountdown(this.countdown);
     return this.index;
   }
 
