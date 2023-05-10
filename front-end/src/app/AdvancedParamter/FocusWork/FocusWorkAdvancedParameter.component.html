@@ -1,34 +1,34 @@
 <div class="listOfButton" id="listOfButtonFocusWork">
-    <div class="container" id="backgroundFocusWork">
+  <div class="container" id="backgroundFocusWork">
         <span class="textButton">
             Fond
         </span>
-        <button (click)="switchCurrentBackground()">
-          Activer/Désactiver
-        </button>
-    </div>
-    <div class="container" id="questionAnimationFocusWork">
+    <button [ngClass]="{'blue-button': isBackgroundActive}" (click)="toggleBackground()">
+      Activer/Désactiver
+    </button>
+  </div>
+  <div class="container" id="questionAnimationFocusWork">
         <span class="textButton">
             Animation Questions
         </span>
-        <button (click)="switchCurrentQuestionAnimation()">
-          Activer/Désactiver
-        </button>
-    </div>
-    <div class="container" id="rightAnswerAnimationFocusWork">
+    <button [ngClass]="{'blue-button': isQuestionAnimationActive}" (click)="toggleQuestionAnimation()">
+      Activer/Désactiver
+    </button>
+  </div>
+  <div class="container" id="rightAnswerAnimationFocusWork">
         <span class="textButton">
             Visuel Réponse Juste
         </span>
-        <button (click)="switchCurrentRightAnswerAnimation()">
-          Activer/Désactiver
-        </button>
-    </div>
-    <div class="container" id="wrongAnswerAnimationFocusWork">
+    <button [ngClass]="{'blue-button': isRightAnswerAnimationActive}" (click)="toggleRightAnswerAnimation()">
+      Activer/Désactiver
+    </button>
+  </div>
+  <div class="container" id="wrongAnswerAnimationFocusWork">
         <span class="textButton">
           Visuel Réponse Fausse
         </span>
-        <button (click)="switchCurrentWrongAnswerAnimation()">
-          Activer/Désactiver
-        </button>
-    </div>
+    <button [ngClass]="{'blue-button': isWrongAnswerAnimationActive}" (click)="toggleWrongAnswerAnimation()">
+      Activer/Désactiver
+    </button>
+  </div>
 </div>

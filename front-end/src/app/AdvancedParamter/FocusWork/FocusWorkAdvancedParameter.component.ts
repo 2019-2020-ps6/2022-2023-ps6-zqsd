@@ -11,11 +11,16 @@ import { AdvancedParameterService } from 'src/services/Parameter/AdvancedParamet
 
 export class FocusWorkAdvancedParameterComponent implements OnInit {
 
+  isBackgroundActive: boolean = false;
+  isQuestionAnimationActive: boolean = false;
+  isRightAnswerAnimationActive: boolean = false;
+  isWrongAnswerAnimationActive: boolean = false;
+
     backgroundIsEnable : AdvancedParameterFocusWork['background'] = this.advancedParameterService.getCurrentBackground();
     questionAnimationIsEnable : AdvancedParameterFocusWork['questionAnimation'] = this.advancedParameterService.getCurrentQuestionAnimation();
     rightAnswerAnimationIsEnable : AdvancedParameterFocusWork['rightAnswerAnimation'] = this.advancedParameterService.getCurrentRightAnswerAnimation();
     wrongAnswerAnimationIsEnable : AdvancedParameterFocusWork['wrongAnswerAnimation'] = this.advancedParameterService.getCurrentWrongAnswerAnimatino();
-    
+
     textDisplayBackgroundButton : string = this.setTextDisplayButton(this.backgroundIsEnable);
     textDisplayQuestionAnimationButton : string = this.setTextDisplayButton(this.questionAnimationIsEnable);
     textDisplayRightAnswerAnimationButton : string = this.setTextDisplayButton(this.rightAnswerAnimationIsEnable);
@@ -68,4 +73,22 @@ export class FocusWorkAdvancedParameterComponent implements OnInit {
         }
         return "Desactivé" //We print the state of the button
     }
+
+  toggleBackground() {
+    this.isBackgroundActive = !this.isBackgroundActive;
+  }
+
+  toggleQuestionAnimation() {
+    this.isQuestionAnimationActive = !this.isQuestionAnimationActive;
+  }
+
+  toggleRightAnswerAnimation() {
+    this.isRightAnswerAnimationActive = !this.isRightAnswerAnimationActive;
+  }
+
+  toggleWrongAnswerAnimation() {
+    this.isWrongAnswerAnimationActive = !this.isWrongAnswerAnimationActive;
+  }
+
+
 }

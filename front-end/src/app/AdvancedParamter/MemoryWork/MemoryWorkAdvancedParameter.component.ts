@@ -10,6 +10,13 @@ import { AdvancedParameterService } from 'src/services/Parameter/AdvancedParamet
 })
 
 export class MemoryWorkAdvancedParameterComponent implements OnInit {
+
+  isComplexQuestionActive: boolean = false;
+  isPuzzleActive: boolean = false;
+  isReflectionActive: boolean = false;
+  isMemoryActive: boolean = false;
+  isLogicActive: boolean = false;
+
     complexQuestionIsEnable : AdvancedParameterMemoryWork['complexQuestion'] = this.advancedParameterService.getCurrentComplexQuestion();
     puzzleIsEnable : AdvancedParameterMemoryWork['puzzle'] = this.advancedParameterService.getCurrentPuzzle();
     reflexionIsEnable : AdvancedParameterMemoryWork['reflection'] = this.advancedParameterService.getCurrentReflection();
@@ -49,26 +56,7 @@ export class MemoryWorkAdvancedParameterComponent implements OnInit {
 
     ngOnInit(): void {
     }
-
-    switchCurrentComplexQuestion(){
-        this.advancedParameterService.switchCurrentComplexQuestion()
-    }
-
-    switchCurrentPuzzle(){
-        this.advancedParameterService.switchCurrentPuzzle()
-    }
-
-    switchCurrentReflection(){
-        this.advancedParameterService.switchCurrentReflection()
-    }
-
-    switchCurrentMemory(){
-        this.advancedParameterService.switchCurrentMemory()
-    }
-
-    switchCurrentLogic(){
-        this.advancedParameterService.switchCurrentLogic()
-    }
+    
 
     setTextDisplayButton(isEnable : boolean) {
         if (isEnable){
@@ -76,4 +64,25 @@ export class MemoryWorkAdvancedParameterComponent implements OnInit {
         }
         return "Desactivé" //We print the state of the button
     }
+
+  switchCurrentComplexQuestion() {
+    this.isComplexQuestionActive = !this.isComplexQuestionActive;
+  }
+
+  switchCurrentPuzzle() {
+    this.isPuzzleActive = !this.isPuzzleActive;
+  }
+
+  switchCurrentReflection() {
+    this.isReflectionActive = !this.isReflectionActive;
+  }
+
+  switchCurrentMemory() {
+    this.isMemoryActive = !this.isMemoryActive;
+  }
+
+  switchCurrentLogic() {
+    this.isLogicActive = !this.isLogicActive;
+  }
+
 }
