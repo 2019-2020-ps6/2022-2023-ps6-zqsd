@@ -7,19 +7,19 @@ export const QuizExample: Quiz[] = [
     {
         id: "1",
         name: "Example",
-        theme : "classic",
+        theme : "général",
         questions: QuestionQuizz
     },
     {
       id:"2",
-      name:"Quiz2",
-      theme:"classic",
+      name:"Rome",
+      theme:"histoire",
       questions:QuestionQuizz2
     },
     {
       id:"3",
-      name:"Quiz3",
-      theme:"classic",
+      name:"Renaud",
+      theme:"chanson française",
       questions:QuestionQuizz3
     }
 ];

@@ -1,24 +1,24 @@
 import { Answer,Question,TextSearching } from '../models/Question.model';
 
-export const AnswerChronologicalHistory1: Answer[] = [
+export const AnswerorderHistory1: Answer[] = [
     {
-        label: "chronological",
+        label: "order",
         value: "Invention de la poudre à canon",
         order : 1
     },
     {
-        label: "chronological",
+        label: "order",
         value: "Découverte de l'Amérique",
         order : 2
     },
     
     {
-      label: "chronological",
+      label: "order",
       value: "Découverte de Neptune",
       order : 3
   },
     {
-        label: "chronological",
+        label: "order",
         value: "Chute du mur de Berlin",
         order : 4
     }
@@ -118,34 +118,7 @@ export const AnswerPuzzle1: Answer[] = [
 ];
 
 
-export const QuestionQuizz: Question[] = [
-    {
-        id: '1',
-        label : "order",
-        value:"Remettez dans l'ordre chronologique les éléments.",
 
-        answers: AnswerChronologicalHistory1,
-    },
-    {
-        id: '2',
-        label : "puzzle",
-        value:"Completez le puzzle.",
-        answers: AnswerPuzzle1,
-    },
-    {
-        id: '3',
-        label : "classical",
-        value:"Quels sont les 3 états de la matière ?",
-        answers: AnswerClassic1,
-    },
-    {
-        id: '4',
-        label : "searching",
-        value:"Quelle est la couleur du cheval d'Henri IV ?",
-        imageSearching: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Henri_IV%2C_roi_de_France%2C_%C3%A0_cheval_devant_Paris_%E2%80%93_Mus%C3%A9e_Carnavalet_CARP1671_%E2%80%93_Collections_Paris%28dot%29fr_%28adjusted%29.jpg/1144px-Henri_IV%2C_roi_de_France%2C_%C3%A0_cheval_devant_Paris_%E2%80%93_Mus%C3%A9e_Carnavalet_CARP1671_%E2%80%93_Collections_Paris%28dot%29fr_%28adjusted%29.jpg",
-        answers: AnswerSearching1,
-    }
-];
 
 export const QuestionQuizz2: Question[] = [
   {
@@ -248,4 +221,54 @@ export const QuestionQuizz3: Question[] = [
     value: "Quelle est la couleur de l'absence de couleur ?",
     answers: AnswerClassic4,
   },
+];
+
+export const Question5: Question = {
+  id: '5',
+  label: "order",
+  value: "faites un classement de la taille de ces objets dans l'ordre croissant ?",
+  answers: [
+    { label: "order", value: "un atome", isCorrect: false },
+    { label: "order", value: "un tabouret", isCorrect: false },
+    { label: "order", value: "les Pyramides de Gizeh", isCorrect: true },
+    { label: "order", value: "ta maman", isCorrect: false },
+  ],
+};
+
+export const Question6: Question ={
+    id: '4',
+    label : "searching",
+    value:"Quelle est la couleur du cheval d'Henri IV ?",
+    imageSearching: "https://www.francoisdelapierre.fr/wp-content/uploads/2020/09/Henri-IV.jpg",
+    answers: AnswerSearching1,
+
+}
+
+
+export const QuestionQuizz: Question[] = [
+  {
+      id: '1',
+      label : "order",
+      value:"Remettez dans l'ordre chronologique les éléments.",
+
+      answers: AnswerorderHistory1,
+  },
+  {
+      id: '2',
+      label : "puzzle",
+      value:"Completez le puzzle.",
+      answers: AnswerPuzzle1,
+  },
+  {
+      id: '3',
+      label : "classical",
+      value:"Quels sont les 3 états de la matière ?",
+      answers: AnswerClassic1,
+  },
+  Question6,
+  Question1,
+  Question2,
+  Question4,
+  Question5
+
 ];
