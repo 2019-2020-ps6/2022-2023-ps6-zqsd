@@ -1,4 +1,8 @@
-<div [ngClass]="{'svg-enabled': this.svgActif}"> 
+<!-- app.component.html -->
+<div [ngClass]="{'svg-enabled': svgActif}" style="height: fit-content;">
     <app-header></app-header>
-    <router-outlet></router-outlet>
-</div>
+    <div style="flex: 1;">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  

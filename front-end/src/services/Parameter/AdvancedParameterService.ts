@@ -35,7 +35,7 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
     public currentRightAnswerAnimation$ : BehaviorSubject<AdvancedParameterFocusWork['rightAnswerAnimation']> = new BehaviorSubject(this.currentRightAnswerAnimation)
     public currentWrongAnswerAnimation$ : BehaviorSubject<AdvancedParameterFocusWork['wrongAnswerAnimation']> = new BehaviorSubject(this.currentWrongAnswerAnimation)
 
-    public svgActif: boolean = false;
+    public svgActif: boolean = true;
     public svgActif$ : BehaviorSubject<boolean> = new BehaviorSubject(this.svgActif)
 
 
