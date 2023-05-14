@@ -21,6 +21,8 @@ export class FocusWorkAdvancedParameterComponent implements OnInit {
     textDisplayRightAnswerAnimationButton : string = this.setTextDisplayButton(this.rightAnswerAnimationIsEnable);
     textDisplayWrongAnswerAnimationButton : string = this.setTextDisplayButton(this.wrongAnswerAnimationIsEnable);
 
+    public svgActif = false;
+
 
 
     constructor(
@@ -40,6 +42,9 @@ export class FocusWorkAdvancedParameterComponent implements OnInit {
         this.advancedParameterService.currentWrongAnswerAnimation$.subscribe((wrongAnswerAnimationIsEnable: AdvancedParameterFocusWork['wrongAnswerAnimation']) => {
             this.wrongAnswerAnimationIsEnable = wrongAnswerAnimationIsEnable;
             this.textDisplayWrongAnswerAnimationButton = this.setTextDisplayButton(this.wrongAnswerAnimationIsEnable)
+        });
+        this.advancedParameterService.getSvgEnabled().subscribe((enabled: boolean) => {
+            enabled = this.svgActif;
         });
     }
 
@@ -68,4 +73,10 @@ export class FocusWorkAdvancedParameterComponent implements OnInit {
         }
         return "Desactivé" //We print the state of the button
     }
+
+    toggleSVG() {
+        this.svgActif = !this.svgActif;
+        this.advancedParameterService.setSvgActif(this.svgActif);
+        console.log("svg : " + this.svgActif)
+      }
 }

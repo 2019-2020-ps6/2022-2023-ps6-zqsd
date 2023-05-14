@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ParameterService } from 'src/services/Parameter/ParameterService';
-
+import { AdvancedParameterService } from 'src/services/Parameter/AdvancedParameterService';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,8 +9,9 @@ import { ParameterService } from 'src/services/Parameter/ParameterService';
 export class AppComponent {
   public musicEnabled: boolean = true;
   public audio: HTMLAudioElement | null = null;
+  public svgActif: boolean = false;
 
-  constructor(private parameterService: ParameterService) {}
+  constructor(private parameterService: ParameterService, private advParameterService : AdvancedParameterService) {}
 
 
   ngOnInit() {
@@ -29,6 +30,10 @@ export class AppComponent {
         }
       }
     });
+    this.advParameterService.getSvgEnabled().subscribe((svgActif: boolean) => {
+      this.svgActif = svgActif;
+      console.log("SVG : " + this.svgActif)
+    })
   }
 
   toggleMusic() {

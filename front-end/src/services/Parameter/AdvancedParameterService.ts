@@ -35,6 +35,9 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
     public currentRightAnswerAnimation$ : BehaviorSubject<AdvancedParameterFocusWork['rightAnswerAnimation']> = new BehaviorSubject(this.currentRightAnswerAnimation)
     public currentWrongAnswerAnimation$ : BehaviorSubject<AdvancedParameterFocusWork['wrongAnswerAnimation']> = new BehaviorSubject(this.currentWrongAnswerAnimation)
 
+    public svgActif: boolean = false;
+    public svgActif$ : BehaviorSubject<boolean> = new BehaviorSubject(this.svgActif)
+
 
     constructor () {
 
@@ -235,6 +238,15 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
 
     getCurrentWrongAnswerAnimatino() : AdvancedParameterFocusWork['wrongAnswerAnimation'] {
       return this.currentWrongAnswerAnimation;
+    }
+
+    getSvgEnabled() : Observable<boolean> {
+      console.log("observable")
+      return this.svgActif$.asObservable();
+      
+    }
+    setSvgActif(value: boolean) {
+      this.svgActif$.next(value);
     }
   }
 
