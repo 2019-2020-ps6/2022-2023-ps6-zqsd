@@ -3,8 +3,8 @@
         <span class="textButton">
             Fond
         </span>
-        <button (click)="toggleSVG()">
-          Activer/Désactiver
+        <button (click)="toggleSVG()" #toggleButton>
+          {{ svgActif ? 'Sombre' : 'Clair' }}
         </button>
     </div>
     <div class="container" id="questionAnimationFocusWork">

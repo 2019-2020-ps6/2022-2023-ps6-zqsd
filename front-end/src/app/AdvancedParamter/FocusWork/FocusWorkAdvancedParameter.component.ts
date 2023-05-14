@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AdvancedParameterFocusWork } from 'src/models/Parameter/advancedParameter.model';
 import { AdvancedParameterService } from 'src/services/Parameter/AdvancedParameterService';
 
@@ -21,7 +21,8 @@ export class FocusWorkAdvancedParameterComponent implements OnInit {
     textDisplayRightAnswerAnimationButton : string = this.setTextDisplayButton(this.rightAnswerAnimationIsEnable);
     textDisplayWrongAnswerAnimationButton : string = this.setTextDisplayButton(this.wrongAnswerAnimationIsEnable);
 
-    public svgActif = false;
+    public svgActif = true;
+    @ViewChild('toggleButton', { static: true }) toggleButton!: ElementRef<HTMLButtonElement>;
 
 
 
@@ -77,6 +78,9 @@ export class FocusWorkAdvancedParameterComponent implements OnInit {
     toggleSVG() {
         this.svgActif = !this.svgActif;
         this.advancedParameterService.setSvgActif(this.svgActif);
-        console.log("svg : " + this.svgActif)
-      }
+        if (this.toggleButton) {
+          this.toggleButton.nativeElement.innerText = this.svgActif ? 'Sombre' : 'Clair';
+        }
+        console.log("svg : " + this.svgActif);
+    }
 }

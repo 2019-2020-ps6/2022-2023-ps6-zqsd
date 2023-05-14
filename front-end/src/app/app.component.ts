@@ -9,7 +9,7 @@ import { AdvancedParameterService } from 'src/services/Parameter/AdvancedParamet
 export class AppComponent {
   public musicEnabled: boolean = true;
   public audio: HTMLAudioElement | null = null;
-  public svgActif: boolean = false;
+  public svgActif: boolean = true;
 
   constructor(private parameterService: ParameterService, private advParameterService : AdvancedParameterService) {}
 
