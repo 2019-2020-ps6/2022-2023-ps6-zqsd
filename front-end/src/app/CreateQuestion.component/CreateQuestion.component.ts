@@ -135,7 +135,7 @@ export class CreateQuestion implements OnInit, AfterViewInit{
 
         const questionC: Question = {
           value: this.questionForm.value.question,
-          label: "searching",
+          label: "classical",
           id: this.id.toString(),
           answers: answers,
         };
