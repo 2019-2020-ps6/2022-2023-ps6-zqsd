@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S4 - Fix bug in condition" />
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - FIx bug in package.json" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +36,7 @@
     "last_opened_file_path": "D:/Etude/Polytech/PS6/Projet 6/2022-2023-ps6-zqsd",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "ts.external.directory.path": "D:\\Etude\\Polytech\\PS6\\Project 5\\2022-2023-ps6-zqsd\\front-end\\node_modules\\typescript\\lib"
   }
 }]]></component>
@@ -52,7 +53,7 @@
       <workItem from="1683649423331" duration="1523000" />
       <workItem from="1683664850970" duration="808000" />
       <workItem from="1683752106980" duration="2626000" />
-      <workItem from="1684136204752" duration="600000" />
+      <workItem from="1684136204752" duration="998000" />
     </task>
     <task id="LOCAL-00001" summary="S1 - Merge Master into Parameter #9">
       <created>1680262725544</created>
@@ -145,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683755305875</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="S5 - FIx bug in package.json">
+      <created>1684137324732</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684137324733</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,6 +228,7 @@
     <MESSAGE value="S4 - Make change on button when clicked on" />
     <MESSAGE value="S4 - Make questions adapted with the parameters" />
     <MESSAGE value="S4 - Fix bug in condition" />
-    <option name="LAST_COMMIT_MESSAGE" value="S4 - Fix bug in condition" />
+    <MESSAGE value="S5 - FIx bug in package.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="S5 - FIx bug in package.json" />
   </component>
 </project>
