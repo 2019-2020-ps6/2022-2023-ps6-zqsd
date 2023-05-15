@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S4 - Fix bug in condition">
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/AdvancedParamter/MemoryWork/MemoryWorkAdvancedParameter.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/AdvancedParamter/MemoryWork/MemoryWorkAdvancedParameter.component.html" afterDir="false" />
-    </list>
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S4 - Fix bug in condition" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +33,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Etude/Polytech/PS6/Project 5/2022-2023-ps6-zqsd",
+    "last_opened_file_path": "D:/Etude/Polytech/PS6/Projet 6/2022-2023-ps6-zqsd",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "ts.external.directory.path": "D:\\Etude\\Polytech\\PS6\\Project 5\\2022-2023-ps6-zqsd\\front-end\\node_modules\\typescript\\lib"
@@ -54,6 +52,7 @@
       <workItem from="1683649423331" duration="1523000" />
       <workItem from="1683664850970" duration="808000" />
       <workItem from="1683752106980" duration="2626000" />
+      <workItem from="1684136204752" duration="600000" />
     </task>
     <task id="LOCAL-00001" summary="S1 - Merge Master into Parameter #9">
       <created>1680262725544</created>
