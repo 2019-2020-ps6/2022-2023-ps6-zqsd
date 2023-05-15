@@ -3,32 +3,32 @@
         <span class="textButton">
             Fond
         </span>
-        <button (click)="toggleSVG()" #toggleButton>
-          {{ svgActif ? 'Sombre' : 'Clair' }}
+        <button style="width: 150px;" (click)="toggleSVG()" #toggleButton>
+          {{ svgActif ? 'Clair' : 'Sombre' }}
         </button>
     </div>
     <div class="container" id="questionAnimationFocusWork">
         <span class="textButton">
             Animation Questions
         </span>
-        <button (click)="switchCurrentQuestionAnimation()">
-          Activer/Désactiver
+        <button style="width: 150px;" (click)="switchCurrentQuestionAnimation()">
+          {{textDisplayQuestionAnimationButton}}
         </button>
     </div>
     <div class="container" id="rightAnswerAnimationFocusWork">
         <span class="textButton">
             Visuel Réponse Juste
         </span>
-        <button (click)="switchCurrentRightAnswerAnimation()">
-          Activer/Désactiver
+        <button style="width: 150px;" (click)="switchCurrentRightAnswerAnimation()">
+          {{textDisplayRightAnswerAnimationButton}}
         </button>
     </div>
     <div class="container" id="wrongAnswerAnimationFocusWork">
         <span class="textButton">
           Visuel Réponse Fausse
         </span>
-        <button (click)="switchCurrentWrongAnswerAnimation()">
-          Activer/Désactiver
+        <button style="width: 150px;" (click)="switchCurrentWrongAnswerAnimation()">
+          {{textDisplayWrongAnswerAnimationButton}}
         </button>
     </div>
 </div>

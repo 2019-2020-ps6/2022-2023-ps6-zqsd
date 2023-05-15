@@ -3,12 +3,12 @@
         <span class="textButton">
             Question Puzzle
         </span>
-        <button (click)="switchCurrentPuzzle()">
+        <button style="width: 150px;" (click)="switchCurrentPuzzle()">
           <div *ngIf="puzzleIsEnable; else alternative">
-            Activé
+            Désactiver
           </div>
           <ng-template #alternative>
-            Désactiver
+            Activer
           </ng-template>
         </button>
     </div>
@@ -16,7 +16,7 @@
         <span class="textButton">
             Question Réflexion
         </span>
-        <button (click)="switchCurrentReflection()">
+        <button style="width: 150px;" (click)="switchCurrentReflection()">
           {{textDisplayReflexionButton}}
         </button>
     </div>
@@ -24,7 +24,7 @@
         <span class="textButton">
             Question Logique
         </span>
-        <button (click)="switchCurrentLogic()">
+        <button style="width: 150px;" (click)="switchCurrentLogic()">
           {{textDisplayLogicButton}}
         </button>
     </div>
