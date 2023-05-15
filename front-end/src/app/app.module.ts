@@ -69,6 +69,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     QuizzListComponent,
     GameQuestionSearchingComponent,
     PopUpComponent,
+    CreateQuestion
   ],
   imports: [
     BrowserModule,

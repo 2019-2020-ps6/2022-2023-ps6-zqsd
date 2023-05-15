@@ -1,0 +1,158 @@
+button.selected.false {
+  background-color: red;
+}
+
+button.selected.true {
+  background-color: green;
+}
+
+.answer-list {
+  width: 750px;
+  border: solid 1px #222;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(85, 85, 85, 0.5);
+  overflow: hidden;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 5px 5px 10px 5px #222;
+
+}
+
+.answer-box {
+  padding: 20px 10px;
+  border-bottom: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  cursor: move;
+  text-align: center;
+  background: white;
+  font-size: 14px;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+  0 8px 10px 1px rgba(0, 0, 0, 0.14),
+  0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.answer-box:last-child {
+  border: none;
+}
+
+.answer-list.cdk-drop-list-dragging .answer-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.question-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* Sélectionner le titre h2 */
+h2 {
+  color: blue;
+  font-size: 20px;
+}
+
+/* Sélectionner les boutons */
+button {
+  background-color: #ccc;
+  color: black;
+  padding: 5px 10px;
+  border: none;
+  margin-right: 10px;
+}
+
+/* Appliquer un style aux boutons "selected true" */
+button.selected.true {
+  background-color: green;
+}
+
+/* Appliquer un style aux boutons "selected false" */
+button.selected.false {
+  background-color: red;
+}
+
+/* Sélectionner les étiquettes des réponses */
+label {
+  font-weight: bold;
+}
+
+/* Sélectionner les champs de saisie */
+input[type="text"] {
+  width: 200px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+/* Sélectionner les images des questions de recherche */
+.question-searching-image {
+  width: 200px;
+  height: auto;
+}
+
+/* Sélectionner les conteneurs des images des questions de recherche */
+.question-searching-image-container {
+  margin-top: 10px;
+}
+
+/* Sélectionner le bouton "Ajouter la question" */
+button[type="button"] {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+select {
+  width: 150px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+}
+
+select option {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Couleur personnalisée pour le select */
+select {
+  background-color: #f2f2f2;
+}
+
+/* Couleur personnalisée pour les options du select */
+select option {
+  background-color: #e6e6e6;
+  color: #333;
+}
+
+
+
+
+
+
