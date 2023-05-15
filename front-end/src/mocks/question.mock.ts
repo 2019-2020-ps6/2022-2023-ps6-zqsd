@@ -11,7 +11,7 @@ export const AnswerorderHistory1: Answer[] = [
         value: "Découverte de l'Amérique",
         order : 2
     },
-    
+
     {
       label: "order",
       value: "Découverte de Neptune",
@@ -201,7 +201,12 @@ export const QuestionQuizz3: Question[] = [
     id: '1',
     label: "classical",
     value: "Quel est l'élément chimique de numéro atomique 1 ?",
-    answers: AnswerClassic1,
+    answers: [
+  { label: "classical", value: "Hydrogène", isCorrect: true },
+  { label: "classical", value: "Hélium", isCorrect: false },
+  { label: "classical", value: "Carbone", isCorrect: false },
+  { label: "classical", value: "Azote", isCorrect: false },
+],
   },
   {
     id: '2',
@@ -231,7 +236,7 @@ export const Question5: Question = {
     { label: "order", value: "un atome", isCorrect: false },
     { label: "order", value: "un tabouret", isCorrect: false },
     { label: "order", value: "les Pyramides de Gizeh", isCorrect: true },
-    { label: "order", value: "une étoile", isCorrect: false },
+    { label: "order", value: "le soleil", isCorrect: false },
   ],
 };
 

@@ -57,26 +57,6 @@ export class MemoryWorkAdvancedParameterComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    switchCurrentComplexQuestion(){
-        this.advancedParameterService.switchCurrentComplexQuestion();
-    }
-
-    public switchCurrentPuzzle(){
-      console.log("aaaaaaa");
-      this.advancedParameterService.switchCurrentPuzzle();
-    }
-
-    switchCurrentReflection(){
-        this.advancedParameterService.switchCurrentReflection();
-    }
-
-    switchCurrentMemory(){
-        this.advancedParameterService.switchCurrentMemory();
-    }
-
-    switchCurrentLogic(){
-        this.advancedParameterService.switchCurrentLogic();
-    }
 
     setTextDisplayButton(isEnable : boolean) {
         if (isEnable){
