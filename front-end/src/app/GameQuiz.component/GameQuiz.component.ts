@@ -1,12 +1,13 @@
 import { Quiz } from './../../models/quiz.model';
 import { Component, Input } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { Question,Answer } from 'src/models/Question.model';
 import { GameService } from 'src/services/GameService';
 import { GamepageComponent } from '../Gamepage.component/GamePage.Component';
 import { DisplayService } from 'src/services/DisplayService';
 import {AdvancedParameterService} from "../../services/Parameter/AdvancedParameterService";
 import {AdvancedParameterMemoryWork} from "../../models/Parameter/advancedParameter.model";
+import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-game-quiz',
@@ -16,39 +17,66 @@ import {AdvancedParameterMemoryWork} from "../../models/Parameter/advancedParame
 export class GameQuizComponent {
   @Input() countdown: any;
 
-  complexQuestionIsEnable : AdvancedParameterMemoryWork['complexQuestion'] = this.advancedParameterService.getCurrentComplexQuestion();
   puzzleIsEnable : AdvancedParameterMemoryWork['puzzle'] = this.advancedParameterService.getCurrentPuzzle();
   reflexionIsEnable : AdvancedParameterMemoryWork['reflection'] = this.advancedParameterService.getCurrentReflection();
-  memoryIsEnable : AdvancedParameterMemoryWork['memory'] = this.advancedParameterService.getCurrentMemory();
   logicIsEnable : AdvancedParameterMemoryWork['logic'] = this.advancedParameterService.getCurrentLogic();
 
-
-
+  isFinnished : boolean = false;
+  private questionCounter : number = 1;
   currentQuiz : Quiz = {id:'', name:'', theme:'', questions: [] as Question[]};
   currentQuestion:Question =  {id:'', value: '',label:"",answers: [] as Answer[]};
-  constructor(public gameService : GameService, public displayService : DisplayService, public advancedParameterService : AdvancedParameterService){
+  constructor(public gameService : GameService, public displayService : DisplayService, public advancedParameterService : AdvancedParameterService, public router : Router){
     this.gameService.getCurrentQuiz().subscribe((quiz : Quiz)=>{
       this.currentQuiz = quiz;
+      this.isFinnished = false;
+      this.questionCounter = 1;
     });
     this.gameService.currentQuestion$.subscribe((question: Question) => {
-      this.currentQuestion = question;
+      this.checkQuestionAllowed(question);
     })
-    this.advancedParameterService.getCurrentComplexQuestionOBS().subscribe((complexQuestionIsEnable: AdvancedParameterMemoryWork['complexQuestion']) => {
-      this.complexQuestionIsEnable = complexQuestionIsEnable;
-    });
     this.advancedParameterService.getCurrentPuzzleOBS().subscribe((puzzleIsEnable: AdvancedParameterMemoryWork['puzzle']) => {
       this.puzzleIsEnable = puzzleIsEnable;
     });
     this.advancedParameterService.getCurrentReflectionOBS().subscribe((reflexionIsEnable: AdvancedParameterMemoryWork['reflection']) => {
       this.reflexionIsEnable = reflexionIsEnable;
     });
-    this.advancedParameterService.getCurrentMemoryOBS().subscribe((memoryIsEnable: AdvancedParameterMemoryWork['memory']) => {
-      this.memoryIsEnable = memoryIsEnable;
-    });
     this.advancedParameterService.getCurrentLogicOBS().subscribe((logicIsEnable: AdvancedParameterMemoryWork['logic']) => {
       this.logicIsEnable = logicIsEnable;
     });
   }
+
+  private checkQuestionAllowed(question : Question) {
+    if (this.currentQuestion == question){
+      return;
+    }
+
+
+    if (question.label == 'classical') {
+      this.currentQuestion = question;
+      console.log("classical")
+    } else {
+      if ((!this.puzzleIsEnable && question.label == 'puzzle') || (!this.reflexionIsEnable && question.label == 'searching') || (!this.logicIsEnable && question.label == 'order')) {
+        if (!this.isFinnished) {
+          console.log("next");
+          this.getNextQuestion(true);
+        }
+      } else {
+        this.currentQuestion = question;
+      }
+    }
+
+    this.questionCounter = this.questionCounter + 1;
+    if (this.questionCounter == this.currentQuiz.questions.length) {
+      this.isFinnished = true;
+    } else if (this.questionCounter-1 > this.currentQuiz.questions.length) {
+      this.router.navigateByUrl('/results');
+      this.questionCounter = 1;
+      this.isFinnished = false;
+      console.log("zzzzzzzzzzzzzzzz")
+    }
+  }
+
+
 
 
   private setTimer(){
@@ -63,10 +91,13 @@ export class GameQuizComponent {
   getNextQuestion(x:boolean){
     this.gameService.nextQuestion();
     this.setTimer();
+
   }
 
   ngOnInit(){
     this.gameService.resetQuiz();
+    this.isFinnished = false;
+    this.questionCounter = 1;
     console.log("init");
   }
   stopCountdown():void{

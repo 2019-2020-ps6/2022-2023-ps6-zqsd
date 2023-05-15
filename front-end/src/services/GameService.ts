@@ -55,8 +55,9 @@ export class GameService {
   }
 
   nextQuestion(): number  {
-    this.setCurrentQuestion(this.index+1)
     this.index+=1;
+    this.setCurrentQuestion(this.index)
+
     this.resetCountdown(this.countdown);
     return this.index;
   }

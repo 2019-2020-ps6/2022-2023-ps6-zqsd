@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - FIx bug in package.json" />
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - FIx bug in package.json">
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/Connexion/Connexion.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/Connexion/Connexion.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/Connexion/Connexion.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/3/036b187aeb1a5591dfe046492cf3e03d41285f4f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/c/0c15380226f8d4ee8477a196e813fe9b5824b2f7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/e/1e82a20b3ea46acba4697c35f8dbcda5a7fcb113" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/4/3490f40e7502a1952afd702717a0a1347c0b2b53" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/2/425be914fbeeddb06c6a5a294509e0ad2d2c4af6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/9954e1368a772fdc749ccb70da12c01564e036b6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/0/b08266b6396482628adadb0db2ed9f4b8ee7301a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/d/bd7609b66501c4fcc3567a5a9095c71e956f07d3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/e/be75c984c54b4d758799f2b94b252dc608957e44" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/4/d4689baf9573606ae305eb56221b21d1d63f42dc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/3/036b187aeb1a5591dfe046492cf3e03d41285f4f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/c/0c15380226f8d4ee8477a196e813fe9b5824b2f7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/e/1e82a20b3ea46acba4697c35f8dbcda5a7fcb113" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/4/3490f40e7502a1952afd702717a0a1347c0b2b53" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/2/425be914fbeeddb06c6a5a294509e0ad2d2c4af6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/9/9954e1368a772fdc749ccb70da12c01564e036b6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/0/b08266b6396482628adadb0db2ed9f4b8ee7301a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/d/bd7609b66501c4fcc3567a5a9095c71e956f07d3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/e/be75c984c54b4d758799f2b94b252dc608957e44" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/4/d4689baf9573606ae305eb56221b21d1d63f42dc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/GameQuiz.component/GameQuiz.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/GameQuiz.component/GameQuiz.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/GameQuiz.component/GameQuiz.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/GameQuiz.component/GameQuiz.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/services/GameService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/GameService.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,11 +61,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Etude/Polytech/PS6/Projet 6/2022-2023-ps6-zqsd",
+    "last_opened_file_path": "D:/Etude/Polytech/POO S6/TD6",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "D:\\Etude\\Polytech\\PS6\\Project 5\\2022-2023-ps6-zqsd\\front-end\\node_modules\\typescript\\lib"
+    "ts.external.directory.path": "D:\\Etude\\Polytech\\PS6\\Projet 6\\2022-2023-ps6-zqsd\\front-end\\node_modules\\typescript\\lib"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -53,7 +81,7 @@
       <workItem from="1683649423331" duration="1523000" />
       <workItem from="1683664850970" duration="808000" />
       <workItem from="1683752106980" duration="2626000" />
-      <workItem from="1684136204752" duration="998000" />
+      <workItem from="1684136204752" duration="19918000" />
     </task>
     <task id="LOCAL-00001" summary="S1 - Merge Master into Parameter #9">
       <created>1680262725544</created>
@@ -153,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684137324733</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="S5 - FIx bug in package.json">
+      <created>1684137402375</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684137402375</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
