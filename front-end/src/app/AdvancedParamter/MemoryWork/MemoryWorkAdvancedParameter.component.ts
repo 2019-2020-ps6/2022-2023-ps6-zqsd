@@ -56,7 +56,7 @@ export class MemoryWorkAdvancedParameterComponent implements OnInit {
 
     ngOnInit(): void {
     }
-    
+
 
     setTextDisplayButton(isEnable : boolean) {
         if (isEnable){

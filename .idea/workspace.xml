@@ -4,8 +4,8 @@
     <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S4 - Make timer position according to quiz">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/AdvancedParamter/FocusWork/FocusWorkAdvancedParameter.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/AdvancedParamter/FocusWork/FocusWorkAdvancedParameter.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/AdvancedParamter/FocusWork/FocusWorkAdvancedParameter.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/AdvancedParamter/FocusWork/FocusWorkAdvancedParameter.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/AdvancedParamter/FocusWork/FocusWorkAdvancedParameter.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/AdvancedParamter/FocusWork/FocusWorkAdvancedParameter.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/AdvancedParamter/MemoryWork/MemoryWorkAdvancedParameter.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/AdvancedParamter/MemoryWork/MemoryWorkAdvancedParameter.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/mocks/question.mock.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/mocks/question.mock.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
