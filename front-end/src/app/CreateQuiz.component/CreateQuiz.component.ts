@@ -3,6 +3,8 @@ import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angul
 import { GameService } from "../../services/GameService";
 import {Quiz} from "../../models/quiz.model";
 import {QuizService} from "../../services/QuizService";
+import {Router} from "@angular/router";
+import {QuestionService} from "../../services/QuestionService";
 
 @Component({
     selector: 'app-CreateQuiz',
@@ -11,11 +13,17 @@ import {QuizService} from "../../services/QuizService";
 })
 
 export class CreateQuiz implements OnInit {
-
+  currentQuestion: number = 1;
   public quizForm: FormGroup;
-  public theme_list = ['Actor', 'Sport', 'Music', 'Movie', 'TV Show', 'Video Game', 'Other'];
+  public theme_list = ['Acteur', 'Sport', 'Musique', 'Film', 'Séries Télévisées', 'Jeux vidéos', 'Autre'];
+  numberOfQuestions: number = 0;
+  buttons: number[] = [];
+  blueButton: number = 1; // par défaut, le premier bouton est en bleu
 
-  constructor(public formBuilder: FormBuilder, public quizService: QuizService) {
+
+
+
+  constructor(public formBuilder: FormBuilder, public quizService: QuizService,public questionService: QuestionService){
     // Form creation
     this.quizForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -23,54 +31,48 @@ export class CreateQuiz implements OnInit {
       questions: this.formBuilder.array([
         this.formBuilder.control('')
       ]),
-      answers: this.formBuilder.array([
-        this.formBuilder.group({isCorrect: false, answer: ''})
-      ])
     });
   }
+
+  onSelect() {
+    this.buttons = Array.from({length: this.numberOfQuestions}, (_, i) => i + 1);
+    //1 question vide par défaut
+  }
+
+
+  onClick(buttonNumber: number) {
+    this.currentQuestion = buttonNumber;
+    this.blueButton = buttonNumber;
+    console.log(`Bouton ${buttonNumber} cliqué.`);
+    console.log(this.currentQuestion);
+    console.log("nombre de questions actuel " + this.quizForm.value.questions.length);
+
+  }
+
+  createQuiz() {
+    //supprime la 1ère question qui est vide
+    this.quizForm.value.questions.splice(0, 1);
+    const quiz = {
+      name: this.quizForm.value.name,
+      theme: this.quizForm.value.theme,
+      questions: this.questionService.questions,
+      id: "0",
+    } as Quiz;
+    this.quizService.addQuiz(quiz);
+    console.log(quiz);
+    this.quizForm.reset();
+    this.questionService.resetQuestions();
+  }
+
+  nextQuestion() {
+    if (this.quizForm.value.questions.length < this.numberOfQuestions+1) {
+      this.currentQuestion++;
+      this.onClick(this.currentQuestion);
+    }
+  }
+
 
   ngOnInit() {
   }
-
-  addQuiz() {
-    const quiz = {
-      name: this.quizForm.value.name,
-      id: this.quizForm.value.id,
-      theme: this.quizForm.value.theme,
-      questions: this.quizForm.value.questions,
-      answers: this.quizForm.value.answers
-    } as Quiz;
-    this.quizService.addQuiz(quiz);
-    this.quizForm.reset();
-  }
-
-  addQuestion() {
-    const questionControl = this.formBuilder.control('');
-    const questionsArray = this.quizForm.controls['questions'] as FormArray;
-    questionsArray.push(questionControl);
-  }
-
-  addAnswer() {
-    const answer = this.formBuilder.group({
-      isCorrect: false,
-      answer: ''
-    });
-    const answersArray = this.quizForm.get('answers') as FormArray;
-    answersArray.push(answer);
-  }
-
-
-  trackByFn(index: number, question: FormControl) {
-    return index;
-  }
-
-  setFalse(index: number) {
-    this.quizForm.get('answers')?.get(String(index))?.get('isCorrect')?.setValue(false);
-  }
-
-  setTrue(index: number) {
-    this.quizForm.get('answers')?.get(String(index))?.get('isCorrect')?.setValue(true);
-  }
-
 
 }
