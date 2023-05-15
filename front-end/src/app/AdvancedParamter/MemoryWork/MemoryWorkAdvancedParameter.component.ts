@@ -55,7 +55,6 @@ export class MemoryWorkAdvancedParameterComponent implements OnInit {
     }
 
     public switchCurrentPuzzle(){
-      console.log("aaaaaaa");
       this.advancedParameterService.switchCurrentPuzzle();
     }
 
@@ -73,8 +72,8 @@ export class MemoryWorkAdvancedParameterComponent implements OnInit {
 
     setTextDisplayButton(isEnable : boolean) {
         if (isEnable){
-            return "Activé"; //We print the state of the button
+            return "Désactiver"; //We print the state of the button
         }
-        return "Desactivé"; //We print the state of the button
+        return "Activer"; //We print the state of the button
     }
 }
