@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 import { AdvancedParameterFocusWork } from 'src/models/Parameter/advancedParameter.model';
 import { AdvancedParameterService } from 'src/services/Parameter/AdvancedParameterService';
 
@@ -26,8 +26,7 @@ export class FocusWorkAdvancedParameterComponent implements OnInit {
 
 
 
-    constructor(
-        private advancedParameterService: AdvancedParameterService) {
+    constructor(private advancedParameterService: AdvancedParameterService) {
         this.advancedParameterService.currentBackGround$.subscribe((currentBackGround: AdvancedParameterFocusWork['background']) => {
             this.backgroundIsEnable = currentBackGround;
             this.textDisplayBackgroundButton = this.setTextDisplayButton(this.backgroundIsEnable)
@@ -65,21 +64,21 @@ export class FocusWorkAdvancedParameterComponent implements OnInit {
     }
 
     switchCurrentWrongAnswerAnimation(){
-        this.advancedParameterService.switchCurrentWrongAnswerAnimatino()
+        this.advancedParameterService.switchCurrentWrongAnswerAnimatinon()
     }
 
     setTextDisplayButton(isEnable : boolean) {
         if (isEnable){
-            return "Activé" //We print the state of the button
+            return "Désactiver"; //We print the state of the button
         }
-        return "Desactivé" //We print the state of the button
+        return "Activer"; //We print the state of the button
     }
 
     toggleSVG() {
         this.svgActif = !this.svgActif;
         this.advancedParameterService.setSvgActif(this.svgActif);
         if (this.toggleButton) {
-          this.toggleButton.nativeElement.innerText = this.svgActif ? 'Sombre' : 'Clair';
+          this.toggleButton.nativeElement.innerText = this.svgActif ? 'Clair' : 'Sombre';
         }
         console.log("svg : " + this.svgActif);
     }

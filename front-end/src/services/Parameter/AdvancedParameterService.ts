@@ -110,23 +110,26 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
     }
 
     switchCurrentPuzzle() {
-      console.log("rrrrr");
       this.currentPuzzle = !this.currentPuzzle;
+      console.log(this.currentPuzzle);
       this.currentPuzzle$.next(this.currentPuzzle);
     }
 
     switchCurrentReflection() {
       this.currentReflection = !this.currentReflection;
+      console.log(this.currentReflection);
       this.currentReflection$.next(this.currentReflection);
     }
 
     switchCurrentMemory() {
       this.currentMemory = !this.currentMemory;
+      console.log(this.currentMemory);
       this.currentMemory$.next(this.currentMemory);
     }
 
     switchCurrentLogic() {
       this.currentLogic = !this.currentLogic;
+      console.log(this.currentLogic);
       this.currentLogic$.next(this.currentLogic);
     }
 
@@ -139,16 +142,19 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
 
     switchCurrentQuestionAnimation() {
       this.currentQuestionAnimation = !this.currentQuestionAnimation;
+      console.log(this.currentQuestionAnimation);
       this.currentQuestionAnimation$.next(this.currentQuestionAnimation);
     }
 
     switchCurrentRightAnswerAnimation() {
       this.currentRightAnswerAnimation = !this.currentRightAnswerAnimation;
+      console.log(this.currentRightAnswerAnimation);
       this.currentRightAnswerAnimation$.next(this.currentRightAnswerAnimation);
     }
 
-    switchCurrentWrongAnswerAnimatino() {
+    switchCurrentWrongAnswerAnimatinon() {
       this.currentWrongAnswerAnimation = !this.currentWrongAnswerAnimation;
+      console.log(this.currentWrongAnswerAnimation);
       this.currentWrongAnswerAnimation$.next(this.currentWrongAnswerAnimation);
     }
 
