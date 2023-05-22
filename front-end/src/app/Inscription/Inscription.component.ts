@@ -23,6 +23,7 @@ export class InscriptionComponent implements OnInit {
   previousUrl: string = "";
   public pathImgPassword : string = "../../../assets/connexion/hiddenEye.png";
   public typePassword : string = "password";
+  public warningMsgId : string = "";
 
   constructor (private location: Location,
                private router: Router,
@@ -143,7 +144,12 @@ export class InscriptionComponent implements OnInit {
     } else {
       elementWarningMSGName.style.visibility = 'hidden';
     }
-    if (this.userService.getAllUserDict().hasOwnProperty(this.inscriptionForm.value.id)) {
+    if (this.inscriptionForm.value.id.length < 1) {
+      this.warningMsgId = "L'identifiant doit faire au moins 1 caractère";
+      elementWarningMSGId.style.visibility = 'visible';
+      isGood = false;
+    } else if (this.userService.getAllUserDict().hasOwnProperty(this.inscriptionForm.value.id)) {
+      this.warningMsgId = "L'identifiant existe déjà";
       elementWarningMSGId.style.visibility = 'visible';
       isGood = false;
     } else {

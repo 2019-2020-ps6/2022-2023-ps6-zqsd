@@ -24,7 +24,7 @@
         <input class="inscription-connexion text_displayed" type="text" id="inscription-id" [formControlName]="'id'" placeholder="Ecrivez ici">
       </div>
       <div class="parent-div-inscription-warning-text">
-        <div class="inscription-warning-text" id="inscription-warning-msg-id">L'identifiant existe déjà</div>
+        <div class="inscription-warning-text" id="inscription-warning-msg-id">{{warningMsgId}}</div>
       </div>
     </div>
     <div>
@@ -68,7 +68,7 @@
         </button>
       </div>
       <div class="inscription-element" id="lastButtonNav">
-        <button routerLink="/ConnexionPage" id="inscription-inscription-button" class="inscription-button" (click)="clickOnInscription()" (mouseleave)="resetDefaultBackgroundButton('#inscription-inscription-button')" (mouseenter)="changeBackgroundButton('#inscription-inscription-button')">
+        <button id="inscription-inscription-button" class="inscription-button" (click)="clickOnInscription()" (mouseleave)="resetDefaultBackgroundButton('#inscription-inscription-button')" (mouseenter)="changeBackgroundButton('#inscription-inscription-button')">
           <div class="inscription-displayText text_displayed button_navigation">
             Inscription
           </div>
