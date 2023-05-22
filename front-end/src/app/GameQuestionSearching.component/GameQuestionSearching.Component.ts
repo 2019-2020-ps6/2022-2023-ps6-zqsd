@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { GameService } from '../../services/GameService';
 import { Question,Answer } from '../../models/Question.model';
 import { QuestionQuizz } from '../../mocks/question.mock';
+import { AdvancedParameterService } from 'src/services/Parameter/AdvancedParameterService';
 
 @Component({
   selector: 'app-game-question-searching',
@@ -15,9 +16,10 @@ export class GameQuestionSearchingComponent implements OnInit {
   @Input() currentQuestion: Question|undefined;
   showResult =false;
   @Output() answerEvent: EventEmitter<boolean>= new EventEmitter<boolean>();
+  public enableAnimationQuestion : boolean = true;
 
 
-  constructor(private gameService: GameService) {
+  constructor(private gameService: GameService, private advPService : AdvancedParameterService) {
 
   }
 
@@ -36,7 +38,9 @@ export class GameQuestionSearchingComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.advPService.getCurrentQuestionAnimationOBS().subscribe((enable) => {
+      this.enableAnimationQuestion = enable;
+    })
   }
 
 }

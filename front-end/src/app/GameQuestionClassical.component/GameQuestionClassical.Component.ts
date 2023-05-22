@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output, ElementRef, QueryList, 
 import { GameService } from '../../services/GameService';
 import { Question, Answer } from '../../models/Question.model';
 import { QuestionQuizz } from '../../mocks/question.mock';
+import { AdvancedParameterService } from 'src/services/Parameter/AdvancedParameterService';
 
 @Component({
   selector: 'app-game-question-classical',
@@ -16,8 +17,10 @@ export class GameQuestionComponent implements OnInit{
 
   @ViewChildren('gameAnswer') gameAnswers: QueryList<ElementRef>;
 
+  public enableAnimationQuestion : boolean = true;
 
-  constructor(private gameService: GameService) {
+
+  constructor(private gameService: GameService, private advPService : AdvancedParameterService) {
     this.gameAnswers = new QueryList<ElementRef>();
   }
 
@@ -35,6 +38,9 @@ export class GameQuestionComponent implements OnInit{
 
 
   ngOnInit() {
+    this.advPService.getCurrentQuestionAnimationOBS().subscribe((enable) => {
+      this.enableAnimationQuestion = enable;
+    })
   }
 
 }

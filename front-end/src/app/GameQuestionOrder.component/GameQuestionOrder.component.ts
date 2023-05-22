@@ -3,6 +3,7 @@ import { GameService } from '../../services/GameService';
 import { Question, Answer } from '../../models/Question.model';
 import { QuestionQuizz } from '../../mocks/question.mock';
 import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
+import { AdvancedParameterService } from 'src/services/Parameter/AdvancedParameterService';
 import * as _ from 'underscore';
 
 @Component({
@@ -16,8 +17,9 @@ export class GameQuestionOrderComponent implements OnInit {
   showResult =false;
   @Output() answerEvent: EventEmitter<boolean>= new EventEmitter<boolean>();
   answers: Answer[] = [];
+  public enableAnimationQuestion : boolean = true;
 
-  constructor(private gameService: GameService,) {}
+  constructor(private gameService: GameService, private advPService : AdvancedParameterService) {}
 
 
 
@@ -38,6 +40,9 @@ export class GameQuestionOrderComponent implements OnInit {
       this.answers = [...this.currentQuestion?.answers];
       this.answers = _.shuffle(this.answers);
     }
+    this.advPService.getCurrentQuestionAnimationOBS().subscribe((enable) => {
+      this.enableAnimationQuestion = enable;
+    })
   }
 }
 
