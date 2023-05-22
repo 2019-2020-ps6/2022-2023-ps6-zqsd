@@ -1,7 +1,7 @@
 @import "src/scss/connexion-variable";
 
 
-.form-forgetpassword {
+.form-inscription {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
   width: 100%;
 }
 
-.forgetpassword-input-section {
+.inscription-input-section {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -20,7 +20,7 @@
 }
 
 
-.forgetpassword-warning-text {
+.inscription-warning-text {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -39,7 +39,7 @@
 }
 
 
-.forgetpassword-element {
+.inscription-element {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -49,7 +49,7 @@
 }
 
 
-.forgetpassword-displayText-input {
+.inscription-displayText-input {
   margin: 0 0 0 0;
   padding: $connexion-padding-top-bot 25px $connexion-padding-top-bot 15px;
   border: 1px solid black;
@@ -62,7 +62,7 @@
 
 
 
-.forgetpassword-connexion {
+.inscription-connexion {
   padding: $connexion-padding-top-bot 0 $connexion-padding-top-bot 0;
   text-align: center;
   transform: translateX(-25px);
@@ -71,7 +71,7 @@
   border: 2px solid black;
 }
 
-.forgetpassword-button {
+.inscription-button {
   padding: $connexion-padding-top-bot 25px $connexion-padding-top-bot 25px;
   margin : 0 0 0 0;
   border-radius: 20px;
@@ -82,7 +82,7 @@
   background-color: rgba(30,30,30,1);
 }
 
-#forgetpassword_navigate_button {
+#inscription_navigate_button {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -95,12 +95,12 @@
   align-items: center;
 }
 
-#forgetpassword-mot-de-passe-oublie-button {
+#inscription-mot-de-passe-oublie-button {
   margin : 15px 0 0 0;
 }
 
 
-#forgetpassword-warning-msg-name {
+#inscription-warning-msg-name {
   visibility: hidden;
 }
 
@@ -113,11 +113,11 @@
   height: 50px;
 }
 
-#forgetpassword-warning-msg-surname {
+#inscription-warning-msg-surname {
   visibility: hidden;
 }
 
-#forgetpassword-warning-msg-id {
+#inscription-warning-msg-id {
   visibility: hidden;
 }
 

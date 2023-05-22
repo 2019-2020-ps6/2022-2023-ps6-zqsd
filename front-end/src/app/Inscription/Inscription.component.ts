@@ -51,7 +51,7 @@ export class InscriptionComponent implements OnInit {
   }
 
   setSizeText() {
-    this.elementRef.nativeElement.querySelector('.form-forgetpassword').style.top = this.topForm + 'px';
+    this.elementRef.nativeElement.querySelector('.form-inscription').style.top = this.topForm + 'px';
     const elements = this.elementRef.nativeElement.querySelectorAll('.text_displayed');
     elements.forEach((element: HTMLElement) => {
       element.style.fontSize = this.sizeText + 'px';
@@ -122,11 +122,11 @@ export class InscriptionComponent implements OnInit {
   //TODO
   clickOnInscription() {
     var isGood : boolean = true;
-    const elementWarningMSGName = this.elementRef.nativeElement.querySelector('#forgetpassword-warning-msg-name');
+    const elementWarningMSGName = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-name');
     const elementWarningMSGPassword = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-password');
     const elementWarningMSGRPassword = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-Rpassword');
-    const elementWarningMSGSurname = this.elementRef.nativeElement.querySelector('#forgetpassword-warning-msg-surname');
-    const elementWarningMSGId = this.elementRef.nativeElement.querySelector('#forgetpassword-warning-msg-id');
+    const elementWarningMSGSurname = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-surname');
+    const elementWarningMSGId = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-id');
     if (this.inscriptionForm.value.surname.length < 3) {
       elementWarningMSGSurname.style.visibility = 'visible';
       isGood = false;
