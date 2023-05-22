@@ -17,23 +17,22 @@ import {filter} from "rxjs/operators";
 
 export class ForgetPasswordComponent implements OnInit {
 
-  public inscriptionForm: FormGroup;
+  public forgetpasswordForm: FormGroup;
   private sizeText: number = PARAMETER.size;
   private topForm : number = 50;
   public pathImgPassword : string = "../../../assets/connexion/hiddenEye.png";
   public typePassword : string = "password";
-  public warningMsgId : string = "";
+  public userPassword : string = "";
+  public leftButtonNav : string = "Confirmer";
 
   constructor (private location: Location,
                private router: Router,
                public formBuilder: FormBuilder, public userService: UserService,
                private elementRef: ElementRef, public parameterService : ParameterService) {
-    this.inscriptionForm = this.formBuilder.group({
+    this.forgetpasswordForm = this.formBuilder.group({
       surname: ['', Validators.required],
       name: ['', Validators.required],
       id: ['', Validators.required],
-      password: ['', Validators.required],
-      Rpassword: ['', Validators.required],
     });
     this.parameterService.currentSize$.subscribe((size: number) => {
       this.sizeText = size;
@@ -47,7 +46,6 @@ export class ForgetPasswordComponent implements OnInit {
 
   ngAfterViewInit(): void {
     this.setSizeText();
-    this.gestionnaryImgPassword();
   }
 
   setSizeText() {
@@ -62,45 +60,23 @@ export class ForgetPasswordComponent implements OnInit {
 
 
   gestionnaryLengthDisplayTextForInput() {
-    const width_display_name = this.elementRef.nativeElement.querySelector('#inscription-name_display').offsetWidth;
-    const width_display_password = this.elementRef.nativeElement.querySelector('#inscription-password_display').offsetWidth;
-    const width_displaysurname = this.elementRef.nativeElement.querySelector('#inscription-surname_display').offsetWidth;
-    const width_display_Rpassword = this.elementRef.nativeElement.querySelector('#inscription-Rpassword_display').offsetWidth;
-    const width_display_id = this.elementRef.nativeElement.querySelector('#inscription-id_display').offsetWidth;
-    const width_max_display = Math.max(width_display_name, width_display_password, width_displaysurname, width_display_Rpassword, width_display_id);
-    this.elementRef.nativeElement.querySelector('#inscription-name_display').style.width = width_max_display + 'px';
-    this.elementRef.nativeElement.querySelector('#inscription-password_display').style.width = width_max_display + 'px';
-    this.elementRef.nativeElement.querySelector('#inscription-surname_display').style.width = width_max_display + 'px';
-    this.elementRef.nativeElement.querySelector('#inscription-Rpassword_display').style.width = width_max_display + 'px';
-    this.elementRef.nativeElement.querySelector('#inscription-id_display').style.width = width_max_display + 'px';
+    const width_display_name = this.elementRef.nativeElement.querySelector('#forgetpassword-name_display').offsetWidth;
+    const width_displaysurname = this.elementRef.nativeElement.querySelector('#forgetpassword-surname_display').offsetWidth;
+    const width_display_id = this.elementRef.nativeElement.querySelector('#forgetpassword-id_display').offsetWidth;
+    const width_max_display = Math.max(width_display_name, width_displaysurname, width_display_id);
+    this.elementRef.nativeElement.querySelector('#forgetpassword-name_display').style.width = width_max_display + 'px';
+    this.elementRef.nativeElement.querySelector('#forgetpassword-surname_display').style.width = width_max_display + 'px';
+    this.elementRef.nativeElement.querySelector('#forgetpassword-id_display').style.width = width_max_display + 'px';
   }
 
   gestionnaryLengthDisplayButtonNavigation() {
-    const width_display_back = this.elementRef.nativeElement.querySelector('#inscription-leave-button').offsetWidth;
-    const width_display_logIn = this.elementRef.nativeElement.querySelector('#inscription-logIN-button').offsetWidth;
-    const width_display_Inscription = this.elementRef.nativeElement.querySelector('#inscription-inscription-button').offsetWidth;
+    const width_display_back = this.elementRef.nativeElement.querySelector('#forgetpassword-leave-button').offsetWidth;
+    const width_display_logIn = this.elementRef.nativeElement.querySelector('#forgetpassword-logIN-button').offsetWidth;
+    const width_display_Inscription = this.elementRef.nativeElement.querySelector('#forgetpassword-inscription-button').offsetWidth;
     const width_max_display = Math.max(width_display_back, width_display_logIn, width_display_Inscription);
-    this.elementRef.nativeElement.querySelector('#inscription-leave-button').style.width = width_max_display + 'px';
-    this.elementRef.nativeElement.querySelector('#inscription-logIN-button').style.width = width_max_display + 'px';
-    this.elementRef.nativeElement.querySelector('#inscription-inscription-button').style.width = width_max_display + 'px';
-  }
-
-  gestionnaryImgPassword() {
-    const elementInputPassword = this.elementRef.nativeElement.querySelector('#inscription-password');
-    const elementInputRPassword = this.elementRef.nativeElement.querySelector('#inscription-Rpassword');
-    const elementPasswordBounding = elementInputPassword.getBoundingClientRect();
-    const elementRPasswordBounding = elementInputRPassword.getBoundingClientRect();
-    const heightInputPassword = elementInputPassword.offsetHeight;
-    const topInputPassword = elementPasswordBounding.top;
-    const topInputRPassword = elementRPasswordBounding.top;
-    const widthInputPassword = elementInputPassword.offsetWidth;
-    const leftInputPassword = elementInputPassword.offsetLeft;
-    const element = this.elementRef.nativeElement.querySelector('#inscription-image-password-eye');
-    if (element) {
-      element.style.height = (heightInputPassword) + 'px';
-      element.style.left = (widthInputPassword+leftInputPassword) + 'px';
-      element.style.top = (topInputRPassword-topInputPassword-heightInputPassword) + 'px';
-    }
+    this.elementRef.nativeElement.querySelector('#forgetpassword-leave-button').style.width = width_max_display + 'px';
+    this.elementRef.nativeElement.querySelector('#forgetpassword-logIN-button').style.width = width_max_display + 'px';
+    this.elementRef.nativeElement.querySelector('#forgetpassword-inscription-button').style.width = width_max_display + 'px';
   }
 
 
@@ -119,71 +95,26 @@ export class ForgetPasswordComponent implements OnInit {
     }
   }
 
-  //TODO
   clickOnInscription() {
-    var isGood : boolean = true;
-    const elementWarningMSGName = this.elementRef.nativeElement.querySelector('#forgetpassword-warning-msg-name');
-    const elementWarningMSGPassword = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-password');
-    const elementWarningMSGRPassword = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-Rpassword');
-    const elementWarningMSGSurname = this.elementRef.nativeElement.querySelector('#forgetpassword-warning-msg-surname');
-    const elementWarningMSGId = this.elementRef.nativeElement.querySelector('#forgetpassword-warning-msg-id');
-    if (this.inscriptionForm.value.surname.length < 3) {
-      elementWarningMSGSurname.style.visibility = 'visible';
-      isGood = false;
-    } else {
-      elementWarningMSGSurname.style.visibility = 'hidden';
-    }
-    if (this.inscriptionForm.value.name.length < 1) {
-      elementWarningMSGName.style.visibility = 'visible';
-      isGood = false;
-    } else {
-      elementWarningMSGName.style.visibility = 'hidden';
-    }
-    if (this.inscriptionForm.value.id.length < 1) {
-      this.warningMsgId = "L'identifiant doit faire au moins 1 caractère";
-      elementWarningMSGId.style.visibility = 'visible';
-      isGood = false;
-    } else if (this.userService.getAllUserDict().hasOwnProperty(this.inscriptionForm.value.id)) {
-      this.warningMsgId = "L'identifiant existe déjà";
-      elementWarningMSGId.style.visibility = 'visible';
-      isGood = false;
-    } else {
-      elementWarningMSGId.style.visibility = 'hidden';
-    }
-    if (this.inscriptionForm.value.password.length < 6) {
-      elementWarningMSGPassword.style.visibility = 'visible';
-      isGood = false;
-    } else {
-      elementWarningMSGPassword.style.visibility = 'hidden';
-    }
-    if (this.inscriptionForm.value.password != this.inscriptionForm.value.Rpassword) {
-      elementWarningMSGRPassword.style.visibility = 'visible';
-      isGood = false;
-    } else {
-      elementWarningMSGRPassword.style.visibility = 'hidden';
-    }
-    if (isGood) {
-      const newUser = {
-        id : this.inscriptionForm.value.id,
-        prenom : this.inscriptionForm.value.surname,
-        nom : this.inscriptionForm.value.name,
-        identifiant : this.inscriptionForm.value.id,
-        motDePasse : this.inscriptionForm.value.password,
-        status : "user",
+    if (this.leftButtonNav == "Confirmer") {
+      const elementWarningMSGName = this.elementRef.nativeElement.querySelector('#forgetpassword-warning-msg-name');
+      const elementWarningMSGId = this.elementRef.nativeElement.querySelector('#forgetpassword-warning-msg-id');
+      if (this.userService.getAllUserDict().hasOwnProperty(this.forgetpasswordForm.value.id)) {
+        elementWarningMSGId.style.visibility = 'hidden';
+        const userAssociated = this.userService.getAllUserDict()[this.forgetpasswordForm.value.id];
+        if (userAssociated.prenom == this.forgetpasswordForm.value.surname.toLowerCase() && userAssociated.nom == this.forgetpasswordForm.value.name.toLowerCase()) {
+          elementWarningMSGName.style.visibility = 'hidden';
+          this.userPassword = userAssociated.motDePasse;
+          this.elementRef.nativeElement.querySelector('#forgetpassword-show-password-section').style.visibility = 'visible';
+          this.leftButtonNav = "Modifier le mot de passe";
+        } else {
+          elementWarningMSGName.style.visibility = 'visible';
+        }
+      } else {
+        elementWarningMSGId.style.visibility = 'visible';
       }
-      this.userService.addUser(newUser);
-      this.router.navigateByUrl('/ConnexionPage');
-    }
-  }
-
-  clickOnEye() {
-    if (this.pathImgPassword == "../../../assets/connexion/Eye.png") {
-      this.pathImgPassword = "../../../assets/connexion/hiddenEye.png";
-      this.typePassword = "password";
     } else {
-      this.pathImgPassword = "../../../assets/connexion/Eye.png";
-      this.typePassword = "text";
+      this.router.navigate(['/modificatePassword']);
     }
   }
-
 }

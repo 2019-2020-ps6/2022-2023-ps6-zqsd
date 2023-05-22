@@ -14,6 +14,8 @@ import {QuizzListComponent} from "./quizz-list/quizz-list.component";
 import {ConnexionComponent} from "./Connexion/Connexion.component";
 import {CreateQuestion} from "./CreateQuestion.component/CreateQuestion.component";
 import {InscriptionComponent} from "./Inscription/Inscription.component";
+import {ForgetPasswordComponent} from "./ForgetPassword/ForgetPassword.component";
+
 
 const routes: Routes = [
   {
@@ -36,8 +38,9 @@ const routes: Routes = [
   { path: 'ParameterPage', component: ParameterPageComponent },
   { path: 'MemoryWork', component: MemoryWorkAdvancedParameterComponent },
   { path : 'QuizList', component: QuizzListComponent},
-  { path : 'ConnexionPage', component: ConnexionComponent},
+  { path : 'ConnexionPage', component: ForgetPasswordComponent},
   { path : 'inscription', component: InscriptionComponent},
+  { path : 'forgetpassword', component: ForgetPasswordComponent},
 ];
 
 @NgModule({
