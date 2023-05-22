@@ -57,7 +57,7 @@
     </div>
     <div id="inscription_navigate_button">
       <div class="inscription-element" id="firstButtonNav">
-        <button id="inscription-leave-button" class="inscription-button" (click)="clickOnLeave()" (mouseleave)="resetDefaultBackgroundButton('#inscription-leave-button')" (mouseenter)="changeBackgroundButton('#inscription-leave-button')">
+        <button routerLink="/homePage" id="inscription-leave-button" class="inscription-button" (mouseleave)="resetDefaultBackgroundButton('#inscription-leave-button')" (mouseenter)="changeBackgroundButton('#inscription-leave-button')">
           <div class="inscription-displayText text_displayed button_navigation">
             Quitter
           </div>

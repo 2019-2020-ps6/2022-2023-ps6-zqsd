@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Fix bug in scss of connexion #21">
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Update warning message for id #21">
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/Connexion/Connexion.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Connexion/Connexion.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/Connexion/Connexion.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Connexion/Connexion.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/Inscription/Inscription.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Inscription/Inscription.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/Inscription/Inscription.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Inscription/Inscription.component.ts" afterDir="false" />
     </list>
@@ -212,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684784183128</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="S5 - Update warning message for id #21">
+      <created>1684784846452</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1684784846452</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,6 +313,7 @@
     <MESSAGE value="S5 - Add picture to hide/show password #18" />
     <MESSAGE value="S5 - CReate Inscription #21" />
     <MESSAGE value="S5 - Fix bug in scss of connexion #21" />
-    <option name="LAST_COMMIT_MESSAGE" value="S5 - Fix bug in scss of connexion #21" />
+    <MESSAGE value="S5 - Update warning message for id #21" />
+    <option name="LAST_COMMIT_MESSAGE" value="S5 - Update warning message for id #21" />
   </component>
 </project>

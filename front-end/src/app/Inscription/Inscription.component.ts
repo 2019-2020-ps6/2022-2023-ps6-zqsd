@@ -20,7 +20,6 @@ export class InscriptionComponent implements OnInit {
   public inscriptionForm: FormGroup;
   private sizeText: number = PARAMETER.size;
   private topForm : number = 50;
-  previousUrl: string = "";
   public pathImgPassword : string = "../../../assets/connexion/hiddenEye.png";
   public typePassword : string = "password";
   public warningMsgId : string = "";
@@ -29,10 +28,6 @@ export class InscriptionComponent implements OnInit {
                private router: Router,
                public formBuilder: FormBuilder, public userService: UserService,
                private elementRef: ElementRef, public parameterService : ParameterService) {
-      this.router.events.pipe(filter(this.filterEvent)).subscribe((event: NavigationEnd) => {
-        this.previousUrl = (event as NavigationEnd).url;
-      });
-
     this.inscriptionForm = this.formBuilder.group({
       surname: ['', Validators.required],
       name: ['', Validators.required],
@@ -179,19 +174,6 @@ export class InscriptionComponent implements OnInit {
       this.userService.addUser(newUser);
       this.router.navigateByUrl('/ConnexionPage');
     }
-  }
-
-
-  clickOnLeave() {
-    if (this.previousUrl) {
-      this.router.navigateByUrl(this.previousUrl);
-    } else {
-      this.location.back();
-    }
-  }
-
-  filterEvent(event : any) : event is NavigationEnd {
-    return event instanceof NavigationEnd
   }
 
   clickOnEye() {

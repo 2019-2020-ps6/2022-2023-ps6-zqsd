@@ -20,7 +20,6 @@ export class ConnexionComponent implements OnInit {
   public connexionForm: FormGroup;
   private sizeText: number = PARAMETER.size;
   private topForm : number = 50;
-  previousUrl: string = "";
   public pathImgPassword : string = "../../../assets/connexion/hiddenEye.png";
   public typePassword : string = "password";
 
@@ -28,10 +27,6 @@ export class ConnexionComponent implements OnInit {
                private router: Router,
                public formBuilder: FormBuilder, public userService: UserService,
                private elementRef: ElementRef, public parameterService : ParameterService) {
-    this.router.events.pipe(filter(this.filterEvent)).subscribe((event: NavigationEnd) => {
-      this.previousUrl = (event as NavigationEnd).url;
-    });
-
     this.connexionForm = this.formBuilder.group({
       name: ['', Validators.required],
       password: ['', Validators.required],
@@ -135,19 +130,6 @@ export class ConnexionComponent implements OnInit {
     } else {
       elementWarningMSGName.style.visibility = 'visible';
     }
-  }
-
-
-  clickOnLeave() {
-    if (this.previousUrl) {
-      this.router.navigateByUrl(this.previousUrl);
-    } else {
-      this.location.back();
-    }
-  }
-
-  filterEvent(event : any) : event is NavigationEnd {
-    return event instanceof NavigationEnd
   }
 
   clickOnEye() {
