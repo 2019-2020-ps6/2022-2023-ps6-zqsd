@@ -1,22 +1,26 @@
-const Joi = require('joi')
-const BaseModel = require('../utils/base-model.js')
+const Joi = require('joi');
+const BaseModel = require('../utils/base-model.js');
 
-module.exports = new BaseModel('Question', {
+const questionSchema = {
   id: Joi.string(),
   label: Joi.string().required(),
   value: Joi.string().required(),
   answers: Joi.array(),
   ImageSearching: Joi.string(),
   answered: Joi.boolean(),
-})
+};
 
-module.exports = new BaseModel('Answer', {
+const answerSchema = {
   label: Joi.string().required(),
   value: Joi.string().required(),
   isCorrect: Joi.boolean(),
   order: Joi.number(),
-})
+};
 
-module.exports = new BaseModel('TextSearching', {
+const textSearchingSchema = {
   value: Joi.string().required(),
-})
+};
+
+module.exports.questionModel = new BaseModel('Question', questionSchema);
+module.exports.answerModel = new BaseModel('Answer', answerSchema);
+module.exports.textSearchingModel = new BaseModel('TextSearching', textSearchingSchema);
