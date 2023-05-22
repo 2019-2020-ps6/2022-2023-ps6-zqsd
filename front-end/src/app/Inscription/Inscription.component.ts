@@ -164,9 +164,9 @@ export class InscriptionComponent implements OnInit {
     }
     if (isGood) {
       const newUser = {
-        id : this.inscriptionForm.value.id,
-        prenom : this.inscriptionForm.value.surname,
-        nom : this.inscriptionForm.value.name,
+        id : Object.keys(this.userService.getAllUserDict()).length.toString(),
+        prenom : this.inscriptionForm.value.surname.toLowerCase(),
+        nom : this.inscriptionForm.value.name.toLowerCase(),
         identifiant : this.inscriptionForm.value.id,
         motDePasse : this.inscriptionForm.value.password,
         status : "user",
