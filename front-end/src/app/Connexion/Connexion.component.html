@@ -13,6 +13,7 @@
       <div class="connexion-input-section connexion-element" id="connexion-input-section-password">
         <div class="connexion-displayText-input text_displayed" id="connexion-password_display">Mot de passe</div>
         <input class="input-connexion text_displayed" type="password" id="connexion-password" [formControlName]="'password'" placeholder="Ecrivez ici">
+        <img id="connexion-image-password-eye" [src]="pathImgPassword" (click)="clickOnEye()">
       </div>
       <div class="parent-div-connection-warning-text">
         <div class="connection-warning-text" id="connection-warning-msg-password">Le mot de passe est incorrect</div>

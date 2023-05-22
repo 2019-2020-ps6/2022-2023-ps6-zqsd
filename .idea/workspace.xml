@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Create Connexion page">
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Add warning msg #18">
+      <change afterPath="$PROJECT_DIR$/front-end/src/assets/connexion/Eye.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/assets/connexion/hiddenEye.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/Connexion/Connexion.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Connexion/Connexion.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/Connexion/Connexion.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Connexion/Connexion.component.scss" afterDir="false" />
@@ -59,7 +61,7 @@
       <workItem from="1683664850970" duration="808000" />
       <workItem from="1683752106980" duration="2626000" />
       <workItem from="1684136204752" duration="20381000" />
-      <workItem from="1684588719811" duration="17279000" />
+      <workItem from="1684588719811" duration="18923000" />
     </task>
     <task id="LOCAL-00001" summary="S1 - Merge Master into Parameter #9">
       <created>1680262725544</created>
@@ -180,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684748372249</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="S5 - Add warning msg #18">
+      <created>1684753189848</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1684753189848</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +272,7 @@
     <MESSAGE value="S5 - FIx bug in package.json" />
     <MESSAGE value="S5 - Fix part of bug by skipping question" />
     <MESSAGE value="S5 - Create Connexion page" />
-    <option name="LAST_COMMIT_MESSAGE" value="S5 - Create Connexion page" />
+    <MESSAGE value="S5 - Add warning msg #18" />
+    <option name="LAST_COMMIT_MESSAGE" value="S5 - Add warning msg #18" />
   </component>
 </project>

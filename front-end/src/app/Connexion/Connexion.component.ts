@@ -21,6 +21,7 @@ export class ConnexionComponent implements OnInit {
   private sizeText: number = PARAMETER.size;
   private topForm : number = 50;
   previousUrl: string = "";
+  public pathImgPassword : string = "../../../assets/connexion/Eye.png";
 
   constructor (private location: Location,
                private router: Router,
@@ -46,6 +47,7 @@ export class ConnexionComponent implements OnInit {
 
   ngAfterViewInit(): void {
     this.setSizeText();
+    this.gestionnaryImgPassword();
   }
 
   setSizeText() {
@@ -86,6 +88,18 @@ export class ConnexionComponent implements OnInit {
     if (element) {
       const heightHeader = element.offsetHeight
       this.elementRef.nativeElement.querySelector('#connexion_navigate_button').style.top = (heightWindow - topNavigation - NavigationHeight - 50 - heightHeader - this.topForm) + 'px';
+    }
+  }
+
+  gestionnaryImgPassword() {
+    const heightInputPassword = this.elementRef.nativeElement.querySelector('#connexion-password').offsetHeight;
+    const element = this.elementRef.nativeElement.querySelector('#connexion-image-password-eye');
+    const widthInputPassword = this.elementRef.nativeElement.querySelector('#connexion-password').offsetWidth;
+    const leftInputPassword = this.elementRef.nativeElement.querySelector('#connexion-password').offsetLeft;
+
+    if (element) {
+      element.style.height = heightInputPassword + 'px';
+      element.style.left = (widthInputPassword+leftInputPassword) + 'px';
     }
   }
 
@@ -134,6 +148,14 @@ export class ConnexionComponent implements OnInit {
 
   filterEvent(event : any) : event is NavigationEnd {
     return event instanceof NavigationEnd
+  }
+
+  clickOnEye() {
+    if (this.pathImgPassword == "../../../assets/connexion/Eye.png") {
+      this.pathImgPassword = "../../../assets/connexion/hiddenEye.png";
+    } else {
+      this.pathImgPassword = "../../../assets/connexion/Eye.png";
+    }
   }
 
 }
