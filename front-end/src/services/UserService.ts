@@ -32,6 +32,11 @@ export class UserService {
     this.actualUser$.next(this.actualUser);
   }
 
+  addUser(user: User) {
+    this.allUSerDict[user.id] = user;
+    this.allUserDict$.next(this.allUSerDict);
+  }
+
 
 
 

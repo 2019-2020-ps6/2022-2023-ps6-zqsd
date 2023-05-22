@@ -33,8 +33,11 @@ export class InscriptionComponent implements OnInit {
       });
 
     this.inscriptionForm = this.formBuilder.group({
+      surname: ['', Validators.required],
       name: ['', Validators.required],
+      id: ['', Validators.required],
       password: ['', Validators.required],
+      Rpassword: ['', Validators.required],
     });
     this.parameterService.currentSize$.subscribe((size: number) => {
       this.sizeText = size;
@@ -122,19 +125,53 @@ export class InscriptionComponent implements OnInit {
 
   //TODO
   clickOnInscription() {
+    var isGood : boolean = true;
     const elementWarningMSGName = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-name');
     const elementWarningMSGPassword = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-password');
-    if (this.userService.getAllUserDict().hasOwnProperty(this.inscriptionForm.value.name)) {
-      elementWarningMSGName.style.visibility = 'hidden';
-      if (this.userService.getAllUserDict()[this.inscriptionForm.value.name].motDePasse == this.inscriptionForm.value.password) {
-        elementWarningMSGPassword.style.visibility = 'hidden';
-        this.userService.changeUser(this.inscriptionForm.value.name);
-        this.router.navigateByUrl('/homePage');
-      } else {
-        elementWarningMSGPassword.style.visibility = 'visible';
-      }
+    const elementWarningMSGRPassword = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-Rpassword');
+    const elementWarningMSGSurname = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-surname');
+    const elementWarningMSGId = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-id');
+    if (this.inscriptionForm.value.surname.length < 3) {
+      elementWarningMSGSurname.style.visibility = 'visible';
+      isGood = false;
     } else {
+      elementWarningMSGSurname.style.visibility = 'hidden';
+    }
+    if (this.inscriptionForm.value.name.length < 1) {
       elementWarningMSGName.style.visibility = 'visible';
+      isGood = false;
+    } else {
+      elementWarningMSGName.style.visibility = 'hidden';
+    }
+    if (this.userService.getAllUserDict().hasOwnProperty(this.inscriptionForm.value.id)) {
+      elementWarningMSGId.style.visibility = 'visible';
+      isGood = false;
+    } else {
+      elementWarningMSGId.style.visibility = 'hidden';
+    }
+    if (this.inscriptionForm.value.password.length < 6) {
+      elementWarningMSGPassword.style.visibility = 'visible';
+      isGood = false;
+    } else {
+      elementWarningMSGPassword.style.visibility = 'hidden';
+    }
+    if (this.inscriptionForm.value.password != this.inscriptionForm.value.Rpassword) {
+      elementWarningMSGRPassword.style.visibility = 'visible';
+      isGood = false;
+    } else {
+      elementWarningMSGRPassword.style.visibility = 'hidden';
+    }
+    if (isGood) {
+      const newUser = {
+        id : this.inscriptionForm.value.id,
+        prenom : this.inscriptionForm.value.surname,
+        nom : this.inscriptionForm.value.name,
+        identifiant : this.inscriptionForm.value.id,
+        motDePasse : this.inscriptionForm.value.password,
+        status : "user",
+      }
+      this.userService.addUser(newUser);
+      this.router.navigateByUrl('/ConnexionPage');
     }
   }
 
