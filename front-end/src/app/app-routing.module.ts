@@ -13,6 +13,7 @@ import {ResultsComponent} from "./results/results.component";
 import {QuizzListComponent} from "./quizz-list/quizz-list.component";
 import {ConnexionComponent} from "./Connexion/Connexion.component";
 import {CreateQuestion} from "./CreateQuestion.component/CreateQuestion.component";
+import {InscriptionComponent} from "./Inscription/Inscription.component";
 
 const routes: Routes = [
   {
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: 'MemoryWork', component: MemoryWorkAdvancedParameterComponent },
   { path : 'QuizList', component: QuizzListComponent},
   { path : 'ConnexionPage', component: ConnexionComponent},
+  { path : 'inscription', component: InscriptionComponent},
 ];
 
 @NgModule({

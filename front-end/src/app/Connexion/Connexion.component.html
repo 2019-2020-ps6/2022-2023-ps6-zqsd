@@ -28,7 +28,7 @@
     </div>
     <div id="connexion_navigate_button">
       <div class="connexion-element" (mouseleave)="resetDefaultBackgroundButton('#connexion-leave-button')" (mouseenter)="changeBackgroundButton('#connexion-leave-button')">
-        <button id="connexion-leave-button" class="connexion-button" (click)="clickOnLeave()">
+        <button routerLink="/homePage" id="connexion-leave-button" class="connexion-button">
           <div class="connexion-displayText text_displayed button_navigation">
             Quitter
           </div>
@@ -42,7 +42,7 @@
         </button>
       </div>
       <div class="connexion-element" (mouseleave)="resetDefaultBackgroundButton('#connexion-inscription-button')" (mouseenter)="changeBackgroundButton('#connexion-inscription-button')">
-        <button routerLink="" id="connexion-inscription-button" class="connexion-button">
+        <button routerLink="/inscription" id="connexion-inscription-button" class="connexion-button">
           <div class="connexion-displayText text_displayed button_navigation">
             Inscription
           </div>

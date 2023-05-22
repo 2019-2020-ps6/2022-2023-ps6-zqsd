@@ -1,0 +1,142 @@
+@import "src/scss/connexion-variable";
+
+
+.form-inscription {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.inscription-input-section {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0 10px 0;
+  margin: 15px 0 0px 0;
+  justify-content: center; /* centre horizontalement */
+  align-items: center; /* centre verticalement */
+}
+
+
+.inscription-warning-text {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 15px 0;
+  justify-content: center; /* centre horizontalement */
+  align-items: center; /* centre verticalement */
+  color: red;
+  font-style: italic;
+  background-color: rgba(255,255,255,0.5);
+  left : 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  height: fit-content;
+  padding: 0 10px 0 10px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+
+.inscription-element {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* centre horizontalement */
+  align-items: center; /* centre verticalement */
+  width : 100%;
+}
+
+
+.inscription-displayText-input {
+  margin: 0 0 0 0;
+  padding: $connexion-padding-top-bot 25px $connexion-padding-top-bot 15px;
+  border: 1px solid black;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #196229;
+  color : white;
+  font-style: italic;
+}
+
+
+
+.inscription-connexion {
+  padding: $connexion-padding-top-bot 0 $connexion-padding-top-bot 0;
+  text-align: center;
+  transform: translateX(-25px);
+  z-index: 1;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.inscription-button {
+  padding: $connexion-padding-top-bot 25px $connexion-padding-top-bot 25px;
+  margin : 0 0 0 0;
+  border-radius: 20px;
+  color: white;
+  text-decoration: underline;
+  border : none;
+  box-shadow: 0 5px 2px #444;
+  background-color: rgba(30,30,30,1);
+}
+
+#inscription_navigate_button {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  top : 100px;
+}
+
+.button_navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#inscription-mot-de-passe-oublie-button {
+  margin : 15px 0 0 0;
+}
+
+
+#inscription-warning-msg-name {
+  visibility: hidden;
+}
+
+#inscription-warning-msg-password {
+  visibility: hidden;
+}
+
+#inscription-image-password-eye {
+  position: absolute;
+  height: 50px;
+}
+
+#inscription-warning-msg-surname {
+  visibility: hidden;
+}
+
+#inscription-warning-msg-id {
+  visibility: hidden;
+}
+
+#inscription-warning-msg-Rpassword {
+  visibility: hidden;
+}
+
+#uselessButton {
+  visibility: hidden;
+  flex : 1;
+  margin-bottom: 50px;
+}
+
+#lastButtonNav {
+  flex : 8;
+  margin-bottom: 50px;
+}
+
+#firstButtonNav {
+  flex : 8;
+  margin-bottom: 50px;
+}

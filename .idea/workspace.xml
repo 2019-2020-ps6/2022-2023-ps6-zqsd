@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Add picture to hide/show password #18">
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Update warning message for id #21">
       <change beforePath="$PROJECT_DIR$/front-end/src/app/Connexion/Connexion.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Connexion/Connexion.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/Connexion/Connexion.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Connexion/Connexion.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/Inscription/Inscription.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Inscription/Inscription.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/Inscription/Inscription.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Inscription/Inscription.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +15,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="fix_skipping_question" />
+        <entry key="$PROJECT_DIR$" value="3682c701989aa05f46cc46bc72e5f17dc0cc3d46" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,20 +31,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Etude/Polytech/POO S6/TD6&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Etude\\Polytech\\PS6\\Projet 6\\2022-2023-ps6-zqsd\\front-end\\node_modules\\typescript\\lib&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Etude/Polytech/POO S6/TD7",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\Etude\\Polytech\\PS6\\Projet 8\\2022-2023-ps6-zqsd\\front-end\\node_modules\\typescript\\lib"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Etude\Polytech\PS6\Projet 7\2022-2023-ps6-zqsd\front-end\src\app\Inscription" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -58,6 +65,7 @@
       <workItem from="1683752106980" duration="2626000" />
       <workItem from="1684136204752" duration="20381000" />
       <workItem from="1684588719811" duration="19246000" />
+      <workItem from="1684757215506" duration="11452000" />
     </task>
     <task id="LOCAL-00001" summary="S1 - Merge Master into Parameter #9">
       <created>1680262725544</created>
@@ -192,7 +200,28 @@
       <option name="project" value="LOCAL" />
       <updated>1684754959472</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="S5 - CReate Inscription #21">
+      <created>1684767844914</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1684767844914</updated>
+    </task>
+    <task id="LOCAL-00021" summary="S5 - Fix bug in scss of connexion #21">
+      <created>1684784183128</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1684784183128</updated>
+    </task>
+    <task id="LOCAL-00022" summary="S5 - Update warning message for id #21">
+      <created>1684784846452</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1684784846452</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +238,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/fix_skipping_question" />
+                        <option value="origin/inscription" />
                       </list>
                     </value>
                   </entry>
@@ -225,6 +254,11 @@
         <entry key="Branch">
           <value>
             <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/inscription" />
+                </option>
+              </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="origin/fix_skipping_question" />
@@ -277,6 +311,9 @@
     <MESSAGE value="S5 - Create Connexion page" />
     <MESSAGE value="S5 - Add warning msg #18" />
     <MESSAGE value="S5 - Add picture to hide/show password #18" />
-    <option name="LAST_COMMIT_MESSAGE" value="S5 - Add picture to hide/show password #18" />
+    <MESSAGE value="S5 - CReate Inscription #21" />
+    <MESSAGE value="S5 - Fix bug in scss of connexion #21" />
+    <MESSAGE value="S5 - Update warning message for id #21" />
+    <option name="LAST_COMMIT_MESSAGE" value="S5 - Update warning message for id #21" />
   </component>
 </project>

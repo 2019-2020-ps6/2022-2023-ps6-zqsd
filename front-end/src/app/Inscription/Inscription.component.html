@@ -1,0 +1,79 @@
+<div>
+  <form class="form-inscription" [formGroup]="inscriptionForm">
+    <div>
+      <div class="inscription-input-section inscription-element" id="inscription-input-section-surname">
+        <div class="inscription-displayText-input text_displayed" id="inscription-surname_display">Prénom</div>
+        <input class="inscription-connexion text_displayed" type="text" id="inscription-surname" [formControlName]="'surname'" placeholder="Ecrivez ici">
+      </div>
+      <div class="parent-div-inscription-warning-text">
+        <div class="inscription-warning-text" id="inscription-warning-msg-surname">Le prénom doit faire au moins 3 caractères</div>
+      </div>
+    </div>
+    <div>
+      <div class="inscription-input-section inscription-element" id="inscription-input-section-name">
+        <div class="inscription-displayText-input text_displayed" id="inscription-name_display">Nom</div>
+        <input class="inscription-connexion text_displayed" type="text" id="inscription-name" [formControlName]="'name'" placeholder="Ecrivez ici">
+      </div>
+      <div class="parent-div-inscription-warning-text">
+        <div class="inscription-warning-text" id="inscription-warning-msg-name">Le prénom doit faire au moins 1 caractères</div>
+      </div>
+    </div>
+    <div>
+      <div class="inscription-input-section inscription-element" id="inscription-input-section-id">
+        <div class="inscription-displayText-input text_displayed" id="inscription-id_display">Identifiant</div>
+        <input class="inscription-connexion text_displayed" type="text" id="inscription-id" [formControlName]="'id'" placeholder="Ecrivez ici">
+      </div>
+      <div class="parent-div-inscription-warning-text">
+        <div class="inscription-warning-text" id="inscription-warning-msg-id">{{warningMsgId}}</div>
+      </div>
+    </div>
+    <div>
+      <div class="inscription-input-section inscription-element" id="inscription-input-section-password">
+        <div class="inscription-displayText-input text_displayed" id="inscription-password_display">Mot de passe</div>
+        <input class="inscription-connexion text_displayed" [type]="typePassword" id="inscription-password"
+               [formControlName]="'password'" placeholder="Ecrivez ici">
+        <img id="inscription-image-password-eye" [src]="pathImgPassword" (click)="clickOnEye()">
+      </div>
+      <div class="parent-div-inscription-warning-text">
+        <div class="inscription-warning-text" id="inscription-warning-msg-password">Le mot de passe doit faire plus de 3 caractères</div>
+      </div>
+    </div>
+    <div>
+      <div class="inscription-input-section inscription-element" id="inscription-input-section-Rpassword">
+        <div class="inscription-displayText-input text_displayed" id="inscription-Rpassword_display">Répétez le mot de passe</div>
+        <input class="inscription-connexion text_displayed" [type]="typePassword" id="inscription-Rpassword"
+               [formControlName]="'Rpassword'" placeholder="Ecrivez ici">
+      </div>
+      <div class="parent-div-inscription-warning-text">
+        <div class="inscription-warning-text" id="inscription-warning-msg-Rpassword">Les mots de passes ne sont pas identiques</div>
+      </div>
+    </div>
+    <div class="inscription-element">
+      <button routerLink="" id="inscription-mot-de-passe-oublie-button" class="inscription-button" (mouseleave)="resetDefaultBackgroundButton('#inscription-mot-de-passe-oublie-button')" (mouseenter)="changeBackgroundButton('#inscription-mot-de-passe-oublie-button')">
+        <div class="inscription-displayText text_displayed">
+          Mot de passe oublié ?
+        </div>
+      </button>
+    </div>
+    <div id="inscription_navigate_button">
+      <div class="inscription-element" id="firstButtonNav">
+        <button routerLink="/homePage" id="inscription-leave-button" class="inscription-button" (mouseleave)="resetDefaultBackgroundButton('#inscription-leave-button')" (mouseenter)="changeBackgroundButton('#inscription-leave-button')">
+          <div class="inscription-displayText text_displayed button_navigation">
+            Quitter
+          </div>
+        </button>
+      </div>
+      <div class="inscription-element" id="uselessButton">
+        <button id="inscription-logIN-button" class="inscription-button" >
+        </button>
+      </div>
+      <div class="inscription-element" id="lastButtonNav">
+        <button id="inscription-inscription-button" class="inscription-button" (click)="clickOnInscription()" (mouseleave)="resetDefaultBackgroundButton('#inscription-inscription-button')" (mouseenter)="changeBackgroundButton('#inscription-inscription-button')">
+          <div class="inscription-displayText text_displayed button_navigation">
+            Inscription
+          </div>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
