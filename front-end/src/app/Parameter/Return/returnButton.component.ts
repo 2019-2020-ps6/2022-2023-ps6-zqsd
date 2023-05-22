@@ -16,9 +16,9 @@ export class ReturnButtonComponent {
     private router: Router) {
     this.router.events.pipe(filter(this.filterEvent)).subscribe((event: NavigationEnd) => {
         this.previousUrl = (event as NavigationEnd).url;
-      });
+    });
   }
-  
+
 
   goBack(): void {
     if (this.previousUrl) {

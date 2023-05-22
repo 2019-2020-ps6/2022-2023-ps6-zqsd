@@ -11,6 +11,7 @@ import {CreateQuiz} from "./CreateQuiz.component/CreateQuiz.component";
 import {MainPuzzleComponent} from "./Puzzle/PuzzleMain/PuzzleMain.component";
 import {ResultsComponent} from "./results/results.component";
 import {QuizzListComponent} from "./quizz-list/quizz-list.component";
+import {ConnexionComponent} from "./Connexion/Connexion.component";
 
 const routes: Routes = [
   {
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'ParameterPage', component: ParameterPageComponent },
   { path: 'MemoryWork', component: MemoryWorkAdvancedParameterComponent },
   { path : 'QuizList', component: QuizzListComponent},
+  { path : 'ConnexionPage', component: ConnexionComponent},
 ];
 
 @NgModule({

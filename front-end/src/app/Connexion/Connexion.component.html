@@ -1,1 +1,42 @@
-<
+<div>
+  <form class="form-connexion" [formGroup]="connexionForm">
+    <div class="connexion-input-section connexion-element" id="connexion-input-section-name">
+      <div class="connexion-displayText-input text_displayed" id="connexion-name_display">Identifiant</div>
+      <input class="input-connexion text_displayed" type="text" id="connexion-name" [formControlName]="'name'" placeholder="Ecrivez ici">
+    </div>
+    <div class="connexion-input-section connexion-element" id="connexion-input-section-password">
+      <div class="connexion-displayText-input text_displayed" id="connexion-password_display">Mot de passe</div>
+      <input class="input-connexion text_displayed" type="password" id="connexion-password" [formControlName]="'password'" placeholder="Ecrivez ici">
+    </div>
+    <div class="connexion-element" (mouseleave)="resetDefaultBackgroundButton('#connexion-mot-de-passe-oublie-button')" (mouseenter)="changeBackgroundButton('#connexion-mot-de-passe-oublie-button')">
+      <button routerLink="" id="connexion-mot-de-passe-oublie-button" class="connexion-button">
+        <div class="connexion-displayText text_displayed">
+          Mot de passe oublié ?
+        </div>
+      </button>
+    </div>
+    <div id="connexion_navigate_button">
+      <div class="connexion-element" (mouseleave)="resetDefaultBackgroundButton('#connexion-leave-button')" (mouseenter)="changeBackgroundButton('#connexion-leave-button')">
+        <button id="connexion-leave-button" class="connexion-button" (click)="clickOnLeave()">
+          <div class="connexion-displayText text_displayed button_navigation">
+            Quitter
+          </div>
+        </button>
+      </div>
+      <div class="connexion-element" (mouseleave)="resetDefaultBackgroundButton('#connexion-logIN-button')" (mouseenter)="changeBackgroundButton('#connexion-logIN-button')">
+        <button id="connexion-logIN-button" class="connexion-button" (click)="clickOnLogIn()">
+          <div class="connexion-displayText text_displayed button_navigation">
+            Connexion
+          </div>
+        </button>
+      </div>
+      <div class="connexion-element" (mouseleave)="resetDefaultBackgroundButton('#connexion-inscription-button')" (mouseenter)="changeBackgroundButton('#connexion-inscription-button')">
+        <button routerLink="" id="connexion-inscription-button" class="connexion-button">
+          <div class="connexion-displayText text_displayed button_navigation">
+            Inscription
+          </div>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
