@@ -39,6 +39,7 @@ import { PopUpComponent } from './PopUp/PopUp.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import {ConnexionComponent} from "./Connexion/Connexion.component";
 import {InscriptionComponent} from "./Inscription/Inscription.component";
+import {ForgetPasswordComponent} from "./ForgetPassword/ForgetPassword.component";
 
 
 
@@ -73,7 +74,8 @@ import {InscriptionComponent} from "./Inscription/Inscription.component";
     GameQuestionSearchingComponent,
     PopUpComponent,
     ConnexionComponent,
-    CreateQuestion
+    CreateQuestion,
+    ForgetPasswordComponent,
   ],
   imports: [
     BrowserModule,

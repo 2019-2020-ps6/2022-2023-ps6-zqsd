@@ -11,11 +11,11 @@ import {filter} from "rxjs/operators";
 
 @Component({
   selector: 'app-Connexion',
-  templateUrl: './Inscription.component.html',
-  styleUrls: ['./Inscription.component.scss']
+  templateUrl: './ForgetPassword.component.html',
+  styleUrls: ['./ForgetPassword.component.scss']
 })
 
-export class InscriptionComponent implements OnInit {
+export class ForgetPasswordComponent implements OnInit {
 
   public inscriptionForm: FormGroup;
   private sizeText: number = PARAMETER.size;
