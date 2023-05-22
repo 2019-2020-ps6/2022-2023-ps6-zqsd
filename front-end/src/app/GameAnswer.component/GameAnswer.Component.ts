@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, Renderer2, ElementRef } from '@angular/core';
 import { GameService } from '../../services/GameService';
 import { Answer } from 'src/models/Question.model';
 import { Router } from '@angular/router';
+import { AdvancedParameterService } from 'src/services/Parameter/AdvancedParameterService';
 
 @Component({
   selector: 'app-GameAnswer',
@@ -14,11 +15,10 @@ export class GameAnswerComponent implements OnInit {
   @Output() answerEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   public questionType : string="";
+  public visuelRightAnswer : boolean = true;
+  public visuelFalseAnswer : boolean = true;
 
-  constructor(
-    private gameService: GameService,
-    private router: Router
-  ) { }
+  constructor(private gameService: GameService,private router: Router, private renderer : Renderer2, private elementRef : ElementRef, private advPService : AdvancedParameterService) { }
 
   getAnswerResult(): void {
     const buttonSound = new Audio();
@@ -30,7 +30,7 @@ export class GameAnswerComponent implements OnInit {
       } else {
         this.answerEvent.emit(false);
       }
-    }, 50);
+    }, 1000);
   }
 
   ngOnInit(): void {
@@ -38,6 +38,36 @@ export class GameAnswerComponent implements OnInit {
       this.questionType = question.label;
       console.log(this.questionType);
     })
+    this.advPService.getCurrentRightAnswerAnimationOBS().subscribe((enableAnimation) => {
+      if(this.currentAnswer != undefined && this.currentAnswer.isCorrect != undefined){
+        this.visuelRightAnswer = enableAnimation && this.currentAnswer.isCorrect;
+      }
+    })
+    this.advPService.getCurrentWrongAnswerAnimatinoOBS().subscribe((enableAnimation) => {
+      if(this.currentAnswer != undefined && this.currentAnswer.isCorrect != undefined){
+        this.visuelFalseAnswer = enableAnimation && !this.currentAnswer.isCorrect;
+      }
+    })
+  }
+  applyGreenBorder(bool : boolean) {
+    if(bool){
+      const buttonElement = this.elementRef.nativeElement.querySelector('#myButton');
+      this.renderer.setStyle(buttonElement, 'border', '5px solid green');
+    
+      setTimeout(() => {
+        this.renderer.removeStyle(buttonElement, 'border');
+      }, 1000);
+    }
+  }
+  applyRedBorder(bool : boolean) {
+    if(bool){
+      const buttonElement = this.elementRef.nativeElement.querySelector('#myButton');
+      this.renderer.setStyle(buttonElement, 'border', '5px solid red');
+    
+      setTimeout(() => {
+        this.renderer.removeStyle(buttonElement, 'border');
+      }, 1000);
+    }
   }
 }
 
