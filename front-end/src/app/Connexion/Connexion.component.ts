@@ -21,7 +21,8 @@ export class ConnexionComponent implements OnInit {
   private sizeText: number = PARAMETER.size;
   private topForm : number = 50;
   previousUrl: string = "";
-  public pathImgPassword : string = "../../../assets/connexion/Eye.png";
+  public pathImgPassword : string = "../../../assets/connexion/hiddenEye.png";
+  public typePassword : string = "password";
 
   constructor (private location: Location,
                private router: Router,
@@ -96,7 +97,6 @@ export class ConnexionComponent implements OnInit {
     const element = this.elementRef.nativeElement.querySelector('#connexion-image-password-eye');
     const widthInputPassword = this.elementRef.nativeElement.querySelector('#connexion-password').offsetWidth;
     const leftInputPassword = this.elementRef.nativeElement.querySelector('#connexion-password').offsetLeft;
-
     if (element) {
       element.style.height = heightInputPassword + 'px';
       element.style.left = (widthInputPassword+leftInputPassword) + 'px';
@@ -153,8 +153,10 @@ export class ConnexionComponent implements OnInit {
   clickOnEye() {
     if (this.pathImgPassword == "../../../assets/connexion/Eye.png") {
       this.pathImgPassword = "../../../assets/connexion/hiddenEye.png";
+      this.typePassword = "password";
     } else {
       this.pathImgPassword = "../../../assets/connexion/Eye.png";
+      this.typePassword = "text";
     }
   }
 
