@@ -1,2 +1,2 @@
-<button [ngClass]="{'game-answer-button': questionType == 'classical', 'game-answer-button-smaller': questionType == 'searching'}" (click)="getAnswerResult()">{{currentAnswer?.value}}</button>
+<button id="myButton" [ngClass]="{'game-answer-button': questionType == 'classical', 'game-answer-button-smaller': questionType == 'searching'}" (click)="getAnswerResult(); applyGreenBorder(visuelRightAnswer); applyRedBorder(visuelFalseAnswer)">{{currentAnswer?.value}}</button>
 

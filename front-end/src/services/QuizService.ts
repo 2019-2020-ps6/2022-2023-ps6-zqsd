@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Quiz } from '../models/quiz.model';
 import { QuizExample} from "../mocks/quizz.mock";
+import {Question} from "../models/Question.model";
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,7 @@ export class QuizService {
    * Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
    */
   public quizzes$: BehaviorSubject<Quiz[]> = new BehaviorSubject(QuizExample);
+  private questions: Question[] = [];
 
   constructor() {
   }
@@ -39,4 +41,8 @@ export class QuizService {
     //update the observable
     this.quizzes$.next(this.quizzes);
   }
+
+
+
+
 }

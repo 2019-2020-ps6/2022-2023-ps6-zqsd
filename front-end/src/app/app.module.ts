@@ -71,6 +71,7 @@ import {ConnexionComponent} from "./Connexion/Connexion.component";
     GameQuestionSearchingComponent,
     PopUpComponent,
     ConnexionComponent,
+    CreateQuestion
   ],
   imports: [
     BrowserModule,

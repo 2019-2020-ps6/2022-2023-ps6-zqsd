@@ -1,0 +1,186 @@
+<div>
+  <h2>Sélectionner un type de question</h2>
+  <div>
+    <button (click)="showClassic()">Classique</button>
+    <button (click)="showSearching()">Analyse</button>
+    <button (click)="showPuzzle()">Puzzle</button>
+    <button (click)="showChronological()">Chronologique</button>
+  </div>
+
+
+  <div *ngIf="showClassicSection">
+    <div>
+      <form [formGroup]="questionForm">
+        <div>
+          <label for="question">Question :</label>
+          <input style="margin-left: 10px;" type="text" id="question" formControlName="question" required>
+        </div>
+        <div>
+          <label for="answer1">Réponse 1 :</label>
+          <input style="margin-left: 10px;" type="text" id="answer1" formControlName="answer1" required>
+          <button style="margin-left: 10px;" type="button" (click)="setAnswer(1, true)" [ngClass]="{'selected true': questionForm.get('isCorrect1')?.value === true}">
+            Vrai
+          </button>
+          <button type="button" (click)="setAnswer(1, false)" [ngClass]="{'selected false': questionForm.get('isCorrect1')?.value === false}">
+            Faux
+          </button>
+        </div>
+        <div>
+          <label for="answer2">Réponse 2 :</label>
+          <input style="margin-left: 10px;" type="text" id="answer2" formControlName="answer2" required>
+          <button style="margin-left: 10px;" type="button" (click)="setAnswer(2, true)" [ngClass]="{'selected true': questionForm.get('isCorrect2')?.value === true}">
+            Vrai
+          </button>
+          <button type="button" (click)="setAnswer(2, false)" [ngClass]="{'selected false': questionForm.get('isCorrect2')?.value === false}">
+            Faux
+          </button>
+        </div>
+        <div>
+          <label for="answer3">Réponse 3 :</label>
+          <input style="margin-left: 10px;" type="text" id="answer3" formControlName="answer3" required>
+          <button style="margin-left: 10px;" type="button" (click)="setAnswer(3, true)" [ngClass]="{'selected true': questionForm.get('isCorrect3')?.value === true}">
+            Vrai
+          </button>
+          <button type="button" (click)="setAnswer(3, false)" [ngClass]="{'selected false': questionForm.get('isCorrect3')?.value === false}">
+            Faux
+          </button>
+        </div>
+        <div>
+          <label for="answer3">Réponse 4 :</label>
+          <input style="margin-left: 10px;" type="text" id="answer4" formControlName="answer4" required>
+          <button style="margin-left: 10px;" type="button" (click)="setAnswer(4, true)" [ngClass]="{'selected true': questionForm.get('isCorrect4')?.value === true}">
+            Vrai
+          </button>
+          <button type="button" (click)="setAnswer(4, false)" [ngClass]="{'selected false': questionForm.get('isCorrect4')?.value === false}">
+            Faux
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="showSearchingSection">
+  <div>
+    <form [formGroup]="questionForm">
+      <div>
+        <label for="question">Question :</label>
+        <input style="margin-left: 10px;" type="text" id="questionSearching" formControlName="question" required>
+      </div>
+      <br>
+
+        <label for="imageSearching">Image :</label>
+        <input style="margin-left: 10px;" type="file" id="imageSearching" (change)="onImageSelected($event)" accept="image/*">
+        <div class="question-searching-image-container" *ngIf="selectedImage">
+          <img [src]="getSelectedImageURL()" class="question-searching-image" />
+        </div>
+
+
+      <div>
+        <label for="answer1">Réponse 1 :</label>
+        <input style="margin-left: 10px;" type="text" id="answer1S" formControlName="answer1" required>
+        <button style="margin-left: 10px;" type="button" (click)="setAnswer(1, true)" [ngClass]="{'selected true': questionForm.get('isCorrect1')?.value === true}">
+          Vrai
+        </button>
+        <button type="button" (click)="setAnswer(1, false)" [ngClass]="{'selected false': questionForm.get('isCorrect1')?.value === false}">
+          Faux
+        </button>
+      </div>
+      <div>
+        <label for="answer2">Réponse 2 :</label>
+        <input style="margin-left: 10px;" type="text" id="answer2S" formControlName="answer2" required>
+        <button style="margin-left: 10px;" type="button" (click)="setAnswer(2, true)" [ngClass]="{'selected true': questionForm.get('isCorrect2')?.value === true}">
+          Vrai
+        </button>
+        <button type="button" (click)="setAnswer(2, false)" [ngClass]="{'selected false': questionForm.get('isCorrect2')?.value === false}">
+          Faux
+        </button>
+      </div>
+      <div>
+        <label for="answer3">Réponse 3 :</label>
+        <input style="margin-left: 10px;" type="text" id="answer3S" formControlName="answer3" required>
+        <button style="margin-left: 10px;" type="button" (click)="setAnswer(3, true)" [ngClass]="{'selected true': questionForm.get('isCorrect3')?.value === true}">
+          Vrai
+        </button>
+        <button type="button" (click)="setAnswer(3, false)" [ngClass]="{'selected false': questionForm.get('isCorrect3')?.value === false}">
+          Faux
+        </button>
+      </div>
+      <div>
+        <label for="answer3">Réponse 4 :</label>
+        <input style="margin-left: 10px;" type="text" id="answer4S" formControlName="answer4" required>
+        <button style="margin-left: 10px;" type="button" (click)="setAnswer(4, true)" [ngClass]="{'selected true': questionForm.get('isCorrect4')?.value === true}">
+          Vrai
+        </button>
+        <button type="button" (click)="setAnswer(4, false)" [ngClass]="{'selected false': questionForm.get('isCorrect4')?.value === false}">
+          Faux
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<div *ngIf="showChronologicalSection">
+  <label for="answer1">Réponses 1 :</label>
+  <input style="margin-left: 10px; margin-right: 10px;" type="text" id="answer1C" formControlName="answer1" required>
+  <select [(ngModel)]="answer1Order">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
+  <div>
+    <label for="answer2">Réponses 2 :</label>
+    <input style="margin-left: 10px; margin-right: 10px;" type="text" id="answer2C" formControlName="answer2" required>
+    <select [(ngModel)]="answer2Order">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+  </div>
+  <div>
+    <label for="answer3">Réponses 3 :</label>
+    <input style="margin-left: 10px; margin-right: 10px;" type="text" id="answer3C" formControlName="answer3" required>
+    <select [(ngModel)]="answer3Order">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+  </div>
+  <div>
+    <label for="answer4">Réponses 4 :</label>
+    <input style="margin-left: 10px; margin-right: 10px;" type="text" id="answer4C" formControlName="answer4" required>
+    <select [(ngModel)]="answer4Order">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+  </div>
+</div>
+
+<div *ngIf="showPuzzleSection">
+  <label for="imageSearching">Image :</label>
+  <input style="margin-left: 10px;" type="file" id="Puzzle" (change)="onImageSelected($event)" accept="image/*">
+  <div class="question-searching-image-container" *ngIf="selectedImage">
+    <img [src]="getSelectedImageURL()" class="question-searching-image" />
+  </div><br>
+  <label style="margin-right: 10px;">Nombre de pièces pour le puzzle</label>
+  <select [(ngModel)]="puzzleSplitNumber">
+    <option value="4">4</option>
+    <option value="6">6</option>
+    <option value="8">8</option>
+    <option value="12">12</option>
+  </select>
+</div>
+
+
+
+
+<button (click)="addQuestion()">Ajouter la question</button>
+
+
