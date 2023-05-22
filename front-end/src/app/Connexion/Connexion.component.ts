@@ -107,13 +107,19 @@ export class ConnexionComponent implements OnInit {
 
 
   clickOnLogIn() {
+    const elementWarningMSGName = this.elementRef.nativeElement.querySelector('#connection-warning-msg-name');
+    const elementWarningMSGPassword = this.elementRef.nativeElement.querySelector('#connection-warning-msg-password');
     if (this.userService.getAllUserDict().hasOwnProperty(this.connexionForm.value.name)) {
+      elementWarningMSGName.style.visibility = 'hidden';
       if (this.userService.getAllUserDict()[this.connexionForm.value.name].motDePasse == this.connexionForm.value.password) {
+        elementWarningMSGPassword.style.visibility = 'hidden';
         this.userService.changeUser(this.connexionForm.value.name);
         this.router.navigateByUrl('/homePage');
       } else {
-        alert('Wrong password');
+        elementWarningMSGPassword.style.visibility = 'visible';
       }
+    } else {
+      elementWarningMSGName.style.visibility = 'visible';
     }
   }
 
