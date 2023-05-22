@@ -7,5 +7,16 @@ module.exports = new BaseModel('Question', {
   value: Joi.string().required(),
   answers: Joi.array(),
   ImageSearching: Joi.string(),
-  answered: Joi.string(),
+  answered: Joi.boolean(),
+})
+
+module.exports = new BaseModel('Answer', {
+  label: Joi.string().required(),
+  value: Joi.string().required(),
+  isCorrect: Joi.boolean(),
+  order: Joi.number(),
+})
+
+module.exports = new BaseModel('TextSearching', {
+  value: Joi.string().required(),
 })
