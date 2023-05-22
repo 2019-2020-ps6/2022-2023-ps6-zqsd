@@ -1,7 +1,7 @@
 @import "src/scss/connexion-variable";
 
 
-.form-inscription {
+.form-connexion {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
   width: 100%;
 }
 
-.inscription-input-section {
+.connexion-input-section {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -20,7 +20,7 @@
 }
 
 
-.inscription-warning-text {
+.connection-warning-text {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -39,7 +39,7 @@
 }
 
 
-.inscription-element {
+.connexion-element {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -49,7 +49,7 @@
 }
 
 
-.inscription-displayText-input {
+.connexion-displayText-input {
   margin: 0 0 0 0;
   padding: $connexion-padding-top-bot 25px $connexion-padding-top-bot 15px;
   border: 1px solid black;
@@ -62,7 +62,7 @@
 
 
 
-.inscription-connexion {
+.input-connexion {
   padding: $connexion-padding-top-bot 0 $connexion-padding-top-bot 0;
   text-align: center;
   transform: translateX(-25px);
@@ -71,7 +71,7 @@
   border: 2px solid black;
 }
 
-.inscription-button {
+.connexion-button {
   padding: $connexion-padding-top-bot 25px $connexion-padding-top-bot 25px;
   margin : 0 0 0 0;
   border-radius: 20px;
@@ -82,7 +82,7 @@
   background-color: rgba(30,30,30,1);
 }
 
-#inscription_navigate_button {
+#connexion_navigate_button {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -95,19 +95,19 @@
   align-items: center;
 }
 
-#inscription-mot-de-passe-oublie-button {
+#connexion-mot-de-passe-oublie-button {
   margin : 15px 0 0 0;
 }
 
 
-#inscription-warning-msg-name {
+#connection-warning-msg-name {
   visibility: hidden;
 }
 
-#inscription-warning-msg-password {
+#connection-warning-msg-password {
   visibility: hidden;
 }
 
-#inscription-image-password-eye {
+#connexion-image-password-eye {
   position: absolute;
 }

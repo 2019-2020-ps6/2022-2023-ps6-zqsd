@@ -28,9 +28,9 @@ export class ConnexionComponent implements OnInit {
                private router: Router,
                public formBuilder: FormBuilder, public userService: UserService,
                private elementRef: ElementRef, public parameterService : ParameterService) {
-      this.router.events.pipe(filter(this.filterEvent)).subscribe((event: NavigationEnd) => {
-        this.previousUrl = (event as NavigationEnd).url;
-      });
+    this.router.events.pipe(filter(this.filterEvent)).subscribe((event: NavigationEnd) => {
+      this.previousUrl = (event as NavigationEnd).url;
+    });
 
     this.connexionForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -52,7 +52,7 @@ export class ConnexionComponent implements OnInit {
   }
 
   setSizeText() {
-    this.elementRef.nativeElement.querySelector('.form-inscription').style.top = this.topForm + 'px';
+    this.elementRef.nativeElement.querySelector('.form-connexion').style.top = this.topForm + 'px';
     const elements = this.elementRef.nativeElement.querySelectorAll('.text_displayed');
     elements.forEach((element: HTMLElement) => {
       element.style.fontSize = this.sizeText + 'px';
@@ -82,19 +82,19 @@ export class ConnexionComponent implements OnInit {
   }
 
   gestionnaryTopOFNavigation() {
-    const topNavigation = this.elementRef.nativeElement.querySelector('#inscription_navigate_button').offsetTop;
+    const topNavigation = this.elementRef.nativeElement.querySelector('#connexion_navigate_button').offsetTop;
     const heightWindow = window.innerHeight;
-    const NavigationHeight = this.elementRef.nativeElement.querySelector('#inscription_navigate_button').offsetHeight;
+    const NavigationHeight = this.elementRef.nativeElement.querySelector('#connexion_navigate_button').offsetHeight;
     const element = document.getElementById('header');
     if (element) {
       const heightHeader = element.offsetHeight
-      this.elementRef.nativeElement.querySelector('#inscription_navigate_button').style.top = (heightWindow - topNavigation - NavigationHeight - 50 - heightHeader - this.topForm) + 'px';
+      this.elementRef.nativeElement.querySelector('#connexion_navigate_button').style.top = (heightWindow - topNavigation - NavigationHeight - 50 - heightHeader - this.topForm) + 'px';
     }
   }
 
   gestionnaryImgPassword() {
     const heightInputPassword = this.elementRef.nativeElement.querySelector('#connexion-password').offsetHeight;
-    const element = this.elementRef.nativeElement.querySelector('#inscription-image-password-eye');
+    const element = this.elementRef.nativeElement.querySelector('#connexion-image-password-eye');
     const widthInputPassword = this.elementRef.nativeElement.querySelector('#connexion-password').offsetWidth;
     const leftInputPassword = this.elementRef.nativeElement.querySelector('#connexion-password').offsetLeft;
     if (element) {
@@ -121,8 +121,8 @@ export class ConnexionComponent implements OnInit {
 
 
   clickOnLogIn() {
-    const elementWarningMSGName = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-name');
-    const elementWarningMSGPassword = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-password');
+    const elementWarningMSGName = this.elementRef.nativeElement.querySelector('#connection-warning-msg-name');
+    const elementWarningMSGPassword = this.elementRef.nativeElement.querySelector('#connection-warning-msg-password');
     if (this.userService.getAllUserDict().hasOwnProperty(this.connexionForm.value.name)) {
       elementWarningMSGName.style.visibility = 'hidden';
       if (this.userService.getAllUserDict()[this.connexionForm.value.name].motDePasse == this.connexionForm.value.password) {
