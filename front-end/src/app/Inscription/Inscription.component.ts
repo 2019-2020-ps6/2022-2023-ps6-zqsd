@@ -11,13 +11,13 @@ import {filter} from "rxjs/operators";
 
 @Component({
   selector: 'app-Connexion',
-  templateUrl: './Connexion.component.html',
-  styleUrls: ['./Connexion.component.scss']
+  templateUrl: './Inscription.component.html',
+  styleUrls: ['./Inscription.component.scss']
 })
 
-export class ConnexionComponent implements OnInit {
+export class InscriptionComponent implements OnInit {
 
-  public connexionForm: FormGroup;
+  public inscriptionForm: FormGroup;
   private sizeText: number = PARAMETER.size;
   private topForm : number = 50;
   previousUrl: string = "";
@@ -32,7 +32,7 @@ export class ConnexionComponent implements OnInit {
         this.previousUrl = (event as NavigationEnd).url;
       });
 
-    this.connexionForm = this.formBuilder.group({
+    this.inscriptionForm = this.formBuilder.group({
       name: ['', Validators.required],
       password: ['', Validators.required],
     });
@@ -59,47 +59,48 @@ export class ConnexionComponent implements OnInit {
     });
     this.gestionnaryLengthDisplayTextForInput();
     this.gestionnaryLengthDisplayButtonNavigation();
-    this.gestionnaryTopOFNavigation();
   }
 
 
   gestionnaryLengthDisplayTextForInput() {
-    const width_display_name = this.elementRef.nativeElement.querySelector('#connexion-name_display').offsetWidth;
-    const width_display_password = this.elementRef.nativeElement.querySelector('#connexion-password_display').offsetWidth;
-    const width_max_display = Math.max(width_display_name, width_display_password);
-    this.elementRef.nativeElement.querySelector('#connexion-name_display').style.width = width_max_display + 'px';
-    this.elementRef.nativeElement.querySelector('#connexion-password_display').style.width = width_max_display + 'px';
+    const width_display_name = this.elementRef.nativeElement.querySelector('#inscription-name_display').offsetWidth;
+    const width_display_password = this.elementRef.nativeElement.querySelector('#inscription-password_display').offsetWidth;
+    const width_displaysurname = this.elementRef.nativeElement.querySelector('#inscription-surname_display').offsetWidth;
+    const width_display_Rpassword = this.elementRef.nativeElement.querySelector('#inscription-Rpassword_display').offsetWidth;
+    const width_display_id = this.elementRef.nativeElement.querySelector('#inscription-id_display').offsetWidth;
+    const width_max_display = Math.max(width_display_name, width_display_password, width_displaysurname, width_display_Rpassword, width_display_id);
+    this.elementRef.nativeElement.querySelector('#inscription-name_display').style.width = width_max_display + 'px';
+    this.elementRef.nativeElement.querySelector('#inscription-password_display').style.width = width_max_display + 'px';
+    this.elementRef.nativeElement.querySelector('#inscription-surname_display').style.width = width_max_display + 'px';
+    this.elementRef.nativeElement.querySelector('#inscription-Rpassword_display').style.width = width_max_display + 'px';
+    this.elementRef.nativeElement.querySelector('#inscription-id_display').style.width = width_max_display + 'px';
   }
 
   gestionnaryLengthDisplayButtonNavigation() {
-    const width_display_back = this.elementRef.nativeElement.querySelector('#connexion-leave-button').offsetWidth;
-    const width_display_logIn = this.elementRef.nativeElement.querySelector('#connexion-logIN-button').offsetWidth;
-    const width_display_Inscription = this.elementRef.nativeElement.querySelector('#connexion-inscription-button').offsetWidth;
+    const width_display_back = this.elementRef.nativeElement.querySelector('#inscription-leave-button').offsetWidth;
+    const width_display_logIn = this.elementRef.nativeElement.querySelector('#inscription-logIN-button').offsetWidth;
+    const width_display_Inscription = this.elementRef.nativeElement.querySelector('#inscription-inscription-button').offsetWidth;
     const width_max_display = Math.max(width_display_back, width_display_logIn, width_display_Inscription);
-    this.elementRef.nativeElement.querySelector('#connexion-leave-button').style.width = width_max_display + 'px';
-    this.elementRef.nativeElement.querySelector('#connexion-logIN-button').style.width = width_max_display + 'px';
-    this.elementRef.nativeElement.querySelector('#connexion-inscription-button').style.width = width_max_display + 'px';
-  }
-
-  gestionnaryTopOFNavigation() {
-    const topNavigation = this.elementRef.nativeElement.querySelector('#inscription_navigate_button').offsetTop;
-    const heightWindow = window.innerHeight;
-    const NavigationHeight = this.elementRef.nativeElement.querySelector('#inscription_navigate_button').offsetHeight;
-    const element = document.getElementById('header');
-    if (element) {
-      const heightHeader = element.offsetHeight
-      this.elementRef.nativeElement.querySelector('#inscription_navigate_button').style.top = (heightWindow - topNavigation - NavigationHeight - 50 - heightHeader - this.topForm) + 'px';
-    }
+    this.elementRef.nativeElement.querySelector('#inscription-leave-button').style.width = width_max_display + 'px';
+    this.elementRef.nativeElement.querySelector('#inscription-logIN-button').style.width = width_max_display + 'px';
+    this.elementRef.nativeElement.querySelector('#inscription-inscription-button').style.width = width_max_display + 'px';
   }
 
   gestionnaryImgPassword() {
-    const heightInputPassword = this.elementRef.nativeElement.querySelector('#connexion-password').offsetHeight;
+    const elementInputPassword = this.elementRef.nativeElement.querySelector('#inscription-password');
+    const elementInputRPassword = this.elementRef.nativeElement.querySelector('#inscription-Rpassword');
+    const elementPasswordBounding = elementInputPassword.getBoundingClientRect();
+    const elementRPasswordBounding = elementInputRPassword.getBoundingClientRect();
+    const heightInputPassword = elementInputPassword.offsetHeight;
+    const topInputPassword = elementPasswordBounding.top;
+    const topInputRPassword = elementRPasswordBounding.top;
+    const widthInputPassword = elementInputPassword.offsetWidth;
+    const leftInputPassword = elementInputPassword.offsetLeft;
     const element = this.elementRef.nativeElement.querySelector('#inscription-image-password-eye');
-    const widthInputPassword = this.elementRef.nativeElement.querySelector('#connexion-password').offsetWidth;
-    const leftInputPassword = this.elementRef.nativeElement.querySelector('#connexion-password').offsetLeft;
     if (element) {
-      element.style.height = heightInputPassword + 'px';
+      element.style.height = (heightInputPassword) + 'px';
       element.style.left = (widthInputPassword+leftInputPassword) + 'px';
+      element.style.top = (topInputRPassword-topInputPassword-heightInputPassword) + 'px';
     }
   }
 
@@ -119,15 +120,15 @@ export class ConnexionComponent implements OnInit {
     }
   }
 
-
-  clickOnLogIn() {
+  //TODO
+  clickOnInscription() {
     const elementWarningMSGName = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-name');
     const elementWarningMSGPassword = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-password');
-    if (this.userService.getAllUserDict().hasOwnProperty(this.connexionForm.value.name)) {
+    if (this.userService.getAllUserDict().hasOwnProperty(this.inscriptionForm.value.name)) {
       elementWarningMSGName.style.visibility = 'hidden';
-      if (this.userService.getAllUserDict()[this.connexionForm.value.name].motDePasse == this.connexionForm.value.password) {
+      if (this.userService.getAllUserDict()[this.inscriptionForm.value.name].motDePasse == this.inscriptionForm.value.password) {
         elementWarningMSGPassword.style.visibility = 'hidden';
-        this.userService.changeUser(this.connexionForm.value.name);
+        this.userService.changeUser(this.inscriptionForm.value.name);
         this.router.navigateByUrl('/homePage');
       } else {
         elementWarningMSGPassword.style.visibility = 'visible';

@@ -38,11 +38,13 @@ import { QuizzListComponent } from './quizz-list/quizz-list.component';
 import { PopUpComponent } from './PopUp/PopUp.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import {ConnexionComponent} from "./Connexion/Connexion.component";
+import {InscriptionComponent} from "./Inscription/Inscription.component";
 
 
 
 @NgModule({
   declarations: [
+    InscriptionComponent,
     AppComponent,
     ParameterMusicComponent,
     ParameterSizeTextComponent,

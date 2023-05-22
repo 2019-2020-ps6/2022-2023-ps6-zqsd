@@ -86,11 +86,11 @@
   position: relative;
   display: flex;
   flex-direction: row;
+  top : 100px;
 }
 
 .button_navigation {
   display: flex;
-  flex : 1;
   justify-content: center;
   align-items: center;
 }
@@ -110,4 +110,33 @@
 
 #inscription-image-password-eye {
   position: absolute;
+  height: 50px;
+}
+
+#inscription-warning-msg-surname {
+  visibility: hidden;
+}
+
+#inscription-warning-msg-id {
+  visibility: hidden;
+}
+
+#inscription-warning-msg-Rpassword {
+  visibility: hidden;
+}
+
+#uselessButton {
+  visibility: hidden;
+  flex : 1;
+  margin-bottom: 50px;
+}
+
+#lastButtonNav {
+  flex : 8;
+  margin-bottom: 50px;
+}
+
+#firstButtonNav {
+  flex : 8;
+  margin-bottom: 50px;
 }

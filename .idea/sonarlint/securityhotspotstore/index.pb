@@ -7,14 +7,6 @@ l
 <front-end/src/services/Parameter/AdvancedParameterService.ts,9\a\9ad66a686ea651a8d7791529a26dafd494fbbb2a
 h
 8front-end/src/app/header.component/header.component.scss,b\7\b742a595f695d9e2bfb77af2266a7440c32ecbdd
-D
-backend/package.json,2\d\2d67691333633e849af94af966942f0c1b3151c6
-H
-backend/app/api/index.js,a\f\aff5bd991f557ad1e47b9d4c942feca19adbf45e
-K
-backend/app/models/index.js,3\1\31f40537bcb7f9747b1135602e21feeadf8af6d4
-K
-backend/app/build-server.js,0\d\0dd0c31a91295c930c3290a8f395f0df772656ed
 v
 Ffront-end/src/app/CreateQuestion.component/CreateQuestion.component.ts,9\9\9954e1368a772fdc749ccb70da12c01564e036b6
 y
