@@ -22,7 +22,9 @@ export class InscriptionComponent implements OnInit {
   private topForm : number = 50;
   public pathImgPassword : string = "../../../assets/connexion/hiddenEye.png";
   public typePassword : string = "password";
-  public warningMsgId : string = "";
+  public warningMsgId : string = "-";
+  public buttonProfilePathPicture : string = "../../../assets/inscription/up.png";
+  private isUp : boolean = true;
 
   constructor (private location: Location,
                private router: Router,
@@ -42,12 +44,86 @@ export class InscriptionComponent implements OnInit {
   }
 
 
+  statusButton: StatusButton[] = [
+    {
+      onClick: () => this.changeStatus("ut"),
+      status: "-----------",
+    },
+    {
+      onClick: () => this.changeStatus("ut"),
+      status: "Utilisateur",
+    },
+    {
+      onClick: () => this.changeStatus("pr"),
+      status: "Proche",
+    },
+    {
+      onClick: () => this.changeStatus("pe"),
+      status: "Personnel",
+    }
+  ];
+  actualStatus: string = "null";
+  dictStatus : { [key: string]: number } = {
+    "ut": 0,
+    "pr": 1,
+    "pe": 2
+  };
+
+
+  showHideBUttonProfile() {
+    const pathPicture : string = this.buttonProfilePathPicture;
+    if (pathPicture == "../../../assets/inscription/up.png") {
+      this.buttonProfilePathPicture = "../../../assets/inscription/down.png";
+      const hiddenElements = this.elementRef.nativeElement.querySelectorAll('.hidden');
+      hiddenElements.forEach((element: HTMLElement) => {
+        element.style.display = 'flex';
+      });
+      this.isUp = false;
+    } else {
+      this.buttonProfilePathPicture = "../../../assets/inscription/up.png";
+      const hiddenElements = this.elementRef.nativeElement.querySelectorAll('.hidden');
+      hiddenElements.forEach((element: HTMLElement) => {
+        element.style.display = 'none';
+      });
+      this.isUp = true;
+    }
+    console.log(this.isUp);
+  }
+
+
+  changeStatus(status: string) {
+    if (this.isUp){
+      return;
+    }
+    if (this.dictStatus.hasOwnProperty(status)) {
+      const choosenStatusIndex : number = this.dictStatus[status];
+      if (choosenStatusIndex != 0 || this.actualStatus == "null") {
+        var previousStatus : string;
+        if (this.actualStatus == "null") {
+          this.statusButton.shift();
+          previousStatus = "ut";
+        } else {
+          previousStatus = this.actualStatus;
+        }
+        this.dictStatus[status] = 0;
+        this.dictStatus[previousStatus] = choosenStatusIndex;
+        this.actualStatus = status;
+        const previousStatusInterface = this.statusButton[0];
+        const choosenStatusInterface = this.statusButton[choosenStatusIndex];
+        this.statusButton[0] = choosenStatusInterface;
+        this.statusButton[choosenStatusIndex] = previousStatusInterface;
+      }
+    }
+  }
+
+
   ngOnInit(): void {
   }
 
   ngAfterViewInit(): void {
     this.setSizeText();
     this.gestionnaryImgPassword();
+    this.gestionnaryPictureProfile();
   }
 
   setSizeText() {
@@ -103,6 +179,12 @@ export class InscriptionComponent implements OnInit {
     }
   }
 
+  gestionnaryPictureProfile() {
+    const elementPictureProfile = this.elementRef.nativeElement.querySelector('#img-button-profile');
+    const elementDisplayTextProfile = this.elementRef.nativeElement.querySelector('#inscription-profile_display');
+    elementPictureProfile.style.height = (elementDisplayTextProfile.offsetHeight - 20) + 'px';
+  }
+
 
   resetDefaultBackgroundButton(targetElement : string) {
     const element = this.elementRef.nativeElement.querySelector(targetElement);
@@ -119,7 +201,6 @@ export class InscriptionComponent implements OnInit {
     }
   }
 
-  //TODO
   clickOnInscription() {
     var isGood : boolean = true;
     const elementWarningMSGName = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-name');
@@ -127,6 +208,7 @@ export class InscriptionComponent implements OnInit {
     const elementWarningMSGRPassword = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-Rpassword');
     const elementWarningMSGSurname = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-surname');
     const elementWarningMSGId = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-id');
+    const elementWarningMSGStatus = this.elementRef.nativeElement.querySelector('#inscription-warning-msg-profile');
     if (this.inscriptionForm.value.surname.length < 3) {
       elementWarningMSGSurname.style.visibility = 'visible';
       isGood = false;
@@ -161,6 +243,12 @@ export class InscriptionComponent implements OnInit {
       isGood = false;
     } else {
       elementWarningMSGRPassword.style.visibility = 'hidden';
+    }
+    if (this.actualStatus == "null") {
+      elementWarningMSGStatus.style.visibility = 'visible';
+      isGood = false;
+    } else {
+      elementWarningMSGStatus.style.visibility = 'hidden';
     }
     if (isGood) {
       const newUser = {
