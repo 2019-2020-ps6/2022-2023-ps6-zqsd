@@ -40,6 +40,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {ConnexionComponent} from "./Connexion/Connexion.component";
 import {InscriptionComponent} from "./Inscription/Inscription.component";
 import {ForgetPasswordComponent} from "./ForgetPassword/ForgetPassword.component";
+import {RetrievePasswordComponent} from "./RetrievePassword/RetrievePassword.component";
 
 
 
@@ -76,6 +77,7 @@ import {ForgetPasswordComponent} from "./ForgetPassword/ForgetPassword.component
     ConnexionComponent,
     CreateQuestion,
     ForgetPasswordComponent,
+    RetrievePasswordComponent
   ],
   imports: [
     BrowserModule,
