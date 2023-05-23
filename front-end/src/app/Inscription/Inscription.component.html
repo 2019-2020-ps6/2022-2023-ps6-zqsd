@@ -48,13 +48,28 @@
         <div class="inscription-warning-text" id="inscription-warning-msg-Rpassword">Les mots de passes ne sont pas identiques</div>
       </div>
     </div>
-    <div class="inscription-element">
-      <button routerLink="" id="inscription-mot-de-passe-oublie-button" class="inscription-button" (mouseleave)="resetDefaultBackgroundButton('#inscription-mot-de-passe-oublie-button')" (mouseenter)="changeBackgroundButton('#inscription-mot-de-passe-oublie-button')">
-        <div class="inscription-displayText text_displayed">
-          Mot de passe oublié ?
+
+    <div>
+      <div class="inscription-input-section inscription-element" id="inscription-button-section-profile">
+        <div class="text_displayed" id="inscription-profile_display">Sélectionnez votre status</div>
+        <div id="inscription-wrapper-button-menu-profile">
+          <button *ngFor="let button of statusButton; let last = last; let first = first; let i = index;" class="inscription-button-profile"
+                  (click)="button.onClick()"
+                  [ngClass]="{'first-button-margin': first, 'last-button-margin': last, 'hidden': i > 0}">
+            <div class="inscription-display-text-profile text_displayed">{{button.status}}</div>
+          </button>
         </div>
-      </button>
+        <div id="wrapper-button-img-profile">
+          <button id="button-down-up-profile" (click)="showHideBUttonProfile()">
+            <img id="img-button-profile" [src]="buttonProfilePathPicture">
+          </button>
+        </div>
+      </div>
+      <div class="parent-div-inscription-warning-text">
+        <div class="inscription-warning-text" id="inscription-warning-msg-profile">Vous devez sélectionner un status</div>
+      </div>
     </div>
+
     <div id="inscription_navigate_button">
       <div class="inscription-element" id="firstButtonNav">
         <button routerLink="/homePage" id="inscription-leave-button" class="inscription-button" (mouseleave)="resetDefaultBackgroundButton('#inscription-leave-button')" (mouseenter)="changeBackgroundButton('#inscription-leave-button')">

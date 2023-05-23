@@ -3,32 +3,32 @@ import { User,TimeToAnswer } from '../models/user.model';
 export const Users: User[] = [
     {
         id: "1",
-        prenom: "Pierre",
-        nom: "Paul",
+        prenom: "pierre",
+        nom: "paul",
         identifiant : "Pieropaul",
         motDePasse : "pastis51",
         status: "user"
     },
     {
         id: "2",
-        prenom: "Frederic",
-        nom: "Rallo",
+        prenom: "frederic",
+        nom: "rallo",
         identifiant : "frallo",
         motDePasse : "ihm",
         status: "staff"
     },
     {
         id: "3",
-        prenom: "Albert",
-        nom: "Oranj",
+        prenom: "albert",
+        nom: "oranj",
         identifiant : "Albertor",
         motDePasse : "ricard",
         status: "user"
     },
     {
         id: "4",
-        prenom: "Lou",
-        nom: "Paul",
+        prenom: "lou",
+        nom: "paul",
         identifiant : "loupaul",
         motDePasse : "poney",
         status: "familly"
