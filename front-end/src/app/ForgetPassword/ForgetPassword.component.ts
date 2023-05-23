@@ -114,7 +114,7 @@ export class ForgetPasswordComponent implements OnInit {
         elementWarningMSGId.style.visibility = 'visible';
       }
     } else {
-      this.router.navigate(['/modificatePassword']);
+      this.router.navigate(['/retrievepassword']);
     }
   }
 }

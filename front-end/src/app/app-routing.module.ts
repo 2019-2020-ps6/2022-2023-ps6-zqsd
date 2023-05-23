@@ -39,7 +39,7 @@ const routes: Routes = [
   { path: 'ParameterPage', component: ParameterPageComponent },
   { path: 'MemoryWork', component: MemoryWorkAdvancedParameterComponent },
   { path : 'QuizList', component: QuizzListComponent},
-  { path : 'ConnexionPage', component: RetrievePasswordComponent},
+  { path : 'ConnexionPage', component: ConnexionComponent},
   { path : 'inscription', component: InscriptionComponent},
   { path : 'forgetpassword', component: ForgetPasswordComponent},
   { path : 'retrievepassword', component: RetrievePasswordComponent},
