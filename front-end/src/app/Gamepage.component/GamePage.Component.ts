@@ -54,16 +54,11 @@ export class GamepageComponent implements OnInit {
         width: '600px',
         height: '400px',
         disableClose: true,
-      });
-      this.gameService.stopCountdown();
-    
+      });   
       dialogRef.afterClosed().subscribe(() => {
         this.gameService.setShowDialog(false);
-        setTimeout(() => {
-          this.gameService.resetCountdown(this.countdown);
-        }, 100);
+        this.dialog.closeAll();
       });
-    
       return dialogRef;
     }
     

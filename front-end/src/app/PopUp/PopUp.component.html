@@ -4,6 +4,8 @@
     <p class="PopUpMessage">{{message}}</p>
   </div>
   <div mat-dialog-actions class="PopUpButton">
-    <button mat-button (click)="onClose(true)">Oui, je suis là</button>
+    <button mat-button (click)="onHome()">Quitter</button>
+    <button mat-button (click)="onRetry()">Réessayer</button>
+    <button mat-button (click)="onSkip()">Passer</button>
   </div>
 </div>

@@ -2,7 +2,7 @@ import { GamepageComponent } from './../app/Gamepage.component/GamePage.Componen
 import { Quiz1 } from './../mocks/quizz.mock';
 import { AnswerClassic1 } from './../mocks/question.mock';
 import { GameAnswerComponent } from './../app/GameAnswer.component/GameAnswer.Component';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { BehaviorSubject, Subject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { serverUrl } from '../configs/server.config';
@@ -18,6 +18,8 @@ import { AdvancedParameterService } from './Parameter/AdvancedParameterService';
   providedIn: 'root'
 })
 export class GameService {
+  retryEvent: Subject<void> = new Subject<void>();
+  skipEvent: Subject<void> = new Subject<void>();
 
   public quizList: Quiz[] = QuizExample;
 
@@ -42,10 +44,17 @@ export class GameService {
   public showDialog$ = this.showDialogSubject.asObservable();
 
   constructor(private aps : AdvancedParameterService) {
-    // Abonnez-vous aux changements de deadline
     this.aps.getCurrentChronometerOBS().subscribe((deadline) => {
-      // Réinitialise le compte à rebours avec la nouvelle deadline
       this.deadline =deadline;
+    });
+    this.retryEvent.subscribe(() => {
+      this.resetCountdown(this.countdown);
+      console.log("Retry event received");
+    });
+
+    this.skipEvent.subscribe(() => {
+      this.nextQuestion();
+      console.log("Skip event received");
     });
   }
 
@@ -120,7 +129,7 @@ export class GameService {
     });
   }
   public resetCountdown(countdown: any): void {
-    clearInterval(this.intervalId);
+    this.stopCountdown();
     let remainingTime = this.deadline;
     // Met à jour le compte à rebours toutes les secondes
     this.intervalId = setInterval(() => {
@@ -130,9 +139,8 @@ export class GameService {
       this.remainingTime = remainingTime;
       // Si le temps est écoulé, arrête le compte à rebours
       if (remainingTime == 0) {
-        clearInterval(this.intervalId);
-        this.nextQuestion();
-        this.showDialogSubject.next(true);
+        this.stopCountdown();
+        this.showDialogSubject.next(true);    
       }
     }, 1000); // Exécute la fonction toutes les 1000ms (1s)
   }
@@ -153,5 +161,11 @@ export class GameService {
   setShowDialog(bool: boolean): void {
     this.showDialogSubject.next(bool);
   }
+  emitRetryEvent(): void {
+    this.retryEvent.next();
+  }
 
+  emitSkipEvent(): void {
+    this.skipEvent.next();
+  }
 }
