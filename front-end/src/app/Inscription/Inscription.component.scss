@@ -2,7 +2,6 @@
 
 
 .form-inscription {
-  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -83,7 +82,6 @@
 }
 
 #inscription_navigate_button {
-  position: relative;
   display: flex;
   flex-direction: row;
   top : 50px;
@@ -109,8 +107,7 @@
 }
 
 #inscription-image-password-eye {
-  position: absolute;
-  height: 50px;
+  margin-left: 10px;
 }
 
 #inscription-warning-msg-surname {
@@ -224,3 +221,4 @@
 .last-button-margin {
   border-radius: 0 0 20px 20px;
 }
+
