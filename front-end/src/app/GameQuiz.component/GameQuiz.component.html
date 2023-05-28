@@ -15,7 +15,7 @@
   <app-game-question-classical [currentQuestion]="currentQuestion" (answerEvent)="getNextQuestion($event)"></app-game-question-classical>
 </ng-template>
 <div class="button-container">
-  <button class="game-question-button" *ngIf="!this.isFinnished" (click)="getNextQuestion(true); resetCountdown(countdown)">Next Question</button>
+  <button class="game-question-button" *ngIf="!this.isFinnished" (click)="getNextQuestion(true); resetCountdown(countdown)">Question suivante</button>
   <button class="game-question-button" *ngIf="this.isFinnished" (click)="stopCountdown()"routerLink="/results">Voir les résultats</button>
 </div>
 
