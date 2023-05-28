@@ -268,25 +268,25 @@ html{ height: 100%; }
 }
 
 .questionTitle {
-  font-size: calc(var(--currentSize) + 5px);
   text-align: center;
   font-weight: bold;
   text-decoration: underline;
   text-underline-offset: 10px;
-  animation: pulse 7s ease-in-out infinite;
+  animation: pulse 5s ease-in-out infinite;
+}
 
-  @keyframes pulse {
-    0%, 25% {
-      font-size: calc(var(--currentSize) + 5px);
-    }
-    50% {
-      font-size: calc(var(--currentSize) + 8px);
-    }
-    75%, 100% {
-      font-size: calc(var(--currentSize) + 5px);
-    }
+@keyframes pulse {
+  0% {
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 0 0 15px rgb(255, 255, 0);
+  }
+  100% {
+    text-shadow: none;
   }
 }
+
 .button-advanced-P{
   position:relative;
   bottom: 0;
