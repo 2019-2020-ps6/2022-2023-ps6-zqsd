@@ -16,13 +16,12 @@ export class GamepageComponent implements OnInit {
     public countdown: HTMLElement|null = null;
     public remainingTime: number = 30;
     public showPopUp: boolean = false;
-
     public topValue: number = 0;
     public rightValue: number = 0;
     public marginValue: number = 25;
 
 
-    constructor(private aps: AdvancedParameterService, private gameService: GameService, private cdRef: ChangeDetectorRef, public dialog: MatDialog, private displayService : DisplayService) { }
+    constructor(private gameService: GameService, public dialog: MatDialog, private displayService : DisplayService) { }
 
     ngOnInit(): void {
         // Récupère l'élément HTML pour afficher le compte à rebours
@@ -41,12 +40,6 @@ export class GamepageComponent implements OnInit {
           if (showDialog) {
             this.openDialog();
           }
-        })
-        this.displayService.getTopRightMargin_Timer().subscribe((topRightMargin_Timer) => {
-          this.topValue = topRightMargin_Timer[0];
-          this.rightValue = topRightMargin_Timer[1];
-          this.marginValue = topRightMargin_Timer[2];
-          this.cdRef.detectChanges();
         })
     }
     openDialog(): MatDialogRef<PopUpComponent> {

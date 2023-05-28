@@ -1,32 +1,39 @@
-.timer{
+.timer {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: #555;
-  color: #fff;
-  font-size: 24px;
+  background-color: #fff;
+  color: #111;
+  font-size: 25px;
+  font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
+  top: 0;
+  right: 0;
   margin: 25px;
   border: 2px solid transparent;
   animation: timer-border 1s linear infinite;
+  z-index: 9999;
 }
+
+@keyframes timer-border {
+  0% {
+    border: 2px solid transparent;
+  }
+  50% {
+    border: 2px solid orange;
+    border-radius: 40%;
+  }
+  100% {
+    border: 2px solid transparent;
+    border-radius: 50%;
+  }
+}
+
 .main-content{
   position: relative;
 }
-@keyframes timer-border {
-  0% {
-    border: 2px solid transparent; /* première étape de l'animation: une bordure transparente */
-  }
-  50% {
-    border: 2px solid orange; /* deuxième étape de l'animation: une bordure orange */
-    border-radius: 40%; /* réduire légèrement le rayon pour donner une impression de vibration */
-  }
-  100% {
-    border: 2px solid transparent; /* dernière étape de l'animation: une bordure transparente */
-    border-radius: 50%; /* remettre le rayon à 50% */
-  }
-}
+
 
