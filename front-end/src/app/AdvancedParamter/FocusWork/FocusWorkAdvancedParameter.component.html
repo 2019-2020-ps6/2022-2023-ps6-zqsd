@@ -31,4 +31,10 @@
           {{textDisplayWrongAnswerAnimationButton}}
         </button>
     </div>
+    <div class="container" id="uppercase_button">
+      <span class="textButton">
+        Texte en majuscule
+      </span>
+      <button style="width: 150px;" (click)="toggleUppercase()" [innerText]="isUpperCase ? 'Désactiver' : 'Activer'"></button>
+  </div>
 </div>

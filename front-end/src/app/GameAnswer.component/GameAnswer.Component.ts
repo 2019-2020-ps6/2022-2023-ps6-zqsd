@@ -18,7 +18,7 @@ export class GameAnswerComponent implements OnInit {
   public visuelRightAnswer : boolean = true;
   public visuelFalseAnswer : boolean = true;
 
-  constructor(private gameService: GameService,private router: Router, private renderer : Renderer2, private elementRef : ElementRef, private advPService : AdvancedParameterService) { }
+  constructor(private gameService: GameService,private router: Router, private renderer : Renderer2, private elementRef : ElementRef, public advPService : AdvancedParameterService) { }
 
   getAnswerResult(): void {
     const buttonSound = new Audio();

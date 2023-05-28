@@ -1,5 +1,5 @@
 <div *ngIf="currentQuestion!=undefined" class="question-container">
-  <div style="margin-top: 15px; margin-bottom: 15px; font-size: calc(var(--currentSize) + 5px);" [ngClass]="{'questionTitle': enableAnimationQuestion}">{{currentQuestion.value}}</div>
+  <div style="margin-top: 15px; margin-bottom: 15px; font-size: calc(var(--currentSize) + 5px);" [ngClass]="{'questionTitle': enableAnimationQuestion, 'uppercase-text': advPService.isUpperCase}">{{currentQuestion.value}}</div>
     <div class="answers-container">
         <div class="answer-row">
             <div class="answer-option">

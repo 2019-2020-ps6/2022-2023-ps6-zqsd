@@ -21,6 +21,7 @@ export class FocusWorkAdvancedParameterComponent implements OnInit {
     textDisplayRightAnswerAnimationButton : string = this.setTextDisplayButton(this.rightAnswerAnimationIsEnable);
     textDisplayWrongAnswerAnimationButton : string = this.setTextDisplayButton(this.wrongAnswerAnimationIsEnable);
 
+    public isUpperCase = false;
     public svgActif = true;
     @ViewChild('toggleButton', { static: true }) toggleButton!: ElementRef<HTMLButtonElement>;
 
@@ -44,7 +45,10 @@ export class FocusWorkAdvancedParameterComponent implements OnInit {
             this.textDisplayWrongAnswerAnimationButton = this.setTextDisplayButton(this.wrongAnswerAnimationIsEnable)
         });
         this.advancedParameterService.getSvgEnabled().subscribe((enabled: boolean) => {
-            enabled = this.svgActif;
+            this.svgActif = enabled;
+        });
+        this.advancedParameterService.getUpperCase().subscribe((enabled: boolean) => {
+            this.isUpperCase = enabled;
         });
     }
 
@@ -75,11 +79,18 @@ export class FocusWorkAdvancedParameterComponent implements OnInit {
     }
 
     toggleSVG() {
-        this.svgActif = !this.svgActif;
-        this.advancedParameterService.setSvgActif(this.svgActif);
+        this.advancedParameterService.setSvgActif(!this.svgActif);
         if (this.toggleButton) {
           this.toggleButton.nativeElement.innerText = this.svgActif ? 'Clair' : 'Sombre';
         }
-        console.log("svg : " + this.svgActif);
+        console.log("this.svg : " + this.svgActif);
+        console.log("service.svg : " + this.advancedParameterService.svgActif);
+    }
+
+    toggleUppercase() {
+        this.advancedParameterService.setUpperCase(!this.isUpperCase);
+        console.log("this.uppercase : " + this.isUpperCase);
+        console.log("service.uppercase : " + this.advancedParameterService.isUpperCase);
     }
 }
+      

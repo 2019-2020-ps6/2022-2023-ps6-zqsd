@@ -37,6 +37,8 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
 
     public svgActif: boolean = true;
     public svgActif$ : BehaviorSubject<boolean> = new BehaviorSubject(this.svgActif)
+    public isUpperCase: boolean = false;
+    public isUpperCase$ : BehaviorSubject<boolean> = new BehaviorSubject(this.isUpperCase)
 
 
     constructor () {
@@ -247,12 +249,20 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
     }
 
     getSvgEnabled() : Observable<boolean> {
-      console.log("observable")
       return this.svgActif$.asObservable();
       
     }
     setSvgActif(value: boolean) {
+      this.svgActif = value;
       this.svgActif$.next(value);
+    }
+    getUpperCase() : Observable<boolean> {
+      return this.isUpperCase$.asObservable();
+      
+    }
+    setUpperCase(value: boolean) {
+      this.isUpperCase = value;
+      this.isUpperCase$.next(value);
     }
   }
 

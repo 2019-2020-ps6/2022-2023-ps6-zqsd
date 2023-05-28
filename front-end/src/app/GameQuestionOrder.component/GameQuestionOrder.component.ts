@@ -19,7 +19,7 @@ export class GameQuestionOrderComponent implements OnInit {
   answers: Answer[] = [];
   public enableAnimationQuestion : boolean = true;
 
-  constructor(private gameService: GameService, private advPService : AdvancedParameterService) {}
+  constructor(private gameService: GameService, public advPService : AdvancedParameterService) {}
 
 
 

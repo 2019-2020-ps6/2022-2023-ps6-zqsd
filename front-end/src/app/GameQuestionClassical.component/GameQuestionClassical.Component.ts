@@ -20,7 +20,7 @@ export class GameQuestionComponent implements OnInit{
   public enableAnimationQuestion : boolean = true;
 
 
-  constructor(private gameService: GameService, private advPService : AdvancedParameterService) {
+  constructor(private gameService: GameService, public advPService : AdvancedParameterService) {
     this.gameAnswers = new QueryList<ElementRef>();
   }
 
