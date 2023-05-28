@@ -14,7 +14,7 @@ export class ParameterSizeTextComponent implements OnInit {
     public currentSize: number = 0;
     disabled = false;
     max = 30;
-    min = 15;
+    min = 20;
     showTicks = false;
     step = 1;
     thumbLabel = false;

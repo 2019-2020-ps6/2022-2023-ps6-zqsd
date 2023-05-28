@@ -1,5 +1,5 @@
 <div class="question-container">
-  <div style="margin-top: 15px; margin-bottom: 15px;" [ngClass]="{'questionTitle': enableAnimationQuestion}">{{currentQuestion?.value}}</div>
+  <div style="margin-top: 15px; margin-bottom: 15px; font-size: calc(var(--currentSize) + 5px);" [ngClass]="{'questionTitle': enableAnimationQuestion}">{{currentQuestion?.value}}</div>
 
   <div class="answer-list" cdkDropList (cdkDropListDropped)="drop($event)">
     <div class="answer-block" *ngFor="let answer of this.answers" cdkDrag>
