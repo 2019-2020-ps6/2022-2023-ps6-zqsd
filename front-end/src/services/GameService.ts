@@ -43,6 +43,9 @@ export class GameService {
   private showDialogSubject = new BehaviorSubject<boolean>(false);
   public showDialog$ = this.showDialogSubject.asObservable();
 
+  private quizEventSubject = new Subject<void>();
+  quizEvent$ = this.quizEventSubject.asObservable()
+
   constructor(private aps : AdvancedParameterService) {
     this.aps.getCurrentChronometerOBS().subscribe((deadline) => {
       this.deadline =deadline;
@@ -167,5 +170,9 @@ export class GameService {
 
   emitSkipEvent(): void {
     this.skipEvent.next();
+  }
+  triggerQuizEvent() {
+    this.quizEventSubject.next();
+    console.log("event triggered")
   }
 }

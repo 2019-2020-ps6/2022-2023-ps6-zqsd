@@ -18,10 +18,15 @@ export class HomePageComponent {
 
   constructor( public gameService:GameService){
     this.QuizzList=gameService.getQuizList();
+  }
 
+  ngOnInit(){
+    this.gameService.quizEvent$.subscribe(() => {
+      this.jouerQuizz();
+    });
   }
   jouerQuizz() {
-    
+    console.log("jouer quiz appelé");
     this.chosenQuizz = _.sample(this.QuizzList)
     if (this.chosenQuizz)
       this.gameService.currentQuiz = this.chosenQuizz
