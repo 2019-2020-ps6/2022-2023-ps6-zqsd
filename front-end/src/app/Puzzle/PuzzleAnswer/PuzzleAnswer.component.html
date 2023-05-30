@@ -7,5 +7,5 @@
   (document:mousemove)="drag($event)"
   (document:mouseup)="endDrag()">
   <img *ngIf="imageUrl.length!=0" [src]="imageUrl" [style.--size]="this.puzzlePieceHeight"/>
-  <img *ngIf="imageUrl.length == 0" [src]="pictureCanvas.toDataURL()" [style.--size]="this.puzzlePieceHeight"/>
+  <img *ngIf="imageUrl.length==0 && pictureCanvas" [src]="pictureCanvas.toDataURL()" [style.--size]="this.puzzlePieceHeight"/>
 </div>

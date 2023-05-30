@@ -59,3 +59,21 @@ d
 4front-end/src/app/Connexion/Connexion.component.html,9\c\9c2084373e49a1bd7fbabee2aa0b2fc01e5c7fa7
 W
 'front-end/src/app/app-routing.module.ts,0\c\0c15380226f8d4ee8477a196e813fe9b5824b2f7
+P
+ front-end/src/mocks/user.mock.ts,6\8\680ecd6786cb1b574e63e2d67a9bb6117ec90862
+p
+@front-end/src/app/CreateQuiz.component/CreateQuiz.component.html,7\2\7299380bada1925f07ef885eb200be0d8c1a146e
+n
+>front-end/src/app/CreateQuiz.component/CreateQuiz.component.ts,f\f\ff24ac66ef5311f22554a3a760bf2a2a2bd3ad7f
+p
+@front-end/src/app/CreateQuiz.component/CreateQuiz.component.scss,e\0\e094ab3e14d9f08cfde7ecfb6e9e886ffe907d58
+Y
+)front-end/src/services/QuestionService.ts,7\3\7367f805a7a4680d6a87af3f9778d0f271a296c1
+k
+;front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts,b\0\b0ed43de26b2eacb8003e0e28537d9d8b4348e46
+m
+=front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.scss,e\f\ef209d457b87936eaae997dc7267913e7958f4e2
+x
+Hfront-end/src/app/CreateQuestion.component/CreateQuestion.component.html,9\7\9758cbc236bf8c12c09cc3477eebd5ed1c5c9ffc
+v
+Ffront-end/src/app/CreateQuestion.component/CreateQuestion.component.ts,9\9\9954e1368a772fdc749ccb70da12c01564e036b6
