@@ -1,6 +1,6 @@
 <div class="listOfButton" id="listOfButtonFocusWork">
     <div class="container" id="backgroundFocusWork">
-        <span class="textButton">
+        <span class="textButton, white-text">
             Fond
         </span>
         <button style="width: 150px;" (click)="toggleSVG()" #toggleButton>
@@ -8,7 +8,7 @@
         </button>
     </div>
     <div class="container" id="questionAnimationFocusWork">
-        <span class="textButton">
+        <span class="textButton, white-text">
             Animation Questions
         </span>
         <button style="width: 150px;" (click)="switchCurrentQuestionAnimation()">
@@ -16,7 +16,7 @@
         </button>
     </div>
     <div class="container" id="rightAnswerAnimationFocusWork">
-        <span class="textButton">
+        <span class="textButton, white-text">
             Visuel Réponse Juste
         </span>
         <button style="width: 150px;" (click)="switchCurrentRightAnswerAnimation()">
@@ -24,7 +24,7 @@
         </button>
     </div>
     <div class="container" id="wrongAnswerAnimationFocusWork">
-        <span class="textButton">
+        <span class="textButton, white-text">
           Visuel Réponse Fausse
         </span>
         <button style="width: 150px;" (click)="switchCurrentWrongAnswerAnimation()">
@@ -32,7 +32,7 @@
         </button>
     </div>
     <div class="container" id="uppercase_button">
-      <span class="textButton">
+      <span class="textButton, white-text">
         Texte en majuscule
       </span>
       <button style="width: 150px;" (click)="toggleUppercase()" [innerText]="isUpperCase ? 'Désactiver' : 'Activer'"></button>
