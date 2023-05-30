@@ -1,10 +1,12 @@
 <div>
-  <h1 style="text-align: center; margin-bottom: 100px;">Résultats</h1>
-  <h2 style="font-size: 30px; text-align: center;margin-bottom: 75px;">{{ getScorePhrase(gameService.score, gameService.currentQuiz.questions.length) }}</h2>
-  <p style="text-align: center; font-size: 60px;"><strong>{{ gameService.score }}/{{ gameService.currentQuiz.questions.length }}</strong></p>
+  <div class="container">
+    <h1 style="text-align: center; margin-bottom: 75px; font-size: 3em;">Résultats</h1>
+    <h2 style="font-size: 30px; text-align: center;margin-bottom: 75px;">{{ getScorePhrase(gameService.score, gameService.currentQuiz.questions.length) }}</h2>
+    <p style="text-align: center; font-size: 60px;"><strong>{{ gameService.score }}/{{ gameService.currentQuiz.questions.length }}</strong></p>
 
-  <div style="text-align: center; margin-top: 50px;">
+    <div style="text-align: center; margin-top: 50px;">
     <button routerLink="/homePage" style="margin-right: 10px; width: 200px;">Menu</button>
     <button  (click)="jouerQuiz()" style="width: 200px;">Nouveau Quiz</button>
+    </div>
   </div>
 </div>

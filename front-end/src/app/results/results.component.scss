@@ -3,7 +3,7 @@
     text-shadow: none;
   }
   50% {
-    text-shadow: 0 0 10px rgb(250, 250, 250), 0 0 20px gold, 0 0 30px rgb(250, 250, 248);
+    text-shadow: 0 0 10px rgb(250, 250, 250), 0 0 20px gold, 0 0 30px rgb(250, 250, 250);
   }
   100% {
     text-shadow: none;
@@ -14,4 +14,16 @@ p {
   animation-name: celebrateScore;
   animation-duration: 3s;
   animation-iteration-count: infinite;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  background-color: #777;
+  opacity: 80%;
 }
