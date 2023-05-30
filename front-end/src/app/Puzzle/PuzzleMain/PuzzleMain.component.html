@@ -7,6 +7,7 @@
   *ngFor="let answer of currentAnswer; let i = index"
   (placedCorrectly)="this.calculateAfterDraging($event)"
   [imageUrl]="answer.value"
+  [pictureCanvas]="answer.picture"
   [id]="dictIndex_TO_ID[i]"
   [indexOfThePicture]="i"
   [puzzlePieceHeight] = "puzzlePieceHeight"
