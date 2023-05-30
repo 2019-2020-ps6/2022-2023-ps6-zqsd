@@ -7,8 +7,6 @@ l
 <front-end/src/services/Parameter/AdvancedParameterService.ts,9\a\9ad66a686ea651a8d7791529a26dafd494fbbb2a
 h
 8front-end/src/app/header.component/header.component.scss,b\7\b742a595f695d9e2bfb77af2266a7440c32ecbdd
-v
-Ffront-end/src/app/CreateQuestion.component/CreateQuestion.component.ts,9\9\9954e1368a772fdc749ccb70da12c01564e036b6
 y
 Ifront-end/src/app/AdvancedParamter/Chronometer/Chronometer.component.html,0\3\036b187aeb1a5591dfe046492cf3e03d41285f4f
 „
@@ -27,8 +25,6 @@ f
 6front-end/src/app/quizz-list/quizz-list.component.html,d\4\d4689baf9573606ae305eb56221b21d1d63f42dc
 Q
 !front-end/src/mocks/quizz.mock.ts,4\2\425be914fbeeddb06c6a5a294509e0ad2d2c4af6
-T
-$front-end/src/mocks/question.mock.ts,3\4\3490f40e7502a1952afd702717a0a1347c0b2b53
 ^
 .front-end/src/app/results/results.component.ts,1\d\1dfda5647d7652ebe5fb1909bf77d605cb821245
 c
@@ -37,3 +33,29 @@ c
 0front-end/src/app/results/results.component.html,e\7\e7c0f394fab6f32039e2f1a38754d87670b08371
 U
 %front-end/src/services/GameService.ts,2\e\2e738a8963976ae6ab9d160c5734f53e686fb6ac
+U
+%front-end/src/services/UserService.ts,a\8\a8109282c5041fa1b46c7a3df47b83c8522a2350
+I
+front-end/src/styles.scss,1\9\19896ffd6198b7f4df8336d0e91474a363b77415
+T
+$front-end/src/app/app.component.html,0\d\0d1ba2d8945cdab73f9817991de3f681a0eca4ce
+d
+4front-end/src/app/Connexion/Connexion.component.scss,b\4\b46b2c95a22e563fc28bbe8f849056522b8538ca
+Z
+*front-end/src/scss/connexion-variable.scss,2\a\2a3381a00d6cbbe99edf3530313d1dd85cd9a18a
+K
+front-end/tsconfig.app.json,7\4\7415b45c20ac76acc7394f03a7f0ec83d45d92a5
+b
+2front-end/src/app/Connexion/Connexion.component.ts,6\3\63734b807f9e8e521d860516e9b63c86d3012018
+h
+8front-end/src/app/Inscription/Inscription.component.scss,2\5\252ec292db3a9e4c67606633e04f1a874c449437
+O
+front-end/src/app/app.module.ts,b\0\b08266b6396482628adadb0db2ed9f4b8ee7301a
+f
+6front-end/src/app/Inscription/Inscription.component.ts,d\c\dca94ad8e941159c3e0628ae45ff6131a9f457d5
+h
+8front-end/src/app/Inscription/Inscription.component.html,f\8\f87c4e4705c779ee0ae4ae37ffb9b660535cf806
+d
+4front-end/src/app/Connexion/Connexion.component.html,9\c\9c2084373e49a1bd7fbabee2aa0b2fc01e5c7fa7
+W
+'front-end/src/app/app-routing.module.ts,0\c\0c15380226f8d4ee8477a196e813fe9b5824b2f7

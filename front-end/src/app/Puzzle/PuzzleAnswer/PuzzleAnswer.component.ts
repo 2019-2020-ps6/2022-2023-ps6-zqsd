@@ -13,6 +13,7 @@ export class PuzzleAnswerComponent implements OnInit {
 
 
   @Input() imageUrl: string = AnswerPuzzle1[0].value;
+  @Input() pictureCanvas?: HTMLCanvasElement = AnswerPuzzle1[0].picture;
   @Input() indexOfThePicture: number = 0; //must start at 0 for the first one and thus 8 for the last one
   @Input() id : number = 0;
   @Input() puzzlePieceHeight: number = 10;
