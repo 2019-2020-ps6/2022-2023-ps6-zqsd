@@ -29,9 +29,7 @@ export class ResultsComponent {
 
   jouerQuiz(): void {
     this.gameService.triggerQuizEvent();
-    setTimeout(() => {
-      this.router.navigate(['/Gamepage']);
-    }, 1000);
+    this.router.navigate(['/Gamepage']);
   }
   
 }
