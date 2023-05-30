@@ -1,6 +1,6 @@
-const { Quiz } = require('../../models')
-const { filterQuestionsFromQuizz } = require('./questions/manager')
-const { filterAnswersFromQuestion } = require('./questions/answers/manager')
+const { Quiz } = require('../../models');
+const { Question } = require('../../models');
+const {filterQuestionsFromQuizz} = require('./questions/manager')
 
 /**
  * Function buildQuizz.
@@ -9,7 +9,7 @@ const { filterAnswersFromQuestion } = require('./questions/answers/manager')
  */
 const buildQuizz = (quizId) => {
   const quiz = Quiz.getById(quizId)
-  const questions = filterQuestionsFromQuizz(quiz.questions)
+  const questions = filterQuestionsFromQuizz(quiz.questionsId)
   return { ...quiz, questions: questions }
 }
 
