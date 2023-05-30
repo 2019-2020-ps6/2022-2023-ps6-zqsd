@@ -35,7 +35,7 @@ export class CreateQuestion implements OnInit, AfterViewInit{
   showChronologicalSection = false;
   id = 5;
   questionType = ''; // Ajout de la variable questionType
-  selectedImage: File | null = null;
+  selectedImage: HTMLImageElement  | null = null;
   answers: Answer[] = [];
 
   answer1Order: number = 1;
@@ -43,6 +43,14 @@ export class CreateQuestion implements OnInit, AfterViewInit{
   answer3Order: number = 3;
   answer4Order: number = 4;
   puzzleSplitNumber: number = 0;
+
+
+  a : boolean = false;
+
+  aa : HTMLCanvasElement | undefined;
+  ab : HTMLCanvasElement | undefined;
+  ac : HTMLCanvasElement | undefined;
+  ad : HTMLCanvasElement | undefined;
 
   showClassic() {
     this.showSearchingSection = false;
@@ -169,62 +177,106 @@ export class CreateQuestion implements OnInit, AfterViewInit{
 
         }
         if (this.questionType === 'searching' && this.selectedImage) {
-          // Convertir l'image en une URL Base64 ou effectuer toute autre opération de traitement de l'image
-          // pour obtenir le contenu à assigner à la propriété imageSearching de la question.
-          // Par exemple, en utilisant FileReader pour lire le contenu de l'image sélectionnée :
-          const reader = new FileReader();
-          reader.onload = (event) => {
-            questionS.imageSearching = event.target?.result as string;
-          };
-
-          reader.readAsDataURL(this.selectedImage);
+          // Créer un élément canvas pour convertir l'image en Blob
+          const canvas = document.createElement('canvas');
+          const context = canvas.getContext('2d');
+          if (context) {
+            canvas.width = this.selectedImage.width;
+            canvas.height = this.selectedImage.height;
+            context.drawImage(this.selectedImage, 0, 0);
+            canvas.toBlob((blob) => {
+              if (blob) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                  const base64Image = event.target?.result as string;
+                  const questionS: Question = {
+                    value: this.questionForm.value.question,
+                    label: "searching",
+                    id: this.id.toString(),
+                    answers: answers,
+                    imageSearching: base64Image,
+                  };
+                  this.questionService.addQuestion(questionS);
+                };
+                reader.readAsDataURL(blob);
+              }
+            });
+          }
+        }
+        break;
+    case 'puzzle':
+      if (this.puzzleSplitNumber > 1 && this.selectedImage) {
+        const largeurPartie: number = this.selectedImage.width / this.puzzleSplitNumber;
+        const hauteurPartie: number = this.selectedImage.height / this.puzzleSplitNumber;
+        const partiesImage: HTMLCanvasElement[] = [];
+        for (let i = 0; i < this.puzzleSplitNumber; i++) {
+          for (let j = 0; j < this.puzzleSplitNumber; j++) {
+            const canvas = document.createElement('canvas');
+            canvas.width = largeurPartie;
+            canvas.height = hauteurPartie;
+            const context = canvas.getContext('2d');
+            if (context) {
+              context.drawImage(
+                this.selectedImage,
+                i * largeurPartie,
+                j * hauteurPartie,
+                largeurPartie,
+                hauteurPartie,
+                0,
+                0,
+                largeurPartie,
+                hauteurPartie
+              );
+            }
+            partiesImage.push(canvas);
+            answers.push({
+              label: "puzzle",
+              value: "",
+              isCorrect:false,
+              order : i + j * this.puzzleSplitNumber,
+              picture: partiesImage[partiesImage.length - 1],
+            });
+          }
+        }
         const questionS: Question = {
           value: this.questionForm.value.question,
           label: "searching",
           id: this.id.toString(),
           answers: answers,
-          imageSearching: this.selectedImage? this.selectedImage.name :undefined, // Ajoutez ici la logique pour récupérer l'image searching
         };
+        this.questionService.addQuestion(questionS);
+      }
+      break;
+    default:
+      break;
+  }
+  this.questionForm.reset();
+  console.log('question ajoutée');
+  this.showClassicSection = false;
+  this.showSearchingSection = false;
+  this.showPuzzleSection = false;
+  this.showChronologicalSection = false;
 
-          this.questionService.addQuestion(questionS);
-          break;
-
-          // puzzle à faire
-          /*
-        case 'puzzle':
-          // Handle puzzle-specific logic
-          break;
-
-        default:
-          break;
-      }*/
-
-
-        }
-    }
-    this.questionForm.reset();
-    console.log('question ajoutée');
-    this.showClassicSection = false;
-    this.showSearchingSection = false;
-    this.showPuzzleSection = false;
-    this.showChronologicalSection = false;
   }
 
   onImageSelected(event: Event) {
     const inputElement = event.target as HTMLInputElement;
     const files = inputElement.files!;
     if (files && files.length > 0) {
-      this.selectedImage = files[0];
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const imageElement = new Image();
+        imageElement.onload = () => {
+          this.selectedImage = imageElement;
+        };
+        imageElement.src = event.target?.result as string;
+      };
+      reader.readAsDataURL(files[0]);
     }
   }
 
-
-  getSelectedImageURL(): SafeUrl {
-    return this.selectedImage ? this.sanitizer.bypassSecurityTrustUrl(URL.createObjectURL(this.selectedImage)) : '';
-  }
-
   ngAfterViewInit() {
-    this.questionType = ''; // Déplacez la logique ici
+    this.questionType = '';
   }
 
 
