@@ -15,8 +15,7 @@ export class HeaderComponent implements OnInit {
     goBack() {
       this.location.back();
     }
-     stopCountdown():void{
+    stopCountdown():void{
       this.gameService.stopCountdown();
-     }
-
+    }
 }

@@ -1,13 +1,25 @@
 <header id="header">
   <div class="container">
-      <div class="logo">
-        <img  src="../../assets/logo/LOGO_ZQSD_V3.png" />
-      </div>
+    <div class="logo">
+      <img src="../../assets/logo/LOGO_ZQSD_V3.png" />
+    </div>
   </div>
   <div class="menu">
-    <img routerLink="/ParameterPage" src="./assets/menu/settings-outline.svg" style="width: 50px;height: 50px;">
-    <img routerLink="/ConnexionPage" src="./assets/menu/person-circle-outline.svg" style="width: 50px;height: 50px;">
-    <img (click)="goBack()" src="./assets/menu/arrow-undo-outline.svg" style="width: 50px;height: 50px;">
-    <img (click)="stopCountdown()" routerLink="/homePage" src="./assets/menu/home-outline.svg" style="width: 50px;height: 50px;">
+    <div class="menu-item">
+      <img routerLink="/ParameterPage" src="./assets/menu/settings-outline.svg" style="width: 50px; height: 50px;">
+      <span class="menu-item-text">Paramètres</span>
+    </div>
+    <div class="menu-item">
+      <img routerLink="/ConnexionPage" src="./assets/menu/person-circle-outline.svg" style="width: 50px; height: 50px;">
+      <span class="menu-item-text">Connexion</span>
+    </div>
+    <div class="menu-item">
+      <img (click)="goBack()" src="./assets/menu/arrow-undo-outline.svg" style="width: 50px; height: 50px;">
+      <span class="menu-item-text">Retour</span>
+    </div>
+    <div class="menu-item">
+      <img (click)="stopCountdown()" routerLink="/homePage" src="./assets/menu/home-outline.svg" style="width: 50px; height: 50px;">
+      <span class="menu-item-text">Accueil</span>
+    </div>
   </div>
 </header>
