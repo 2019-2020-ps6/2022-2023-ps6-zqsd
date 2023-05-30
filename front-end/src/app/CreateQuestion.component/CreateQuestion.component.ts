@@ -28,7 +28,7 @@ import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
 
 
 export class CreateQuestion implements OnInit, AfterViewInit{
-  public questionForm!: FormGroup;
+  public questionForm: FormGroup;
   showClassicSection = false;
   showSearchingSection = false;
   showPuzzleSection = false;
@@ -37,12 +37,12 @@ export class CreateQuestion implements OnInit, AfterViewInit{
   questionType = ''; // Ajout de la variable questionType
   selectedImage: File | null = null;
   answers: Answer[] = [];
-
+  puzzleSplitNumber: number = 0;
   answer1Order: number = 1;
   answer2Order: number = 2;
   answer3Order: number = 3;
   answer4Order: number = 4;
-  puzzleSplitNumber: number = 0;
+
 
   showClassic() {
     this.showSearchingSection = false;
@@ -106,12 +106,12 @@ export class CreateQuestion implements OnInit, AfterViewInit{
       isCorrect1: [false],
       isCorrect2: [false],
       isCorrect3: [false],
-      isCorrect4: [false]
+      isCorrect4: [false],
     });
   }
 
 
-  ngOnInit() {
+    ngOnInit() {
   }
 
   setAnswer(index: number, isCorrect: boolean) {
@@ -130,7 +130,7 @@ export class CreateQuestion implements OnInit, AfterViewInit{
             label: 'classical',
             value: this.questionForm.value[`answer${i}`],
             isCorrect: this.questionForm.value[`isCorrect${i}`]
-          });// vérifier si ce sont bien des types answers qui sont push
+          });
         }
 
         const questionC: Question = {
@@ -144,12 +144,32 @@ export class CreateQuestion implements OnInit, AfterViewInit{
 
       case 'chronological':
         for (let i = 1; i <= 4; i++) {
-          answers.push({
-            label: 'chronological',
-            value: this.questionForm.value[`answer${i}`],
-            isCorrect: this.questionForm.value[`isCorrect${i}`],
-            order: this.id// à faire
-          });
+          switch (i) {
+            case this.answer1Order:
+              answers.push({
+                label: 'chronological',
+                value: this.questionForm.value.answer1,
+              });
+              break;
+            case this.answer2Order:
+              answers.push({
+                label: 'chronological',
+                value: this.questionForm.value.answer2,
+              });
+              break;
+            case this.answer3Order:
+              answers.push({
+                label: 'chronological',
+                value: this.questionForm.value.answer3,
+              });
+              break;
+            case this.answer4Order:
+              answers.push({
+                label: 'chronological',
+                value: this.questionForm.value.answer4,
+              });
+              break;
+          }
         }
         const questionCh: Question = {
           value: this.questionForm.value.question,
@@ -158,6 +178,11 @@ export class CreateQuestion implements OnInit, AfterViewInit{
           answers: answers,
         };
         this.questionService.addQuestion(questionCh);
+        console.log(questionCh);
+        console.log(this.answer1Order);
+        console.log(this.answer2Order);
+        console.log(this.answer3Order);
+        console.log(this.answer4Order);
         break;
 
       case 'searching':
@@ -178,29 +203,26 @@ export class CreateQuestion implements OnInit, AfterViewInit{
           };
 
           reader.readAsDataURL(this.selectedImage);
-        const questionS: Question = {
-          value: this.questionForm.value.question,
-          label: "searching",
-          id: this.id.toString(),
-          answers: answers,
-          imageSearching: this.selectedImage? this.selectedImage.name :undefined, // Ajoutez ici la logique pour récupérer l'image searching
-        };
+          const questionS: Question = {
+            value: this.questionForm.value.question,
+            label: "searching",
+            id: this.id.toString(),
+            answers: answers,
+            imageSearching: this.selectedImage ? this.selectedImage.name : undefined, // Ajoutez ici la logique pour récupérer l'image searching
+          };
 
           this.questionService.addQuestion(questionS);
           break;
-
-          // puzzle à faire
-          /*
-        case 'puzzle':
-          // Handle puzzle-specific logic
-          break;
-
-        default:
-          break;
-      }*/
-
-
         }
+      // puzzle à faire
+      /*
+    case 'puzzle':
+      // Handle puzzle-specific logic
+      break;
+
+    default:
+      break;
+  }*/
     }
     this.questionForm.reset();
     console.log('question ajoutée');
