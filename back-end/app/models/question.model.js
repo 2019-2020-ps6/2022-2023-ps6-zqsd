@@ -21,6 +21,12 @@ const textSearchingSchema = {
   value: Joi.string().required(),
 };
 
-module.exports.questionModel = new BaseModel('Question', questionSchema);
-module.exports.answerModel = new BaseModel('Answer', answerSchema);
-module.exports.textSearchingModel = new BaseModel('TextSearching', textSearchingSchema);
+const questionModel = new BaseModel('Question', questionSchema);
+const answerModel = new BaseModel('Answer', answerSchema);
+const textSearchingModel = new BaseModel('TextSearching', textSearchingSchema);
+
+module.exports = {
+  questionModel,
+  answerModel,
+  textSearchingModel,
+};
