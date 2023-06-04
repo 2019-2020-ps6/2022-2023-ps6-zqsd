@@ -1,8 +1,8 @@
 const { Router } = require('express')
 
-const manageAllErrors = require('../../../utils/routes/error-management')
+const manageAllErrors = require('../../utils/routes/error-management')
 const { filterQuestionsFromQuizz, getQuestionFromQuiz } = require('./manager')
-const { buildQuizzes } = require('../manager')
+const { buildQuizzes } = require('./manager')
 
 const router = new Router({ mergeParams: true })
 
