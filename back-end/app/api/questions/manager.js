@@ -1,5 +1,5 @@
-const { Quiz, Question } = require('../../../models')
-const NotFoundError = require('../../../utils/errors/not-found-error.js')
+const { Quiz, Question } = require('../../models')
+const NotFoundError = require('../../utils/errors/not-found-error.js')
 /**
  * filterQuestionsFromQuizz.
  * This function filters among the questions to return only the question linked with the given quizId.
