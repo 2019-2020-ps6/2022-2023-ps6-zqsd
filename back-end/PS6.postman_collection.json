@@ -41,7 +41,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"theme\": \"Sports\",\n\t\"name\": \"Avec un ballon\"\n}"
+							"raw": "{\n\t\"theme\": \"Sports\",\n\t\"name\": \"Avec un ballon\"\n\t\"questionIds\": [\\n\\t\\t\"1685887371335\"\\n\\t]\\n }"
 						},
 						"url": {
 							"raw": "localhost:9428/api/quizzes",
