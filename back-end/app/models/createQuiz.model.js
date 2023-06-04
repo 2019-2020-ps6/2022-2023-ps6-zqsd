@@ -1,6 +1,8 @@
 const Joi = require('joi');
 const BaseModel = require('../utils/base-model.js');
 
+//copie modèle front mais inutile pour l'instant ?
+
 const createQuizSchema = {
   name: Joi.string().required(),
   theme: Joi.string().required(),

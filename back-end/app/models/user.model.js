@@ -9,6 +9,7 @@ const User = new BaseModel('User', {
   identifiant: Joi.string().required(), // id to log in
   motdePasse: Joi.string().required(),
   status: Joi.string().required(),
+  id: Joi.string().required(),
 });
 
 const TimeToAnswer = new BaseModel('TimeToAnswer', {

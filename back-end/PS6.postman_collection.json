@@ -316,7 +316,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:9428/api/quizzes/1584378903107/questions",
+							"raw": "localhost:9428/api/questions",
 							"host": [
 								"localhost"
 							],
@@ -337,7 +337,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:9428/api/quizzes/1583165102259/questions/1583165184337",
+							"raw": "localhost:9428/api/questions/1583165184337",
 							"host": [
 								"localhost"
 							],
@@ -375,7 +375,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:9428/api/quizzes/1583165102259/questions/1584373088757",
+							"raw": "localhost:9428/api/questions/1584373088757",
 							"host": [
 								"localhost"
 							],
@@ -397,7 +397,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:9428/api/quizzes/1583165102259/questions/1584373088757",
+							"raw": "localhost:9428/api/questions/1584373088757",
 							"host": [
 								"localhost"
 							],
@@ -428,7 +428,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:9428/api/quizzes/1584378903107/questions",
+							"raw": "localhost:9428/api/questions",
 							"host": [
 								"localhost"
 							],

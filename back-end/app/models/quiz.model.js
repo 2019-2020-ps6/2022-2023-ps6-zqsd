@@ -1,10 +1,11 @@
 const Joi = require('joi');
 const BaseModel = require('../utils/base-model.js');
-const questionModel = require('./question.model.js');
 
-module.exports = new BaseModel('Quiz', {
+const quizSchema = {
   id: Joi.string().required(),
   name: Joi.string().required(),
   theme: Joi.string().required(),
-  questionsId: Joi.array(), // comment faire un array de questions ?
-});
+  questionsId: Joi.array().items(Joi.string()), // Array of question IDs
+};
+
+module.exports = new BaseModel('Quiz', quizSchema);
