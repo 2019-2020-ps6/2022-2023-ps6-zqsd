@@ -1,15 +1,13 @@
 import { GamepageComponent } from './../app/Gamepage.component/GamePage.Component';
-import { Quiz1 } from './../mocks/quizz.mock';
 import { AnswerClassic1 } from './../mocks/question.mock';
 import { GameAnswerComponent } from './../app/GameAnswer.component/GameAnswer.Component';
 import { Injectable, EventEmitter } from '@angular/core';
 import { BehaviorSubject, Subject, Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpClientModule } from '@angular/common/http';
 import { serverUrl } from '../configs/server.config';
 import { QuizExample } from '../mocks/quizz.mock';
 import { Quiz } from '../models/quiz.model';
 import { Question,Answer } from 'src/models/Question.model';
-import { QuestionQuizz } from 'src/mocks/question.mock';
 import { AdvancedParameterService } from './Parameter/AdvancedParameterService';
 
 
@@ -21,10 +19,11 @@ export class GameService {
   retryEvent: Subject<void> = new Subject<void>();
   skipEvent: Subject<void> = new Subject<void>();
 
-  public quizList: Quiz[] = QuizExample;
+  public quizList :Quiz[];
+
 
   public answerResult = AnswerClassic1[0].isCorrect;
-  public quizList$ : BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizList);
+  public quizList$ : BehaviorSubject<Quiz[]> =(BehaviorSubject<Quiz[]>) this._httpClient.get<Quiz[]>(serverUrl+"/quizzes").subscribe;
   currentQuiz: Quiz=this.quizList[0];
   public currentQuiz$: BehaviorSubject<Quiz> = new BehaviorSubject<Quiz>(this.currentQuiz)
   private index:number=0;
@@ -46,7 +45,7 @@ export class GameService {
   private quizEventSubject = new Subject<void>();
   quizEvent$ = this.quizEventSubject.asObservable()
 
-  constructor(private aps : AdvancedParameterService) {
+  constructor(private aps : AdvancedParameterService, private _httpClient: HttpClient) {
     this.aps.getCurrentChronometerOBS().subscribe((deadline) => {
       this.deadline =deadline;
     });
