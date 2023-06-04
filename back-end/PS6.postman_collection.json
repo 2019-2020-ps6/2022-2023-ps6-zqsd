@@ -287,7 +287,8 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"label\": \"Quelle est la capitale de la Finlande ?\"\n}",
+							"raw": "{\n\t\"label\": \"Classique\",\n\t\"value\": \" Quelle capitale ?\",\n\t\"answers\": [],\n\t\"ImageSearching\": \"444\",\n\t\"answered\": false\n}",
+
 							"options": {
 								"raw": {
 									"language": "json"
@@ -295,15 +296,13 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:9428/api/quizzes/1583165102259/questions",
+							"raw": "localhost:9428/api/questions",
 							"host": [
 								"localhost"
 							],
 							"port": "9428",
 							"path": [
 								"api",
-								"quizzes",
-								"1583165102259",
 								"questions"
 							]
 						}
@@ -323,8 +322,6 @@
 							"port": "9428",
 							"path": [
 								"api",
-								"quizzes",
-								"1584378903107",
 								"questions"
 							]
 						}
@@ -344,8 +341,6 @@
 							"port": "9428",
 							"path": [
 								"api",
-								"quizzes",
-								"1583165102259",
 								"questions",
 								"1583165184337"
 							]
@@ -382,8 +377,6 @@
 							"port": "9428",
 							"path": [
 								"api",
-								"quizzes",
-								"1583165102259",
 								"questions",
 								"1584373088757"
 							]
@@ -404,8 +397,6 @@
 							"port": "9428",
 							"path": [
 								"api",
-								"quizzes",
-								"1583165102259",
 								"questions",
 								"1584373088757"
 							]
@@ -435,8 +426,6 @@
 							"port": "9428",
 							"path": [
 								"api",
-								"quizzes",
-								"1584378903107",
 								"questions"
 							]
 						}

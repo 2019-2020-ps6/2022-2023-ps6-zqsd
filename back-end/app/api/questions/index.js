@@ -30,7 +30,7 @@ router.get('/:questionId', (req, res) => {
 router.post('/', (req, res) => {
   try {
     const question = Question.create({ ...req.body })
-    res.status(201).json(quiz)
+    res.status(201).json(question)
   } catch (err) {
     manageAllErrors(res, err)
   }
