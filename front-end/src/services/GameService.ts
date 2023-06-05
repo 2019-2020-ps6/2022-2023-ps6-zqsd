@@ -19,11 +19,10 @@ export class GameService {
   retryEvent: Subject<void> = new Subject<void>();
   skipEvent: Subject<void> = new Subject<void>();
 
-  public quizList :Quiz[];
-
-
+  public onlineQuizz: Observable<Quiz[]>= this._httpClient.get<Quiz[]>(serverUrl+"/quizzes");
+  public quizList: Quiz[] = QuizExample;
   public answerResult = AnswerClassic1[0].isCorrect;
-  public quizList$ : BehaviorSubject<Quiz[]> =(BehaviorSubject<Quiz[]>) this._httpClient.get<Quiz[]>(serverUrl+"/quizzes").subscribe;
+  public quizList$ : BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizList);
   currentQuiz: Quiz=this.quizList[0];
   public currentQuiz$: BehaviorSubject<Quiz> = new BehaviorSubject<Quiz>(this.currentQuiz)
   private index:number=0;
