@@ -72,6 +72,7 @@ export class GameService {
 
   getCurrentQuestion(): Observable<Question> {
     return this.currentQuestion$.asObservable();
+    
   }
 
   nextQuestion(): number  {
@@ -83,8 +84,9 @@ export class GameService {
   }
 
   setCurrentQuestion(index: number) {
-    const question = this.currentQuiz.questions[index];
     console.log(index);
+    const question = this.currentQuiz.questions[index];
+    
 
     if(question) {
       this.currentQuestion  = question;

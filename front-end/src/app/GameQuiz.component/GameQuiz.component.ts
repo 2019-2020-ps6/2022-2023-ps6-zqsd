@@ -27,11 +27,13 @@ export class GameQuizComponent {
   currentQuestion:Question =  {id:'', value: '',label:"",answers: [] as Answer[]};
   constructor(public gameService : GameService, public displayService : DisplayService, public advancedParameterService : AdvancedParameterService, public router : Router){
     this.gameService.getCurrentQuiz().subscribe((quiz : Quiz)=>{
+      console.log(quiz);
       this.currentQuiz = quiz;
       this.isFinnished = false;
       this.questionCounter = 1;
     });
     this.gameService.currentQuestion$.subscribe((question: Question) => {
+      console.log(question)
       this.checkQuestionAllowed(question);
     })
     this.advancedParameterService.getCurrentPuzzleOBS().subscribe((puzzleIsEnable: AdvancedParameterMemoryWork['puzzle']) => {
