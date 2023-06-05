@@ -3,8 +3,10 @@ const { Router } = require('express')
 const manageAllErrors = require('../../utils/routes/error-management')
 const { filterQuestionsFromQuizz, getQuestionFromQuiz } = require('./manager')
 const { buildQuizzes } = require('./manager')
+const { Question } = require('../../models/question.model')
 
-const router = new Router({ mergeParams: true })
+const router = new Router()
+
 
 router.get('/', (req, res) => {
   try {
@@ -28,7 +30,7 @@ router.get('/:questionId', (req, res) => {
 router.post('/', (req, res) => {
   try {
     const question = Question.create({ ...req.body })
-    res.status(201).json(quiz)
+    res.status(201).json(question)
   } catch (err) {
     manageAllErrors(res, err)
   }
@@ -50,4 +52,6 @@ router.delete('/:questionId', (req, res) => {
     manageAllErrors(res, err)
   }
 })
+
+module.exports = router
 

@@ -41,7 +41,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"theme\": \"Sports\",\n\t\"name\": \"Avec un ballon\"\n}"
+							"raw": "{\n\t\"theme\": \"Sports\",\n\t\"name\": \"Avec un ballon\"\n\t\"questionIds\": [\\n\\t\\t\"1685887371335\"\\n\\t]\\n }"
 						},
 						"url": {
 							"raw": "localhost:9428/api/quizzes",
@@ -171,7 +171,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"firstName\": \"John\",\n\t\"lastName\": \"Doe\"\n}",
+							"raw": "{\n\t\"firstName\": \"John\",\n\t\"lastName\": \"Doe\",\n\t\"identifiant\": \"johndoe\",\n\t\"motdePasse\": \"password\",\n\t\"status\": \"active\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -287,7 +287,8 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"label\": \"Quelle est la capitale de la Finlande ?\"\n}",
+							"raw": "{\n\t\"label\": \"Classique\",\n\t\"value\": \" Quelle capitale ?\",\n\t\"answers\": [],\n\t\"ImageSearching\": \"444\",\n\t\"answered\": false\n}",
+
 							"options": {
 								"raw": {
 									"language": "json"
@@ -295,15 +296,13 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:9428/api/quizzes/1583165102259/questions",
+							"raw": "localhost:9428/api/questions",
 							"host": [
 								"localhost"
 							],
 							"port": "9428",
 							"path": [
 								"api",
-								"quizzes",
-								"1583165102259",
 								"questions"
 							]
 						}
@@ -316,15 +315,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:9428/api/quizzes/1584378903107/questions",
+							"raw": "localhost:9428/api/questions",
 							"host": [
 								"localhost"
 							],
 							"port": "9428",
 							"path": [
 								"api",
-								"quizzes",
-								"1584378903107",
 								"questions"
 							]
 						}
@@ -337,15 +334,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:9428/api/quizzes/1583165102259/questions/1583165184337",
+							"raw": "localhost:9428/api/questions/1583165184337",
 							"host": [
 								"localhost"
 							],
 							"port": "9428",
 							"path": [
 								"api",
-								"quizzes",
-								"1583165102259",
 								"questions",
 								"1583165184337"
 							]
@@ -375,15 +370,13 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:9428/api/quizzes/1583165102259/questions/1584373088757",
+							"raw": "localhost:9428/api/questions/1584373088757",
 							"host": [
 								"localhost"
 							],
 							"port": "9428",
 							"path": [
 								"api",
-								"quizzes",
-								"1583165102259",
 								"questions",
 								"1584373088757"
 							]
@@ -397,15 +390,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:9428/api/quizzes/1583165102259/questions/1584373088757",
+							"raw": "localhost:9428/api/questions/1584373088757",
 							"host": [
 								"localhost"
 							],
 							"port": "9428",
 							"path": [
 								"api",
-								"quizzes",
-								"1583165102259",
 								"questions",
 								"1584373088757"
 							]
@@ -428,171 +419,14 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:9428/api/quizzes/1584378903107/questions",
+							"raw": "localhost:9428/api/questions",
 							"host": [
 								"localhost"
 							],
 							"port": "9428",
 							"path": [
 								"api",
-								"quizzes",
-								"1584378903107",
 								"questions"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Answers",
-			"item": [
-				{
-					"name": "Get answers",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:9428/api/quizzes/1583165102259/questions/1584373088757/answers",
-							"host": [
-								"localhost"
-							],
-							"port": "9428",
-							"path": [
-								"api",
-								"quizzes",
-								"1583165102259",
-								"questions",
-								"1584373088757",
-								"answers"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create answer",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"value\": \"Helsinki\",\n\t\"isCorrect\":  true\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:9428/api/quizzes/1583165102259/questions/1584373088757/answers",
-							"host": [
-								"localhost"
-							],
-							"port": "9428",
-							"path": [
-								"api",
-								"quizzes",
-								"1583165102259",
-								"questions",
-								"1584373088757",
-								"answers"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get answer by id",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:9428/api/quizzes/1583165102259/questions/1584373088757/answers/1584382671281",
-							"host": [
-								"localhost"
-							],
-							"port": "9428",
-							"path": [
-								"api",
-								"quizzes",
-								"1583165102259",
-								"questions",
-								"1584373088757",
-								"answers",
-								"1584382671281"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update answer",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"value\": \"Helsinki\",\n\t\"isCorrect\":  false\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:9428/api/quizzes/1583165102259/questions/1584373088757/answers/1584382671281",
-							"host": [
-								"localhost"
-							],
-							"port": "9428",
-							"path": [
-								"api",
-								"quizzes",
-								"1583165102259",
-								"questions",
-								"1584373088757",
-								"answers",
-								"1584382671281"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete answer",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "localhost:9428/api/quizzes/1583165102259/questions/1584373088757/answers/1584382671281",
-							"host": [
-								"localhost"
-							],
-							"port": "9428",
-							"path": [
-								"api",
-								"quizzes",
-								"1583165102259",
-								"questions",
-								"1584373088757",
-								"answers",
-								"1584382671281"
 							]
 						}
 					},

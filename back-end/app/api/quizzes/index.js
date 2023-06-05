@@ -3,14 +3,15 @@ const { Router } = require('express')
 const { Quiz } = require('../../models')
 const manageAllErrors = require('../../utils/routes/error-management')
 const { buildQuizz, buildQuizzes } = require('./manager')
+const { User } = require('../../models/user.model')
+const { Question } = require('../../models/question.model')
 
 const router = new Router()
 
 
 router.get('/', (req, res) => {
   try {
-    const quizzes = buildQuizzes()
-    res.status(200).json(quizzes)
+    res.status(200).json(Quiz.get())
   } catch (err) {
     manageAllErrors(res, err)
   }
@@ -18,21 +19,33 @@ router.get('/', (req, res) => {
 
 router.get('/:quizId', (req, res) => {
   try {
-    const quizz = buildQuizz(req.params.quizId)
-    res.status(200).json(quizz)
-  } catch (err) {
-    manageAllErrors(res, err)
-  }
-})
+      res.status(200).json(Quiz.getById(req.params.quizId))
+    } catch (err) {
+      manageAllErrors(res, err)
+    }
+  })
+
+
+//Globalement j'ai l'idée mais ça marche pas
 
 router.post('/', (req, res) => {
   try {
-    const quiz = Quiz.create({ ...req.body })
-    res.status(201).json(quiz)
+    const { questionIds, ...quizData } = req.body;
+
+    // Récupérer les questions à partir des IDs
+    const questions = questionIds.map(questionId => Question.getById(questionId));
+
+    // Créer le quizz avec les données et les questions récupérées
+    const quiz = Quiz.create({ ...quizData, questionIds, questions });
+
+    res.status(201).json(quiz);
   } catch (err) {
-    manageAllErrors(res, err)
+    manageAllErrors(res, err);
   }
-})
+});
+
+
+
 
 router.put('/:quizId', (req, res) => {
   try {
@@ -50,5 +63,6 @@ router.delete('/:quizId', (req, res) => {
     manageAllErrors(res, err)
   }
 })
+
 
 module.exports = router
