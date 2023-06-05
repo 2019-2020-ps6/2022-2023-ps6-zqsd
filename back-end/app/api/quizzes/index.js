@@ -11,38 +11,42 @@ const router = new Router()
 
 router.get('/', (req, res) => {
   try {
-    res.status(200).json(Quiz.get())
-  } catch (err) {
-    manageAllErrors(res, err)
-  }
-})
-
-router.get('/:quizId', (req, res) => {
-  try {
-      res.status(200).json(Quiz.getById(req.params.quizId))
-    } catch (err) {
-      manageAllErrors(res, err)
-    }
-  })
-
-
-//Globalement j'ai l'idée mais ça marche pas
-
-router.post('/', (req, res) => {
-  try {
-    const { questionIds, ...quizData } = req.body;
-
-    // Récupérer les questions à partir des IDs
-    const questions = questionIds.map(questionId => Question.getById(questionId));
-
-    // Créer le quizz avec les données et les questions récupérées
-    const quiz = Quiz.create({ ...quizData, questionIds, questions });
-
-    res.status(201).json(quiz);
+    const quizzes = Quiz.get().map((quiz) => {
+      const questions = quiz.questionIds.map((questionId) => Question.getById(questionId));
+      return { ...quiz, questions };
+    });
+    res.status(200).json(quizzes);
   } catch (err) {
     manageAllErrors(res, err);
   }
 });
+
+
+
+
+router.get('/:quizId', (req, res) => {
+  try {
+    const quiz = Quiz.getById(req.params.quizId);
+    const questions = quiz.questionIds.map((questionId) => Question.getById(questionId));
+    const quizWithQuestions = { ...quiz, questions };
+
+    res.status(200).json(quizWithQuestions);
+  } catch (err) {
+    manageAllErrors(res, err);
+  }
+});
+
+
+
+
+router.post('/', (req, res) => {
+  try {
+    const question = Quiz.create({ ...req.body })
+    res.status(201).json(question)
+  } catch (err) {
+    manageAllErrors(res, err)
+  }
+})
 
 
 
