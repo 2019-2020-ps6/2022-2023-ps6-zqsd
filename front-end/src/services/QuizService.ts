@@ -3,6 +3,8 @@ import { BehaviorSubject } from 'rxjs';
 import { Quiz } from '../models/quiz.model';
 import { QuizExample} from "../mocks/quizz.mock";
 import {Question} from "../models/Question.model";
+import { HttpClient } from '@angular/common/http';
+import { serverUrl } from '../configs/server.config';
 
 @Injectable({
   providedIn: 'root'
@@ -26,14 +28,14 @@ export class QuizService {
   public quizzes$: BehaviorSubject<Quiz[]> = new BehaviorSubject(QuizExample);
   private questions: Question[] = [];
 
-  constructor() {
+  constructor( private _httpClient: HttpClient) {
   }
 
   addQuiz(quiz: Quiz) {
     // You need here to update the list of quiz and then update our observable (Subject) with the new list
     // More info: https://angular.io/tutorial/toh-pt6#the-searchterms-rxjs-subject
-    this.quizzes.push(quiz);
-    this.quizzes$.next(this.quizzes);
+    //todo get the ids from the questions, 
+    this._httpClient.post(serverUrl+"/quizzes",quiz)
   }
   deleteQuiz(quiz: Quiz) {
     //delete the quiz from the list

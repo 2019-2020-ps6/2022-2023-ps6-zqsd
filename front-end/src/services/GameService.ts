@@ -1,16 +1,15 @@
 import { GamepageComponent } from './../app/Gamepage.component/GamePage.Component';
-import { Quiz1 } from './../mocks/quizz.mock';
 import { AnswerClassic1 } from './../mocks/question.mock';
 import { GameAnswerComponent } from './../app/GameAnswer.component/GameAnswer.Component';
 import { Injectable, EventEmitter } from '@angular/core';
 import { BehaviorSubject, Subject, Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpClientModule } from '@angular/common/http';
 import { serverUrl } from '../configs/server.config';
 import { QuizExample } from '../mocks/quizz.mock';
 import { Quiz } from '../models/quiz.model';
 import { Question,Answer } from 'src/models/Question.model';
-import { QuestionQuizz } from 'src/mocks/question.mock';
 import { AdvancedParameterService } from './Parameter/AdvancedParameterService';
+
 
 
 
@@ -21,17 +20,16 @@ export class GameService {
   retryEvent: Subject<void> = new Subject<void>();
   skipEvent: Subject<void> = new Subject<void>();
 
-  public quizList: Quiz[] = QuizExample;
-
-  public answerResult = AnswerClassic1[0].isCorrect;
-  public quizList$ : BehaviorSubject<Quiz[]> = new BehaviorSubject(this.quizList);
-  currentQuiz: Quiz=this.quizList[0];
-  public currentQuiz$: BehaviorSubject<Quiz> = new BehaviorSubject<Quiz>(this.currentQuiz)
+  public quizList$: Observable<Quiz[]>= this._httpClient.get<Quiz[]>(serverUrl+"/quizzes");
+  public quizList: Quiz[] = [];
+  public answerResult : boolean|undefined= true;
+  currentQuiz: Quiz= QuizExample[0];
+  public currentQuiz$: BehaviorSubject<Quiz> = new BehaviorSubject(this.currentQuiz);
   private index:number=0;
-  private currentQuestion: Question=this.currentQuiz.questions[this.index];
-  public currentQuestion$: BehaviorSubject<Question> = new BehaviorSubject(this.currentQuestion);
+  private currentQuestion: Question = this.currentQuiz.questions[0];
+  public currentQuestion$: BehaviorSubject<Question>= new BehaviorSubject(this.currentQuestion);
   public currentAnswer$: Subject<Answer> = new Subject<Answer>();
-  public answerResult$ : BehaviorSubject<boolean | undefined> = new BehaviorSubject(this.answerResult);
+  public answerResult$ : BehaviorSubject<boolean|undefined> = new BehaviorSubject(this.answerResult);
   score = 0;
 
   public deadline: number = 30;
@@ -46,7 +44,7 @@ export class GameService {
   private quizEventSubject = new Subject<void>();
   quizEvent$ = this.quizEventSubject.asObservable()
 
-  constructor(private aps : AdvancedParameterService) {
+  constructor(private aps : AdvancedParameterService, private _httpClient: HttpClient) {
     this.aps.getCurrentChronometerOBS().subscribe((deadline) => {
       this.deadline =deadline;
     });
@@ -58,6 +56,16 @@ export class GameService {
     this.skipEvent.subscribe(() => {
       this.nextQuestion();
       console.log("Skip event received");
+    });
+
+    this.quizList$.subscribe((list)=> {
+      this.quizList=list;
+      
+      console.log(this.quizList)
+      this.currentQuiz =this.quizList[0];
+      this.currentQuestion=this.currentQuiz.questions[0];
+      this.currentQuiz$= new BehaviorSubject<Quiz>(this.currentQuiz)
+      this.currentQuestion$=new BehaviorSubject<Question>(this.currentQuestion)
     });
   }
 
@@ -96,10 +104,6 @@ export class GameService {
     this.currentQuiz$.next(this.currentQuiz);
   }
 
-  add(quiz:Quiz) : void {
-    this.quizList.push(quiz)
-    this.quizList$.next(this.quizList)
-  }
   getcurrentAnswer(): Observable<any> {
     return this.currentAnswer$.asObservable();
   }
@@ -124,7 +128,6 @@ export class GameService {
     this.currentQuiz$.next(this.currentQuiz);
     this.currentQuestion$.next(this.currentQuestion);
     //this.currentAnswer$.next(undefined);
-    this.quizList$.next(this.quizList);
     this.quizList.forEach((quiz) => {
       quiz.questions.forEach((question) => {
         question.answered = false;
