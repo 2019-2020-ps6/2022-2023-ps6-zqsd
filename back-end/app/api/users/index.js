@@ -1,9 +1,9 @@
-const { Router } = require('express')
+const { Router } = require('express');
+const { User } = require('../../models/user.model');
+const manageAllErrors = require('../../utils/routes/error-management');
 
-const { User } = require('../../models')
-const manageAllErrors = require('../../utils/routes/error-management')
+const router = new Router();
 
-const router = new Router()
 
 router.get('/', (req, res) => {
   try {
