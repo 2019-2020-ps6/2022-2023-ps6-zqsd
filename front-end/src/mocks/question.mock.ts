@@ -67,6 +67,28 @@ export const AnswerClassic4: Answer[] = [
   { label: "classical", value: "Le gris", isCorrect: false },
   { label: "classical", value: "Le transparent", isCorrect: false },
 ];
+
+export const AnswerClassic5: Answer[] = [
+  { label: "classical", value: "Victor Hugo", isCorrect: true },
+  { label: "classical", value: "Alexandre le Grand", isCorrect: false },
+  { label: "classical", value: "Simone Veil", isCorrect: false },
+  { label: "classical", value: "Jeff Kaplan", isCorrect: false },
+];
+
+export const AnswerClassic6: Answer[] = [
+  { label: "classical", value: "Sydney", isCorrect: false },
+  { label: "classical", value: "Otawa", isCorrect: true },
+  { label: "classical", value: "Canberra", isCorrect: false },
+  { label: "classical", value: "Tokyo", isCorrect: false },
+];
+
+export const AnswerClassic7: Answer[] = [
+  { label: "classical", value: "L'Everest", isCorrect: true },
+  { label: "classical", value: "Le Mont blanc", isCorrect: false },
+  { label: "classical", value: "Le Mont Verdoyant", isCorrect: false },
+  { label: "classical", value: "Le Mont St Michel", isCorrect: false },
+];
+
 export const AnswerSearching1: Answer[] = [
     {
         label: "textSearching",
@@ -122,28 +144,22 @@ export const AnswerPuzzle1: Answer[] = [
 
 export const QuestionQuizz2: Question[] = [
   {
-    id: '1',
-    label: "classical",
-    value: "Quels sont les 3 états de la matière ?",
-    answers: AnswerClassic1,
-  },
-  {
     id: '5',
     label: "classical",
     value: "Qui a écrit 'Les Misérables' ?",
-    answers: AnswerClassic2,
+    answers: AnswerClassic5,
   },
   {
     id: '6',
     label: "classical",
     value: "Quelle est la capitale de l'Australie ?",
-    answers: AnswerClassic3,
+    answers: AnswerClassic6,
   },
   {
     id: '7',
     label: "classical",
     value: "Quelle est la plus haute montagne du monde ?",
-    answers: AnswerClassic4,
+    answers: AnswerClassic7,
   },
 ];
 
