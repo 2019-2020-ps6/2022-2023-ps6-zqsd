@@ -11,7 +11,7 @@ export const AnswerorderHistory1: Answer[] = [
         value: "Découverte de l'Amérique",
         order : 2
     },
-    
+
     {
       label: "order",
       value: "Découverte de Neptune",
@@ -189,8 +189,8 @@ export const Question4: Question = {
   label: "classical",
   value: "Quelle est la couleur de l'absence de couleur ?",
   answers: [
-    { label: "classical", value: "Le blanc", isCorrect: false },
     { label: "classical", value: "Le noir", isCorrect: true },
+    { label: "classical", value: "Le blanc", isCorrect: false },
     { label: "classical", value: "Le gris", isCorrect: false },
     { label: "classical", value: "Le transparent", isCorrect: false },
   ],
@@ -228,10 +228,10 @@ export const Question5: Question = {
   label: "order",
   value: "faites un classement de la taille de ces objets dans l'ordre croissant ?",
   answers: [
-    { label: "order", value: "un atome", isCorrect: false },
-    { label: "order", value: "un tabouret", isCorrect: false },
-    { label: "order", value: "les Pyramides de Gizeh", isCorrect: true },
-    { label: "order", value: "ta maman", isCorrect: false },
+    { label: "order", value: "Un atome", isCorrect: false },
+    { label: "order", value: "Un tabouret", isCorrect: false },
+    { label: "order", value: "Les Pyramides de Gizeh", isCorrect: true },
+    { label: "order", value: "Une galaxie", isCorrect: false },
   ],
 };
 
