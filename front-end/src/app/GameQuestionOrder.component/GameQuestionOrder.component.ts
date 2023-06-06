@@ -18,6 +18,7 @@ export class GameQuestionOrderComponent implements OnInit {
   @Output() answerEvent: EventEmitter<boolean>= new EventEmitter<boolean>();
   answers: Answer[] = [];
   public enableAnimationQuestion : boolean = true;
+  selectedFont : string="";
 
   constructor(private gameService: GameService, public advPService : AdvancedParameterService) {}
 
@@ -43,6 +44,12 @@ export class GameQuestionOrderComponent implements OnInit {
     this.advPService.getCurrentQuestionAnimationOBS().subscribe((enable) => {
       this.enableAnimationQuestion = enable;
     })
+    this.advPService.getSelectedFont().subscribe((font) => {
+      this.selectedFont = font;
+    })
+  }
+  getSelectedFont(){
+    return this.selectedFont;
   }
 }
 

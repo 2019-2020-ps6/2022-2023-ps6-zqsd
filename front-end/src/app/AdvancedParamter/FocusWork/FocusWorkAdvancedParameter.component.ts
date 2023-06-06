@@ -15,7 +15,7 @@ export class FocusWorkAdvancedParameterComponent implements OnInit {
     questionAnimationIsEnable : AdvancedParameterFocusWork['questionAnimation'] = this.advancedParameterService.getCurrentQuestionAnimation();
     rightAnswerAnimationIsEnable : AdvancedParameterFocusWork['rightAnswerAnimation'] = this.advancedParameterService.getCurrentRightAnswerAnimation();
     wrongAnswerAnimationIsEnable : AdvancedParameterFocusWork['wrongAnswerAnimation'] = this.advancedParameterService.getCurrentWrongAnswerAnimatino();
-    
+
     textDisplayBackgroundButton : string = this.setTextDisplayButton(this.backgroundIsEnable);
     textDisplayQuestionAnimationButton : string = this.setTextDisplayButton(this.questionAnimationIsEnable);
     textDisplayRightAnswerAnimationButton : string = this.setTextDisplayButton(this.rightAnswerAnimationIsEnable);
@@ -23,11 +23,15 @@ export class FocusWorkAdvancedParameterComponent implements OnInit {
 
     public isUpperCase = false;
     public svgActif = true;
+
+    selectedFont: string = "Arial";
+    fonts: string[] = ['Arial', 'Trebuchet MS', 'Times New Roman', 'Courier New'];
+
     @ViewChild('toggleButton', { static: true }) toggleButton!: ElementRef<HTMLButtonElement>;
 
 
 
-    constructor(private advancedParameterService: AdvancedParameterService) {
+    constructor(public advancedParameterService: AdvancedParameterService) {
         this.advancedParameterService.currentBackGround$.subscribe((currentBackGround: AdvancedParameterFocusWork['background']) => {
             this.backgroundIsEnable = currentBackGround;
             this.textDisplayBackgroundButton = this.setTextDisplayButton(this.backgroundIsEnable)
@@ -50,6 +54,9 @@ export class FocusWorkAdvancedParameterComponent implements OnInit {
         this.advancedParameterService.getUpperCase().subscribe((enabled: boolean) => {
             this.isUpperCase = enabled;
         });
+        this.advancedParameterService.getSelectedFont().subscribe((font: string) => {
+          this.selectedFont = font;
+      });
     }
 
     ngOnInit(): void {
@@ -92,5 +99,12 @@ export class FocusWorkAdvancedParameterComponent implements OnInit {
         console.log("this.uppercase : " + this.isUpperCase);
         console.log("service.uppercase : " + this.advancedParameterService.isUpperCase);
     }
+    onFontChange(selectedFont: string) {
+      this.advancedParameterService.setSelectedFont(selectedFont);
+    }
+
+    getSelectedFont(){
+      return this.selectedFont;
+    }
 }
-      
+

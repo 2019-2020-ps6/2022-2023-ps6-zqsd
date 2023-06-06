@@ -36,5 +36,16 @@
         Texte en majuscule
       </span>
       <button style="width: 150px;" (click)="toggleUppercase()" [innerText]="isUpperCase ? 'Désactiver' : 'Activer'"></button>
-  </div>
+    </div>
+    <div class="container" id="fontSelectionFocusWork">
+      <span class="textButton, white-text">
+        Police du texte
+      </span>
+      <select class="menu-deroulant"  [(ngModel)]="selectedFont" (change)="onFontChange(selectedFont)">
+        <option *ngFor="let font of fonts" [value]="font">{{ font }}</option>
+      </select>
+    </div>
+    <span class="white-text" style="margin-bottom:10px;" [style.fontFamily]="getSelectedFont()">
+      Texte avec la police sélectionnée
+    </span>
 </div>

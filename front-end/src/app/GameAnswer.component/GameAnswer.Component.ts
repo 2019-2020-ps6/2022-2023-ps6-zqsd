@@ -18,6 +18,8 @@ export class GameAnswerComponent implements OnInit {
   public visuelRightAnswer : boolean = true;
   public visuelFalseAnswer : boolean = true;
 
+  selectedFont : string="";
+
   constructor(private gameService: GameService,private router: Router, private renderer : Renderer2, private elementRef : ElementRef, public advPService : AdvancedParameterService) { }
 
   getAnswerResult(): void {
@@ -48,12 +50,15 @@ export class GameAnswerComponent implements OnInit {
         this.visuelFalseAnswer = enableAnimation && !this.currentAnswer.isCorrect;
       }
     })
+    this.advPService.getSelectedFont().subscribe((font) => {
+      this.selectedFont = font;
+    })
   }
   applyGreenBorder(bool : boolean) {
     if(bool){
       const buttonElement = this.elementRef.nativeElement.querySelector('#myButton');
       this.renderer.setStyle(buttonElement, 'border', '5px solid green');
-    
+
       setTimeout(() => {
         this.renderer.removeStyle(buttonElement, 'border');
       }, 1000);
@@ -63,11 +68,15 @@ export class GameAnswerComponent implements OnInit {
     if(bool){
       const buttonElement = this.elementRef.nativeElement.querySelector('#myButton');
       this.renderer.setStyle(buttonElement, 'border', '5px solid red');
-    
+
       setTimeout(() => {
         this.renderer.removeStyle(buttonElement, 'border');
       }, 1000);
     }
+  }
+
+  getSelectedFont(){
+    return this.selectedFont;
   }
 }
 

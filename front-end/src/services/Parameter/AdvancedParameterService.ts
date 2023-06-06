@@ -40,6 +40,9 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
     public isUpperCase: boolean = false;
     public isUpperCase$ : BehaviorSubject<boolean> = new BehaviorSubject(this.isUpperCase)
 
+    public selectedFont: string = "Arial";
+    public selectedFont$ : BehaviorSubject<string> = new BehaviorSubject(this.selectedFont);
+
 
     constructor () {
 
@@ -250,7 +253,7 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
 
     getSvgEnabled() : Observable<boolean> {
       return this.svgActif$.asObservable();
-      
+
     }
     setSvgActif(value: boolean) {
       this.svgActif = value;
@@ -258,11 +261,18 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
     }
     getUpperCase() : Observable<boolean> {
       return this.isUpperCase$.asObservable();
-      
     }
     setUpperCase(value: boolean) {
       this.isUpperCase = value;
       this.isUpperCase$.next(value);
+    }
+    getSelectedFont() : Observable<string> {
+      return this.selectedFont$.asObservable();
+    }
+    setSelectedFont(value: string) {
+      this.selectedFont = value;
+      this.selectedFont$.next(value);
+      console.log("texte changé en : " + this.selectedFont);
     }
   }
 
