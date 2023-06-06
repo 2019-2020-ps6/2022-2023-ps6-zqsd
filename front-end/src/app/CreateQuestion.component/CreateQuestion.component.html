@@ -123,6 +123,10 @@
 
 
 <div *ngIf="showChronologicalSection">
+  <div>
+    <label for="question">Question :</label>
+    <input style="margin-left: 10px;" type="text" id="questionChronological" formControlName="question" required>
+  </div>
   <label for="answer1">Réponses 1 :</label>
   <input style="margin-left: 10px; margin-right: 10px;" type="text" id="answer1C" formControlName="answer1" required>
   <select [(ngModel)]="answer1Order">
