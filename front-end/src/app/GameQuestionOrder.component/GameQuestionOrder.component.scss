@@ -1,7 +1,6 @@
 .answer-list {
   width: 750px;
   border: solid 1px #222;
-  height: 500px;
   display: flex;
   flex-direction: column;
   background-color: rgba(85, 85, 85, 0.5);
@@ -59,6 +58,22 @@
   align-items: center;
   margin-top: 50px;
 }
+.answer-row {
+  display: flex;
+  align-items: center;
+}
+
+.answer-number {
+  margin-right: 10px;
+  font-weight: 500;
+  font-size: 20px;
+  
+}
+
+.answer-block {
+  flex-grow: 1;
+}
+
 
 
 
