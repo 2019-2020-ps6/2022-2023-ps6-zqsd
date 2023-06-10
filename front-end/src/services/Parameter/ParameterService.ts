@@ -11,6 +11,8 @@ import { Parameter } from 'src/models/Parameter/parameter.model';
     private currentSize : Parameter['size'] = PARAMETER.size;
     private musicEnabled = true;
     public currentMusic$ = new BehaviorSubject<boolean>(this.musicEnabled);
+    public selectedMusic : string = "";
+    public selectedMusic$ : BehaviorSubject<string> = new BehaviorSubject(this.selectedMusic);
     private currentMusicPicturePath : Parameter['nameMusicPicture'] = this.getMusicString(this.musicEnabled);
 
     public currentSize$: BehaviorSubject<Parameter['size']> = new BehaviorSubject(this.currentSize)
@@ -47,6 +49,14 @@ import { Parameter } from 'src/models/Parameter/parameter.model';
     this.currentMusic$.next(this.musicEnabled);
     this.currentMusicPicturePath = this.getMusicString(this.musicEnabled);
     this.currentMusicPicturePath$.next(this.currentMusicPicturePath);
+  }
+
+  public setSelectedMusic(musicPath : string){
+    this.selectedMusic = musicPath;
+    this.selectedMusic$.next(musicPath)
+  }
+  public getselectedMusic(){
+    return this.selectedMusic$.asObservable();
   }
 
 
