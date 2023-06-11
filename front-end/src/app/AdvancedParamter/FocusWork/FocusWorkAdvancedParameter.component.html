@@ -1,6 +1,6 @@
 <div class="listOfButton" id="listOfButtonFocusWork">
     <div class="container" id="backgroundFocusWork">
-        <span class="textButton, white-text">
+        <span [ngClass]="{'white-text': svgActif, 'black-text': !svgActif}" class="textButton">
             Fond
         </span>
         <button style="width: 150px;" (click)="toggleSVG()" #toggleButton>
@@ -8,7 +8,7 @@
         </button>
     </div>
     <div class="container" id="questionAnimationFocusWork">
-        <span class="textButton, white-text">
+        <span [ngClass]="{'white-text': svgActif, 'black-text': !svgActif}"class="textButton">
             Animation Questions
         </span>
         <button style="width: 150px;" (click)="switchCurrentQuestionAnimation()">
@@ -16,7 +16,7 @@
         </button>
     </div>
     <div class="container" id="rightAnswerAnimationFocusWork">
-        <span class="textButton, white-text">
+        <span [ngClass]="{'white-text': svgActif, 'black-text': !svgActif}" class="textButton">
             Visuel Réponse Juste
         </span>
         <button style="width: 150px;" (click)="switchCurrentRightAnswerAnimation()">
@@ -24,7 +24,7 @@
         </button>
     </div>
     <div class="container" id="wrongAnswerAnimationFocusWork">
-        <span class="textButton, white-text">
+        <span [ngClass]="{'white-text': svgActif, 'black-text': !svgActif}" class="textButton">
           Visuel Réponse Fausse
         </span>
         <button style="width: 150px;" (click)="switchCurrentWrongAnswerAnimation()">
@@ -32,20 +32,20 @@
         </button>
     </div>
     <div class="container" id="uppercase_button">
-      <span class="textButton, white-text">
+      <span [ngClass]="{'white-text': svgActif, 'black-text': !svgActif}" class="textButton">
         Texte en majuscule
       </span>
       <button style="width: 150px;" (click)="toggleUppercase()" [innerText]="isUpperCase ? 'Désactiver' : 'Activer'"></button>
     </div>
     <div class="container" id="fontSelectionFocusWork">
-      <span class="textButton, white-text">
+      <span [ngClass]="{'white-text': svgActif, 'black-text': !svgActif}" class="textButton">
         Police du texte
       </span>
       <select class="menu-deroulant"  [(ngModel)]="selectedFont" (change)="onFontChange(selectedFont)">
         <option *ngFor="let font of fonts" [value]="font">{{ font }}</option>
       </select>
     </div>
-    <span class="white-text" style="margin-bottom:10px;" [style.fontFamily]="getSelectedFont()">
+    <span [ngClass]="{'white-text': svgActif, 'black-text': !svgActif}" style="margin-bottom:10px;" [style.fontFamily]="getSelectedFont()">
       Texte avec la police sélectionnée
     </span>
 </div>

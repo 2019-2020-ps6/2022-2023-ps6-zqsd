@@ -1,6 +1,6 @@
 <h1 class ="subtitle-parameter">TAILLE DU TEXTE</h1>
 <div class="parametres">
-  <div class="white-text" style="font-size: 20px; font-weight: 500;">Taille de police :</div>
+  <div [ngClass]="{'white-text': svgActif, 'black-text': !svgActif}" style="font-size: 20px; font-weight: 500;">Taille de police :</div>
   <mat-slider
     class="example-margin"
         [disabled]="disabled"
@@ -12,7 +12,7 @@
       <input matSliderThumb [(ngModel)]="value" (ngModelChange)="updateValue()">
     </mat-slider>
     <div>{{value}}</div>
-    <span class="title" appAdaptFontSize>Ceci est un texte pour tester la taille.</span>
+    <span [ngClass]="{'white-text': svgActif, 'black-text': !svgActif}" class="title" appAdaptFontSize>Ceci est un texte pour tester la taille.</span>
 </div>
 
 

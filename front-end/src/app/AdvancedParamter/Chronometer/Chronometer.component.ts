@@ -17,16 +17,20 @@ export class ChronometerAdvancedParameterComponent implements OnInit {
     showTicks = false;
     step = 1;
     thumbLabel = false;
-    value : AdvancedParameterChronometer['chronometer'] = this.advancedParameterService.getCurrentChronometer(); 
+    value : AdvancedParameterChronometer['chronometer'] = this.advancedParameterService.getCurrentChronometer();
+    public svgActif : boolean = true;
 
     constructor(
         private advancedParameterService: AdvancedParameterService) {
         this.advancedParameterService.currentChronometer$.subscribe((chronometerTime: AdvancedParameterChronometer['chronometer']) => {
             this.value = chronometerTime;
         });
+        this.advancedParameterService.getSvgEnabled().subscribe((enabled: boolean) => {
+          this.svgActif = enabled;
+        });
     }
 
-    
+
     ngOnInit(): void {
     }
 
