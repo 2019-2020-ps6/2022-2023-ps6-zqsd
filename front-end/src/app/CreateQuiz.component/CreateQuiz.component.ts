@@ -18,7 +18,7 @@ export class CreateQuiz implements OnInit {
   public theme_list = ['Acteur', 'Sport', 'Musique', 'Film', 'Séries Télévisées', 'Jeux vidéos', 'Autre'];
   numberOfQuestions: number = 0;
   buttons: number[] = [];
-  blueButton: number = 1; // par défaut, le premier bouton est en bleu
+  blueButton: number = 1;
 
 
 
@@ -52,6 +52,7 @@ export class CreateQuiz implements OnInit {
   createQuiz() {
     //supprime la 1ère question qui est vide
     this.quizForm.value.questions.splice(0, 1);
+    console.log(this.quizService.getQuizList().length)
     const quiz = {
       name: this.quizForm.value.name,
       theme: this.quizForm.value.theme,
@@ -61,6 +62,7 @@ export class CreateQuiz implements OnInit {
     console.log(quiz);
     this.quizForm.reset();
     this.questionService.resetQuestions();
+    console.log(this.quizService.getQuizList().length)
   }
 
   nextQuestion() {

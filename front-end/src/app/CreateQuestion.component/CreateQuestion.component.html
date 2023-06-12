@@ -123,9 +123,14 @@
 
 
 <div *ngIf="showChronologicalSection">
+  <form [formGroup]="questionForm">
+  <div>
+    <label for="question">Question :</label>
+    <input style="margin-left: 10px;" type="text" id="questionChronological" formControlName="question" required>
+  </div>
   <label for="answer1">Réponses 1 :</label>
   <input style="margin-left: 10px; margin-right: 10px;" type="text" id="answer1C" formControlName="answer1" required>
-  <select [(ngModel)]="answer1Order">
+  <select (change)="answer1Order">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -134,7 +139,7 @@
   <div>
     <label for="answer2">Réponses 2 :</label>
     <input style="margin-left: 10px; margin-right: 10px;" type="text" id="answer2C" formControlName="answer2" required>
-    <select [(ngModel)]="answer2Order">
+    <select (change)="answer2Order">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -144,7 +149,7 @@
   <div>
     <label for="answer3">Réponses 3 :</label>
     <input style="margin-left: 10px; margin-right: 10px;" type="text" id="answer3C" formControlName="answer3" required>
-    <select [(ngModel)]="answer3Order">
+    <select (change)="answer3Order">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -154,14 +159,16 @@
   <div>
     <label for="answer4">Réponses 4 :</label>
     <input style="margin-left: 10px; margin-right: 10px;" type="text" id="answer4C" formControlName="answer4" required>
-    <select [(ngModel)]="answer4Order">
+    <select (change)="answer4Order">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
       <option value="4">4</option>
     </select>
   </div>
+</form>
 </div>
+
 
 <div *ngIf="showPuzzleSection">
   <label for="imageSearching">Image :</label>

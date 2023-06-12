@@ -3,6 +3,7 @@ import { GameService } from '../../services/GameService';
 import { Question,Answer } from '../../models/Question.model';
 import { QuestionQuizz } from '../../mocks/question.mock';
 import { AdvancedParameterService } from 'src/services/Parameter/AdvancedParameterService';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-game-question-searching',
@@ -17,14 +18,19 @@ export class GameQuestionSearchingComponent implements OnInit {
   showResult =false;
   @Output() answerEvent: EventEmitter<boolean>= new EventEmitter<boolean>();
   public enableAnimationQuestion : boolean = true;
+  selectedFont : string="";
 
 
-  constructor(private gameService: GameService, public advPService : AdvancedParameterService) {
+  constructor(private gameService: GameService, public advPService : AdvancedParameterService, private router : Router) {
 
   }
 
   questionAnswered(goodAnswer:boolean){
       this.getNextQuestion();
+      if (this.gameService.allQuestionsAnswered()) {
+      this.router.navigateByUrl('/results');
+      console.log("zzzzzzzzzzzzzzzz")
+    }
   }
 
   getNextQuestion(){
@@ -41,6 +47,12 @@ export class GameQuestionSearchingComponent implements OnInit {
     this.advPService.getCurrentQuestionAnimationOBS().subscribe((enable) => {
       this.enableAnimationQuestion = enable;
     })
+    this.advPService.getSelectedFont().subscribe((font) => {
+      this.selectedFont = font;
+    })
+  }
+  getSelectedFont(){
+    return this.selectedFont;
   }
 
 }

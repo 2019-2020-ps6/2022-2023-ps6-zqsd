@@ -10,6 +10,8 @@ import { ParameterService } from 'src/services/Parameter/ParameterService';
 export class ParameterMusicComponent implements OnInit {
 
     resultPictureUrl: string = "";
+    selectedMusic: string = "";
+
 
     constructor(private parameterService: ParameterService) { }
 
@@ -21,5 +23,10 @@ export class ParameterMusicComponent implements OnInit {
 
     public toggleMusic() {
         this.parameterService.toggleMusic();
+    }
+
+    public setMusic(){
+      this.parameterService.setSelectedMusic(this.selectedMusic);
+      console.log("musique : " + this.selectedMusic)
     }
 }

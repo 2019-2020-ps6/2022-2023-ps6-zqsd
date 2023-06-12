@@ -21,6 +21,7 @@ export class MemoryWorkAdvancedParameterComponent implements OnInit {
     textDisplayReflexionButton : string = this.setTextDisplayButton(this.reflexionIsEnable);
     textDisplayMemoryButton : string = this.setTextDisplayButton(this.memoryIsEnable);
     textDisplayLogicButton : string = this.setTextDisplayButton(this.logicIsEnable);
+    public svgActif : boolean = true;
 
 
     constructor(
@@ -44,6 +45,9 @@ export class MemoryWorkAdvancedParameterComponent implements OnInit {
         this.advancedParameterService.getCurrentLogicOBS().subscribe((logicIsEnable: AdvancedParameterMemoryWork['logic']) => {
             this.logicIsEnable = logicIsEnable;
             this.textDisplayLogicButton = this.setTextDisplayButton(this.logicIsEnable);
+        });
+        this.advancedParameterService.getSvgEnabled().subscribe((enabled: boolean) => {
+          this.svgActif = enabled;
         });
     }
 

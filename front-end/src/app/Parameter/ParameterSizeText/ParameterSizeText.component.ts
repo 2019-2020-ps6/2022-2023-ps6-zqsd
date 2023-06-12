@@ -19,8 +19,9 @@ export class ParameterSizeTextComponent implements OnInit {
     step = 1;
     thumbLabel = false;
     value : Parameter['size'] = this.parameterService.getCurrentSize();
+    public svgActif : boolean = true;
 
-    constructor(private parameterService : ParameterService) {
+    constructor(private parameterService : ParameterService, private advancedParameterService : AdvancedParameterService) {
         }
 
 
@@ -30,6 +31,9 @@ export class ParameterSizeTextComponent implements OnInit {
         this.currentSize = size;
         console.log('Current size:', this.currentSize);
         document.documentElement.style.setProperty('--ts-currentSize', this.currentSize + 'px');
+      });
+      this.advancedParameterService.getSvgEnabled().subscribe((enabled: boolean) => {
+        this.svgActif = enabled;
       });
     }
 

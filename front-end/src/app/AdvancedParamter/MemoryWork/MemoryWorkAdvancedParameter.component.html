@@ -1,6 +1,6 @@
 <div class="listOfButton" id="listOfButtonFocusWork">
     <div class="container" id="puzzleMemoryWork">
-        <span class="textButton, white-text">
+        <span [ngClass]="{'white-text': svgActif, 'black-text': !svgActif}" class="textButton">
             Question Puzzle
         </span>
         <button style="width: 150px;" (click)="switchCurrentPuzzle()">
@@ -13,7 +13,7 @@
         </button>
     </div>
     <div class="container" id="reflexionMemoryWork">
-        <span class="textButton, white-text">
+        <span [ngClass]="{'white-text': svgActif, 'black-text': !svgActif}" class="textButton">
             Question Réflexion
         </span>
         <button style="width: 150px;" (click)="switchCurrentReflection()">
@@ -21,7 +21,7 @@
         </button>
     </div>
     <div class="container" id="logicMemoryWork">
-        <span class="textButton, white-text">
+        <span [ngClass]="{'white-text': svgActif, 'black-text': !svgActif}" class="textButton">
             Question Logique
         </span>
         <button style="width: 150px;" (click)="switchCurrentLogic()">

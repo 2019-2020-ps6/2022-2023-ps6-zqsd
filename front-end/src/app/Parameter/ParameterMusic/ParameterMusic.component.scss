@@ -1,0 +1,9 @@
+.music-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.music-container > * {
+  margin-top: 10px;
+}
