@@ -3,6 +3,7 @@ import { GameService } from '../../services/GameService';
 import { Question,Answer } from '../../models/Question.model';
 import { QuestionQuizz } from '../../mocks/question.mock';
 import { AdvancedParameterService } from 'src/services/Parameter/AdvancedParameterService';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-game-question-searching',
@@ -20,12 +21,16 @@ export class GameQuestionSearchingComponent implements OnInit {
   selectedFont : string="";
 
 
-  constructor(private gameService: GameService, public advPService : AdvancedParameterService) {
+  constructor(private gameService: GameService, public advPService : AdvancedParameterService, private router : Router) {
 
   }
 
   questionAnswered(goodAnswer:boolean){
       this.getNextQuestion();
+      if (this.gameService.allQuestionsAnswered()) {
+      this.router.navigateByUrl('/results');
+      console.log("zzzzzzzzzzzzzzzz")
+    }
   }
 
   getNextQuestion(){
