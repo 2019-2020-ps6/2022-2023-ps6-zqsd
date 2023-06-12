@@ -91,15 +91,15 @@ export class GameQuizComponent {
 
   //on go next, pas de badAnswer donc pas de ++ a faire
   getNextQuestion(x:boolean){
-    if (this.isFinnished) {
+    console.log(this.gameService.allQuestionsAnswered() + " allQuestionsAnswered");
+    this.gameService.nextQuestion();
+    this.setTimer();
+    if (this.gameService.allQuestionsAnswered()) {
       this.router.navigateByUrl('/results');
       this.questionCounter = 1;
       this.isFinnished = false;
       console.log("zzzzzzzzzzzzzzzz")
     }
-    this.gameService.nextQuestion();
-    this.setTimer();
-
   }
 
   ngOnInit(){
