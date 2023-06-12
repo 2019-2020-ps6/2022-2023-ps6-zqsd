@@ -42,7 +42,7 @@ export class QuizService {
     this.quizzes$.next(this.quizzes);
   }
 
-
-
-
+  getQuizList(): Quiz[] {
+    return this.quizzes;
+  }
 }

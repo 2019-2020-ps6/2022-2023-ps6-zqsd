@@ -52,16 +52,18 @@ export class CreateQuiz implements OnInit {
   createQuiz() {
     //supprime la 1ère question qui est vide
     this.quizForm.value.questions.splice(0, 1);
+    console.log(this.quizService.getQuizList().length)
     const quiz = {
       name: this.quizForm.value.name,
       theme: this.quizForm.value.theme,
       questions: this.questionService.questions,
-      id: "0",
+      id: (this.quizService.getQuizList().length + 1).toString(),
     } as Quiz;
     this.quizService.addQuiz(quiz);
     console.log(quiz);
     this.quizForm.reset();
     this.questionService.resetQuestions();
+    console.log(this.quizService.getQuizList().length)
   }
 
   nextQuestion() {
