@@ -18,7 +18,7 @@ import { ReturnButtonComponent } from './Parameter/Return/returnButton.component
 import { ParameterPageComponent } from './Parameter/ParameterPage.component/ParameterPage.component';
 import { ButtonNavigationAdvancedParameter } from './Parameter/ButtonNavigationAdvancedParameter/ButtonNavigationAdvancedParameter.component';
 
-
+import { HttpClientModule } from '@angular/common/http';
 import { GamepageComponent } from './Gamepage.component/GamePage.Component';
 import { GameQuestionComponent } from './GameQuestionClassical.component/GameQuestionClassical.Component';
 import { GameQuestionSearchingComponent } from './GameQuestionSearching.component/GameQuestionSearching.Component';
@@ -91,7 +91,7 @@ import {RetrievePasswordComponent} from "./RetrievePassword/RetrievePassword.com
     ReactiveFormsModule,
     DragDropModule,
     MatDialogModule,
-
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

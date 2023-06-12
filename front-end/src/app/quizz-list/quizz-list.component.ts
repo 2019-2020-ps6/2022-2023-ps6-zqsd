@@ -9,7 +9,7 @@ import { Quiz } from 'src/models/quiz.model';
 })
 export class QuizzListComponent {
 
-  
+
   QuizzList: Quiz[] ;
 
   constructor( public gameService:GameService){
@@ -17,9 +17,9 @@ export class QuizzListComponent {
 
   }
 
-  jouerQuizz(id: string) {
-    this.gameService.currentQuiz=this.QuizzList[Number(id)-1]
-    
+  jouerQuizz(id: number) {
+    this.gameService.currentQuiz=this.QuizzList[Number(id)]
+
   }
 
 
