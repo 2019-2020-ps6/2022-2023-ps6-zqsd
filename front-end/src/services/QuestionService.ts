@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Question} from "../models/Question.model";
+import {HttpClient} from "@angular/common/http";
+import {serverUrl} from "../configs/server.config";
 ;
 
 @Injectable({
@@ -7,16 +9,20 @@ import {Question} from "../models/Question.model";
 })
 export class QuestionService {
 
-  questions: Question[] = [];
+  idQuestions: String[] = [];
 
-  constructor() { }
+
+  constructor(private _httpClient: HttpClient) { }
 
   addQuestion(question: Question) {
-    this.questions.push(question);
+    return this._httpClient.post<Question>(serverUrl+"/questions",question).subscribe((question) => {
+      this.idQuestions.push(question.id.toString());
+      console.log("question subscribed + id ajouté à la liste");
+    });
   }
 
   resetQuestions() {
-    this.questions = [];
+    this.idQuestions = [];
   }
 
 }

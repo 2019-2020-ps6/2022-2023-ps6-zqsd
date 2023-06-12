@@ -5,6 +5,7 @@ const manageAllErrors = require('../../utils/routes/error-management')
 const { buildQuizz, buildQuizzes } = require('./manager')
 const { User } = require('../../models/user.model')
 const { Question } = require('../../models/question.model')
+const { Console } = require('../../utils/logger')
 
 const router = new Router()
 
@@ -12,7 +13,7 @@ const router = new Router()
 router.get('/', (req, res) => {
   try {
     const quizzes = Quiz.get().map((quiz) => {
-      const questions = quiz.questionIds.map((questionId) => Question.getById(questionId));
+       const questions = quiz.questionIds.map((questionId) => Question.getById(questionId));
       return { ...quiz, questions };
     });
     res.status(200).json(quizzes);

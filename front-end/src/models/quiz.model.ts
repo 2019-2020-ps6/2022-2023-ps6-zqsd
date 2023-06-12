@@ -8,4 +8,5 @@ export interface Quiz {
     name: string;
     theme: string; //by default : classic
     questions: Question[]; //list of the different SubQuiz that will be show when this quiz in launch : ex chronological, etc...
+    questionIds ?:string[]|undefined;
 }
