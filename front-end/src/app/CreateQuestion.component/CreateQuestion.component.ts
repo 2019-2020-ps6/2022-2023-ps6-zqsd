@@ -151,17 +151,41 @@ export class CreateQuestion implements OnInit, AfterViewInit{
         break;
 
       case 'chronological':
+        const dictionary: Map<number, Answer> = new Map<number, Answer>();
+        let key = 0;
         for (let i = 1; i <= 4; i++) {
-          answers.push({
+          const newAnswer: Answer = {
             label: 'chronological',
             value: this.questionForm.value[`answer${i}`],
-            isCorrect: this.questionForm.value[`isCorrect${i}`],
-            order: this.id// à faire
-          });
+            order: this.id
+          };
+          switch (i) {
+            case 1:
+              key = this.answer1Order;
+              break;
+            case 2:
+              key = this.answer2Order;
+              break;
+            case 3:
+              key = this.answer3Order;
+              break;
+            default:
+              key = this.answer4Order;
+              break;
+          }
+
+          dictionary.set(key, newAnswer);
+          console.log("question ajoutée");
+        }
+        for (let j = 1; j <= 4; j++) {
+          const answer = dictionary.get(j);
+          if (answer !== undefined) {
+            answers[j-1] = answer;
+          }
         }
         const questionCh: Question = {
           value: this.questionForm.value.question,
-          label: "chronological",
+          label: "order",
           id: this.id.toString(),
           answers: answers,
         };

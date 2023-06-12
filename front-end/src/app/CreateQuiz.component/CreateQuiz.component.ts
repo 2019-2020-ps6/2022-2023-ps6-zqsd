@@ -18,7 +18,7 @@ export class CreateQuiz implements OnInit {
   public theme_list = ['Acteur', 'Sport', 'Musique', 'Film', 'Séries Télévisées', 'Jeux vidéos', 'Autre'];
   numberOfQuestions: number = 0;
   buttons: number[] = [];
-  blueButton: number = 1; // par défaut, le premier bouton est en bleu
+  blueButton: number = 1;
 
 
 
