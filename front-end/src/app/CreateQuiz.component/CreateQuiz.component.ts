@@ -55,8 +55,7 @@ export class CreateQuiz implements OnInit {
     const quiz = {
       name: this.quizForm.value.name,
       theme: this.quizForm.value.theme,
-      questions: this.questionService.questions,
-      id: "0",
+      questionIds: this.questionService.idQuestions
     } as Quiz;
     this.quizService.addQuiz(quiz);
     console.log(quiz);
