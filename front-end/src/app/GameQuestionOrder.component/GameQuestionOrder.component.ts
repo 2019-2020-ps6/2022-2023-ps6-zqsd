@@ -20,7 +20,7 @@ export class GameQuestionOrderComponent implements OnInit {
   public enableAnimationQuestion : boolean = true;
   selectedFont : string="";
 
-  constructor(private gameService: GameService, public advPService : AdvancedParameterService, public router : Router) {}
+  constructor(public gameService: GameService, public advPService : AdvancedParameterService, public router : Router) {}
 
 
 

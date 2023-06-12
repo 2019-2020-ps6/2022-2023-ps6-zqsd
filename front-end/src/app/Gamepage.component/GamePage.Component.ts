@@ -67,6 +67,7 @@ export class GamepageComponent implements OnInit, OnDestroy {
         this.audio.pause();
         this.audio = null;
       }
+      this.gameService.stopCountdown();
     }
 
     openDialog(): MatDialogRef<PopUpComponent> {

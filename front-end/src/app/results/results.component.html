@@ -5,7 +5,7 @@
     <p style="text-align: center; font-size: 60px;"><strong>{{ gameService.score }}/{{ gameService.currentQuiz.questions.length }}</strong></p>
 
     <div style="text-align: center; margin-top: 50px;">
-    <button routerLink="/homePage" style="margin-right: 10px; width: 200px;">Menu</button>
+    <button (click)="gameService.stopCountdown()" routerLink="/homePage" style="margin-right: 10px; width: 200px;">Menu</button>
     <button  (click)="jouerQuiz()" style="width: 200px;">Nouveau Quiz</button>
     </div>
   </div>
