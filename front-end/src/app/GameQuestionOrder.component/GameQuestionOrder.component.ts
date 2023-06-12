@@ -5,6 +5,7 @@ import { QuestionQuizz } from '../../mocks/question.mock';
 import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
 import { AdvancedParameterService } from 'src/services/Parameter/AdvancedParameterService';
 import * as _ from 'underscore';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-game-question-order',
@@ -14,13 +15,12 @@ import * as _ from 'underscore';
 export class GameQuestionOrderComponent implements OnInit {
 
   @Input() currentQuestion: Question|undefined;
-  showResult =false;
   @Output() answerEvent: EventEmitter<boolean>= new EventEmitter<boolean>();
   answers: Answer[] = [];
   public enableAnimationQuestion : boolean = true;
   selectedFont : string="";
 
-  constructor(private gameService: GameService, public advPService : AdvancedParameterService) {}
+  constructor(private gameService: GameService, public advPService : AdvancedParameterService, public router : Router) {}
 
 
 
@@ -34,6 +34,10 @@ export class GameQuestionOrderComponent implements OnInit {
       console.log("Answer is correct")
     }
     this.answerEvent.emit(_.isEqual(this.answers,this.currentQuestion?.answers));
+    if (this.gameService.allQuestionsAnswered()) {
+      this.router.navigateByUrl('/results');
+      console.log("zzzzzzzzzzzzzzzz")
+    }
   }
 
   ngOnInit() {
