@@ -560,9 +560,30 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get parameter by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9428/api/parameter/:parameterId",
+							"host": [
+								"localhost"
+							],
+							"port": "9428",
+							"path": [
+								"api",
+								"parameter",
+								":parameterId"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
+
 	]
 }
 

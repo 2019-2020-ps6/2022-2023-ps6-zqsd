@@ -14,6 +14,15 @@ router.get('/',  (req, res) => {
   }
 });
 
+router.get('/:parameterId', (req, res) => {
+  try {
+    const parameter = Parameter.getById(req.params.parameterId)
+    res.status(200).json(parameter)
+  } catch (err) {
+    manageAllErrors(res, err)
+  }
+})
+
 router.post('/', (req, res) => {
     try {
         const parameter = Parameter.create({ ...req.body });

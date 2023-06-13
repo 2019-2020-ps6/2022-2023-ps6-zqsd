@@ -9,7 +9,7 @@ import {PARAMETER} from "../../mocks/Parameter/parameter.mock";
   providedIn: 'root'
 })
 export class ParameterService {
-  private currentSize: Parameter['size'] = 3;
+  private currentSize: Parameter['size'] = 25;
   private musicEnabled = true;
   public currentMusic$ = new BehaviorSubject<boolean>(this.musicEnabled);
   public selectedMusic: string = "";
@@ -17,6 +17,7 @@ export class ParameterService {
   private currentMusicPicturePath: Parameter['nameMusicPicture'] = this.getMusicString(this.musicEnabled);
 
   public currentSize$: BehaviorSubject<Parameter['size']> = new BehaviorSubject(this.currentSize);
+
   public currentMusicPicturePath$: BehaviorSubject<Parameter['nameMusicPicture']> = new BehaviorSubject(this.currentMusicPicturePath);
   public currentParameter$: BehaviorSubject<Parameter> = new BehaviorSubject(PARAMETER);
 
@@ -25,10 +26,9 @@ export class ParameterService {
     this.fetchParameter().subscribe((parameter: Parameter) => {
       this.currentParameter$.next(parameter);
       this.currentSize = parameter.size;
+      this.currentSize$ = new BehaviorSubject(parameter.size);
       this.selectedMusic = parameter.selectedMusic;
       this.musicEnabled = parameter.music;
-
-      // Mettre à jour d'autres propriétés si nécessaire
     });
   }
 
