@@ -48,5 +48,5 @@ testem.log
 Thumbs.db
 
 # E2E folder
-/playwright-report
+/playwright-report/
 /test-results
