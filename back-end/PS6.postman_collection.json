@@ -507,9 +507,66 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "ParameterManager",
+			"item": [
+				{
+					"name": "Create parameter",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "localhost:9428/api/parameter",
+							"host": [
+								"localhost"
+							],
+							"port": "9428",
+							"path": [
+								"api",
+								"parameter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete parameter",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:9428/api/parameter/:parameterId",
+							"host": [
+								"localhost"
+							],
+							"port": "9428",
+							"path": [
+								"api",
+								"parameter",
+								":parameterId"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
+
+
 
 
 

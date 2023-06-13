@@ -22,10 +22,6 @@ export class ParameterService {
 
 
   constructor(private _httpClient: HttpClient) {
-    this.createOrUpdateParameter(PARAMETER).subscribe((parameter: Parameter) => {
-      console.log("Parameter par défault créé");
-    });
-
     this.fetchParameter().subscribe((parameter: Parameter) => {
       this.currentParameter$.next(parameter);
       this.currentSize = parameter.size;

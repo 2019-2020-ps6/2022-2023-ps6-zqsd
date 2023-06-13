@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const { Parameter } = require('../../models/Parameter/parameter.model');
 const manageAllErrors = require('../../utils/routes/error-management');
+const { Question } = require('../../models/question.model')
 
 const router = new Router();
 
@@ -13,22 +14,32 @@ router.get('/',  (req, res) => {
   }
 });
 
-
-router.put('/', (req, res) => {
-  try {
-    const existingParameter = Parameter.get();
-    if (existingParameter) {
-      // Mise à jour du paramètre existant
-      const updatedParameter = Parameter.update(req.body);
-      res.status(200).json(updatedParameter);
-    } else {
-      // Création d'un nouveau paramètre
-      const newParameter = Parameter.create(req.body);
-      res.status(201).json(newParameter);
+router.post('/', (req, res) => {
+    try {
+        const parameter = Parameter.create({ ...req.body });
+        res.status(201).json(parameter);
+    } catch (err) {
+        manageAllErrors(res, err);
     }
+});
+
+router.delete('/:parameterId', (req, res) => {
+    try {
+        Parameter.delete(req.params.parameterId);
+        res.status(204).end();
+    } catch (err) {
+        manageAllErrors(res, err);
+    }
+});
+
+
+router.put('/:parameterId', (req, res) => {
+  try {
+    res.status(200).json(Parameter.update(req.params.parameterId, req.body));
   } catch (err) {
     manageAllErrors(res, err);
   }
 });
+
 
 module.exports = router;

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ParameterService} from "../../../services/Parameter/ParameterService";
+import {PARAMETER} from "../../../mocks/Parameter/parameter.mock";
 
 @Component({
     selector: 'app-ParameterPage',
@@ -7,6 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ParameterPageComponent implements OnInit {
-    ngOnInit(): void {
-    }
-} 
+
+
+  constructor(private parameterService: ParameterService) {
+  }
+
+
+  ngOnInit(): void {
+  }
+}
