@@ -85,24 +85,14 @@ test('Tester la police', async ({ page }) => {
   await page.keyboard.press('ArrowRight');
   await page.keyboard.press('ArrowRight');
   await page.keyboard.press('ArrowRight');
-
-  const element2 = await page.$('span:has-text("Retour")');
-  if (element2) {
-    await element2.click();
-  } else {
-    console.log("Le span contenant le texte Retour n'a pas été trouvé.");
-  }
-  const answer = await page.$('.answer-option:first-child app-GameAnswer');
+  await page.waitForTimeout(1000);
   let fontSize;
-  if (answer) {
-    const button = await answer.$('button');
-    fontSize = await button?.evaluate((element) => {
+  const texte = await page.$('span:has-text("Ceci est un texte pour tester la taille.")');
+    fontSize = await texte?.evaluate((element) => {
       const styles = window.getComputedStyle(element);
       return styles.fontSize;
     });
-  }
   console.log("font : " + fontSize)
   expect(fontSize).toBe('28px');
-  await page.waitForTimeout(5000);
 });
 
