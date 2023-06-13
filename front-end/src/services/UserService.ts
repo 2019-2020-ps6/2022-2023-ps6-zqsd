@@ -1,7 +1,9 @@
 import {Injectable} from "@angular/core";
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {User} from "../models/user.model";
 import {Users} from "../mocks/user.mock";
+import { HttpClient } from "@angular/common/http";
+import { serverUrl } from "src/configs/server.config";
 
 @Injectable({
   providedIn: 'root'
@@ -14,13 +16,21 @@ export class UserService {
     "Albertor": Users[2],
     "loupaul": Users[3]
   };
-  public allUserDict$: BehaviorSubject<Record<string, User>> = new BehaviorSubject(this.allUSerDict);
+  public allUser: User[] = []
+  public allUser$: Observable<User[]> = new Observable()
+  public allUserDict$:BehaviorSubject<Record<string, User>> = new BehaviorSubject(this.allUSerDict)
+  private currentUser: User = Users[0];
+  public currentUser$: BehaviorSubject<User> = new BehaviorSubject(this.currentUser);
 
-  private actualUser: User = Users[0];
-  public actualUser$: BehaviorSubject<User> = new BehaviorSubject(this.actualUser);
-
-  constructor() {
-
+  constructor(private _httpClient: HttpClient) {
+      this.allUser$ = _httpClient.get<User[]>(serverUrl+"/users")
+      this.allUser$.subscribe(x => {
+        this.allUser=x
+        this.allUser.forEach(u => {
+          this.allUSerDict[u.identifiant] = u;
+          this.allUserDict$.next(this.allUSerDict)
+        })
+      })
   }
 
   getAllUserDict() {
@@ -28,13 +38,18 @@ export class UserService {
   }
 
   changeUser(user: User) {
-    this.actualUser = user;
-    this.actualUser$.next(this.actualUser);
+    this.currentUser=user
+    this.currentUser$.next(user);
+  }
+
+  getCurrentUser(){
+    return this.currentUser$
   }
 
   addUser(user: User) {
-    this.allUSerDict[user.id] = user;
-    this.allUserDict$.next(this.allUSerDict);
+    this._httpClient.post<User>(serverUrl+"/users",user).subscribe(x =>{
+        this.allUSerDict[x.identifiant]=x
+    })
   }
 
 
