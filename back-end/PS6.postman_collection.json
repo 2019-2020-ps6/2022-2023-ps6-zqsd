@@ -453,6 +453,64 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Parameter",
+			"item": [
+				{
+					"name": "Get parameter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9428/api/parameter",
+							"host": [
+								"localhost"
+							],
+							"port": "9428",
+							"path": [
+								"api",
+								"parameter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create or update parameter",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"size\": 10,\n\t\"music\": true,\n\t\"nameMusicPicture\": \"Son_Enable.png\"\n}"
+						},
+						"url": {
+							"raw": "localhost:9428/api/parameter",
+							"host": [
+								"localhost"
+							],
+							"port": "9428",
+							"path": [
+								"api",
+								"parameter"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
+
+
+
+

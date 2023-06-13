@@ -4,47 +4,31 @@ const manageAllErrors = require('../../utils/routes/error-management');
 
 const router = new Router();
 
-
-router.get('/', (req, res) => {
+router.get('/',  (req, res) => {
   try {
-    res.status(200).json(Parameter.get())
+    const parameters = Parameter.get();
+    res.status(200).json(parameters);
   } catch (err) {
-    manageAllErrors(res, err)
+    manageAllErrors(res, err);
   }
-})
+});
 
-router.get('/:parameterId', (req, res) => {
+
+router.put('/', (req, res) => {
   try {
-    res.status(200).json(Parameter.getById(req.params.parameterId))
+    const existingParameter = Parameter.get();
+    if (existingParameter) {
+      // Mise à jour du paramètre existant
+      const updatedParameter = Parameter.update(req.body);
+      res.status(200).json(updatedParameter);
+    } else {
+      // Création d'un nouveau paramètre
+      const newParameter = Parameter.create(req.body);
+      res.status(201).json(newParameter);
+    }
   } catch (err) {
-    manageAllErrors(res, err)
+    manageAllErrors(res, err);
   }
-})
+});
 
-router.post('/', (req, res) => {
-  try {
-    const user = Parameter.create({ ...req.body })
-    res.status(201).json(user)
-  } catch (err) {
-    manageAllErrors(res, err)
-  }
-})
-
-router.put('/:parameterId', (req, res) => {
-  try {
-    res.status(200).json(Parameter.update(req.params.parameterId, req.body))
-  } catch (err) {
-    manageAllErrors(res, err)
-  }
-})
-
-router.delete('/:parameterId', (req, res) => {
-  try {
-    Parameter.delete(req.params.parameterId)
-    res.status(204).end()
-  } catch (err) {
-    manageAllErrors(res, err)
-  }
-})
-
-module.exports = router
+module.exports = router;
