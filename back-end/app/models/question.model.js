@@ -1,6 +1,5 @@
 const Joi = require('joi');
 const BaseModel = require('../utils/base-model.js');
-
 const answerSchema = {
   label: Joi.string().required(),
   value: Joi.string().required(),
@@ -13,7 +12,7 @@ const questionSchema = {
   label: Joi.string().required(),
   value: Joi.string().required(),
   answers: Joi.array().items(Joi.object(answerSchema)), // Array of answer objects
-  ImageSearching: Joi.string(),
+  imageSearching: Joi.string(),
   answered: Joi.boolean(),
 };
 
