@@ -1,42 +1,50 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import {BehaviorSubject, Observable, tap} from 'rxjs';
 import { Parameter } from 'src/models/Parameter/parameter.model';
 import { HttpClient } from "@angular/common/http";
 import { serverUrl } from "../../configs/server.config";
-import {PARAMETER} from "../../mocks/Parameter/parameter.mock";
+import { PARAMETER } from "../../mocks/Parameter/parameter.mock";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ParameterService {
-  private currentSize: Parameter['size'] = 25;
-  private musicEnabled = true;
-  public currentMusic$ = new BehaviorSubject<boolean>(this.musicEnabled);
+
+  private currentSize: Parameter['size'] = 0;
+  private musicEnabled = false;
   public selectedMusic: string = "";
-  public selectedMusic$ : BehaviorSubject<string> = new BehaviorSubject(this.selectedMusic);
   private currentMusicPicturePath: Parameter['nameMusicPicture'] = this.getMusicString(this.musicEnabled);
 
+
+  public currentMusic$ = new BehaviorSubject<boolean>(this.musicEnabled);
+  public selectedMusic$: BehaviorSubject<string> = new BehaviorSubject(this.selectedMusic);
   public currentSize$: BehaviorSubject<Parameter['size']> = new BehaviorSubject(this.currentSize);
-
   public currentMusicPicturePath$: BehaviorSubject<Parameter['nameMusicPicture']> = new BehaviorSubject(this.currentMusicPicturePath);
-  public currentParameter$: BehaviorSubject<Parameter> = new BehaviorSubject(PARAMETER);
-
+  public currentParameter$: BehaviorSubject<Parameter> = new BehaviorSubject<Parameter>(PARAMETER);
 
   constructor(private _httpClient: HttpClient) {
     this.fetchParameter().subscribe((parameter: Parameter) => {
       this.currentParameter$.next(parameter);
       this.currentSize = parameter.size;
-      this.currentSize$ = new BehaviorSubject(parameter.size);
+      this.currentSize$.next(parameter.size);
       this.selectedMusic = parameter.selectedMusic;
       this.musicEnabled = parameter.music;
+      this.currentMusic$.next(this.musicEnabled);
+      this.currentMusicPicturePath = this.getMusicString(this.musicEnabled);
+      this.currentMusicPicturePath$.next(this.currentMusicPicturePath);
     });
   }
 
   fetchParameter(): Observable<Parameter> {
-    return this._httpClient.get<Parameter>(`${serverUrl}/parameter`);
+    return this._httpClient.get<Parameter>(serverUrl + "/parameter").pipe(
+      tap((parameter: Parameter) => {
+        console.log('Paramètres récupérés :', parameter);
+      })
+    );
   }
 
-  createOrUpdateParameter(parameter: Parameter): Observable<Parameter> {
+
+  updateParameter(parameter: Parameter): Observable<Parameter> {
     return this._httpClient.put<Parameter>(`${serverUrl}/parameter`, parameter);
   }
 
@@ -57,15 +65,19 @@ export class ParameterService {
     this.currentMusic$.next(this.musicEnabled);
     this.currentMusicPicturePath = this.getMusicString(this.musicEnabled);
     this.currentMusicPicturePath$.next(this.currentMusicPicturePath);
+
+    const parameter = this.currentParameter$.getValue();
+    parameter.music = this.musicEnabled;
+    this.updateParameter(parameter).subscribe();
   }
 
   setSelectedMusic(musicPath: string) {
     this.selectedMusic = musicPath;
     this.selectedMusic$.next(musicPath);
-  }
 
-  getSelectedMusic(): Observable<string> {
-    return this.selectedMusic$.asObservable();
+    const parameter = this.currentParameter$.getValue();
+    parameter.selectedMusic = musicPath;
+    this.updateParameter(parameter).subscribe();
   }
 
   getCurrentMusicOBS(): Observable<Parameter['music']> {
@@ -89,10 +101,10 @@ export class ParameterService {
   }
 
   getMusicString(isEnabled: boolean): Parameter['nameMusicPicture'] {
-    if (isEnabled == false) {
-      return "Son_Disabled.png";
-    } else {
+    if (isEnabled) {
       return "Son_Enable.png";
+    } else {
+      return "Son_Disabled.png";
     }
   }
 

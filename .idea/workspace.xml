@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - add file ? #35">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/PS6.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/PS6.postman_collection.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/app/api/parameter/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/app/api/parameter/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/Parameter/ParameterPage.component/ParameterPage.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Parameter/ParameterPage.component/ParameterPage.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/services/Parameter/ParameterService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/Parameter/ParameterService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +69,7 @@
       <workItem from="1684757215506" duration="11452000" />
       <workItem from="1684785374778" duration="24197000" />
       <workItem from="1685428264939" duration="9494000" />
-      <workItem from="1686636546523" duration="8070000" />
+      <workItem from="1686636546523" duration="9435000" />
     </task>
     <task id="LOCAL-00001" summary="S1 - Merge Master into Parameter #9">
       <created>1680262725544</created>

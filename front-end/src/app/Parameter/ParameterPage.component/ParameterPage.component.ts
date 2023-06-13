@@ -16,5 +16,7 @@ export class ParameterPageComponent implements OnInit {
 
 
   ngOnInit(): void {
+    console.log(this.parameterService.getCurrentSize())
+    this.parameterService.fetchParameter();
   }
 }
