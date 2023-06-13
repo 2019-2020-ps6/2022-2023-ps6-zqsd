@@ -48,10 +48,14 @@ Joelle voudrait pouvoir permettre a ses patients de faire une chose ludique, ada
 ## Scenarios
 
 ### Scénario 1 : 
--Pierre veut jouer un quiz, je  vais dans la sélection de quiz et je choisis le quiz de mon choix, je test le quiz démonstration qui possède les 4 types de questions
+-Pierre veut jouer un quiz, il va dans la sélection de quiz et il choisit le quiz de son choix, il teste le quiz démonstration qui possède les 4 types de questions
 ### Scnéario 2 : 
 Joelle veux se connecter et créer un quiz avec les 4 types de questions
 ### Scénario 3 :
 André joue un quiz random, retourne dans le menu et change les paramètres
 ### Scénario 4 :
 Alice est un proche du patient, elle souhaite personnaliser les paramètres pour son père, et je vais tester cela en jouant un quiz aléatoire
+#### Scénario 5:
+Joelle veut créer un nouveau compte pour andré
+#### Scénario 6:
+André veut se connecter à son compte il va donc sur la page connexion  et entre son identifiant et son mot de passe
