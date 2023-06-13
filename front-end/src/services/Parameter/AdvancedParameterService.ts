@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { AdvancedParameterChronometer, AdvancedParameterFocusWork, AdvancedParameterMemoryWork } from 'src/models/Parameter/advancedParameter.model';
 import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANCED_PARAMETER_FOCUS_WORK } from 'src/mocks/Parameter/advancedParameter.mock';
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
     providedIn: 'root'
@@ -44,7 +45,7 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
     public selectedFont$ : BehaviorSubject<string> = new BehaviorSubject(this.selectedFont);
 
 
-    constructor () {
+    constructor (private _httpClient: HttpClient) {
 
     }
 

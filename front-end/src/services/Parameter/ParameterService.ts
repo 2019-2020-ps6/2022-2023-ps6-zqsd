@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { PARAMETER } from 'src/mocks/Parameter/parameter.mock';
 import { Parameter } from 'src/models/Parameter/parameter.model';
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
     providedIn: 'root'
@@ -19,7 +20,7 @@ import { Parameter } from 'src/models/Parameter/parameter.model';
     public currentMusicPicturePath$ : BehaviorSubject<Parameter['nameMusicPicture']> = new BehaviorSubject(this.currentMusicPicturePath)
 
 
-    constructor () {
+    constructor (private _httpClient: HttpClient) {
 
     }
 
