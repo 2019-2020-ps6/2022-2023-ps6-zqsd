@@ -20,7 +20,7 @@
       </div>
       <div>
         <label for="answer1">Réponse 1 :</label>
-        <input style="margin-left: 10px;" type="text" id="answer1" formControlName="answer1" required>
+        <input style="margin-left: 10px;" type="text"  formControlName="answer1" required>
         <button style="margin-left: 10px;" type="button" (click)="setAnswer(1, true)" [ngClass]="{'selected true': questionForm.get('isCorrect1')?.value === true}">
           Vrai
         </button>
@@ -30,7 +30,7 @@
       </div>
       <div>
         <label for="answer2">Réponse 2 :</label>
-        <input style="margin-left: 10px;" type="text" id="answer2" formControlName="answer2" required>
+        <input style="margin-left: 10px;" type="text"  formControlName="answer2" required>
         <button style="margin-left: 10px;" type="button" (click)="setAnswer(2, true)" [ngClass]="{'selected true': questionForm.get('isCorrect2')?.value === true}">
           Vrai
         </button>
@@ -40,7 +40,7 @@
       </div>
       <div>
         <label for="answer3">Réponse 3 :</label>
-        <input style="margin-left: 10px;" type="text" id="answer3" formControlName="answer3" required>
+        <input style="margin-left: 10px;" type="text"  formControlName="answer3" required>
         <button style="margin-left: 10px;" type="button" (click)="setAnswer(3, true)" [ngClass]="{'selected true': questionForm.get('isCorrect3')?.value === true}">
           Vrai
         </button>
@@ -50,7 +50,7 @@
       </div>
       <div>
         <label for="answer3">Réponse 4 :</label>
-        <input style="margin-left: 10px;" type="text" id="answer4" formControlName="answer4" required>
+        <input style="margin-left: 10px;" type="text"  formControlName="answer4" required>
         <button style="margin-left: 10px;" type="button" (click)="setAnswer(4, true)" [ngClass]="{'selected true': questionForm.get('isCorrect4')?.value === true}">
           Vrai
         </button>
