@@ -21,6 +21,7 @@ export class GameService {
   skipEvent: Subject<void> = new Subject<void>();
 
   public _quizList$: Observable<Quiz[]>= this._httpClient.get<Quiz[]>(serverUrl+"/quizzes");
+  public quizList$: BehaviorSubject<Quiz[]> = new BehaviorSubject<Quiz[]>([]);
   public quizList: Quiz[] = QuizExample;
   public answerResult : boolean|undefined= true;
   currentQuiz: Quiz= QuizExample[0];
@@ -66,6 +67,10 @@ export class GameService {
       this.currentQuestion=this.currentQuiz.questions[0];
       this.currentQuiz$= new BehaviorSubject<Quiz>(this.currentQuiz)
       this.currentQuestion$=new BehaviorSubject<Question>(this.currentQuestion)
+    });
+
+    this._quizList$.subscribe(data => {
+      this.quizList$.next(data);
     });
   }
 
@@ -180,8 +185,8 @@ export class GameService {
   }
 
   updateQuizList(): void {
-    this._quizList$.subscribe((list) => {
-      this.quizList = list;
+    this._httpClient.get<Quiz[]>(serverUrl+"/quizzes").subscribe(data => {
+      this.quizList$.next(data);
     });
   }
 
