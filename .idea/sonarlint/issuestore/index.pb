@@ -1,8 +1,6 @@
 
 C
 front-end/README.md,1\2\1259f326526e24ae39df2171bfb5e6ef87596594
-b
-2front-end/src/app/home-page/home-page.component.ts,7\c\7c6f1a0326126bb9a10af29072f2b281797108e1
 l
 <front-end/src/services/Parameter/AdvancedParameterService.ts,9\a\9ad66a686ea651a8d7791529a26dafd494fbbb2a
 h
@@ -15,24 +13,8 @@ l
 <front-end/src/app/GameQuiz.component/GameQuiz.component.scss,b\d\bd7609b66501c4fcc3567a5a9095c71e956f07d3
 w
 Gfront-end/src/app/AdvancedParamter/Chronometer/Chronometer.component.ts,9\e\9e067d2d228428564bed1a592af2f8132dbcea64
-l
-<front-end/src/app/Gamepage.component/GamePage.Component.html,9\8\980a078d82fbecc1c8f94341d868834ae590021e
-d
-4front-end/src/app/home-page/home-page.component.html,3\5\350e6560496f361d4c49ceb48d4ba8a5460d8dd1
-d
-4front-end/src/app/quizz-list/quizz-list.component.ts,1\e\1e82a20b3ea46acba4697c35f8dbcda5a7fcb113
-f
-6front-end/src/app/quizz-list/quizz-list.component.html,d\4\d4689baf9573606ae305eb56221b21d1d63f42dc
-Q
-!front-end/src/mocks/quizz.mock.ts,4\2\425be914fbeeddb06c6a5a294509e0ad2d2c4af6
-^
-.front-end/src/app/results/results.component.ts,1\d\1dfda5647d7652ebe5fb1909bf77d605cb821245
-c
-3front-end/src/app/results/results.component.spec.ts,b\7\b70bd8151371e3059477445cf7c04342c1e37055
 `
 0front-end/src/app/results/results.component.html,e\7\e7c0f394fab6f32039e2f1a38754d87670b08371
-U
-%front-end/src/services/GameService.ts,2\e\2e738a8963976ae6ab9d160c5734f53e686fb6ac
 U
 %front-end/src/services/UserService.ts,a\8\a8109282c5041fa1b46c7a3df47b83c8522a2350
 I
@@ -45,20 +27,12 @@ Z
 *front-end/src/scss/connexion-variable.scss,2\a\2a3381a00d6cbbe99edf3530313d1dd85cd9a18a
 K
 front-end/tsconfig.app.json,7\4\7415b45c20ac76acc7394f03a7f0ec83d45d92a5
-b
-2front-end/src/app/Connexion/Connexion.component.ts,6\3\63734b807f9e8e521d860516e9b63c86d3012018
 h
 8front-end/src/app/Inscription/Inscription.component.scss,2\5\252ec292db3a9e4c67606633e04f1a874c449437
-O
-front-end/src/app/app.module.ts,b\0\b08266b6396482628adadb0db2ed9f4b8ee7301a
 f
 6front-end/src/app/Inscription/Inscription.component.ts,d\c\dca94ad8e941159c3e0628ae45ff6131a9f457d5
 h
 8front-end/src/app/Inscription/Inscription.component.html,f\8\f87c4e4705c779ee0ae4ae37ffb9b660535cf806
-d
-4front-end/src/app/Connexion/Connexion.component.html,9\c\9c2084373e49a1bd7fbabee2aa0b2fc01e5c7fa7
-W
-'front-end/src/app/app-routing.module.ts,0\c\0c15380226f8d4ee8477a196e813fe9b5824b2f7
 p
 @front-end/src/app/CreateQuiz.component/CreateQuiz.component.scss,e\0\e094ab3e14d9f08cfde7ecfb6e9e886ffe907d58
 Y
@@ -71,8 +45,6 @@ p
 @front-end/src/app/CreateQuiz.component/CreateQuiz.component.html,7\2\7299380bada1925f07ef885eb200be0d8c1a146e
 m
 =front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.scss,e\f\ef209d457b87936eaae997dc7267913e7958f4e2
-k
-;front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts,b\0\b0ed43de26b2eacb8003e0e28537d9d8b4348e46
 x
 Hfront-end/src/app/CreateQuestion.component/CreateQuestion.component.html,9\7\9758cbc236bf8c12c09cc3477eebd5ed1c5c9ffc
 v

@@ -21,7 +21,7 @@ export class GameService {
   skipEvent: Subject<void> = new Subject<void>();
 
   public quizList$: Observable<Quiz[]>= this._httpClient.get<Quiz[]>(serverUrl+"/quizzes");
-  public quizList: Quiz[] = [];
+  public quizList: Quiz[] = QuizExample;
   public answerResult : boolean|undefined= true;
   currentQuiz: Quiz= QuizExample[0];
   public currentQuiz$: BehaviorSubject<Quiz> = new BehaviorSubject(this.currentQuiz);

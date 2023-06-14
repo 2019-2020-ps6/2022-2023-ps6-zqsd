@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import * as _ from 'underscore' ;
+import { MatDialog, MatDialogRef} from '@angular/material/dialog';
 import { UserService } from 'src/services/UserService';
 
 import { GameService } from 'src/services/GameService';

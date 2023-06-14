@@ -1,0 +1,10 @@
+<div class="PopUpContainer">
+  <h1 mat-dialog-title class="PopUpTitle">{{title}}</h1>
+  <div mat-dialog-content>
+    <p class="PopUpMessage">{{message}}</p>
+  </div>
+  <div mat-dialog-actions class="PopUpButton">
+    <button mat-button (click)="onConfirm()">Confirmer</button>
+    <button mat-button (click)="onCancel()">Annuler</button>
+  </div>
+</div>
