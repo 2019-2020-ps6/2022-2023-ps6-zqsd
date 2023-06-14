@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import * as _ from 'underscore' ;
+import { UserService } from 'src/services/UserService';
 
 import { GameService } from 'src/services/GameService';
 import { Quiz } from 'src/models/quiz.model';
@@ -13,17 +14,22 @@ import { Quiz } from 'src/models/quiz.model';
 })
 export class HomePageComponent {
 
-  QuizzList: Quiz[] ; 
+  currentUser = this.userService.getCurrentUser();
+  QuizzList: Quiz[] ;
   chosenQuizz: Quiz|undefined;
 
-  constructor( public gameService:GameService){
+  constructor( public gameService:GameService,public userService: UserService){
     this.QuizzList=gameService.getQuizList();
+    this.showUser();
+    console.log(this.currentUser);
   }
 
   ngOnInit(){
     this.gameService.quizEvent$.subscribe(() => {
       this.jouerQuizz();
     });
+    this.currentUser = this.userService.getCurrentUser();
+
   }
   jouerQuizz() {
     console.log("jouer quiz appelé");
@@ -33,5 +39,20 @@ export class HomePageComponent {
     else
       this.gameService.currentQuiz = this.QuizzList[0]
   }
-  
+
+
+  bienvenueMessage: string = '';
+
+  showUser() {
+    const user = this.userService.getCurrentUser();
+    if (user && user.prenom !== "Default") {
+      this.bienvenueMessage = 'Bienvenue ' + user;
+    } else {
+      this.bienvenueMessage = ''; // Ne pas définir de message s'il n'y a pas de prénom
+    }
+  }
+
+
+
+
 }
