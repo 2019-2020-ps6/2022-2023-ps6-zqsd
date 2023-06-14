@@ -20,7 +20,9 @@ test('Jouer un quiz démonstration avec toutes les questions', async ({ page }) 
       const h2Text = await h2Element.textContent();
       if (h2Text === quizName) {
         console.log("Quiz déjà existant");
-        break;
+        await page.getByRole('listitem').filter({ hasText: 'AstérixThème: FilmJouerSupprimer' }).getByRole('button', { name: 'Supprimer' }).click();
+        await page.getByRole('button', { name: 'Confirmer' }).click();
+        console.log("Quiz supprimé")
       }
     }
   }
