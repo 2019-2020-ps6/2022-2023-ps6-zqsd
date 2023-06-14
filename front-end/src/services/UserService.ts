@@ -10,16 +10,19 @@ import { serverUrl } from "src/configs/server.config";
 })
 export class UserService {
 
-  private allUSerDict: Record<string, User> = {
+  allUSerDict: Record<string, User> = {
     "Pieropaul": Users[0],
     "frallo": Users[1],
     "Albertor": Users[2],
-    "loupaul": Users[3]
+    "loupaul": Users[3],
+    "Default": Users[4],
   };
   public allUser: User[] = []
   public allUser$: Observable<User[]> = new Observable()
   public allUserDict$:BehaviorSubject<Record<string, User>> = new BehaviorSubject(this.allUSerDict)
-  private currentUser: User = Users[0];
+
+  //user par défault = 4
+  private currentUser: User = Users[4];
   public currentUser$: BehaviorSubject<User> = new BehaviorSubject(this.currentUser);
 
   constructor(private _httpClient: HttpClient) {
@@ -43,7 +46,7 @@ export class UserService {
   }
 
   getCurrentUser(){
-    return this.currentUser$
+    return this.currentUser$.getValue();
   }
 
   addUser(user: User) {
