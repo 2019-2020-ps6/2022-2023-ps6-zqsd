@@ -1,0 +1,6 @@
+.Dockerignore
+dist/
+nodes_modules/
+test-result/
+.angular/ 
+.gitignore

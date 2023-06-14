@@ -1,0 +1,13 @@
+FROM node:20-alpine3.17 
+
+
+RUN mkdir -p /app
+WORKDIR /app
+
+COPY --chown=node:node  ./package*.json .
+RUN npm install
+USER node
+COPY --chown=node:node  . .
+EXPOSE 9428
+
+CMD ["npm", "run","start"]
