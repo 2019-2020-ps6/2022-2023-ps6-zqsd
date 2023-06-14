@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Create delete Button #47">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/services/QuizService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/QuizService.ts" afterDir="false" />
-    </list>
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Fix subscribe in QuizzList #47" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +10,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="fix_bug_merging" />
+        <entry key="$PROJECT_DIR$" value="fix_merging_delete_button" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -273,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684852427835</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="S5 - Fix subscribe in QuizzList #47">
+      <created>1686752670519</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1686752670519</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,7 +294,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="fix_merging_delete_button" />
+                        <option value="origin/Jouer" />
                       </list>
                     </value>
                   </entry>
@@ -308,17 +312,17 @@
             <list>
               <RecentGroup>
                 <option name="FILTER_VALUES">
+                  <option value="origin/Jouer" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
                   <option value="fix_merging_delete_button" />
                 </option>
               </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="DeleteButton" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/Jouer" />
                 </option>
               </RecentGroup>
               <RecentGroup>
@@ -354,7 +358,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="S4 - Update on draging picture" />
     <MESSAGE value="S4 - Fix bug draging useless" />
     <MESSAGE value="S4 - Fix bug dragging useless" />
     <MESSAGE value="S4 - Make puzzle working" />
@@ -379,6 +382,7 @@
     <MESSAGE value="S5 - create retrieve password #27" />
     <MESSAGE value="S5 - add puzzle in creation question #35" />
     <MESSAGE value="S5 - add file ? #35" />
-    <option name="LAST_COMMIT_MESSAGE" value="S5 - add file ? #35" />
+    <MESSAGE value="S5 - Fix subscribe in QuizzList #47" />
+    <option name="LAST_COMMIT_MESSAGE" value="S5 - Fix subscribe in QuizzList #47" />
   </component>
 </project>

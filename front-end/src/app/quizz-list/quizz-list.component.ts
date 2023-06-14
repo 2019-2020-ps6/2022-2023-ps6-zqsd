@@ -22,7 +22,6 @@ export class QuizzListComponent {
     this.gameService._quizList$.subscribe((list)=> {
       this.QuizzList=list;
     });
-    this.QuizzList=gameService.getQuizList();
   }
 
 
