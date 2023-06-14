@@ -5,6 +5,7 @@ import { QuizExample} from "../mocks/quizz.mock";
 import {Question} from "../models/Question.model";
 import { HttpClient } from '@angular/common/http';
 import { serverUrl } from '../configs/server.config';
+import {GameService} from "./GameService";
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,7 @@ export class QuizService {
   public quizzes$: BehaviorSubject<Quiz[]> = new BehaviorSubject(QuizExample);
   private questions: Question[] = [];
 
-  constructor( private _httpClient: HttpClient) {
+  constructor( private _httpClient: HttpClient, private gameService: GameService) {
   }
 
   addQuiz(quiz: Quiz) {
@@ -39,17 +40,16 @@ export class QuizService {
     //todo get the ids from the questions,
     return this._httpClient.post(serverUrl+"/quizzes",quiz).subscribe((quiz) => {
       console.log("quiz subscribed");
+      this.gameService.updateQuizList();
     });
-
   }
 
 
-  //Plus tard si le temps le permet
   deleteQuiz(quiz: Quiz) {
-    //delete the quiz from the list
-    this.quizzes.splice(this.quizzes.indexOf(quiz), 1);
-    //update the observable
-    this.quizzes$.next(this.quizzes);
+    return this._httpClient.delete(serverUrl+"/quizzes/"+quiz.id).subscribe((quiz) => {
+      console.log("quiz deleted");
+      this.gameService.updateQuizList();
+    });
   }
 
   getQuizList(): Quiz[] {
