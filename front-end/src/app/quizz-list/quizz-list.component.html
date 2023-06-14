@@ -5,6 +5,12 @@
       <h2>{{q.name}}</h2>
       <p>Thème: {{q.theme}}</p>
       <button routerLink="/Gamepage" class="btn-jouer" (click)="jouerQuizz(i)">Jouer</button>
+      <button class="btn-delete" (click)="deleteQuizz(i)">Supprimer</button>
     </li>
   </ul>
+  <ng-container *ngIf="showPopUp">
+    <app-PopUpDeleteQuiz></app-PopUpDeleteQuiz>
+  </ng-container>
 </div>
+
+

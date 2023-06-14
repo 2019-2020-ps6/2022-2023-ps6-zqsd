@@ -2,10 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - add file ? #35">
+      <change afterPath="$PROJECT_DIR$/front-end/playwright-report/data/9f4546339b8ec213f8a3b6cc14d270c7512b8ec4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/popUpDeleteQuiz/popUpDeleteQuiz.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/popUpDeleteQuiz/popUpDeleteQuiz.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/app/popUpDeleteQuiz/popUpDeleteQuiz.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/c/0c15380226f8d4ee8477a196e813fe9b5824b2f7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1dfda5647d7652ebe5fb1909bf77d605cb821245" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/e/1e82a20b3ea46acba4697c35f8dbcda5a7fcb113" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/e/2e738a8963976ae6ab9d160c5734f53e686fb6ac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/5/350e6560496f361d4c49ceb48d4ba8a5460d8dd1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/2/425be914fbeeddb06c6a5a294509e0ad2d2c4af6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/3/63734b807f9e8e521d860516e9b63c86d3012018" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/9/79604fdafe155cddf96996f2e176bcf2b432728a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/c/7c6f1a0326126bb9a10af29072f2b281797108e1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/8/980a078d82fbecc1c8f94341d868834ae590021e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/c/9c2084373e49a1bd7fbabee2aa0b2fc01e5c7fa7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/0/b08266b6396482628adadb0db2ed9f4b8ee7301a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/0/b0ed43de26b2eacb8003e0e28537d9d8b4348e46" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/7/b70bd8151371e3059477445cf7c04342c1e37055" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/4/d4689baf9573606ae305eb56221b21d1d63f42dc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/c/dc45c60117c55ff37a36d785c29d3e632d268727" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/c/0c15380226f8d4ee8477a196e813fe9b5824b2f7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/d/1dfda5647d7652ebe5fb1909bf77d605cb821245" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/e/1e82a20b3ea46acba4697c35f8dbcda5a7fcb113" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/e/2e738a8963976ae6ab9d160c5734f53e686fb6ac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/5/350e6560496f361d4c49ceb48d4ba8a5460d8dd1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/2/425be914fbeeddb06c6a5a294509e0ad2d2c4af6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/3/63734b807f9e8e521d860516e9b63c86d3012018" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/9/79604fdafe155cddf96996f2e176bcf2b432728a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/c/7c6f1a0326126bb9a10af29072f2b281797108e1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/8/980a078d82fbecc1c8f94341d868834ae590021e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/c/9c2084373e49a1bd7fbabee2aa0b2fc01e5c7fa7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/0/b08266b6396482628adadb0db2ed9f4b8ee7301a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/0/b0ed43de26b2eacb8003e0e28537d9d8b4348e46" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/7/b70bd8151371e3059477445cf7c04342c1e37055" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/4/d4689baf9573606ae305eb56221b21d1d63f42dc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/c/dc45c60117c55ff37a36d785c29d3e632d268727" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/e2e/Scénarios/connexion-test.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/e2e/Scénarios/connexion-test.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/e2e/e2e.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/e2e/e2e.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/playwright-report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/playwright-report/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/home-page/home-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/home-page/home-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizz-list/quizz-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizz-list/quizz-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizz-list/quizz-list.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizz-list/quizz-list.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizz-list/quizz-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizz-list/quizz-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/services/GameService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/GameService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,11 +82,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Etude/Polytech/POO S6/Correction/TD5 Solutions for Streams-20230530",
+    "last_opened_file_path": "D:/Etude/Polytech/PS6/Projet 10/2022-2023-ps6-zqsd",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\scorv\\OneDrive\\Documents\\SI3 Polytech Nice\\PS6\\2022-2023-ps6-zqsd\\front-end\\node_modules\\typescript\\lib"
+    "ts.external.directory.path": "D:\\Etude\\Polytech\\PS6\\Projet 10\\2022-2023-ps6-zqsd\\front-end\\node_modules\\typescript\\lib"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -70,6 +114,7 @@
       <workItem from="1684757215506" duration="11452000" />
       <workItem from="1684785374778" duration="24197000" />
       <workItem from="1685428264939" duration="9494000" />
+      <workItem from="1686733679865" duration="10514000" />
     </task>
     <task id="LOCAL-00001" summary="S1 - Merge Master into Parameter #9">
       <created>1680262725544</created>

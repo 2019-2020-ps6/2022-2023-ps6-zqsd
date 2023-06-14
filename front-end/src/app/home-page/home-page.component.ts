@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import * as _ from 'underscore' ;
-
+import { MatDialog, MatDialogRef} from '@angular/material/dialog';
 import { GameService } from 'src/services/GameService';
 import { Quiz } from 'src/models/quiz.model';
 
@@ -13,7 +13,7 @@ import { Quiz } from 'src/models/quiz.model';
 })
 export class HomePageComponent {
 
-  QuizzList: Quiz[] ; 
+  QuizzList: Quiz[] ;
   chosenQuizz: Quiz|undefined;
 
   constructor( public gameService:GameService){
@@ -33,5 +33,5 @@ export class HomePageComponent {
     else
       this.gameService.currentQuiz = this.QuizzList[0]
   }
-  
+
 }
