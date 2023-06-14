@@ -15,8 +15,6 @@ l
 <front-end/src/app/GameQuiz.component/GameQuiz.component.scss,b\d\bd7609b66501c4fcc3567a5a9095c71e956f07d3
 `
 0front-end/src/app/results/results.component.html,e\7\e7c0f394fab6f32039e2f1a38754d87670b08371
-U
-%front-end/src/services/UserService.ts,a\8\a8109282c5041fa1b46c7a3df47b83c8522a2350
 I
 front-end/src/styles.scss,1\9\19896ffd6198b7f4df8336d0e91474a363b77415
 T

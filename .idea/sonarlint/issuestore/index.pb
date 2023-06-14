@@ -15,8 +15,6 @@ w
 Gfront-end/src/app/AdvancedParamter/Chronometer/Chronometer.component.ts,9\e\9e067d2d228428564bed1a592af2f8132dbcea64
 `
 0front-end/src/app/results/results.component.html,e\7\e7c0f394fab6f32039e2f1a38754d87670b08371
-U
-%front-end/src/services/UserService.ts,a\8\a8109282c5041fa1b46c7a3df47b83c8522a2350
 I
 front-end/src/styles.scss,1\9\19896ffd6198b7f4df8336d0e91474a363b77415
 T

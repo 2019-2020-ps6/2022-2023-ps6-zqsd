@@ -19,7 +19,7 @@ export class QuizzListComponent {
   selectedQuizId: number = 0;
 
   constructor( public gameService:GameService, public dialog: MatDialog, private quizService: QuizService){
-    this.gameService._quizList$.subscribe((list)=> {
+    this.gameService.quizList$.subscribe((list)=> {
       this.QuizzList=list;
     });
   }
