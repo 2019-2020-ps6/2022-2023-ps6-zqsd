@@ -20,7 +20,7 @@
       </div>
       <div>
         <label for="answer1">Réponse 1 :</label>
-        <input style="margin-left: 10px;" type="text"  formControlName="answer1" required>
+        <input style="margin-left: 10px;" type="text" id="answer1" formControlName="answer1" required>
         <button style="margin-left: 10px;" type="button" (click)="setAnswer(1, true)" [ngClass]="{'selected true': questionForm.get('isCorrect1')?.value === true}">
           Vrai
         </button>
@@ -30,7 +30,7 @@
       </div>
       <div>
         <label for="answer2">Réponse 2 :</label>
-        <input style="margin-left: 10px;" type="text"  formControlName="answer2" required>
+        <input style="margin-left: 10px;" type="text" id="answer2" formControlName="answer2" required>
         <button style="margin-left: 10px;" type="button" (click)="setAnswer(2, true)" [ngClass]="{'selected true': questionForm.get('isCorrect2')?.value === true}">
           Vrai
         </button>
@@ -40,7 +40,7 @@
       </div>
       <div>
         <label for="answer3">Réponse 3 :</label>
-        <input style="margin-left: 10px;" type="text"  formControlName="answer3" required>
+        <input style="margin-left: 10px;" type="text" id="answer3" formControlName="answer3" required>
         <button style="margin-left: 10px;" type="button" (click)="setAnswer(3, true)" [ngClass]="{'selected true': questionForm.get('isCorrect3')?.value === true}">
           Vrai
         </button>
@@ -50,7 +50,7 @@
       </div>
       <div>
         <label for="answer3">Réponse 4 :</label>
-        <input style="margin-left: 10px;" type="text"  formControlName="answer4" required>
+        <input style="margin-left: 10px;" type="text" id="answer4" formControlName="answer4" required>
         <button style="margin-left: 10px;" type="button" (click)="setAnswer(4, true)" [ngClass]="{'selected true': questionForm.get('isCorrect4')?.value === true}">
           Vrai
         </button>
@@ -70,11 +70,11 @@
       </div>
       <br>
 
-        <label for="imageSearching">Image :</label>
-        <input style="margin-left: 10px;" type="file" id="imageSearching" (change)="onImageSelected($event)" accept="image/*">
-        <div class="question-searching-image-container" *ngIf="selectedImage">
-          <img [src]="this.selectedImage.src" class="question-searching-image" />
-        </div>
+      <label for="imageSearching">Image :</label>
+      <input style="margin-left: 10px;" type="file" id="imageSearching" (change)="onImageSelected($event)" accept="image/*">
+      <div class="question-searching-image-container" *ngIf="selectedImage">
+        <img [src]="this.selectedImage.src" class="question-searching-image" />
+      </div>
 
 
       <div>
@@ -124,49 +124,49 @@
 
 <div *ngIf="showChronologicalSection">
   <form [formGroup]="questionForm">
-  <div>
-    <label for="question">Question :</label>
-    <input style="margin-left: 10px;" type="text" id="questionChronological" formControlName="question" required>
-  </div>
-  <label for="answer1">Réponses 1 :</label>
-  <input style="margin-left: 10px; margin-right: 10px;" type="text" id="answer1C" formControlName="answer1" required>
-  <select (change)="answer1Order">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-  </select>
-  <div>
-    <label for="answer2">Réponses 2 :</label>
-    <input style="margin-left: 10px; margin-right: 10px;" type="text" id="answer2C" formControlName="answer2" required>
-    <select (change)="answer2Order">
+    <div>
+      <label for="question">Question :</label>
+      <input style="margin-left: 10px;" type="text" id="questionChronological" formControlName="question" required>
+    </div>
+    <label for="answer1">Réponses 1 :</label>
+    <input style="margin-left: 10px; margin-right: 10px;" type="text" id="answer1C" formControlName="answer1" required>
+    <select (change)="answer1Order">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
       <option value="4">4</option>
     </select>
-  </div>
-  <div>
-    <label for="answer3">Réponses 3 :</label>
-    <input style="margin-left: 10px; margin-right: 10px;" type="text" id="answer3C" formControlName="answer3" required>
-    <select (change)="answer3Order">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-    </select>
-  </div>
-  <div>
-    <label for="answer4">Réponses 4 :</label>
-    <input style="margin-left: 10px; margin-right: 10px;" type="text" id="answer4C" formControlName="answer4" required>
-    <select (change)="answer4Order">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-    </select>
-  </div>
-</form>
+    <div>
+      <label for="answer2">Réponses 2 :</label>
+      <input style="margin-left: 10px; margin-right: 10px;" type="text" id="answer2C" formControlName="answer2" required>
+      <select (change)="answer2Order">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    </div>
+    <div>
+      <label for="answer3">Réponses 3 :</label>
+      <input style="margin-left: 10px; margin-right: 10px;" type="text" id="answer3C" formControlName="answer3" required>
+      <select (change)="answer3Order">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    </div>
+    <div>
+      <label for="answer4">Réponses 4 :</label>
+      <input style="margin-left: 10px; margin-right: 10px;" type="text" id="answer4C" formControlName="answer4" required>
+      <select (change)="answer4Order">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    </div>
+  </form>
 </div>
 
 
@@ -187,5 +187,4 @@
 
 
 <button (click)="addQuestion()">Ajouter la question</button>
-
 
