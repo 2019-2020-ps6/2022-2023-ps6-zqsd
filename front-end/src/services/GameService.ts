@@ -72,7 +72,6 @@ export class GameService {
 
   getCurrentQuestion(): Observable<Question> {
     return this.currentQuestion$.asObservable();
-
   }
 
   nextQuestion(): number  {
@@ -180,4 +179,11 @@ export class GameService {
     this.quizEventSubject.next();
     console.log("event triggered")
   }
+
+  updateQuizList(): void {
+    this.quizList$.subscribe((list) => {
+      this.quizList = list;
+    });
+  }
+
 }
