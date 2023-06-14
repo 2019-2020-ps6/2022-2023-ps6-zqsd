@@ -14,7 +14,7 @@ export class FocusWorkAdvancedParameterComponent implements OnInit {
     backgroundIsEnable : AdvancedParameterFocusWork['background'] = this.advancedParameterService.getCurrentBackground();
     questionAnimationIsEnable : AdvancedParameterFocusWork['questionAnimation'] = this.advancedParameterService.getCurrentQuestionAnimation();
     rightAnswerAnimationIsEnable : AdvancedParameterFocusWork['rightAnswerAnimation'] = this.advancedParameterService.getCurrentRightAnswerAnimation();
-    wrongAnswerAnimationIsEnable : AdvancedParameterFocusWork['wrongAnswerAnimation'] = this.advancedParameterService.getCurrentWrongAnswerAnimatino();
+    wrongAnswerAnimationIsEnable : AdvancedParameterFocusWork['wrongAnswerAnimation'] = this.advancedParameterService.getCurrentWrongAnswerAnimation();
 
     textDisplayBackgroundButton : string = this.setTextDisplayButton(this.backgroundIsEnable);
     textDisplayQuestionAnimationButton : string = this.setTextDisplayButton(this.questionAnimationIsEnable);

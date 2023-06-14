@@ -247,7 +247,7 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
       return this.currentRightAnswerAnimation;
     }
 
-    getCurrentWrongAnswerAnimatino() : AdvancedParameterFocusWork['wrongAnswerAnimation'] {
+    getCurrentWrongAnswerAnimation() : AdvancedParameterFocusWork['wrongAnswerAnimation'] {
       return this.currentWrongAnswerAnimation;
     }
 

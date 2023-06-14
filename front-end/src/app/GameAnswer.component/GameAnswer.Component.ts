@@ -54,8 +54,13 @@ export class GameAnswerComponent implements OnInit {
       this.selectedFont = font;
     })
   }
-  applyGreenBorder(bool : boolean) {
-    if(bool){
+  applyGreenBorder() {
+    let bool = false;
+    if(this.currentAnswer?.isCorrect != undefined){
+      bool = this.currentAnswer.isCorrect;
+    }
+    this.visuelRightAnswer = this.advPService.getCurrentRightAnswerAnimation()&&bool;
+    if(this.visuelRightAnswer){
       const buttonElement = this.elementRef.nativeElement.querySelector('#myButton');
       this.renderer.setStyle(buttonElement, 'border', '5px solid green');
 
@@ -64,8 +69,13 @@ export class GameAnswerComponent implements OnInit {
       }, 1000);
     }
   }
-  applyRedBorder(bool : boolean) {
-    if(bool){
+  applyRedBorder() {
+    let bool = false;
+    if(this.currentAnswer?.isCorrect != undefined){
+      bool = this.currentAnswer.isCorrect;
+    }
+    this.visuelFalseAnswer = this.advPService.getCurrentWrongAnswerAnimation()&&!bool ;
+    if(this.visuelFalseAnswer){
       const buttonElement = this.elementRef.nativeElement.querySelector('#myButton');
       this.renderer.setStyle(buttonElement, 'border', '5px solid red');
 
