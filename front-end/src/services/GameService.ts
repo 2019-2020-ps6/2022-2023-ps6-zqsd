@@ -20,7 +20,7 @@ export class GameService {
   retryEvent: Subject<void> = new Subject<void>();
   skipEvent: Subject<void> = new Subject<void>();
 
-  public quizList$: Observable<Quiz[]>= this._httpClient.get<Quiz[]>(serverUrl+"/quizzes");
+  public _quizList$: Observable<Quiz[]>= this._httpClient.get<Quiz[]>(serverUrl+"/quizzes");
   public quizList: Quiz[] = QuizExample;
   public answerResult : boolean|undefined= true;
   currentQuiz: Quiz= QuizExample[0];
@@ -58,7 +58,7 @@ export class GameService {
       console.log("Skip event received");
     });
 
-    this.quizList$.subscribe((list)=> {
+    this._quizList$.subscribe((list)=> {
       this.quizList=list;
 
       console.log(this.quizList)
@@ -68,7 +68,6 @@ export class GameService {
       this.currentQuestion$=new BehaviorSubject<Question>(this.currentQuestion)
     });
   }
-
 
   getCurrentQuestion(): Observable<Question> {
     return this.currentQuestion$.asObservable();
@@ -181,7 +180,7 @@ export class GameService {
   }
 
   updateQuizList(): void {
-    this.quizList$.subscribe((list) => {
+    this._quizList$.subscribe((list) => {
       this.quizList = list;
     });
   }

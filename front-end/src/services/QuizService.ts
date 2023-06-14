@@ -21,7 +21,7 @@ export class QuizService {
    * The list of quiz.
    * The list is retrieved from the mock.
    */
-  private quizzes: Quiz[] = QuizExample
+  private quizzes: Quiz[] = QuizExample;
 
   /**
    * Observable which contains the list of the quiz.

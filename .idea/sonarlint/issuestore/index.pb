@@ -29,16 +29,12 @@ K
 front-end/tsconfig.app.json,7\4\7415b45c20ac76acc7394f03a7f0ec83d45d92a5
 h
 8front-end/src/app/Inscription/Inscription.component.scss,2\5\252ec292db3a9e4c67606633e04f1a874c449437
-f
-6front-end/src/app/Inscription/Inscription.component.ts,d\c\dca94ad8e941159c3e0628ae45ff6131a9f457d5
 h
 8front-end/src/app/Inscription/Inscription.component.html,f\8\f87c4e4705c779ee0ae4ae37ffb9b660535cf806
 p
 @front-end/src/app/CreateQuiz.component/CreateQuiz.component.scss,e\0\e094ab3e14d9f08cfde7ecfb6e9e886ffe907d58
 Y
 )front-end/src/services/QuestionService.ts,7\3\7367f805a7a4680d6a87af3f9778d0f271a296c1
-n
->front-end/src/app/CreateQuiz.component/CreateQuiz.component.ts,f\f\ff24ac66ef5311f22554a3a760bf2a2a2bd3ad7f
 P
  front-end/src/mocks/user.mock.ts,6\8\680ecd6786cb1b574e63e2d67a9bb6117ec90862
 p
