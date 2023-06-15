@@ -13,7 +13,7 @@ test('Jouer un quiz démonstration avec toutes les questions', async ({ page }) 
   await page.goto(homepage);
   await page.click('button.btn-liste');;
 
-  const quizName = 'Connaissances globales';
+  const quizName = 'Astérix';
 
 await page.$$eval('li.quizz-item', (listItems, name) => {
   for (const listItem of listItems) {
@@ -55,5 +55,5 @@ await page.$$eval('li.quizz-item', (listItems, name) => {
   const paragraphText = await page.textContent('p');
 
   // Vérifier si le texte correspond à "2/3"
-  expect(paragraphText).toBe('2/3');
+  expect(paragraphText).toBe('1/3');
 });
