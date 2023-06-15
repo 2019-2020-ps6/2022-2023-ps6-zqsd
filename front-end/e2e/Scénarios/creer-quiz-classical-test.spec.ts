@@ -23,11 +23,22 @@ test('Jouer un quiz démonstration avec toutes les questions', async ({ page }) 
         await page.getByRole('listitem').filter({ hasText: 'AstérixThème: FilmJouerSupprimer' }).getByRole('button', { name: 'Supprimer' }).click();
         await page.getByRole('button', { name: 'Confirmer' }).click();
         console.log("Quiz supprimé")
+
+      }
+    }
+  }
+  let isDeleted = true;
+  for (const quizItem of quizItems) {
+    const h2Element = await quizItem.$('h2');
+    if (h2Element) {
+      const h2Text = await h2Element.textContent();
+      if (h2Text === quizName) {
+        isDeleted = false;
       }
     }
   }
 
-
+  expect(isDeleted).toBeTruthy;
 
   await page.goto(homepage);
   await page.click('button.btn-creer');;
@@ -122,5 +133,22 @@ test('Jouer un quiz démonstration avec toutes les questions', async ({ page }) 
   await page.waitForTimeout(1000);
   await addQuestionButton?.click();
   await createQuizButton?.click();
+
+  await page.goto(homepage);
+  await page.click('button.btn-liste');;
+
+  let isPresent = false;
+  const quizItemsAfterCreate = await page.$$('li.quizz-item');
+  for (const quizItem of quizItemsAfterCreate) {
+    const h2Element = await quizItem.$('h2');
+    if (h2Element) {
+      const h2Text = await h2Element.textContent();
+      console.log(h2Text);
+      if (h2Text === quizName) {
+        isPresent = true;
+      }
+    }
+  }
+  expect(isPresent).toBeTruthy;
 
 });
