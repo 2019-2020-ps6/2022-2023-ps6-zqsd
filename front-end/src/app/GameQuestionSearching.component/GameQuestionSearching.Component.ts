@@ -26,6 +26,9 @@ export class GameQuestionSearchingComponent implements OnInit {
   }
 
   questionAnswered(goodAnswer:boolean){
+      if (goodAnswer) {
+        this.gameService.score++;
+      }
       this.getNextQuestion();
       if (this.gameService.allQuestionsAnswered()) {
       this.router.navigateByUrl('/results');

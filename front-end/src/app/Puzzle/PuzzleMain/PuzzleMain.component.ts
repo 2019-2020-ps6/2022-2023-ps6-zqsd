@@ -4,6 +4,7 @@ import {Answer, Question} from "../../../models/Question.model";
 import {AnswerPuzzle1} from "../../../mocks/question.mock";
 import {DisplayService} from "../../../services/DisplayService";
 import * as _ from "underscore";
+import {GameService} from "../../../services/GameService";
 
 interface MyDictionary extends Record<number, number> {}
 
@@ -36,7 +37,7 @@ export class MainPuzzleComponent {
   public dictUnique : MyDictionary = {0 : 0, 1 : 0, 2 : 0, 3 : 0};
   public dictChecking : MyDictionary = {0 : 0, 1 : 0, 2 : 0, 3 : 0}; //0 false, 1 true
 
-  constructor(public displayService : DisplayService){
+  constructor(public displayService : DisplayService, private gameService : GameService) {
     this.setSize();
     this.generateCoordAvailable();
     this.setupPuzzle();
@@ -103,6 +104,7 @@ export class MainPuzzleComponent {
       }
     }
     console.log("You won!");
+    this.gameService.score++;
     this.answerEvent.emit(true);
   }
 

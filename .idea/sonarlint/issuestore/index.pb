@@ -13,8 +13,6 @@ l
 <front-end/src/app/GameQuiz.component/GameQuiz.component.scss,b\d\bd7609b66501c4fcc3567a5a9095c71e956f07d3
 w
 Gfront-end/src/app/AdvancedParamter/Chronometer/Chronometer.component.ts,9\e\9e067d2d228428564bed1a592af2f8132dbcea64
-`
-0front-end/src/app/results/results.component.html,e\7\e7c0f394fab6f32039e2f1a38754d87670b08371
 I
 front-end/src/styles.scss,1\9\19896ffd6198b7f4df8336d0e91474a363b77415
 T
@@ -43,8 +41,6 @@ V
 &front-end/e2e/e2e-component.fixture.ts,1\7\17ea527c1e5e4c0753c842549e082bfb4664c59d
 r
 Bfront-end/src/app/RetrievePassword/RetrievePassword.component.html,e\3\e32f221ecfba8e6f2a6d10e83b11de1876f91c84
-^
-.front-end/src/app/results/results.component.ts,1\d\1dfda5647d7652ebe5fb1909bf77d605cb821245
 ~
 Nfront-end/src/app/Parameter/ParameterPage.component/ParameterPage.component.ts,d\c\dc45c60117c55ff37a36d785c29d3e632d268727
 Q

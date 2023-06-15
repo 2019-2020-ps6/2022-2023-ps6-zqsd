@@ -119,6 +119,10 @@ export class GameService {
 
   allQuestionsAnswered(): boolean {
     const lastIndex = this.currentQuiz.questions.length;
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaa")
+    console.log(this.index);
+    console.log(lastIndex);
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaa")
     if (this.index === lastIndex || this.currentQuiz.questions.length === 0) {
       return true;
     }
