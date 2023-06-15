@@ -2,8 +2,8 @@
 
 ## Personas
 ### Persona 1 : Pierre Oranje
-age : 76 ans 
-#### Présentation : 
+Age : 76 ans 
+#### Présentation :
 Pierre est un ancien travailleur du bâtiment. A de nombreuse reprise, par le passé, il à 
 travailler en heure supplémentaire afin de rattraper les différents retards des projets. 
     Ces différentes  heures  supplémentaires  ont  causé  de  multiple  AVC  et  entrainé  une 
@@ -16,7 +16,7 @@ capacités  cognitives  de  Pierre  tout  en  s’amusant.  De plus,  la  person
 
 
 ### Persona 2 : Alice Gomez
-age : 32 ans. 
+Age : 32 ans. 
 Activité professionnelle : Enseignante en école primaire 
 #### Présentation  : 
 Alice est enseignante en école primaire et elle aime  bien  aider  son  prochain. En tant qu’enseignante, elle est bienveillante, sociable et sait s’occuper des enfants. Elle est la fille d'un patient. Lors  d’un  repas  de  famille,  le  père  d’Alice eut  un  AVC.  Il  souffre maintenant d’une démence vasculaire. Il a donc principalement des troubles de mémoire qui lui posent  problème  pour  la  vie  quotidienne
@@ -48,14 +48,21 @@ Joelle voudrait pouvoir permettre a ses patients de faire une chose ludique, ada
 ## Scenarios
 
 ### Scénario 1 : 
--Pierre veut jouer un quiz, il va dans la sélection de quiz et il choisit le quiz de son choix, il teste le quiz démonstration qui possède les 4 types de questions
-### Scnéario 2 : 
-Joelle veux se connecter et créer un quiz avec les 4 types de questions
+-Pierre veut jouer un quiz, il va dans la sélection de quiz et il choisit le quiz de son choix, il teste le quiz démonstration 
+
+### Scénario 2 : 
+Joelle veux se connecter à son compte. Cependant, lorsqu'elle rentré son mot de passe, elle se rends compte que ce n'est pas le bon. Elle veut donc le retrouver pour pouvoir se connecter. Une fois connecté, elle va vouloir créer un quiz composé uniquement de question Classiques et Puzzle.
+
+
+
 ### Scénario 3 :
 André joue un quiz random, retourne dans le menu et change les paramètres
-### Scénario 4 :
-Alice est un proche du patient, elle souhaite personnaliser les paramètres pour son père, et je vais tester cela en jouant un quiz aléatoire
-#### Scénario 5:
-Joelle veut créer un nouveau compte pour andré
+
+#### Scénario 4:
+Alice, fille de Leonel Gomez veut crée le compte pour son père. Elle va ensuite tester que ses identifiants fonctionnent bien. 
+
+### Scénario 5:
+Alice est un proche du patient, elle souhaite personnaliser les paramètres pour son père, et va tester cela en jouant un quiz aléatoire.
+
 #### Scénario 6:
 André veut se connecter à son compte il va donc sur la page connexion  et entre son identifiant et son mot de passe
