@@ -254,13 +254,13 @@ export class CreateQuestion implements OnInit, AfterViewInit{
             }
             const base64 = canvas.toDataURL('image/jpeg', 0.8); // Utilisation de la compression PNG sans perte
             partiesImage.push(base64);
-            console.log("question ajoutée : " +
-              partiesImage);
+            console.log(i + j*this.puzzleSplitNumber);
+            console.log(base64);
             answers.push({
               label: "puzzle",
               value: "1",
               isCorrect:false,
-              order : i + j * this.puzzleSplitNumber,
+              order : i + j*this.puzzleSplitNumber,
               picture: partiesImage[partiesImage.length - 1],
             });
           }

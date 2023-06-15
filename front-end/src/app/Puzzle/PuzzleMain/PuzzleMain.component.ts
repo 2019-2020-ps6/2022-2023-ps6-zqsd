@@ -49,6 +49,9 @@ export class MainPuzzleComponent {
     this.currentAnswer = _.shuffle(this.currentAnswer);
     const coordDefault = this.generateFirstPositionXY();
     for (let i = 0; i < this.currentAnswer.length; i++) {
+      var idOfThePicture: number = this.currentAnswer[i].order || 0;
+      console.log("setupPuzzle");
+      console.log(idOfThePicture);
       var id = this.generateIdNewPosition(this.generateImagePosition(coordDefault, i));
       this.dictID_TO_Index[id] = i;
       this.dictIndex_TO_ID[i] = id;
@@ -90,6 +93,9 @@ export class MainPuzzleComponent {
     } else {
       this.dictChecking[indexPicture] = 0;
     }
+    console.log("onPiecePlacedCorrectly");
+    console.log(this.currentAnswer[indexPicture].order);
+    console.log(indexPosition);
     console.log(this.dictChecking)
     for (let i = 0; i < this.currentAnswer.length; i++) {
       if (this.dictChecking[i] == 0) {
@@ -101,7 +107,8 @@ export class MainPuzzleComponent {
   }
 
   launchVerificationPlacement(x : number, y : number) : void {
-    var indexPosition : number = 1;
+    console.log("launchVerificationPlacement");
+    var indexPosition : number = 0;
     for (let i = 1; i < this.coordsAvailable[0].length; i++) {
       if (x == this.coordsAvailable[0][i]) {
         indexPosition += i;
@@ -110,6 +117,7 @@ export class MainPuzzleComponent {
         indexPosition += i * Math.sqrt(this.numberOfPicture);
       }
     }
+    console.log(indexPosition);
     this.onPiecePlacedCorrectly(indexPosition, this.dictID_TO_Index[this.generateIdNewPosition([x, y])]);
     return ;
   }
@@ -138,6 +146,10 @@ export class MainPuzzleComponent {
 
   generateIdNewPosition(coord : number[]): number {
     var id : number = Math.floor(coord[0]) * 100000 + coord[1];
+    console.log("id");
+    console.log(id);
+    console.log(this.dictID_TO_Index);
+    console.log(this.dictID_TO_Index[id]);
     return id;
   }
 
@@ -195,6 +207,8 @@ export class MainPuzzleComponent {
 
   calculateAfterDraging(puzzleChanged : PuzzleResult): void {
     if (puzzleChanged.draging){
+      console.log("calculate after dragging");
+      console.log(puzzleChanged);
       var indexOfThePicture : number = puzzleChanged.index;
       var X : number = puzzleChanged.x;
       var Y : number = puzzleChanged.y;
