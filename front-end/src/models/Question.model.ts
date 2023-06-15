@@ -1,3 +1,5 @@
+import {SafeUrl} from "@angular/platform-browser";
+
 export interface Answer {
     label:string
     value: string; //can be a link to a picture for puzzle label, an answer that will be display for chronological or classical label, or an answer that won't be show for analysis label
@@ -23,7 +25,7 @@ export interface Question {
     label: string;
     value: String;
     answers: Answer[];
-    imageSearching?: string|undefined;
+    imageSearching?: SafeUrl | null;
     answered?: boolean;
 }
 

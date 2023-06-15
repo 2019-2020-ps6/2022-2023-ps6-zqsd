@@ -61,6 +61,7 @@
     </form>
   </div>
 </div>
+
 <div *ngIf="showSearchingSection">
   <div>
     <form [formGroup]="questionForm">
@@ -70,11 +71,12 @@
       </div>
       <br>
 
-      <label for="imageSearching">Image :</label>
-      <input style="margin-left: 10px;" type="file" id="imageSearching" (change)="onImageSelected($event)" accept="image/*">
-      <div class="question-searching-image-container" *ngIf="selectedImage">
-        <img [src]="this.selectedImage.src" class="question-searching-image" />
+      <label for="imageSearching">Image URL:</label>
+      <input style="margin-left: 10px;" type="text" id="imageSearching" formControlName="imageUrl" placeholder="Enter image URL">
+      <div class="question-searching-image-container" *ngIf="questionForm.get('imageUrl')?.value">
+        <img [src]="questionForm.get('imageUrl')?.value" class="question-searching-image" alt="Selected Image">
       </div>
+
 
 
       <div>

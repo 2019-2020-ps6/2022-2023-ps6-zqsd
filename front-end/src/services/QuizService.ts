@@ -40,6 +40,7 @@ export class QuizService {
     //todo get the ids from the questions,
     return this._httpClient.post(serverUrl+"/quizzes",quiz).subscribe((quiz) => {
       console.log("quiz subscribed");
+      console.log(quiz);
       this.gameService.updateQuizList();
     });
   }
