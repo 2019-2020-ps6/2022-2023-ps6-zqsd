@@ -232,7 +232,7 @@ export class CreateQuestion implements OnInit, AfterViewInit{
       if (this.puzzleSplitNumber > 1 && this.selectedImage) {
         const largeurPartie: number = this.selectedImage.width / this.puzzleSplitNumber;
         const hauteurPartie: number = this.selectedImage.height / this.puzzleSplitNumber;
-        const partiesImage: HTMLCanvasElement[] = [];
+        const partiesImage: string[] = [];
         for (let i = 0; i < this.puzzleSplitNumber; i++) {
           for (let j = 0; j < this.puzzleSplitNumber; j++) {
             const canvas = document.createElement('canvas');
@@ -252,7 +252,8 @@ export class CreateQuestion implements OnInit, AfterViewInit{
                 hauteurPartie
               );
             }
-            partiesImage.push(canvas);
+            const imageDataURL = canvas.toDataURL();
+            partiesImage.push(imageDataURL);
             answers.push({
               label: "puzzle",
               value: "1",

@@ -1,28 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Create listUser #51">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/7367f805a7a4680d6a87af3f9778d0f271a296c1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/85809bd00d51c7a00c3956a79c4a53c7b301868b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/8/980a078d82fbecc1c8f94341d868834ae590021e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/9954e1368a772fdc749ccb70da12c01564e036b6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/0/a0fbcebcbc8b1e89cf0ab4b1bf6b45c04daf4a52" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/0/b0ed43de26b2eacb8003e0e28537d9d8b4348e46" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/2/c26bd081a903acf9a398da7c2ddcd73517483210" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/3/7367f805a7a4680d6a87af3f9778d0f271a296c1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/5/85809bd00d51c7a00c3956a79c4a53c7b301868b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/8/980a078d82fbecc1c8f94341d868834ae590021e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/9/9954e1368a772fdc749ccb70da12c01564e036b6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/0/a0fbcebcbc8b1e89cf0ab4b1bf6b45c04daf4a52" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/0/b0ed43de26b2eacb8003e0e28537d9d8b4348e46" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/2/c26bd081a903acf9a398da7c2ddcd73517483210" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Create listUser #53">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/2/72e46fd8b5c0a7c103370d369b3e1ff87a7a50ea" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/2/72e46fd8b5c0a7c103370d369b3e1ff87a7a50ea" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back-end/app/models/question.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/app/models/question.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/CreateQuestion.component/CreateQuestion.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/CreateQuestion.component/CreateQuestion.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleAnswer/PuzzleAnswer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleAnswer/PuzzleAnswer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/models/Question.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/models/Question.model.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Jouer" />
+        <entry key="$PROJECT_DIR$" value="superuser" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -88,7 +74,7 @@
       <workItem from="1684785374778" duration="24197000" />
       <workItem from="1685428264939" duration="9494000" />
       <workItem from="1686733679865" duration="10514000" />
-      <workItem from="1686813570953" duration="11015000" />
+      <workItem from="1686813570953" duration="12541000" />
     </task>
     <task id="LOCAL-00001" summary="S1 - Merge Master into Parameter #9">
       <created>1680262725544</created>
@@ -328,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686821682899</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="S5 - Create listUser #53">
+      <created>1686827579012</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1686827579012</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,7 +402,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="S4 - Make puzzle working" />
     <MESSAGE value="S4 - Make timer position according to quiz" />
     <MESSAGE value="S4 - Make change on button when clicked on" />
     <MESSAGE value="S4 - Make questions adapted with the parameters" />
@@ -434,6 +426,7 @@
     <MESSAGE value="S5 - Fix subscribe in QuizzList #47" />
     <MESSAGE value="S5 - Fix bug in forgetpassword #47" />
     <MESSAGE value="S5 - Create listUser #51" />
-    <option name="LAST_COMMIT_MESSAGE" value="S5 - Create listUser #51" />
+    <MESSAGE value="S5 - Create listUser #53" />
+    <option name="LAST_COMMIT_MESSAGE" value="S5 - Create listUser #53" />
   </component>
 </project>
