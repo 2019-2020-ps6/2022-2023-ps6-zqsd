@@ -222,7 +222,7 @@ export class CreateQuestion implements OnInit, AfterViewInit{
       if (this.puzzleSplitNumber > 1 && this.selectedImage) {
         const largeurPartie: number = this.selectedImage.width / this.puzzleSplitNumber;
         const hauteurPartie: number = this.selectedImage.height / this.puzzleSplitNumber;
-        const partiesImage: HTMLCanvasElement[] = [];
+        const partiesImage: string[] = [];
         for (let i = 0; i < this.puzzleSplitNumber; i++) {
           for (let j = 0; j < this.puzzleSplitNumber; j++) {
             const canvas = document.createElement('canvas');
@@ -242,19 +242,22 @@ export class CreateQuestion implements OnInit, AfterViewInit{
                 hauteurPartie
               );
             }
-            partiesImage.push(canvas);
+            const base64 = canvas.toDataURL('image/jpeg', 0.8); // Utilisation de la compression PNG sans perte
+            partiesImage.push(base64);
+            console.log(i + j*this.puzzleSplitNumber);
+            console.log(base64);
             answers.push({
               label: "puzzle",
-              value: "",
+              value: "1",
               isCorrect:false,
-              order : i + j * this.puzzleSplitNumber,
+              order : i + j*this.puzzleSplitNumber,
               picture: partiesImage[partiesImage.length - 1],
             });
           }
         }
         const questionS: Question = {
-          value: this.questionForm.value.question,
-          label: "searching",
+          value: "a",
+          label: "puzzle",
           id: this.id.toString(),
           answers: answers,
         };

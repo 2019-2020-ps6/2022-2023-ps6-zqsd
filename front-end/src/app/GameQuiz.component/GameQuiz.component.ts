@@ -55,11 +55,9 @@ export class GameQuizComponent {
 
     if (question.label == 'classical') {
       this.currentQuestion = question;
-      console.log("classical")
     } else {
       if ((!this.puzzleIsEnable && question.label == 'puzzle') || (!this.reflexionIsEnable && question.label == 'searching') || (!this.logicIsEnable && question.label == 'order')) {
         if (!this.isFinnished) {
-          console.log("next");
           this.getNextQuestion(true);
         }
       } else {
@@ -74,7 +72,6 @@ export class GameQuizComponent {
       this.router.navigateByUrl('/results');
       this.questionCounter = 1;
       this.isFinnished = false;
-      console.log("zzzzzzzzzzzzzzzz")
     }
   }
 
