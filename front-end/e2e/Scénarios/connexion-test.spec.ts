@@ -42,7 +42,7 @@ test.describe('test the connexion system', () => {
       await page.locator("#connexion-password").fill("123456")
       await page.getByRole('button',({name:"Connexion"})).click()
       expect(page.url()).toBe(homepage);
-      expect(page.getByText('Bienvenue LeonelG')).toBeTruthy()
+      expect(page.getByText('Bienvenue Leonel')).toBeTruthy()
     })
 
 
@@ -56,7 +56,7 @@ test.describe('test the connexion system', () => {
         await page.locator("#connexion-password").fill("123456")
         await page.getByRole('button',({name:"Connexion"})).click()
         expect(page.url()).toBe(homepage);
-        expect(page.getByText('Bienvenue JoelleB')).toBeTruthy()
+        expect(page.getByText('Bienvenue Joelle')).toBeTruthy()
     })
 
   //identifiant incorrecte

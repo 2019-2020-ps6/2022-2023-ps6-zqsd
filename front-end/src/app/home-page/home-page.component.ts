@@ -52,12 +52,13 @@ export class HomePageComponent {
   bienvenueMessage: string = '';
 
   showUser() {
-    const user = this.userService.getCurrentUser();
-    if (user.toString() !== "[object Object]" && user.toString() !== "Default") {
-      this.bienvenueMessage = 'Bienvenue ' + user;
-    } else {
-      this.bienvenueMessage = ''; // Ne pas définir de message s'il n'y a pas de prénom
-    }
+    this.userService.currentUser$.subscribe((user)=> {
+      if (user.prenom.toString() !== "[object Object]" && user.prenom.toString() !== "Default") {
+        this.bienvenueMessage = 'Bienvenue ' + user.prenom;
+      } else {
+        this.bienvenueMessage = ''; // Ne pas définir de message s'il n'y a pas de prénom
+      }
+    });
   }
 
 
