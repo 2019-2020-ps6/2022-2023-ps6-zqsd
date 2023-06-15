@@ -102,7 +102,7 @@ export class ForgetPasswordComponent implements OnInit {
       if (this.userService.getAllUserDict().hasOwnProperty(this.forgetpasswordForm.value.id)) {
         elementWarningMSGId.style.visibility = 'hidden';
         const userAssociated = this.userService.getAllUserDict()[this.forgetpasswordForm.value.id];
-        if (userAssociated.prenom == this.forgetpasswordForm.value.surname.toLowerCase() && userAssociated.nom == this.forgetpasswordForm.value.name.toLowerCase()) {
+        if (userAssociated.prenom.toLowerCase() == this.forgetpasswordForm.value.surname.toLowerCase() && userAssociated.nom.toLowerCase() == this.forgetpasswordForm.value.name.toLowerCase()) {
           elementWarningMSGName.style.visibility = 'hidden';
           this.userPassword = userAssociated.motDePasse;
           this.elementRef.nativeElement.querySelector('#forgetpassword-show-password-section').style.visibility = 'visible';
