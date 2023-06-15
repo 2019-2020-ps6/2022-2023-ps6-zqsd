@@ -1,22 +1,24 @@
-<div *ngIf="currentQuestion!=undefined" class="question-container">
-    <div style="margin-top: 15px; margin-bottom: 15px; font-size: calc(var(--currentSize) + 5px);" [style.fontFamily]="getSelectedFont()" [ngClass]="{'questionTitle': enableAnimationQuestion, 'uppercase-text': advPService.isUpperCase}">{{currentQuestion.value}}</div>
+<div *ngIf="currentQuestion != undefined" class="question-container">
+  <div style="margin-top: 15px; margin-bottom: 15px; font-size: calc(var(--currentSize) + 5px);" [style.fontFamily]="getSelectedFont()" [ngClass]="{'questionTitle': enableAnimationQuestion, 'uppercase-text': advPService.isUpperCase}">
+    {{currentQuestion.value}}
+  </div>
 
   <div class="question-searching-image-container">
-      <img src="{{currentQuestion.imageSearching}}" class="question-searching-image" />
+    <img [src]="currentQuestion.imageSearching" class="question-searching-image" style="max-width: 100%; max-height: 100%;" />
   </div>
 
   <div class="question-searching-answers-container">
-      <div class="question-searching-answer-option">
-          <app-GameAnswer [currentAnswer]="currentQuestion.answers[0]" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
-      </div>
-      <div class="question-searching-answer-option">
-          <app-GameAnswer [currentAnswer]="currentQuestion.answers[1]" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
-      </div>
-      <div class="question-searching-answer-option">
-          <app-GameAnswer [currentAnswer]="currentQuestion.answers[2]" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
-      </div>
-      <div class="question-searching-answer-option">
-          <app-GameAnswer [currentAnswer]="currentQuestion.answers[3]" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
-      </div>
+    <div class="question-searching-answer-option">
+      <app-GameAnswer [currentAnswer]="currentQuestion.answers[0]" (answerEvent)="questionAnswered($event)"></app-GameAnswer>
+    </div>
+    <div class="question-searching-answer-option">
+      <app-GameAnswer [currentAnswer]="currentQuestion.answers[1]" (answerEvent)="questionAnswered($event)"></app-GameAnswer>
+    </div>
+    <div class="question-searching-answer-option">
+      <app-GameAnswer [currentAnswer]="currentQuestion.answers[2]" (answerEvent)="questionAnswered($event)"></app-GameAnswer>
+    </div>
+    <div class="question-searching-answer-option">
+      <app-GameAnswer [currentAnswer]="currentQuestion.answers[3]" (answerEvent)="questionAnswered($event)"></app-GameAnswer>
+    </div>
   </div>
 </div>
