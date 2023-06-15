@@ -14,7 +14,7 @@ interface MyDictionary extends Record<number, number> {}
 })
 export class MainPuzzleComponent {
 
-  @Input() currentQuestion: Question = {id:'', value: '',label:"",answers: AnswerPuzzle1};
+  @Input() currentQuestion: Question = {id:'', value: '',label:"",answers: [] as Answer[]};
   @Output() answerEvent: EventEmitter<boolean>= new EventEmitter<boolean>();
 
   currentAnswer: Answer[] = this.currentQuestion.answers;
@@ -56,12 +56,24 @@ export class MainPuzzleComponent {
   }
 
   ngOnInit(): void {
-    console.log(this.currentAnswer + "AAAAAAAAa");
-    console.log(typeof this.currentQuestion + "BBBBBBBBB");
+    console.log("init")
+    console.log(this.currentAnswer);
+    console.log(this.currentQuestion);
+    console.log("init")
     this.setSize();
     this.generateCoordAvailable();
     this.setupPuzzle();
   }
+
+  ngAfterViewInit(): void {
+    this.currentAnswer = this.currentQuestion.answers;
+    console.log("after")
+    console.log(this.currentAnswer);
+    console.log(this.currentQuestion);
+    console.log("after")
+
+  }
+
 
   onPiecePlacedCorrectly(indexPosition : number, indexPicture : number): void {
     if (this.currentAnswer[indexPicture].order == indexPosition){

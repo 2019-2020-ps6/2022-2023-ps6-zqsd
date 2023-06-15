@@ -48,6 +48,10 @@ export class GameQuizComponent {
   }
 
   private checkQuestionAllowed(question : Question) {
+    console.log("test")
+    console.log(question)
+    console.log(this.currentQuestion)
+    console.log(this.currentQuestion == question)
     if (this.currentQuestion == question){
       return;
     }
@@ -57,13 +61,19 @@ export class GameQuizComponent {
       this.currentQuestion = question;
       console.log("classical")
     } else {
+      console.log("else")
+      console.log(this.puzzleIsEnable)
+      console.log(question.label)
       if ((!this.puzzleIsEnable && question.label == 'puzzle') || (!this.reflexionIsEnable && question.label == 'searching') || (!this.logicIsEnable && question.label == 'order')) {
         if (!this.isFinnished) {
           console.log("next");
           this.getNextQuestion(true);
         }
       } else {
+        console.log("else else")
         this.currentQuestion = question;
+        console.log(this.currentQuestion)
+        console.log(question)
       }
     }
 
@@ -76,6 +86,9 @@ export class GameQuizComponent {
       this.isFinnished = false;
       console.log("zzzzzzzzzzzzzzzz")
     }
+    console.log("azerty");
+    console.log(this.currentQuestion);
+    console.log("azerty");
   }
 
 

@@ -252,8 +252,10 @@ export class CreateQuestion implements OnInit, AfterViewInit{
                 hauteurPartie
               );
             }
-            const imageDataURL = canvas.toDataURL();
-            partiesImage.push(imageDataURL);
+            const base64 = canvas.toDataURL('image/jpeg', 0.8); // Utilisation de la compression PNG sans perte
+            partiesImage.push(base64);
+            console.log("question ajoutée : " +
+              partiesImage);
             answers.push({
               label: "puzzle",
               value: "1",

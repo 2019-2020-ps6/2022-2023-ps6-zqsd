@@ -35,6 +35,7 @@ export class PuzzleAnswerComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.pictureCanvas);
     this.imageLeft = this.getCoordinateWithId(this.id)[0];
     this.imageTop = this.getCoordinateWithId(this.id)[1];
   }
