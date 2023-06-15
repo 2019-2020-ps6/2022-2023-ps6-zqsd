@@ -47,22 +47,59 @@ Joelle voudrait pouvoir permettre a ses patients de faire une chose ludique, ada
 
 ## Scenarios
 
+Les scénarios suivants sont numérotés dans l'ordre d'exécution. Certains sont nécessaires afin que d'autres marchent comme par exemple crée un certain quizz qu'un autre persona jouera derrière. Cela évite des problèmes comme un quiz ou un utilisateur n'étant pas dans la base de donnéee.
+
 ### Scénario 1 : 
--Pierre veut jouer un quiz, il va dans la sélection de quiz et il choisit le quiz de son choix, il teste le quiz démonstration 
+Joelle veux se connecter à son compte. Cependant, lorsqu'elle rentré son mot de passe, elle se rends compte que ce n'est pas le bon. Elle veut donc le retrouver pour pouvoir se connecter. Une fois connecté, elle va vouloir créer un quiz composé uniquement de question Classiques et Order.
 
 ### Scénario 2 : 
-Joelle veux se connecter à son compte. Cependant, lorsqu'elle rentré son mot de passe, elle se rends compte que ce n'est pas le bon. Elle veut donc le retrouver pour pouvoir se connecter. Une fois connecté, elle va vouloir créer un quiz composé uniquement de question Classiques et Puzzle.
-
-
+-Pierre veut jouer un quiz spécifique qu'il avait vu auparavant, il va dans la sélection de quiz et il choisit le quiz de culture générale "Connaissances Globales".
 
 ### Scénario 3 :
-André joue un quiz random, retourne dans le menu et change les paramètres
+André ne veut pas se prendre la tête, il veut juste jouer un quiz aléatoire sans se prendre la tête.
 
-#### Scénario 4:
+### Scénario 4 :
 Alice, fille de Leonel Gomez veut crée le compte pour son père. Elle va ensuite tester que ses identifiants fonctionnent bien. 
+Elle souhaite personnaliser les paramètres pour son père, et va tester cela en jouant un quiz aléatoire.
 
-### Scénario 5:
-Alice est un proche du patient, elle souhaite personnaliser les paramètres pour son père, et va tester cela en jouant un quiz aléatoire.
+## Tests automatiques
 
-#### Scénario 6:
-André veut se connecter à son compte il va donc sur la page connexion  et entre son identifiant et son mot de passe
+### Choix d'implémentation :
+
+Nous avons décidé d'effectuer plusieurs tests afin de couvrir les différentes fonctionnalités que nous avons implémenté. Voici nos fonctionnalités ainsi que les tests qui correspondent :
+
+- Connexion : Scénario 1; Joelle, aide soignante veut se connecter afin de pouvoir créer un quiz personnalisé pour son patient. Elle se trompe de mot de passe et veut le retrouver. On test donc ici la connexion avec un mauvais mot de passe ainsi que la récupération d'un mot de passe. Une fois le mot de passe récupéré, Joelle réussira à se connecter et pourra vérifier qu'elle est bien sur son compte à l'accueil en lisant le message "Bienvenue JoelleB"
+
+- Inscription : Scénario 4, Alice inscrit son père sur le site. Ce test est important car il permet de tester si on peut bien ajouter un utilisateur à notre base de données. On va tester cette création par la suite en se connectant avec l'identifiant et le mot de passe utilisé. Si tout se passe bien, on se retrouve normalement sur la page d'accueil avec un message d'accueil "Bienvenue LeonelG" 
+
+- Jouer un quiz : Scénario 2,3; On test ici les différentes questions que nous avons implémenté ainsi que les bonnes et mauvaises réponses. On attends un certains score selon le quiz effectué pour bien vérifier par exemple que le score sera le même.  
+
+- Créer un quiz : Scénario 2; après s'être connectée, Joelle va crée un quiz composé de questions classiques et order. (Test des questions analyse et puzzle non implémenté car non fonctionnelle avec le lien du back à cause du stockage d'image)
+On va ensuite vérifier dans la liste des quizz que le quiz est bien ajouté puis le jouer afin de vérifier que les questions sont bien les bonnes avec les réponses correctes. On va par exemple vérifier que la bonne réponse est bien entourée en vert ou l'inverse pour une réponse fausse. On définit certaines réponses juste et fausses et on attends un score précis qu'on vérifie.
+
+
+- Paramétrer pour un utilisateur : Scénario 5; Alice personnalise les paramètres, cela change certaines fonctionnalités du quiz que nous allons vérifier après en jouant à un quiz aléatoire et en vérifiant que cela a bien été appliqué. On va par exemple désactiver l'animation liée aux questions puis vérifier cela en localisant la question.
+
+### Pour résumer
+
+Nous avons décidé en priorité de tester la prise en compte de trouble c'est à dire le changement qu'effectuent nos paramètres avancés sur les quiz que nous jouons.
+
+Cependant, pour cela il nous fallait d'abord crée un quiz afin de bien pouvoir le tester. Une fois que nous avons pu effectuer ces tests, nous avons fini par implémneter les tests de connexions afin de bien vérifier que cette partie du site marche.
+
+Finalement, nous avons pu tester l'ensemble des fonctionnalités du site (hormis les questions analyse et puzzle)
+
+
+## Tests utilisateurs
+
+### Retours et analyse
+
+#### Retours : 
+
+Nous avons eu plusieurs retours à propos de l'apparence de notre site. Ainsi, nous avons décidé de changer plusieurs éléments que nous avions pensé pour la maquette pour les raisons suivantes :
+- Changement du Fond : Choix entre fond clair et fond sombre selon la préférence de l'utilisateur
+- Changement de Police : Implémentation du choix de la police 
+- Boutons Activer/Désaciver : 
+- Refactor de l'anglais au français :
+- Changement du Pop-up d'inactivité : Implémentation des 3 boutons Réessayer/Passer/Quitter
+- 
+- A méditer ?
