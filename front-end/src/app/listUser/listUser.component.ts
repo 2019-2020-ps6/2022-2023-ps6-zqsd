@@ -6,35 +6,32 @@ import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {PopUpComponent} from "../PopUp/PopUp.component";
 import {PopUpDeleteQuizComponent} from "../popUpDeleteQuiz/popUpDeleteQuiz.component";
 import {QuizService} from "../../services/QuizService";
+import {UserService} from "../../services/UserService";
+import {User} from "../../models/user.model";
+import {Users} from "../../mocks/user.mock";
 
 @Component({
-  selector: 'app-quizz-list',
-  templateUrl: './quizz-list.component.html',
-  styleUrls: ['./quizz-list.component.scss']
+  selector: 'app-user-list',
+  templateUrl: './listUser.component.html',
+  styleUrls: ['./listUser.component.scss']
 })
-export class QuizzListComponent {
+export class UserListComponent {
   popupTitle: string = "Confirmation de suppression";
-  popupMessage: string = "Etes-vous sûr de vouloir supprimer ce quizz ?";
+  popupMessage: string = "Etes-vous sûr de vouloir supprimer cet utilisateur ?";
 
   showPopUp: boolean = false;
-  QuizzList: Quiz[] = QuizExample;
-  selectedQuizId: number = 0;
+  UserList: User[] = Object.values(Users);
+  selectedUserId: number = 0;
 
-  constructor( public gameService:GameService, public dialog: MatDialog, private quizService: QuizService){
-    this.gameService.quizList$.subscribe((list)=> {
-      this.QuizzList=list;
+  constructor( public userService:UserService, public dialog: MatDialog, private quizService: QuizService){
+    this.userService.allUserDict$.subscribe((list)=> {
+      this.UserList=Object.values(list);
     });
   }
 
-
-  jouerQuizz(id: number) {
-    this.gameService.currentQuiz=this.QuizzList[Number(id)]
-
-  }
-
-  deleteQuizz(id: number) {
+  deleteUser(id: number) {
     this.showPopUp = true;
-    this.selectedQuizId = id;
+    this.selectedUserId = id;
     this.openDialog();
   }
 
@@ -46,7 +43,9 @@ export class QuizzListComponent {
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result === true) {
-        this.quizService.deleteQuiz(this.QuizzList[this.selectedQuizId]);
+        console.log("Suppression de l'utilisateur " + this.selectedUserId);
+        console.log(this.UserList[this.selectedUserId]);
+        this.userService.deleteUser(this.UserList[this.selectedUserId]);
       } else {
         // Le bouton "Annuler" a été sélectionné : rien à faire
       }

@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import {Component, Inject, Input} from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router, RouterModule } from '@angular/router';
 import { GameService } from 'src/services/GameService';
@@ -9,8 +9,8 @@ import { GameService } from 'src/services/GameService';
   styleUrls: ['./popUpDeleteQuiz.component.scss']
 })
 export class PopUpDeleteQuizComponent {
-  title: string = "Confirmation de suppression";
-  message: string = "Etes-vous sûr de vouloir supprimer ce quizz ?";
+  @Input() title: string = "Confirmation de suppression";
+  @Input() message: string = "Etes-vous sûr de vouloir supprimer ce quizz ?";
 
 
   constructor(public dialogRef: MatDialogRef<PopUpDeleteQuizComponent>, private gameService : GameService, private router: Router) {}

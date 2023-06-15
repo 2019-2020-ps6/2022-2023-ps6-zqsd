@@ -3,4 +3,5 @@
   <button routerLink="/Gamepage" class="btn-jouer" (click)="jouerQuizz()">Jouer</button>
   <button routerLink="/CreateQuiz" class="btn-creer">Créer un quiz</button>
   <button routerLink="/QuizList" class="btn-liste">Liste des quiz</button>
+  <button *ngIf="showButtonAdmin" class="btn-liste" routerLink="/UserGestion">Gestion des utilisateurs</button>
 </div>

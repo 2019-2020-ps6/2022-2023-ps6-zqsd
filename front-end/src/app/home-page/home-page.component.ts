@@ -14,6 +14,8 @@ import { Quiz } from 'src/models/quiz.model';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent {
+  showButtonAdmin: boolean = false;
+
 
   currentUser = this.userService.getCurrentUser();
   QuizzList: Quiz[] ;
@@ -23,6 +25,11 @@ export class HomePageComponent {
     this.QuizzList=gameService.getQuizList();
     this.showUser();
     console.log(this.currentUser);
+    this.userService.currentUser$.subscribe((user)=> {
+      this.showButtonAdmin=user.status=="Admin";
+      console.log(user);
+      console.log(this.showButtonAdmin);
+    });
   }
 
   ngOnInit(){

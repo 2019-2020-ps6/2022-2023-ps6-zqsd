@@ -9,7 +9,7 @@
     </li>
   </ul>
   <ng-container *ngIf="showPopUp">
-    <app-PopUpDeleteQuiz></app-PopUpDeleteQuiz>
+    <app-PopUpDeleteQuiz [title]="popupTitle" [message]="popupMessage"></app-PopUpDeleteQuiz>
   </ng-container>
 </div>
 

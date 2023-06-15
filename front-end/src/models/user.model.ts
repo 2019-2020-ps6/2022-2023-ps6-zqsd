@@ -8,7 +8,7 @@ export interface User {
     nom: string;
     identifiant : string; //id to log in
     motDePasse : string;
-    status: string;
+    status: string; //Utilisateur, Proche, Personnel, Admin
 }
 
 export interface TimeToAnswer {
