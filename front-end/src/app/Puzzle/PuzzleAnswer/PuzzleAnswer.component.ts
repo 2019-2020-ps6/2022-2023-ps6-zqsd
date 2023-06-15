@@ -40,6 +40,12 @@ export class PuzzleAnswerComponent implements OnInit {
     this.imageTop = this.getCoordinateWithId(this.id)[1];
   }
 
+  ngAfterViewInit(): void {
+    console.log(this.id);
+    this.imageLeft = this.getCoordinateWithId(this.id)[0];
+    this.imageTop = this.getCoordinateWithId(this.id)[1];
+  }
+
   ngOnChanges(): void {
     this.imageLeft = this.getCoordinateWithId(this.id)[0];
     this.imageTop = this.getCoordinateWithId(this.id)[1];

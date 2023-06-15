@@ -31,8 +31,6 @@ p
 @front-end/src/app/CreateQuiz.component/CreateQuiz.component.html,7\2\7299380bada1925f07ef885eb200be0d8c1a146e
 p
 @front-end/src/app/CreateQuiz.component/CreateQuiz.component.scss,e\0\e094ab3e14d9f08cfde7ecfb6e9e886ffe907d58
-m
-=front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.scss,e\f\ef209d457b87936eaae997dc7267913e7958f4e2
 x
 Hfront-end/src/app/CreateQuestion.component/CreateQuestion.component.html,9\7\9758cbc236bf8c12c09cc3477eebd5ed1c5c9ffc
 X

@@ -67,10 +67,19 @@ export class MainPuzzleComponent {
 
   ngAfterViewInit(): void {
     this.currentAnswer = this.currentQuestion.answers;
+    this.puzzleGridHeight = 500;
+    this.puzzlePieceHeight = this.puzzleGridHeight / Math.sqrt(this.currentAnswer.length);
+    this.headerHeight = 175;
+    this.spaceTop = 50;
+    this.spaceLeft = 50;
+    this.numberOfPicture = this.currentAnswer.length;
     console.log("after")
     console.log(this.currentAnswer);
     console.log(this.currentQuestion);
     console.log("after")
+    this.setSize();
+    this.generateCoordAvailable();
+    this.setupPuzzle();
 
   }
 
