@@ -65,7 +65,7 @@ export class UserService {
   }
 
   deleteUser(user: User) {
-    this._httpClient.delete<User>(serverUrl+"/users/"+user.identifiant).subscribe(x =>{
+    this._httpClient.delete<User>(serverUrl+"/users/"+user.id).subscribe(x =>{
       delete this.allUSerDict[user.identifiant]
       this.allUserDict$.next(this.allUSerDict)
     })
