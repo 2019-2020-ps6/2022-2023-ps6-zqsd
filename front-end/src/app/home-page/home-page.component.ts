@@ -46,7 +46,7 @@ export class HomePageComponent {
 
   showUser() {
     const user = this.userService.getCurrentUser();
-    if (user && user.prenom !== "Default") {
+    if (user && user.toString() !== "Default") {
       this.bienvenueMessage = 'Bienvenue ' + user;
     } else {
       this.bienvenueMessage = ''; // Ne pas définir de message s'il n'y a pas de prénom

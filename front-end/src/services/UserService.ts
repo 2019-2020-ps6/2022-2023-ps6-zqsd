@@ -16,6 +16,7 @@ export class UserService {
     "Albertor": Users[2],
     "loupaul": Users[3],
     "Default": Users[4],
+    "JoelleB": Users[5],
   };
   public allUser: User[] = []
   public allUser$: Observable<User[]> = new Observable()
