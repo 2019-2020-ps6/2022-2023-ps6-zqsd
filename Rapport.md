@@ -1,6 +1,10 @@
 # Rapport du PS6
 
-## Personas
+Lire le README.MD pour en savoir plus sur le thème global du projet.
+
+# Partie 1 : Personas et scénarios
+
+
 ### Persona 1 : Pierre Oranje
 Age : 76 ans 
 #### Présentation :
@@ -89,6 +93,43 @@ Cependant, pour cela il nous fallait d'abord crée un quiz afin de bien pouvoir 
 Finalement, nous avons pu tester l'ensemble des fonctionnalités du site (hormis les questions analyse et puzzle)
 
 
+
+# Partie 2 : Présentation de l'architecture Client Serveur
+
+Voici une présentation de l'architecture du projet :
+
+## Backend :
+ Le backend utilise une API REST avec l'utilisation d'outils tels que Postman et Nodemon. Il est responsable de la gestion des données et de la communication avec la base de données.
+
+## Modèles :
+ Le projet comprend plusieurs modèles, notamment :
+
+### Quiz :
+ Représente un quiz et comprend des informations telles que l'identifiant, le nom, le thème et les identifiants des questions associées.
+
+### Answer :
+Représente une réponse à une question. Les réponses sont directement associées à une question et ne disposent pas d'une API individuelle.
+
+### Question :
+Représente une question et comprend des informations telles que l'identifiant, le libellé, la valeur, les réponses associées et éventuellement une image. Le modèle de question est défini avec des contraintes de validation à l'aide de la bibliothèque Joi.
+
+### User : 
+Représente un utilisateur du système. Bien que les paramètres liés à l'utilisateur soient définis, ils ne sont pas encore implémentés dans la liaison entre le frontend et le backend.
+
+## API : Les principales routes de l'API sont les suivantes :
+
+"/questions" : Gère les opérations liées aux questions, telles que la création, la récupération, la mise à jour et la suppression des questions.
+
+"/quizzes" : Gère les opérations liées aux quiz, notamment la création et la récupération des quiz.
+
+"/users" : Gère les opérations liées aux utilisateurs comme la création et deletion des utilisateurs.
+
+
+## Conclusion :
+L'architecture globale du projet permet de créer et gérer des utilisateurs, questions, réponses et quiz via l'API REST. Les réponses sont des attributs de questions et celles-ci sont associées aux quiz via leurs identifiants, ce qui permet de stocker uniquement les identifiants des questions dans les quiz et d'éviter les doublons dans la base de données.
+
+# Partie 3 : Présentation de l'évaluation coopérative
+
 ## Tests utilisateurs
 
 ### Retours et analyse
@@ -103,3 +144,55 @@ Nous avons eu plusieurs retours à propos de l'apparence de notre site. Ainsi, n
 - Changement du Pop-up d'inactivité : Implémentation des 3 boutons Réessayer/Passer/Quitter
 - 
 - A méditer ?
+
+# Partie 4 : Conclusion perspective
+
+# Annexe
+
+## Répartition des tâches 
+
+
+Guillaume Arrigoni:
+- Logique pour questions de type puzzle
+- Système de connexion
+- Paramètres avancés et logique appliqués au quiz
+- Deletion de quiz ou d'utilisateurs
+-
+-
+-
+-
+Drid Loris :
+- SCSS globale
+- Implémentation et prise en compte des retours
+- Test paramètres/jeux/création quiz
+- Animation trouble tels que le Pop-up, animations questions, Chronomètre
+- 
+-
+Tho Romain :
+- Formulaire de création de quiz et de questions
+- API back-end
+- Tests connexion/inscription
+- Lien front/back-end
+- Jouer quiz/résultats
+Benziane Swann :
+- Lien front/back-end
+- Docker
+- Logique pour questions de type Chronologique/analyse
+- Jouer quiz
+
+Le reste du projet a été développé en collaboration, en incluant des aspects tels que la logique de jeu, le routing et l'architecture générale. Ces éléments ont été créés conjointement en utilisant une approche collaborative pour assurer une mise en œuvre cohérente et efficace du site ZQSD.
+
+
+## Bibliographie
+
+Liste des sites consultés :
+- StackOverflow
+- ChatGPT
+- Docker.com
+- Angular.io
+- https://lms.univ-cotedazur.fr/2022/course
+- https://github.com/NablaT/ps6-correction-td1-td2-v2
+- https://github.com/NablaT/starter-ps6-full-stack
+-
+-
+-
