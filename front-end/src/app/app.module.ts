@@ -42,6 +42,7 @@ import {InscriptionComponent} from "./Inscription/Inscription.component";
 import {ForgetPasswordComponent} from "./ForgetPassword/ForgetPassword.component";
 import {RetrievePasswordComponent} from "./RetrievePassword/RetrievePassword.component";
 import {PopUpDeleteQuizComponent} from "./popUpDeleteQuiz/popUpDeleteQuiz.component";
+import {UserListComponent} from "./listUser/listUser.component";
 
 
 
@@ -80,6 +81,7 @@ import {PopUpDeleteQuizComponent} from "./popUpDeleteQuiz/popUpDeleteQuiz.compon
     ForgetPasswordComponent,
     RetrievePasswordComponent,
     PopUpDeleteQuizComponent,
+    UserListComponent,
   ],
   imports: [
     BrowserModule,

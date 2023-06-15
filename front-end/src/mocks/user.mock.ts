@@ -48,6 +48,14 @@ export const Users: User[] = [
       identifiant:"JoelleB",
       motDePasse:"123456",
       status:"staff"
+    },
+    {
+      id: "7",
+      prenom:"Admin",
+      nom:"Admin",
+      identifiant:"Admin",
+      motDePasse:"Admin",
+      status:"Admin"
     }
 ];
 

@@ -122,7 +122,7 @@ export class ConnexionComponent implements OnInit {
       elementWarningMSGName.style.visibility = 'hidden';
       if (this.userService.getAllUserDict()[this.connexionForm.value.name].motDePasse == this.connexionForm.value.password) {
         elementWarningMSGPassword.style.visibility = 'hidden';
-        this.userService.changeUser(this.connexionForm.value.name);
+        this.userService.changeUserWithString(this.connexionForm.value.name);
         this.router.navigateByUrl('/homePage');
       } else {
         elementWarningMSGPassword.style.visibility = 'visible';
