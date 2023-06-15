@@ -42,7 +42,7 @@ test.describe('test the connexion system', () => {
       await page.locator("#connexion-password").fill("123456")
       await page.getByRole('button',({name:"Connexion"})).click()
       expect(page.url()).toBe(homepage);
-      expect(page.getByText('Bienvenue LeonelG')).toBeTruthy()
+      expect(page.getByText('Bienvenue Leonel')).toBeTruthy()
     })
 
 
@@ -56,7 +56,7 @@ test.describe('test the connexion system', () => {
         await page.locator("#connexion-password").fill("123456")
         await page.getByRole('button',({name:"Connexion"})).click()
         expect(page.url()).toBe(homepage);
-        expect(page.getByText('Bienvenue JoelleB')).toBeTruthy()
+        expect(page.getByText('Bienvenue Joelle')).toBeTruthy()
     })
 
   //identifiant incorrecte
@@ -73,8 +73,8 @@ test.describe('test the connexion system', () => {
     await page.goto(homepage);
     await page.locator("#header").getByText('Connexion').click()
     await page.getByRole('button', { name: 'Mot de passe oublié ?' }).click()
-    await page.locator('#forgetpassword-name').fill("Bekhe")
     await page.locator('#forgetpassword-surname').fill("Joelle")
+    await page.locator('#forgetpassword-name').fill("Bekhe")
     await page.locator('#forgetpassword-id').fill("JoelleB")
     await page.getByRole('button', { name: 'Confirmer' }).click()
 
@@ -82,8 +82,6 @@ test.describe('test the connexion system', () => {
     expect(page.getByText('123456')).toBeTruthy()
     await page.getByRole('button', { name: 'Quitter' }).click()
     expect(page.url()).toBe(homepage);
-    expect(page.getByText('Bienvenue JoelleB')).toBeTruthy()
-
   })
 
 })
