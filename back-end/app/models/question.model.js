@@ -6,6 +6,7 @@ const answerSchema = {
   value: Joi.string().required(),
   isCorrect: Joi.boolean(),
   order: Joi.number(),
+  picture: Joi.any().allow(null), // Permet de gérer la propriété picture qui est de type HTMLCanvasElement
 };
 
 const questionSchema = {

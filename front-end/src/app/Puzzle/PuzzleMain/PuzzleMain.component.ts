@@ -55,7 +55,9 @@ export class MainPuzzleComponent {
     }
   }
 
-  onInit(): void {
+  ngOnInit(): void {
+    console.log(this.currentAnswer + "AAAAAAAAa");
+    console.log(typeof this.currentQuestion + "BBBBBBBBB");
     this.setSize();
     this.generateCoordAvailable();
     this.setupPuzzle();

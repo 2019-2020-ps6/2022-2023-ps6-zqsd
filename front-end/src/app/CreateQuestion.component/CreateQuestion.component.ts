@@ -255,7 +255,7 @@ export class CreateQuestion implements OnInit, AfterViewInit{
             partiesImage.push(canvas);
             answers.push({
               label: "puzzle",
-              value: "",
+              value: "1",
               isCorrect:false,
               order : i + j * this.puzzleSplitNumber,
               picture: partiesImage[partiesImage.length - 1],
@@ -263,8 +263,8 @@ export class CreateQuestion implements OnInit, AfterViewInit{
           }
         }
         const questionS: Question = {
-          value: this.questionForm.value.question,
-          label: "searching",
+          value: "a",
+          label: "puzzle",
           id: this.id.toString(),
           answers: answers,
         };
