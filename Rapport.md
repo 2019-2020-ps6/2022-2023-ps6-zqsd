@@ -105,7 +105,7 @@ ___
 Nous avons décidé en priorité de tester la prise en compte de trouble c'est à dire le changement qu'effectuent nos paramètres avancés sur les quiz que nous jouons.
 
 Cependant, pour cela il nous fallait d'abord crée un quiz afin de bien pouvoir le tester. Une fois que nous avons pu effectuer ces tests, nous avons fini par implémneter les tests de connexions afin de bien vérifier que cette partie du site marche.
-
+___
 ### Recul :
 
 Finalement, nous avons pu tester la majorité des fonctionnalités du site. Cependant, certaines parties n'ont pas pu être testés par difficulté technique.
@@ -165,6 +165,7 @@ Tho Romain :
 - Tests connexion/inscription
 - Lien front/back-end
 - Jouer quiz/résultats
+
 Benziane Swann :
 - Lien front/back-end
 - Docker
@@ -173,7 +174,7 @@ Benziane Swann :
 
 Le reste du projet a été développé en collaboration, en incluant des aspects tels que la logique de jeu, le routing et l'architecture générale. Ces éléments ont été créés conjointement en utilisant une approche collaborative pour assurer une mise en œuvre cohérente et efficace du site ZQSD.
 
-
+___
 ## Bibliographie
 
 Liste des sites consultés :
