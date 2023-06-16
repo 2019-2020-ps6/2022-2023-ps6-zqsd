@@ -1,5 +1,5 @@
 <div id="puzzle_question" style="margin-top: 15px; margin-bottom: 15px; font-size: calc(var(--currentSize) + 5px);" [style.fontFamily]="getSelectedFont()" [ngClass]="{'questionTitle': enableAnimationQuestion, 'uppercase-text': advPService.isUpperCase}">Complétez le puzzle !</div>
-<div>
+<div id="puzzle_wrapper">
   <app-puzzle-grid
     [size]="currentAnswer.length"
     [puzzleGridHeight] = "puzzleGridHeight"

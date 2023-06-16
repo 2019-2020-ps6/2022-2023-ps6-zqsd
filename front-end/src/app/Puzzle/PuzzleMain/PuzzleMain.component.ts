@@ -103,6 +103,7 @@ export class MainPuzzleComponent {
     this.generateCoordAvailable();
     this.setupPuzzle();
     this.setupDictionary();
+    document.documentElement.style.setProperty('--puzzleGridHeight', (this.puzzleGridHeight) + 'px');
   }
 
 
@@ -178,7 +179,7 @@ export class MainPuzzleComponent {
     var Y = [];
     var X = [];
     for (let i = 0; i < Math.sqrt(this.numberOfPicture); i++) {
-      Y.push(this.spaceTop + this.headerHeight + this.puzzlePieceHeight * i);
+      Y.push(50 + 30 + this.puzzlePieceHeight * i);
       X.push(this.spaceLeft + this.puzzlePieceHeight * i);
     }
     coord.push(X)

@@ -1,0 +1,11 @@
+
+
+:root {
+  --puzzleGridHeight : 500px;
+}
+
+
+
+#puzzle_wrapper {
+  height: var(--puzzleGridHeight);
+}
