@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Fix bug in createQuestion #53">
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Fix bug in puzzle 9 part #53">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/2/42fef323020b236c304d6e9e73de5b3580cd7705" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/d/5d823adeb20616014033c2e38c1f2f6dc6c6230c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/f/5f4938b0e7b9cba95d2be6195f17a2c66782a20b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/f/6f12ca68b6ea6337346da10cebe18b46c880f8bf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/e/be75c984c54b4d758799f2b94b252dc608957e44" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/f/ef209d457b87936eaae997dc7267913e7958f4e2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/2/42fef323020b236c304d6e9e73de5b3580cd7705" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/d/5d823adeb20616014033c2e38c1f2f6dc6c6230c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/f/5f4938b0e7b9cba95d2be6195f17a2c66782a20b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/f/6f12ca68b6ea6337346da10cebe18b46c880f8bf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/e/be75c984c54b4d758799f2b94b252dc608957e44" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/f/ef209d457b87936eaae997dc7267913e7958f4e2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/GameQuestionClassical.component/GameQuestionClassical.Component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/GameQuestionClassical.component/GameQuestionClassical.Component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleAnswer/PuzzleAnswer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleAnswer/PuzzleAnswer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +87,7 @@
       <workItem from="1685428264939" duration="9494000" />
       <workItem from="1686733679865" duration="10514000" />
       <workItem from="1686813570953" duration="27574000" />
-      <workItem from="1686900998135" duration="1618000" />
+      <workItem from="1686900998135" duration="3885000" />
     </task>
     <task id="LOCAL-00001" summary="S1 - Merge Master into Parameter #9">
       <created>1680262725544</created>
@@ -359,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686902156607</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="S5 - Fix bug in puzzle 9 part #53">
+      <created>1686903014431</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1686903014431</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,7 +469,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="S5 - Create Connexion page" />
     <MESSAGE value="S5 - Add warning msg #18" />
     <MESSAGE value="S5 - Add picture to hide/show password #18" />
     <MESSAGE value="S5 - CReate Inscription #21" />
@@ -470,6 +493,7 @@
     <MESSAGE value="S5 - Fix bug in puzzle order #53" />
     <MESSAGE value="S5 - Fix bug in result #53" />
     <MESSAGE value="S5 - Fix bug in createQuestion #53" />
-    <option name="LAST_COMMIT_MESSAGE" value="S5 - Fix bug in createQuestion #53" />
+    <MESSAGE value="S5 - Fix bug in puzzle 9 part #53" />
+    <option name="LAST_COMMIT_MESSAGE" value="S5 - Fix bug in puzzle 9 part #53" />
   </component>
 </project>
