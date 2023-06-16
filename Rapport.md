@@ -2,7 +2,7 @@
 
 # ZQSD : Soutien interactif pour la démence vasculaire
 
-ZQSD est un site web dédié au soutien des patients atteints de démence vasculaire. Il offre une variété d'activités basées sur quatre types de questions : Classique, Analyse, Puzzle et Chronologique. Les utilisateurs peuvent se connecter, jouer à des quiz aléatoires ou spécifiques, ainsi que créer leurs propres quiz.
+ZQSD est un site web dédié au soutien des patients atteints de démence vasculaire, qui a pour conséquences des problèmes de mémoire, de concentration et de capacités de raisonnement. Le site offre une variété d'activités basées sur quatre types de questions : Classique, Analyse, Puzzle et Chronologique. Les utilisateurs peuvent se connecter, jouer à des quiz aléatoires ou spécifiques, ainsi que créer leurs propres quiz.
 
 Le site propose des paramètres avancés qui permettent d'adapter l'expérience utilisateur en fonction des besoins et des handicaps de chaque individu. Ces paramètres permettent de personnaliser différentes caractéristiques du site.
 
@@ -13,8 +13,8 @@ Le site propose des paramètres avancés qui permettent d'adapter l'expérience 
 ___
 
 #### Présentation :
-Pierre est un ancien travailleur du bâtiment. A de nombreuse reprise, par le passé, il à 
-travailler en heure supplémentaire afin de rattraper les différents retards des projets. 
+Pierre est un ancien travailleur du bâtiment. A de nombreuse reprise, par le passé, il a 
+travaillé en heure supplémentaire afin de rattraper les différents retards des projets. 
     Ces différentes  heures  supplémentaires  ont  causé  de  multiple  AVC  et  entrainé  une 
 démence vasculaire. Pierre souffre donc d’une perte de quelques fonctions cognitives.
 ___
@@ -77,7 +77,7 @@ ___
 André joue un quiz au hasard, puis se rend compte qu'il n'y a pas de musique, et que le texte est trop petit. Il va donc configurer les paramètres et aller rejouer le quiz.
 ___
 ### Scénario 4 :
-Alice, fille de Leonel Gomez veut crée le compte pour son père. Elle va ensuite tester que ses identifiants fonctionnent bien. 
+Alice, fille de Leonel Gomez veut créer le compte pour son père. Elle va ensuite tester que ses identifiants fonctionnent bien. 
 Elle souhaite personnaliser les paramètres avancés pour son père, et va tester cela en jouant un quiz aléatoire.
 ___
 # Partie 2 : Scénario de tests et mise en place
