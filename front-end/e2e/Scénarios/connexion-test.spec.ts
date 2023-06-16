@@ -58,20 +58,9 @@ test.describe('test the connexion system', () => {
       await page.getByRole('button',({name:"Connexion"})).click()
       expect(page.url()).toBe(homepage);
       expect(page.getByText('Bienvenue Leonel')).toBeTruthy()
+      await page.waitForTimeout(3000)
     })
 
-
-
-    //connexion de Joelle Boekhe et vérification de son statut
-    test("existing user",async ({page}) =>{
-        await page.goto(homepage);
-        await page.locator("#header").getByText('Connexion').click()
-        await page.locator("#connexion-name").fill("JoelleB")
-        await page.locator("#connexion-password").fill("123456")
-        await page.getByRole('button',({name:"Connexion"})).click()
-        expect(page.url()).toBe(homepage);
-        expect(page.getByText('Bienvenue Joelle')).toBeTruthy()
-    })
 
   //identifiant incorrecte
   test("wrong identifiant",async ({page}) =>{
@@ -81,6 +70,7 @@ test.describe('test the connexion system', () => {
     await page.locator("#connexion-password").fill("1234567")
     await page.getByRole('button',({name:"Connexion"}))
     expect(page.getByText('Le mot de passe est incorrect')).toBeTruthy()
+    await page.waitForTimeout(3000)
   })
 
   test ("mdp oublié",async ({page}) =>{
@@ -94,8 +84,23 @@ test.describe('test the connexion system', () => {
 
     expect(page.getByText('Votre mot de passe est')).toBeTruthy()
     expect(page.getByText('123456')).toBeTruthy()
+    await page.waitForTimeout(3000)
     await page.getByRole('button', { name: 'Quitter' }).click()
     expect(page.url()).toBe(homepage);
+
+  })
+
+
+  //connexion de Joelle Boekhe et vérification de son statut
+  test("existing user",async ({page}) =>{
+    await page.goto(homepage);
+    await page.locator("#header").getByText('Connexion').click()
+    await page.locator("#connexion-name").fill("JoelleB")
+    await page.locator("#connexion-password").fill("123456")
+    await page.getByRole('button',({name:"Connexion"})).click()
+    expect(page.url()).toBe(homepage);
+    expect(page.getByText('Bienvenue Joelle')).toBeTruthy()
+    await page.waitForTimeout(3000)
   })
 
 })
