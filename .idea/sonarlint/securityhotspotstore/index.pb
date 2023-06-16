@@ -92,16 +92,12 @@ O
 front-end/src/app/app.module.ts,b\0\b08266b6396482628adadb0db2ed9f4b8ee7301a
 d
 4front-end/src/app/home-page/home-page.component.html,3\5\350e6560496f361d4c49ceb48d4ba8a5460d8dd1
-W
-'front-end/src/app/app-routing.module.ts,0\c\0c15380226f8d4ee8477a196e813fe9b5824b2f7
 b
 2front-end/src/app/home-page/home-page.component.ts,7\c\7c6f1a0326126bb9a10af29072f2b281797108e1
 t
 Dfront-end/src/app/GameQuestion.component/GameQuestion.Component.html,f\0\f0b52b779af404a94e528ae272ed2101ff580ead
 r
 Bfront-end/src/app/GameQuestion.component/GameQuestion.Component.ts,c\2\c26bd081a903acf9a398da7c2ddcd73517483210
-j
-:front-end/src/app/Gamepage.component/GamePage.Component.ts,a\0\a0fbcebcbc8b1e89cf0ab4b1bf6b45c04daf4a52
 l
 <front-end/src/app/Gamepage.component/GamePage.Component.html,9\8\980a078d82fbecc1c8f94341d868834ae590021e
 l

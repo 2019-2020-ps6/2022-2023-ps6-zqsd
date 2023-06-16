@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Add mock in QuizList #59">
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Fix bug in puzzle mock #59">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/c/0c15380226f8d4ee8477a196e813fe9b5824b2f7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/0/a0fbcebcbc8b1e89cf0ab4b1bf6b45c04daf4a52" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/c/0c15380226f8d4ee8477a196e813fe9b5824b2f7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/0/a0fbcebcbc8b1e89cf0ab4b1bf6b45c04daf4a52" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizz-list/quizz-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizz-list/quizz-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/Gamepage.component/GamePage.Component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Gamepage.component/GamePage.Component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +76,7 @@
       <workItem from="1685428264939" duration="9494000" />
       <workItem from="1686733679865" duration="10514000" />
       <workItem from="1686813570953" duration="27574000" />
-      <workItem from="1686900998135" duration="14365000" />
+      <workItem from="1686900998135" duration="16328000" />
     </task>
     <task id="LOCAL-00001" summary="S1 - Merge Master into Parameter #9">
       <created>1680262725544</created>
@@ -408,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686913838630</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="S5 - Fix bug in puzzle mock #59">
+      <created>1686916718243</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1686916718243</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,7 +512,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="S5 - Fix bug in scss of connexion #21" />
     <MESSAGE value="S5 - Update warning message for id #21" />
     <MESSAGE value="S5 - setup forgetpassword #23" />
     <MESSAGE value="S5 - fix bug in inscription with refactoring #23" />
@@ -524,6 +536,7 @@
     <MESSAGE value="S5 - Add question in puzzle #53" />
     <MESSAGE value="S5 - Fix bug due to the question #53" />
     <MESSAGE value="S5 - Add mock in QuizList #59" />
-    <option name="LAST_COMMIT_MESSAGE" value="S5 - Add mock in QuizList #59" />
+    <MESSAGE value="S5 - Fix bug in puzzle mock #59" />
+    <option name="LAST_COMMIT_MESSAGE" value="S5 - Fix bug in puzzle mock #59" />
   </component>
 </project>

@@ -82,8 +82,6 @@ b
 2front-end/src/app/listUser/listUser.component.scss,9\9\99792cb1e48a9f3cccf15c3581c0327deffeda45
 O
 front-end/src/app/app.module.ts,b\0\b08266b6396482628adadb0db2ed9f4b8ee7301a
-W
-'front-end/src/app/app-routing.module.ts,0\c\0c15380226f8d4ee8477a196e813fe9b5824b2f7
 b
 2front-end/src/app/Connexion/Connexion.component.ts,6\3\63734b807f9e8e521d860516e9b63c86d3012018
 d
@@ -100,8 +98,6 @@ t
 Dfront-end/src/app/GameQuestion.component/GameQuestion.Component.html,f\0\f0b52b779af404a94e528ae272ed2101ff580ead
 r
 Bfront-end/src/app/GameQuestion.component/GameQuestion.Component.ts,c\2\c26bd081a903acf9a398da7c2ddcd73517483210
-j
-:front-end/src/app/Gamepage.component/GamePage.Component.ts,a\0\a0fbcebcbc8b1e89cf0ab4b1bf6b45c04daf4a52
 l
 <front-end/src/app/Gamepage.component/GamePage.Component.html,9\8\980a078d82fbecc1c8f94341d868834ae590021e
 l
