@@ -22,6 +22,10 @@ export class QuizService {
    * The list of quiz.
    * The list is retrieved from the mock.
    */
+  private dicoMockQuiz: Record<string, Quiz> = {
+    [QuizExample[0].id]: QuizExample[0],
+  };
+
   private quizzes: Quiz[] = QuizExample;
   private quizzesBack: Quiz[] = [];
 
@@ -59,7 +63,15 @@ export class QuizService {
     this._httpClient.post<Quiz>(serverUrl+"/quizzes",quiz).subscribe(quiz => {
       console.log("quiz subscribed");
       console.log(quiz);
-      this.allQuiz[quiz.id]=quiz
+
+    });
+    this._httpClient.get<Quiz[]>(serverUrl+"/quizzes").subscribe(data => {
+      for (let i = 0; i < data.length; i++) {
+        this.allQuiz[data[i].id]=data[i]
+      }
+      for (let i = 0; i < Object.values(this.dicoMockQuiz).length ; i++) {
+        this.allQuiz[Object.values(this.dicoMockQuiz)[i].id] = Object.values(this.dicoMockQuiz)[i];
+      }
       this.gameService.updateQuizList(Object.values(this.allQuiz));
     });
   }
@@ -75,6 +87,9 @@ export class QuizService {
     });
     if (!deleteInDatabase) {
       delete this.allQuiz[quiz.id]
+      if (this.dicoMockQuiz[quiz.id] != undefined) {
+        delete this.dicoMockQuiz[quiz.id];
+      }
       this.gameService.updateQuizList(Object.values(this.allQuiz));
     }
   }

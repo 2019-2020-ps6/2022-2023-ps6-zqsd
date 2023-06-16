@@ -51,8 +51,6 @@ Z
 package.json,7\0\7030d0b2f71b999ff89a343de08c414af32fc93a
 A
 package-lock.json,f\a\fa288d1472d29beccb489a676f68739ad365fc47
-n
->front-end/src/app/CreateQuiz.component/CreateQuiz.component.ts,f\f\ff24ac66ef5311f22554a3a760bf2a2a2bd3ad7f
 d
 4front-end/src/services/Parameter/ParameterService.ts,f\2\f2e99e779e04bf0b75608f119ef92b6487eee224
 n
@@ -110,8 +108,6 @@ S
 #back-end/app/api/questions/index.js,f\6\f65e3163e0a43b6686fa848407b3c7ed9fe88b56
 U
 %back-end/app/models/question.model.js,2\2\225b99f6a1aba78ca7f5aeb26bd7fba06f10b3d9
-Y
-)front-end/src/services/QuestionService.ts,7\3\7367f805a7a4680d6a87af3f9778d0f271a296c1
 y
 Ifront-end/src/app/Puzzle/PuzzleAnswer/PuzzleAnswer-Interface.component.ts,6\5\654f566e4ed02cc4ffa861fe16d946722f95043d
 V
