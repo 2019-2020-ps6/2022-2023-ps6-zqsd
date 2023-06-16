@@ -1,4 +1,10 @@
-# Rapport du PS6
+# Rapport PS6
+
+# ZQSD : Soutien interactif pour la démence vasculaire
+
+ZQSD est un site web dédié au soutien des patients atteints de démence vasculaire. Il offre une variété d'activités basées sur quatre types de questions : Classique, Analyse, Puzzle et Chronologique. Les utilisateurs peuvent se connecter, jouer à des quiz aléatoires ou spécifiques, ainsi que créer leurs propres quiz.
+
+Le site propose des paramètres avancés qui permettent d'adapter l'expérience utilisateur en fonction des besoins et des handicaps de chaque individu. Ces paramètres permettent de personnaliser différentes caractéristiques du site.
 
 # Partie 1 : Personas et scénarios
 
