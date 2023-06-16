@@ -132,16 +132,6 @@ U
 %back-end/app/models/question.model.js,2\2\225b99f6a1aba78ca7f5aeb26bd7fba06f10b3d9
 Y
 )front-end/src/services/QuestionService.ts,7\3\7367f805a7a4680d6a87af3f9778d0f271a296c1
-m
-=front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.scss,e\f\ef209d457b87936eaae997dc7267913e7958f4e2
-m
-=front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.html,5\d\5d823adeb20616014033c2e38c1f2f6dc6c6230c
-o
-?front-end/src/app/Puzzle/PuzzleAnswer/PuzzleAnswer.component.ts,6\f\6f12ca68b6ea6337346da10cebe18b46c880f8bf
-q
-Afront-end/src/app/Puzzle/PuzzleAnswer/PuzzleAnswer.component.scss,5\f\5f4938b0e7b9cba95d2be6195f17a2c66782a20b
-q
-Afront-end/src/app/Puzzle/PuzzleAnswer/PuzzleAnswer.component.html,4\2\42fef323020b236c304d6e9e73de5b3580cd7705
 y
 Ifront-end/src/app/Puzzle/PuzzleAnswer/PuzzleAnswer-Interface.component.ts,6\5\654f566e4ed02cc4ffa861fe16d946722f95043d
 V
@@ -158,8 +148,6 @@ l
 Lfront-end/src/app/GameQuestionOrder.component/GameQuestionOrder.component.ts,e\0\e07c24b79aab04de5e9f87fe2641ffee127aa265
 †
 Vfront-end/src/app/GameQuestionSearching.component/GameQuestionSearching.Component.html,1\c\1c482a083839d404a83e7b0f89eafa828a806c96
-„
-Tfront-end/src/app/GameQuestionClassical.component/GameQuestionClassical.Component.ts,b\e\be75c984c54b4d758799f2b94b252dc608957e44
 U
 %front-end/src/services/GameService.ts,2\e\2e738a8963976ae6ab9d160c5734f53e686fb6ac
 „
