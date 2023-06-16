@@ -4,9 +4,9 @@ services:
     build: 
       context: ./../front-end
       args: 
-       - PROD_URL=http://localhost:8000
+       - PROD_URL=http://back-end:8000
        - ENV=e2e
-       - TEST_URL= http://localhost:8500
+       - TEST_URL= http://back-end:8500
     image: front-end:test3.0
     ports:
       - "8580:80"
@@ -35,8 +35,6 @@ services:
       retries: 3
   playwright:
     image: playwright:9.9.9
-    ports:
-      - 9323:9323
     depends_on:
       - front-end
     volumes:
