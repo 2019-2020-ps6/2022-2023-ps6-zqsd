@@ -46,6 +46,13 @@ export class MainPuzzleComponent {
     });
   }
 
+  setupDictionary() : void {
+    for (let i = 0; i < this.numberOfPicture; i++) {
+      this.dictUnique[i] = 0;
+      this.dictChecking[i] = 0;
+    }
+  }
+
   setupPuzzle(): void {
     this.currentAnswer = _.shuffle(this.currentAnswer);
     const coordDefault = this.generateFirstPositionXY();
@@ -67,6 +74,7 @@ export class MainPuzzleComponent {
     this.setSize();
     this.generateCoordAvailable();
     this.setupPuzzle();
+    this.setupDictionary();
   }
 
   ngAfterViewInit(): void {
@@ -84,7 +92,7 @@ export class MainPuzzleComponent {
     this.setSize();
     this.generateCoordAvailable();
     this.setupPuzzle();
-
+    this.setupDictionary();
   }
 
 
