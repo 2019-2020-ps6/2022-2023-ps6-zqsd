@@ -219,6 +219,7 @@ export class CreateQuestion implements OnInit, AfterViewInit{
         break;
     case 'puzzle':
       if (this.puzzleSplitNumber > 1 && this.selectedImage) {
+        console.log('puzzle');
         const largeurPartie: number = this.selectedImage.width / this.puzzleSplitNumber;
         const hauteurPartie: number = this.selectedImage.height / this.puzzleSplitNumber;
         const partiesImage: string[] = [];
@@ -286,6 +287,23 @@ export class CreateQuestion implements OnInit, AfterViewInit{
         this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(imageUrl);
       };
       reader.readAsDataURL(imageFile);
+    }
+  }
+
+
+  onImageSelectedHTTP(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    const files = inputElement.files!;
+    if (files && files.length > 0) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const imageElement = new Image();
+        imageElement.onload = () => {
+          this.selectedImage = imageElement;
+        };
+        imageElement.src = event.target?.result as string;
+      };
+      reader.readAsDataURL(files[0]);
     }
   }
 
