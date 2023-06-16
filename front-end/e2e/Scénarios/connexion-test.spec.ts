@@ -3,14 +3,29 @@ import {connexionPage, homepage} from 'e2e/e2e.config';
 
 test.describe('test the connexion system', () => {
 
-  /*
+
+  test("delete account LeonelG", async ({ page }) => {
+    await page.goto(homepage);
+    await page.locator("#header").getByText('Connexion').click();
+    await page.locator("#connexion-name").fill("Admin");
+    await page.locator("#connexion-password").fill("Admin");
+    await page.getByRole('button', { name: "Connexion" }).click();
+    await page.locator("#header").getByText('Gestion des utilisateurs').click();
+
+    const deleteButton = page
+      .getByRole('listitem')
+      .filter({ hasText: 'Prenom: LeonelNom: GomezStatus: userSupprimer' })
+      .getByRole('button', { name: 'Supprimer' });
+
+    if (await deleteButton.isVisible()) {
+      await deleteButton.click();
+    } else {
+      await page.goto(homepage); // Return to the homepage if the delete button is not visible
+    }
+  });
 
 
-    //deletetion du compte LeonelG pour pouvoir faire le scénario de test
-
-
-
-    //Alice veut inscrire son père en tant qu'utilisateur et tester le compte
+  //Alice veut inscrire son père en tant qu'utilisateur et tester le compte
     test("non existing user inscription",async ({page}) =>{
       await page.goto(homepage);
       await page.locator("#header").getByText('Connexion').click()
@@ -46,7 +61,6 @@ test.describe('test the connexion system', () => {
     })
 
 
-   */
 
     //connexion de Joelle Boekhe et vérification de son statut
     test("existing user",async ({page}) =>{
