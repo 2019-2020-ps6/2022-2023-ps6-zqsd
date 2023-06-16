@@ -160,8 +160,6 @@ Lfront-end/src/app/GameQuestionOrder.component/GameQuestionOrder.component.ts,e
 Vfront-end/src/app/GameQuestionSearching.component/GameQuestionSearching.Component.html,1\c\1c482a083839d404a83e7b0f89eafa828a806c96
 „
 Tfront-end/src/app/GameQuestionClassical.component/GameQuestionClassical.Component.ts,b\e\be75c984c54b4d758799f2b94b252dc608957e44
-k
-;front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts,b\0\b0ed43de26b2eacb8003e0e28537d9d8b4348e46
 U
 %front-end/src/services/GameService.ts,2\e\2e738a8963976ae6ab9d160c5734f53e686fb6ac
 „

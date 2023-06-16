@@ -166,5 +166,3 @@ j
 :front-end/src/app/GameQuiz.component/GameQuiz.component.ts,a\1\a1b4496a91f774688d03250987cbcf9c518d7461
 U
 %front-end/src/services/GameService.ts,2\e\2e738a8963976ae6ab9d160c5734f53e686fb6ac
-k
-;front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts,b\0\b0ed43de26b2eacb8003e0e28537d9d8b4348e46
