@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - add file ? #35">
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Add question in puzzle #53">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/e2e/Scénarios/connexion-test.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/e2e/Scénarios/connexion-test.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/e2e/e2e.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/e2e/e2e.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/playwright-report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/playwright-report/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleGrid/PuzzleGrid.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleGrid/PuzzleGrid.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +16,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Jouer" />
+        <entry key="$PROJECT_DIR$" value="superuser" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,20 +32,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Etude/Polytech/POO S6/Correction/TD5 Solutions for Streams-20230530",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\scorv\\OneDrive\\Documents\\SI3 Polytech Nice\\PS6\\2022-2023-ps6-zqsd\\front-end\\node_modules\\typescript\\lib"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Etude/Polytech/PS6/Projet 10/2022-2023-ps6-zqsd&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Etude\\Polytech\\PS6\\Projet 10\\2022-2023-ps6-zqsd\\front-end\\node_modules\\typescript\\lib&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Etude\Polytech\PS6\Projet 9\2022-2023-ps6-zqsd\front-end\src\app\RetrievePassword" />
@@ -70,6 +71,9 @@
       <workItem from="1684757215506" duration="11452000" />
       <workItem from="1684785374778" duration="24197000" />
       <workItem from="1685428264939" duration="9494000" />
+      <workItem from="1686733679865" duration="10514000" />
+      <workItem from="1686813570953" duration="27574000" />
+      <workItem from="1686900998135" duration="4576000" />
     </task>
     <task id="LOCAL-00001" summary="S1 - Merge Master into Parameter #9">
       <created>1680262725544</created>
@@ -274,7 +278,105 @@
       <option name="project" value="LOCAL" />
       <updated>1684852427835</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="S5 - Fix subscribe in QuizzList #47">
+      <created>1686752670519</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1686752670519</updated>
+    </task>
+    <task id="LOCAL-00031" summary="S5 - Fix subscribe in QuizzList #47">
+      <created>1686752869980</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1686752869980</updated>
+    </task>
+    <task id="LOCAL-00032" summary="S5 - Fix subscribe in QuizzList #47">
+      <created>1686753800433</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1686753800433</updated>
+    </task>
+    <task id="LOCAL-00033" summary="S5 - Fix bug in forgetpassword #47">
+      <created>1686815863521</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1686815863521</updated>
+    </task>
+    <task id="LOCAL-00034" summary="S5 - Create listUser #51">
+      <created>1686821682899</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1686821682899</updated>
+    </task>
+    <task id="LOCAL-00035" summary="S5 - Create listUser #53">
+      <created>1686827579012</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1686827579012</updated>
+    </task>
+    <task id="LOCAL-00036" summary="S5 - Fix HTMLCanvas #53">
+      <created>1686829019410</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1686829019410</updated>
+    </task>
+    <task id="LOCAL-00037" summary="S5 - Save and load picture for puzzle #53">
+      <created>1686835497048</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1686835497048</updated>
+    </task>
+    <task id="LOCAL-00038" summary="S5 - Fix bug in puzzle #53">
+      <created>1686836388686</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1686836388686</updated>
+    </task>
+    <task id="LOCAL-00039" summary="S5 - Fix bug in puzzle order #53">
+      <created>1686842070980</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1686842070980</updated>
+    </task>
+    <task id="LOCAL-00040" summary="S5 - Fix bug in result #53">
+      <created>1686845607424</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1686845607424</updated>
+    </task>
+    <task id="LOCAL-00041" summary="S5 - Fix bug in createQuestion #53">
+      <created>1686902156607</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1686902156607</updated>
+    </task>
+    <task id="LOCAL-00042" summary="S5 - Fix bug in puzzle 9 part #53">
+      <created>1686903014431</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1686903014431</updated>
+    </task>
+    <task id="LOCAL-00043" summary="S5 - Add question in puzzle #53">
+      <created>1686905176270</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1686905176270</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,6 +416,21 @@
               </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
+                  <option value="origin/fixpuzzlebackend" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="fix_merging_delete_button" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="DeleteButton" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
                   <option value="origin/inscription" />
                 </option>
               </RecentGroup>
@@ -345,18 +462,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="S4 - Update on draging picture" />
-    <MESSAGE value="S4 - Fix bug draging useless" />
-    <MESSAGE value="S4 - Fix bug dragging useless" />
-    <MESSAGE value="S4 - Make puzzle working" />
-    <MESSAGE value="S4 - Make timer position according to quiz" />
-    <MESSAGE value="S4 - Make change on button when clicked on" />
-    <MESSAGE value="S4 - Make questions adapted with the parameters" />
-    <MESSAGE value="S4 - Fix bug in condition" />
-    <MESSAGE value="S5 - FIx bug in package.json" />
-    <MESSAGE value="S5 - Fix part of bug by skipping question" />
-    <MESSAGE value="S5 - Create Connexion page" />
-    <MESSAGE value="S5 - Add warning msg #18" />
     <MESSAGE value="S5 - Add picture to hide/show password #18" />
     <MESSAGE value="S5 - CReate Inscription #21" />
     <MESSAGE value="S5 - Fix bug in scss of connexion #21" />
@@ -370,6 +475,18 @@
     <MESSAGE value="S5 - create retrieve password #27" />
     <MESSAGE value="S5 - add puzzle in creation question #35" />
     <MESSAGE value="S5 - add file ? #35" />
-    <option name="LAST_COMMIT_MESSAGE" value="S5 - add file ? #35" />
+    <MESSAGE value="S5 - Fix subscribe in QuizzList #47" />
+    <MESSAGE value="S5 - Fix bug in forgetpassword #47" />
+    <MESSAGE value="S5 - Create listUser #51" />
+    <MESSAGE value="S5 - Create listUser #53" />
+    <MESSAGE value="S5 - Fix HTMLCanvas #53" />
+    <MESSAGE value="S5 - Save and load picture for puzzle #53" />
+    <MESSAGE value="S5 - Fix bug in puzzle #53" />
+    <MESSAGE value="S5 - Fix bug in puzzle order #53" />
+    <MESSAGE value="S5 - Fix bug in result #53" />
+    <MESSAGE value="S5 - Fix bug in createQuestion #53" />
+    <MESSAGE value="S5 - Fix bug in puzzle 9 part #53" />
+    <MESSAGE value="S5 - Add question in puzzle #53" />
+    <option name="LAST_COMMIT_MESSAGE" value="S5 - Add question in puzzle #53" />
   </component>
 </project>

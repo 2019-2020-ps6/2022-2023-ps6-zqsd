@@ -43,6 +43,9 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
     public selectedFont: string = "Arial";
     public selectedFont$ : BehaviorSubject<string> = new BehaviorSubject(this.selectedFont);
 
+    public selectedTime : number = 1000;
+    public selectedTime$ : BehaviorSubject<number> = new BehaviorSubject(this.selectedTime);
+
 
     constructor () {
 
@@ -247,7 +250,7 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
       return this.currentRightAnswerAnimation;
     }
 
-    getCurrentWrongAnswerAnimatino() : AdvancedParameterFocusWork['wrongAnswerAnimation'] {
+    getCurrentWrongAnswerAnimation() : AdvancedParameterFocusWork['wrongAnswerAnimation'] {
       return this.currentWrongAnswerAnimation;
     }
 
@@ -273,6 +276,13 @@ import { ADVANCED_PARAMETER_CHRONOMETER, ADVANCED_PARAMETER_MEMORY_WORK, ANDVANC
       this.selectedFont = value;
       this.selectedFont$.next(value);
       console.log("texte changé en : " + this.selectedFont);
+    }
+    getSelectedTime(){
+      return this.selectedTime$.asObservable();
+    }
+    setSelectedTime(time : number){
+      this.selectedTime = time;
+      this.selectedTime$.next(time);
     }
   }
 

@@ -1,2 +1,2 @@
-<button id="myButton" [ngClass]="{'game-answer-button': questionType == 'classical', 'game-answer-button-smaller': questionType == 'searching', 'uppercase-text': advPService.isUpperCase}" [style.fontFamily]="getSelectedFont()" (click)="getAnswerResult(); applyGreenBorder(visuelRightAnswer); applyRedBorder(visuelFalseAnswer)">{{currentAnswer?.value}}</button>
+<button id="myButton" [ngClass]="{'game-answer-button': questionType == 'classical', 'game-answer-button-smaller': questionType == 'searching', 'uppercase-text': advPService.isUpperCase}" [style.fontFamily]="getSelectedFont()" (click)="getAnswerResult(); applyGreenBorder(); applyRedBorder()">{{currentAnswer?.value}}</button>
 

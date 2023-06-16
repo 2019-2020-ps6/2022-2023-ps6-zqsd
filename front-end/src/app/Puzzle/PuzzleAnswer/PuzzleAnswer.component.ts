@@ -13,7 +13,7 @@ export class PuzzleAnswerComponent implements OnInit {
 
 
   @Input() imageUrl: string = AnswerPuzzle1[0].value;
-  @Input() pictureCanvas?: HTMLCanvasElement = AnswerPuzzle1[0].picture;
+  @Input() pictureCanvas?: string = AnswerPuzzle1[0].picture;
   @Input() indexOfThePicture: number = 0; //must start at 0 for the first one and thus 8 for the last one
   @Input() id : number = 0;
   @Input() puzzlePieceHeight: number = 10;
@@ -35,6 +35,13 @@ export class PuzzleAnswerComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.pictureCanvas);
+    this.imageLeft = this.getCoordinateWithId(this.id)[0];
+    this.imageTop = this.getCoordinateWithId(this.id)[1];
+  }
+
+  ngAfterViewInit(): void {
+    console.log(this.id);
     this.imageLeft = this.getCoordinateWithId(this.id)[0];
     this.imageTop = this.getCoordinateWithId(this.id)[1];
   }

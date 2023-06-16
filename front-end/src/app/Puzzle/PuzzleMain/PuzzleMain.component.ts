@@ -1,9 +1,11 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, Output} from '@angular/core';
 import {PuzzleResult} from "../PuzzleAnswer/PuzzleAnswer-Interface.component";
 import {Answer, Question} from "../../../models/Question.model";
 import {AnswerPuzzle1} from "../../../mocks/question.mock";
 import {DisplayService} from "../../../services/DisplayService";
 import * as _ from "underscore";
+import {GameService} from "../../../services/GameService";
+import {AdvancedParameterService} from "../../../services/Parameter/AdvancedParameterService";
 
 interface MyDictionary extends Record<number, number> {}
 
@@ -14,7 +16,7 @@ interface MyDictionary extends Record<number, number> {}
 })
 export class MainPuzzleComponent {
 
-  @Input() currentQuestion: Question = {id:'', value: '',label:"",answers: AnswerPuzzle1};
+  @Input() currentQuestion: Question = {id:'', value: '',label:"",answers: [] as Answer[]};
   @Output() answerEvent: EventEmitter<boolean>= new EventEmitter<boolean>();
 
   currentAnswer: Answer[] = this.currentQuestion.answers;
@@ -36,7 +38,10 @@ export class MainPuzzleComponent {
   public dictUnique : MyDictionary = {0 : 0, 1 : 0, 2 : 0, 3 : 0};
   public dictChecking : MyDictionary = {0 : 0, 1 : 0, 2 : 0, 3 : 0}; //0 false, 1 true
 
-  constructor(public displayService : DisplayService){
+  public enableAnimationQuestion : boolean = true;
+  selectedFont : string="";
+
+  constructor(public displayService : DisplayService, private gameService : GameService, public advPService : AdvancedParameterService, public elementRef: ElementRef) {
     this.setSize();
     this.generateCoordAvailable();
     this.setupPuzzle();
@@ -45,21 +50,62 @@ export class MainPuzzleComponent {
     });
   }
 
+  setupDictionary() : void {
+    for (let i = 0; i < this.numberOfPicture; i++) {
+      this.dictUnique[i] = 0;
+      this.dictChecking[i] = 0;
+    }
+  }
+
   setupPuzzle(): void {
     this.currentAnswer = _.shuffle(this.currentAnswer);
     const coordDefault = this.generateFirstPositionXY();
     for (let i = 0; i < this.currentAnswer.length; i++) {
+      var idOfThePicture: number = this.currentAnswer[i].order || 0;
+      console.log("setupPuzzle");
+      console.log(idOfThePicture);
       var id = this.generateIdNewPosition(this.generateImagePosition(coordDefault, i));
       this.dictID_TO_Index[id] = i;
       this.dictIndex_TO_ID[i] = id;
     }
   }
 
-  onInit(): void {
+  ngOnInit(): void {
+    console.log("init")
+    console.log(this.currentAnswer);
+    console.log(this.currentQuestion);
+    console.log("init")
     this.setSize();
     this.generateCoordAvailable();
     this.setupPuzzle();
+    this.setupDictionary();
+    this.advPService.getCurrentQuestionAnimationOBS().subscribe((enable) => {
+      this.enableAnimationQuestion = enable;
+    })
+    this.advPService.getSelectedFont().subscribe((font) => {
+      this.selectedFont = font;
+    })
   }
+
+  ngAfterViewInit(): void {
+    this.currentAnswer = this.currentQuestion.answers;
+    this.puzzleGridHeight = 500;
+    this.puzzlePieceHeight = this.puzzleGridHeight / Math.sqrt(this.currentAnswer.length);
+    this.headerHeight = 175;
+    this.spaceTop = 50;
+    this.spaceLeft = 50;
+    this.numberOfPicture = this.currentAnswer.length;
+    console.log("after")
+    console.log(this.currentAnswer);
+    console.log(this.currentQuestion);
+    console.log("after")
+    this.setSize();
+    this.generateCoordAvailable();
+    this.setupPuzzle();
+    this.setupDictionary();
+    document.documentElement.style.setProperty('--puzzleGridHeight', (this.puzzleGridHeight) + 'px');
+  }
+
 
   onPiecePlacedCorrectly(indexPosition : number, indexPicture : number): void {
     if (this.currentAnswer[indexPicture].order == indexPosition){
@@ -67,6 +113,9 @@ export class MainPuzzleComponent {
     } else {
       this.dictChecking[indexPicture] = 0;
     }
+    console.log("onPiecePlacedCorrectly");
+    console.log(this.currentAnswer[indexPicture].order);
+    console.log(indexPosition);
     console.log(this.dictChecking)
     for (let i = 0; i < this.currentAnswer.length; i++) {
       if (this.dictChecking[i] == 0) {
@@ -74,11 +123,13 @@ export class MainPuzzleComponent {
       }
     }
     console.log("You won!");
+    this.gameService.score++;
     this.answerEvent.emit(true);
   }
 
   launchVerificationPlacement(x : number, y : number) : void {
-    var indexPosition : number = 1;
+    console.log("launchVerificationPlacement");
+    var indexPosition : number = 0;
     for (let i = 1; i < this.coordsAvailable[0].length; i++) {
       if (x == this.coordsAvailable[0][i]) {
         indexPosition += i;
@@ -87,6 +138,7 @@ export class MainPuzzleComponent {
         indexPosition += i * Math.sqrt(this.numberOfPicture);
       }
     }
+    console.log(indexPosition);
     this.onPiecePlacedCorrectly(indexPosition, this.dictID_TO_Index[this.generateIdNewPosition([x, y])]);
     return ;
   }
@@ -103,7 +155,7 @@ export class MainPuzzleComponent {
 
   generateFirstPositionXY(): number[] {
     var w = window.innerWidth - this.spaceLeft - this.puzzleGridHeight;
-    var h = this.headerHeight + this.spaceTop;
+    var h = 50 + 30 ;
     return [w, h];
   }
 
@@ -115,6 +167,10 @@ export class MainPuzzleComponent {
 
   generateIdNewPosition(coord : number[]): number {
     var id : number = Math.floor(coord[0]) * 100000 + coord[1];
+    console.log("id");
+    console.log(id);
+    console.log(this.dictID_TO_Index);
+    console.log(this.dictID_TO_Index[id]);
     return id;
   }
 
@@ -123,7 +179,7 @@ export class MainPuzzleComponent {
     var Y = [];
     var X = [];
     for (let i = 0; i < Math.sqrt(this.numberOfPicture); i++) {
-      Y.push(this.spaceTop + this.headerHeight + this.puzzlePieceHeight * i);
+      Y.push(50 + 30 + this.puzzlePieceHeight * i);
       X.push(this.spaceLeft + this.puzzlePieceHeight * i);
     }
     coord.push(X)
@@ -172,6 +228,8 @@ export class MainPuzzleComponent {
 
   calculateAfterDraging(puzzleChanged : PuzzleResult): void {
     if (puzzleChanged.draging){
+      console.log("calculate after dragging");
+      console.log(puzzleChanged);
       var indexOfThePicture : number = puzzleChanged.index;
       var X : number = puzzleChanged.x;
       var Y : number = puzzleChanged.y;
@@ -197,6 +255,10 @@ export class MainPuzzleComponent {
     var x : number = Math.floor((id - y) / 100000);
 
     return [x,y];
+  }
+
+  getSelectedFont(){
+    return this.selectedFont;
   }
 
 }

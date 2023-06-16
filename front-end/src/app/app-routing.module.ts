@@ -16,6 +16,7 @@ import {CreateQuestion} from "./CreateQuestion.component/CreateQuestion.componen
 import {InscriptionComponent} from "./Inscription/Inscription.component";
 import {ForgetPasswordComponent} from "./ForgetPassword/ForgetPassword.component";
 import {RetrievePasswordComponent} from "./RetrievePassword/RetrievePassword.component";
+import {UserListComponent} from "./listUser/listUser.component";
 
 
 const routes: Routes = [
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path : 'inscription', component: InscriptionComponent},
   { path : 'forgetpassword', component: ForgetPasswordComponent},
   { path : 'retrievepassword', component: RetrievePasswordComponent},
+  { path : 'UserGestion', component: UserListComponent},
 ];
 
 @NgModule({

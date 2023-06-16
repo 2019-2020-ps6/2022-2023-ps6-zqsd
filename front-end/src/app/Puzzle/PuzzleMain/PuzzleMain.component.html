@@ -1,15 +1,19 @@
-<app-puzzle-grid
-  [size]="currentAnswer.length"
-  [puzzleGridHeight] = "puzzleGridHeight"
-  [puzzlePieceHeight] = "puzzlePieceHeight">
-</app-puzzle-grid>
-<app-puzzle-answer
-  *ngFor="let answer of currentAnswer; let i = index"
-  (placedCorrectly)="this.calculateAfterDraging($event)"
-  [imageUrl]="answer.value"
-  [pictureCanvas]="answer.picture"
-  [id]="dictIndex_TO_ID[i]"
-  [indexOfThePicture]="i"
-  [puzzlePieceHeight] = "puzzlePieceHeight"
-  [unique] = "dictUnique[i]">
-</app-puzzle-answer>
+<div id="puzzle_question" style="margin-top: 15px; margin-bottom: 15px; font-size: calc(var(--currentSize) + 5px);" [style.fontFamily]="getSelectedFont()" [ngClass]="{'questionTitle': enableAnimationQuestion, 'uppercase-text': advPService.isUpperCase}">Complétez le puzzle !</div>
+<div id="puzzle_wrapper">
+  <app-puzzle-grid
+    [size]="currentAnswer.length"
+    [puzzleGridHeight] = "puzzleGridHeight"
+    [puzzlePieceHeight] = "puzzlePieceHeight">
+  </app-puzzle-grid>
+  <app-puzzle-answer
+    *ngFor="let answer of currentAnswer; let i = index"
+    (placedCorrectly)="this.calculateAfterDraging($event)"
+    [imageUrl]="answer.value"
+    [pictureCanvas]="answer.picture"
+    [id]="dictIndex_TO_ID[i]"
+    [indexOfThePicture]="i"
+    [puzzlePieceHeight] = "puzzlePieceHeight"
+    [unique] = "dictUnique[i]">
+  </app-puzzle-answer>
+</div>
+

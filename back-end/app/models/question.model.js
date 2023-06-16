@@ -6,6 +6,7 @@ const answerSchema = {
   value: Joi.string().required(),
   isCorrect: Joi.boolean(),
   order: Joi.number(),
+  picture: Joi.string(), // Permet de gérer la propriété picture qui est de type HTMLCanvasElement
 };
 
 const questionSchema = {
@@ -13,8 +14,8 @@ const questionSchema = {
   label: Joi.string().required(),
   value: Joi.string().required(),
   answers: Joi.array().items(Joi.object(answerSchema)), // Array of answer objects
-  ImageSearching: Joi.string(),
-  answered: Joi.boolean(),
+  imageSearching: Joi.string().allow(null).optional(),
+  answered: Joi.boolean().optional(),
 };
 
 const textSearchingSchema = {

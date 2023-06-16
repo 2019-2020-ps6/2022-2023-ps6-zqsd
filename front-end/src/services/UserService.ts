@@ -4,22 +4,28 @@ import {User} from "../models/user.model";
 import {Users} from "../mocks/user.mock";
 import { HttpClient } from "@angular/common/http";
 import { serverUrl } from "src/configs/server.config";
+import {Quiz} from "../models/quiz.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private allUSerDict: Record<string, User> = {
+  allUSerDict: Record<string, User> = {
     "Pieropaul": Users[0],
     "frallo": Users[1],
     "Albertor": Users[2],
-    "loupaul": Users[3]
+    "loupaul": Users[3],
+    "Default": Users[4],
+    "JoelleB": Users[5],
+    "Admin": Users[6],
   };
   public allUser: User[] = []
   public allUser$: Observable<User[]> = new Observable()
   public allUserDict$:BehaviorSubject<Record<string, User>> = new BehaviorSubject(this.allUSerDict)
-  private currentUser: User = Users[0];
+
+  //user par défault = 4
+  private currentUser: User = Users[4];
   public currentUser$: BehaviorSubject<User> = new BehaviorSubject(this.currentUser);
 
   constructor(private _httpClient: HttpClient) {
@@ -42,13 +48,26 @@ export class UserService {
     this.currentUser$.next(user);
   }
 
+  changeUserWithString(userString: string) {
+    const user : User = this.allUSerDict[userString]
+    this.currentUser=user
+    this.currentUser$.next(user);
+  }
+
   getCurrentUser(){
-    return this.currentUser$
+    return this.currentUser$.getValue();
   }
 
   addUser(user: User) {
     this._httpClient.post<User>(serverUrl+"/users",user).subscribe(x =>{
         this.allUSerDict[x.identifiant]=x
+    })
+  }
+
+  deleteUser(user: User) {
+    this._httpClient.delete<User>(serverUrl+"/users/"+user.id).subscribe(x =>{
+      delete this.allUSerDict[user.identifiant]
+      this.allUserDict$.next(this.allUSerDict)
     })
   }
 

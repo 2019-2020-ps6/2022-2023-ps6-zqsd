@@ -17,6 +17,7 @@ export class GameAnswerComponent implements OnInit {
   public questionType : string="";
   public visuelRightAnswer : boolean = true;
   public visuelFalseAnswer : boolean = true;
+  public selectedTime : number = 1000;
 
   selectedFont : string="";
 
@@ -32,7 +33,7 @@ export class GameAnswerComponent implements OnInit {
       } else {
         this.answerEvent.emit(false);
       }
-    }, 1000);
+    }, this.selectedTime);
   }
 
   ngOnInit(): void {
@@ -53,25 +54,39 @@ export class GameAnswerComponent implements OnInit {
     this.advPService.getSelectedFont().subscribe((font) => {
       this.selectedFont = font;
     })
+    this.advPService.getSelectedTime().subscribe((time) => {
+      this.selectedTime = time;
+    });
   }
-  applyGreenBorder(bool : boolean) {
-    if(bool){
+  applyGreenBorder() {
+    console.log(this.selectedTime)
+    let bool = false;
+    if(this.currentAnswer?.isCorrect != undefined){
+      bool = this.currentAnswer.isCorrect;
+    }
+    this.visuelRightAnswer = this.advPService.getCurrentRightAnswerAnimation()&&bool;
+    if(this.visuelRightAnswer){
       const buttonElement = this.elementRef.nativeElement.querySelector('#myButton');
       this.renderer.setStyle(buttonElement, 'border', '5px solid green');
 
       setTimeout(() => {
         this.renderer.removeStyle(buttonElement, 'border');
-      }, 1000);
+      }, this.selectedTime);
     }
   }
-  applyRedBorder(bool : boolean) {
-    if(bool){
+  applyRedBorder() {
+    let bool = false;
+    if(this.currentAnswer?.isCorrect != undefined){
+      bool = this.currentAnswer.isCorrect;
+    }
+    this.visuelFalseAnswer = this.advPService.getCurrentWrongAnswerAnimation()&&!bool ;
+    if(this.visuelFalseAnswer){
       const buttonElement = this.elementRef.nativeElement.querySelector('#myButton');
       this.renderer.setStyle(buttonElement, 'border', '5px solid red');
 
       setTimeout(() => {
         this.renderer.removeStyle(buttonElement, 'border');
-      }, 1000);
+      }, this.selectedTime);
     }
   }
 

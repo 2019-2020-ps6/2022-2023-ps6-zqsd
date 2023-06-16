@@ -41,11 +41,23 @@
       <span [ngClass]="{'white-text': svgActif, 'black-text': !svgActif}" class="textButton">
         Police du texte
       </span>
-      <select class="menu-deroulant"  [(ngModel)]="selectedFont" (change)="onFontChange(selectedFont)">
+      <select id="policeSelector" class="menu-deroulant"  [(ngModel)]="selectedFont" (change)="onFontChange(selectedFont)">
         <option *ngFor="let font of fonts" [value]="font">{{ font }}</option>
       </select>
     </div>
     <span [ngClass]="{'white-text': svgActif, 'black-text': !svgActif}" style="margin-bottom:10px;" [style.fontFamily]="getSelectedFont()">
       Texte avec la police sélectionnée
     </span>
+    <div class="container" id="selectTimeContainer">
+      <span [ngClass]="{'white-text': svgActif, 'black-text': !svgActif}" class="textButton">
+        Temps d'animation des réponses
+      </span>
+      <div>
+        <select id="timeSelector" class="menu-deroulant" [(ngModel)]="selectedTime" (change)="setSelectedTime(selectedTime)">
+          <option [value]="1000">1 seconde</option>
+          <option [value]="2000">2 secondes</option>
+          <option [value]="3000">3 secondes</option>
+        </select>
+      </div>
+    </div>
 </div>

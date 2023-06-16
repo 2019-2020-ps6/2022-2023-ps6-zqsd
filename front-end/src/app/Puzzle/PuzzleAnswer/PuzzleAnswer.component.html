@@ -1,11 +1,11 @@
 <div
   [style.background-position]="imagePosition"
-  [style.position]="'fixed'"
+  [style.position]="'absolute'"
   [style.top.px]="imageTop"
   [style.left.px]="imageLeft"
   (mousedown)="startDrag($event)"
   (document:mousemove)="drag($event)"
   (document:mouseup)="endDrag()">
-  <img *ngIf="imageUrl.length!=0" [src]="imageUrl" [style.--size]="this.puzzlePieceHeight"/>
-  <img *ngIf="imageUrl.length==0 && pictureCanvas" [src]="pictureCanvas.toDataURL()" [style.--size]="this.puzzlePieceHeight"/>
+  <img *ngIf="pictureCanvas==null" [src]="imageUrl" [style.--size]="this.puzzlePieceHeight"/>
+  <img *ngIf="pictureCanvas!=null && pictureCanvas" [src]="this.pictureCanvas" [style.--size]="this.puzzlePieceHeight" class="picture"/>
 </div>

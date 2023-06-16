@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Liste des utilisateurs</h1>
+  <ul class="quizz-list grid-list">
+    <li class="quizz-item" *ngFor="let q of UserList; let i = index">
+      <h2 id="prenom">Prenom: {{q.prenom}}</h2>
+      <h2 id="nom">Nom: {{q.nom}}</h2>
+      <p>Status: {{q.status}}</p>
+      <button class="btn-delete" (click)="deleteUser(i)">Supprimer</button>
+    </li>
+  </ul>
+  <ng-container *ngIf="showPopUp">
+    <app-PopUpDeleteQuiz></app-PopUpDeleteQuiz>
+  </ng-container>
+</div>

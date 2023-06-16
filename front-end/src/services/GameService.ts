@@ -20,8 +20,9 @@ export class GameService {
   retryEvent: Subject<void> = new Subject<void>();
   skipEvent: Subject<void> = new Subject<void>();
 
-  public quizList$: Observable<Quiz[]>= this._httpClient.get<Quiz[]>(serverUrl+"/quizzes");
-  public quizList: Quiz[] = [];
+  public _quizList$: Observable<Quiz[]>= this._httpClient.get<Quiz[]>(serverUrl+"/quizzes");
+  public quizList$: BehaviorSubject<Quiz[]> = new BehaviorSubject<Quiz[]>([]);
+  public quizList: Quiz[] = QuizExample;
   public answerResult : boolean|undefined= true;
   currentQuiz: Quiz= QuizExample[0];
   public currentQuiz$: BehaviorSubject<Quiz> = new BehaviorSubject(this.currentQuiz);
@@ -58,21 +59,23 @@ export class GameService {
       console.log("Skip event received");
     });
 
-    this.quizList$.subscribe((list)=> {
+    this._quizList$.subscribe((list)=> {
       this.quizList=list;
-      
+
       console.log(this.quizList)
       this.currentQuiz =this.quizList[0];
       this.currentQuestion=this.currentQuiz.questions[0];
       this.currentQuiz$= new BehaviorSubject<Quiz>(this.currentQuiz)
       this.currentQuestion$=new BehaviorSubject<Question>(this.currentQuestion)
     });
-  }
 
+    this._quizList$.subscribe(data => {
+      this.quizList$.next(data);
+    });
+  }
 
   getCurrentQuestion(): Observable<Question> {
     return this.currentQuestion$.asObservable();
-    
   }
 
   nextQuestion(): number  {
@@ -86,7 +89,7 @@ export class GameService {
   setCurrentQuestion(index: number) {
     console.log(index);
     const question = this.currentQuiz.questions[index];
-    
+
 
     if(question) {
       this.currentQuestion  = question;
@@ -116,6 +119,10 @@ export class GameService {
 
   allQuestionsAnswered(): boolean {
     const lastIndex = this.currentQuiz.questions.length;
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaa")
+    console.log(this.index);
+    console.log(lastIndex);
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaa")
     if (this.index === lastIndex || this.currentQuiz.questions.length === 0) {
       return true;
     }
@@ -148,7 +155,7 @@ export class GameService {
       // Si le temps est écoulé, arrête le compte à rebours
       if (remainingTime == 0) {
         this.stopCountdown();
-        this.showDialogSubject.next(true);    
+        this.showDialogSubject.next(true);
       }
     }, 1000); // Exécute la fonction toutes les 1000ms (1s)
   }
@@ -180,4 +187,11 @@ export class GameService {
     this.quizEventSubject.next();
     console.log("event triggered")
   }
+
+  updateQuizList(): void {
+    this._httpClient.get<Quiz[]>(serverUrl+"/quizzes").subscribe(data => {
+      this.quizList$.next(data);
+    });
+  }
+
 }

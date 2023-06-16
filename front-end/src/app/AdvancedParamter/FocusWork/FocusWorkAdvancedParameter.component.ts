@@ -14,7 +14,7 @@ export class FocusWorkAdvancedParameterComponent implements OnInit {
     backgroundIsEnable : AdvancedParameterFocusWork['background'] = this.advancedParameterService.getCurrentBackground();
     questionAnimationIsEnable : AdvancedParameterFocusWork['questionAnimation'] = this.advancedParameterService.getCurrentQuestionAnimation();
     rightAnswerAnimationIsEnable : AdvancedParameterFocusWork['rightAnswerAnimation'] = this.advancedParameterService.getCurrentRightAnswerAnimation();
-    wrongAnswerAnimationIsEnable : AdvancedParameterFocusWork['wrongAnswerAnimation'] = this.advancedParameterService.getCurrentWrongAnswerAnimatino();
+    wrongAnswerAnimationIsEnable : AdvancedParameterFocusWork['wrongAnswerAnimation'] = this.advancedParameterService.getCurrentWrongAnswerAnimation();
 
     textDisplayBackgroundButton : string = this.setTextDisplayButton(this.backgroundIsEnable);
     textDisplayQuestionAnimationButton : string = this.setTextDisplayButton(this.questionAnimationIsEnable);
@@ -23,6 +23,8 @@ export class FocusWorkAdvancedParameterComponent implements OnInit {
 
     public isUpperCase = false;
     public svgActif = true;
+
+    public selectedTime : number = 1000;
 
     selectedFont: string = "Arial";
     fonts: string[] = ['Arial', 'Trebuchet MS', 'Times New Roman', 'Courier New'];
@@ -56,7 +58,10 @@ export class FocusWorkAdvancedParameterComponent implements OnInit {
         });
         this.advancedParameterService.getSelectedFont().subscribe((font: string) => {
           this.selectedFont = font;
-      });
+        });
+        this.advancedParameterService.getSelectedTime().subscribe((time: number) => {
+          this.selectedTime = time;
+        });
     }
 
     ngOnInit(): void {
@@ -105,6 +110,9 @@ export class FocusWorkAdvancedParameterComponent implements OnInit {
 
     getSelectedFont(){
       return this.selectedFont;
+    }
+    setSelectedTime(time : number){
+      this.advancedParameterService.setSelectedTime(time);
     }
 }
 

@@ -13,7 +13,6 @@ import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
 
 
-
 @Component({
   selector: 'app-CreateQuestion',
   templateUrl: './CreateQuestion.component.html',
@@ -36,6 +35,8 @@ export class CreateQuestion implements OnInit, AfterViewInit{
   id = 5;
   questionType = ''; // Ajout de la variable questionType
   selectedImage: HTMLImageElement  | null = null;
+  imageUrl: SafeUrl | null = null;
+
   answers: Answer[] = [];
 
   answer1Order: number = 1;
@@ -114,7 +115,8 @@ export class CreateQuestion implements OnInit, AfterViewInit{
       isCorrect1: [false],
       isCorrect2: [false],
       isCorrect3: [false],
-      isCorrect4: [false]
+      isCorrect4: [false],
+      imageUrl: [''],
     });
   }
 
@@ -196,94 +198,101 @@ export class CreateQuestion implements OnInit, AfterViewInit{
         for (let i = 1; i <= 4; i++) {
           answers.push({
             label: 'searching',
-            value: this.questionForm.value[`answer${i}`]
+            value: this.questionForm.value[`answer${i}`],
+            isCorrect: this.questionForm.value[`isCorrect${i}`]
           });
 
         }
-        if (this.questionType === 'searching' && this.selectedImage) {
-          // Créer un élément canvas pour convertir l'image en Blob
-          const canvas = document.createElement('canvas');
-          const context = canvas.getContext('2d');
-          if (context) {
-            canvas.width = this.selectedImage.width;
-            canvas.height = this.selectedImage.height;
-            context.drawImage(this.selectedImage, 0, 0);
-            canvas.toBlob((blob) => {
-              if (blob) {
-                const reader = new FileReader();
-                reader.onload = (event) => {
-                  const base64Image = event.target?.result as string;
-                  const questionS: Question = {
-                    value: this.questionForm.value.question,
-                    label: "searching",
-                    id: this.id.toString(),
-                    answers: answers,
-                    imageSearching: base64Image,
-                  };
-                  this.questionService.addQuestion(questionS);
-                };
-                reader.readAsDataURL(blob);
+        if (this.questionType === 'searching' && this.questionForm.value.imageUrl !== '') {
+          const questionS: Question = {
+            value: this.questionForm.value.question,
+            label: "searching",
+            id: this.id.toString(),
+            answers: answers,
+            imageSearching: this.questionForm.value.imageUrl.toString(),
+          };
+          console.log(questionS);
+          this.questionService.addQuestion(questionS);
+        }
+        else {
+          console.log("ajouter une image")
+        };
+        break;
+      case 'puzzle':
+        if (this.puzzleSplitNumber > 1 && this.selectedImage) {
+          console.log('puzzle');
+          const largeurPartie: number = this.selectedImage.width / this.puzzleSplitNumber;
+          const hauteurPartie: number = this.selectedImage.height / this.puzzleSplitNumber;
+          const partiesImage: string[] = [];
+          for (let i = 0; i < this.puzzleSplitNumber; i++) {
+            for (let j = 0; j < this.puzzleSplitNumber; j++) {
+              const canvas = document.createElement('canvas');
+              canvas.width = largeurPartie;
+              canvas.height = hauteurPartie;
+              const context = canvas.getContext('2d');
+              if (context) {
+                context.drawImage(
+                  this.selectedImage,
+                  i * largeurPartie,
+                  j * hauteurPartie,
+                  largeurPartie,
+                  hauteurPartie,
+                  0,
+                  0,
+                  largeurPartie,
+                  hauteurPartie
+                );
               }
-            });
+              const base64 = canvas.toDataURL('image/jpeg', 0.8); // Utilisation de la compression PNG sans perte
+              partiesImage.push(base64);
+              console.log(i + j*this.puzzleSplitNumber);
+              console.log(base64);
+              answers.push({
+                label: "puzzle",
+                value: "1",
+                isCorrect:false,
+                order : i + j*this.puzzleSplitNumber,
+                picture: partiesImage[partiesImage.length - 1],
+              });
+            }
           }
+          const questionS: Question = {
+            value: "a",
+            label: "puzzle",
+            id: this.id.toString(),
+            answers: answers,
+          };
+          this.questionService.addQuestion(questionS);
         }
         break;
-    case 'puzzle':
-      if (this.puzzleSplitNumber > 1 && this.selectedImage) {
-        const largeurPartie: number = this.selectedImage.width / this.puzzleSplitNumber;
-        const hauteurPartie: number = this.selectedImage.height / this.puzzleSplitNumber;
-        const partiesImage: HTMLCanvasElement[] = [];
-        for (let i = 0; i < this.puzzleSplitNumber; i++) {
-          for (let j = 0; j < this.puzzleSplitNumber; j++) {
-            const canvas = document.createElement('canvas');
-            canvas.width = largeurPartie;
-            canvas.height = hauteurPartie;
-            const context = canvas.getContext('2d');
-            if (context) {
-              context.drawImage(
-                this.selectedImage,
-                i * largeurPartie,
-                j * hauteurPartie,
-                largeurPartie,
-                hauteurPartie,
-                0,
-                0,
-                largeurPartie,
-                hauteurPartie
-              );
-            }
-            partiesImage.push(canvas);
-            answers.push({
-              label: "puzzle",
-              value: "",
-              isCorrect:false,
-              order : i + j * this.puzzleSplitNumber,
-              picture: partiesImage[partiesImage.length - 1],
-            });
-          }
-        }
-        const questionS: Question = {
-          value: this.questionForm.value.question,
-          label: "searching",
-          id: this.id.toString(),
-          answers: answers,
-        };
-        this.questionService.addQuestion(questionS);
-      }
-      break;
-    default:
-      break;
-  }
-  this.questionForm.reset();
-  console.log('question ajoutée');
-  this.showClassicSection = false;
-  this.showSearchingSection = false;
-  this.showPuzzleSection = false;
-  this.showChronologicalSection = false;
+      default:
+        break;
+    }
+    this.questionForm.reset();
+    console.log('question ajoutée');
+    this.showClassicSection = false;
+    this.showSearchingSection = false;
+    this.showPuzzleSection = false;
+    this.showChronologicalSection = false;
 
   }
 
   onImageSelected(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    const files = inputElement.files!;
+    if (files && files.length > 0) {
+      const imageFile = files[0];
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const imageUrl = event.target?.result as string;
+        this.imageUrl = this.sanitizer.bypassSecurityTrustUrl(imageUrl);
+      };
+      reader.readAsDataURL(imageFile);
+    }
+  }
+
+
+  onImageSelectedHTTP(event: Event) {
     const inputElement = event.target as HTMLInputElement;
     const files = inputElement.files!;
     if (files && files.length > 0) {
@@ -298,6 +307,7 @@ export class CreateQuestion implements OnInit, AfterViewInit{
       reader.readAsDataURL(files[0]);
     }
   }
+
 
   ngAfterViewInit() {
     this.questionType = '';

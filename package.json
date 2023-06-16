@@ -1,5 +1,9 @@
 {
   "dependencies": {
-    "@ng-select/ng-select": "^10.0.4"
+    "@ng-select/ng-select": "^10.0.4",
+    "underscore": "^1.13.6"
+  },
+  "devDependencies": {
+    "@types/underscore": "^1.11.5"
   }
 }
