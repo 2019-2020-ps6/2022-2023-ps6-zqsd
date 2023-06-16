@@ -1,6 +1,4 @@
 
-C
-front-end/README.md,1\2\1259f326526e24ae39df2171bfb5e6ef87596594
 l
 <front-end/src/services/Parameter/AdvancedParameterService.ts,9\a\9ad66a686ea651a8d7791529a26dafd494fbbb2a
 h
@@ -86,12 +84,8 @@ d
 4front-end/src/app/home-page/home-page.component.html,3\5\350e6560496f361d4c49ceb48d4ba8a5460d8dd1
 b
 2front-end/src/app/home-page/home-page.component.ts,7\c\7c6f1a0326126bb9a10af29072f2b281797108e1
-b
-2front-end/src/app/listUser/listUser.component.html,2\3\23f0b17e1d0c5a51e8a9631b7516de695d69026d
 n
 >front-end/src/app/popUpDeleteQuiz/popUpDeleteQuiz.component.ts,8\c\8ca8243169a2bf391c77408ff71baf2a557ef60f
-P
- front-end/src/mocks/user.mock.ts,6\8\680ecd6786cb1b574e63e2d67a9bb6117ec90862
 t
 Dfront-end/src/app/GameQuestion.component/GameQuestion.Component.html,f\0\f0b52b779af404a94e528ae272ed2101ff580ead
 r

@@ -1,6 +1,4 @@
 
-C
-front-end/README.md,1\2\1259f326526e24ae39df2171bfb5e6ef87596594
 l
 <front-end/src/services/Parameter/AdvancedParameterService.ts,9\a\9ad66a686ea651a8d7791529a26dafd494fbbb2a
 h
@@ -76,10 +74,6 @@ d
 4front-end/src/app/Connexion/Connexion.component.html,9\c\9c2084373e49a1bd7fbabee2aa0b2fc01e5c7fa7
 V
 &front-end/src/configs/server.config.ts,e\8\e8ea971730e44567bfc8f55f5aea121a15c1f659
-P
- front-end/src/mocks/user.mock.ts,6\8\680ecd6786cb1b574e63e2d67a9bb6117ec90862
-b
-2front-end/src/app/listUser/listUser.component.html,2\3\23f0b17e1d0c5a51e8a9631b7516de695d69026d
 b
 2front-end/src/app/listUser/listUser.component.scss,9\9\99792cb1e48a9f3cccf15c3581c0327deffeda45
 b

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Fix bug in createquiz #59" />
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Fix bug in merging #59">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/2/1259f326526e24ae39df2171bfb5e6ef87596594" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/2/1259f326526e24ae39df2171bfb5e6ef87596594" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/quizz-list/quizz-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/quizz-list/quizz-list.component.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -405,7 +412,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686922660637</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="S5 - Fix bug in merging #59">
+      <created>1686923118712</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1686923118712</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -422,7 +436,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Rapport" />
+                        <option value="fix_problem_merging" />
                       </list>
                     </value>
                   </entry>
@@ -438,6 +452,11 @@
         <entry key="Branch">
           <value>
             <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="fix_problem_merging" />
+                </option>
+              </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="Rapport" />
@@ -483,11 +502,6 @@
                   <option value="puzzle_adaptive" />
                 </option>
               </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/Puzzle" />
-                </option>
-              </RecentGroup>
             </list>
           </value>
         </entry>
@@ -496,7 +510,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="S5 - Update warning message for id #21" />
     <MESSAGE value="S5 - setup forgetpassword #23" />
     <MESSAGE value="S5 - fix bug in inscription with refactoring #23" />
     <MESSAGE value="S5 - Create forgetpassword page #23" />
@@ -521,6 +534,7 @@
     <MESSAGE value="S5 - Fix bug due to the question #53" />
     <MESSAGE value="S5 - Add mock in QuizList #59" />
     <MESSAGE value="S5 - Fix bug in puzzle mock #59" />
-    <option name="LAST_COMMIT_MESSAGE" value="S5 - Fix bug in puzzle mock #59" />
+    <MESSAGE value="S5 - Fix bug in merging #59" />
+    <option name="LAST_COMMIT_MESSAGE" value="S5 - Fix bug in merging #59" />
   </component>
 </project>

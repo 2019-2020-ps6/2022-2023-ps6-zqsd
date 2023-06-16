@@ -25,7 +25,7 @@ export class UserListComponent {
 
   constructor( public userService:UserService, public dialog: MatDialog, private quizService: QuizService){
     this.userService.allUserDict$.subscribe((list)=> {
-      this.UserList=Object.values(list);
+      this.UserList=Object.values(list).filter(user => user.id !== '7');
     });
   }
 
