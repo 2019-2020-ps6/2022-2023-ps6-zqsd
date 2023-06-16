@@ -53,6 +53,4 @@ export class QuizzListComponent {
     return dialogRef;
   }
 
-
-
 }
