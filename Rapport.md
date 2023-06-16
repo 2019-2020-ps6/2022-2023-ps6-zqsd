@@ -1,70 +1,79 @@
 # Rapport du PS6
 
-
 # Partie 1 : Personas et scénarios
 
-
 ### Persona 1 : Pierre Oranje
-Age : 76 ans 
+**Age** : 76 ans 
+___
+
 #### Présentation :
 Pierre est un ancien travailleur du bâtiment. A de nombreuse reprise, par le passé, il à 
 travailler en heure supplémentaire afin de rattraper les différents retards des projets. 
     Ces différentes  heures  supplémentaires  ont  causé  de  multiple  AVC  et  entrainé  une 
 démence vasculaire. Pierre souffre donc d’une perte de quelques fonctions cognitives. 
+___
 #### Relation  à  la  technologie  :
 Pierre  n’a  pas  de  connaissance  dans  les  domaines  technologiques.  Les concepts de connexion, site web, périphériques sont assez abstraits pour lui. 
+___
 #### Tâches avec l’application :
 Pierre  souhaiterais  limiter  la  perte  des  capacités  cognitives  dans  le  futur voire essayer de retrouver des capacités perdu. Le quizz est dès lors un moyen d’entrainer les 
 capacités  cognitives  de  Pierre  tout  en  s’amusant.  De plus,  la  personnalisation  des  questions  permet de renforcer l’efficacité du quizz en stimulant des souvenirs forts.
-
-
+____
 ### Persona 2 : Alice Gomez
 Age : 32 ans. 
-Activité professionnelle : Enseignante en école primaire 
+___ 
 #### Présentation  : 
 Alice est enseignante en école primaire et elle aime  bien  aider  son  prochain. En tant qu’enseignante, elle est bienveillante, sociable et sait s’occuper des enfants. Elle est la fille d'un patient. Lors  d’un  repas  de  famille,  le  père  d’Alice eut  un  AVC.  Il  souffre maintenant d’une démence vasculaire. Il a donc principalement des troubles de mémoire qui lui posent  problème  pour  la  vie  quotidienne
+___
 #### Relation à la technologie : 
 Alice est capable d’utiliser un ordinateur correctement comme la plupart des  gens  de  son  âge.  Elle  possède  des  connaissances  basiques  pour  une  utilisation  journalière  et pratique de la technologie. 
+___
 #### Tâches avec  l’application  :
 Alice  rends visite à son père pendant son  temps  libre et l’aide à combattre sa maladie en lui faisant travailler par exemple sa mémoire. Le quizz est par conséquent une activité ludique qu’ils peuvent faire ensemble et qui aide le père à combattre sa maladie.
-
-
+___
 ### Persona 3 : André Bouchard
 Age: 80 ans. 
-#### présentation :
+___
+#### Présentation :
 ancien prof d'histoire géographie au collège, maintenant à la retraite. Suite  à un AVC survenu 4 ans plus tôt, André souffre de  démence vasculaire. Même s'il souffre d'une légère perte de mémoire, ses principaux symptômes sont un trouble majeur de l'attention ainsi qu'une capacité de réflexion ralentie.
+___
 #### Relation à la technologie
 André avait un ordinateur chez lui et sa famille lui avait offert une tablette pour qu'il puisse prendre des photos et les regarder. il est donc plutôt à l'aise avec la technologie et en particulier les tablettes.
+___
 #### Tache avec l'application
-André  aimerait pouvoir faire travailler son cerveau pour que ses capacités cognitives ne chutent pas.
 
+André  aimerait pouvoir faire travailler son cerveau pour que ses capacités cognitives ne chutent pas.
+___
 ### Persona 4 : Joelle Boekhe
 Age: 30 ans 
-#### présentation:
+___
+#### Présentation:
 Joelle est une aide qui travaille dans un EHPAD. elle veut soigner ses patients du mieux possible et elle est trés motivée. Ceci étant dit elle est aussi trés fatigué. 
+___
 #### Relation à la technologie 
 Joelle est une femme qui vit avec son temps elle est trés à l'aise avec la technologie, elle a un smartphone depuis 2012. et elle a été entrainée pendant ses études à utiliser les outils informatiques 
+___
 #### Tache avec l'application
 Joelle voudrait pouvoir permettre a ses patients de faire une chose ludique, adaptée à leurs problème. 
 
-
-## Scenarios
+___
+## Scenarios :
 
 Les scénarios suivants sont numérotés dans l'ordre d'exécution. Certains sont nécessaires afin que d'autres marchent comme par exemple crée un certain quizz qu'un autre persona jouera derrière. Cela évite des problèmes comme un quiz ou un utilisateur n'étant pas dans la base de donnéee.
-
+___
 ### Scénario 1 : 
 Joelle veux se connecter à son compte. Cependant, lorsqu'elle rentré son mot de passe, elle se rends compte que ce n'est pas le bon. Elle veut donc le retrouver pour pouvoir se connecter. Une fois connecté, elle va vouloir créer un quiz composé uniquement de question Classiques et Order.
-
+___
 ### Scénario 2 : 
 -Pierre veut jouer un quiz spécifique qu'il avait vu auparavant, il va dans la sélection de quiz et il choisit le quiz de culture générale "Connaissances Globales".
-
+___
 ### Scénario 3 :
 André ne veut pas se prendre la tête, il veut juste jouer un quiz aléatoire sans se prendre la tête.
-
+___
 ### Scénario 4 :
 Alice, fille de Leonel Gomez veut crée le compte pour son père. Elle va ensuite tester que ses identifiants fonctionnent bien. 
 Elle souhaite personnaliser les paramètres pour son père, et va tester cela en jouant un quiz aléatoire.
-
+___
 # Partie 2 : Scénario de tests et mise en place
 
 ## Tests automatiques
@@ -84,15 +93,23 @@ On va ensuite vérifier dans la liste des quizz que le quiz est bien ajouté pui
 
 
 - Paramétrer pour un utilisateur : Scénario 5; Alice personnalise les paramètres, cela change certaines fonctionnalités du quiz que nous allons vérifier après en jouant à un quiz aléatoire et en vérifiant que cela a bien été appliqué. On va par exemple désactiver l'animation liée aux questions puis vérifier cela en localisant la question.
-
-### Pour résumer
+___
+### Pour résumer :
 
 Nous avons décidé en priorité de tester la prise en compte de trouble c'est à dire le changement qu'effectuent nos paramètres avancés sur les quiz que nous jouons.
 
 Cependant, pour cela il nous fallait d'abord crée un quiz afin de bien pouvoir le tester. Une fois que nous avons pu effectuer ces tests, nous avons fini par implémneter les tests de connexions afin de bien vérifier que cette partie du site marche.
 
-Finalement, nous avons pu tester l'ensemble des fonctionnalités du site (hormis les questions analyse et puzzle)
+### Recul :
 
+Finalement, nous avons pu tester la majorité des fonctionnalités du site. Cependant, certaines parties n'ont pas pu être testés par difficulté technique.
+On peut citer par exemple : 
+- Les questions de type puzzle : résoudre un puzzle en faisant un drag and drop est trop compliqué à tester
+- Les questions de type chronologique : même problème que puzzle avec le drag and drop
+- Création de questions puzzle : On importe un fichier local mais dur à tester car les fichiers locaux dépendent donc de la machine sur laquelle le test est effectué
+
+Ce sont des tests qu'il aurait été important d'implémenter car ce sont les questions les plus difficiles à coder et donc les plus à même à rencontrer des problèmes. Cependant par manque de temps et de maîtrise technique, il nous a été conseillé d'abandonner de tester ces fonctionnalités.
+___
 
 # Partie 3 : Présentation de l'évaluation coopérative
 
