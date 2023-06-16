@@ -130,10 +130,10 @@ Guillaume Arrigoni:
 -
 -
 Drid Loris :
-- SCSS globale
+- SCSS global
 - Implémentation et prise en compte des retours
 - Test paramètres/jeux/création quiz
-- Animation trouble tels que le Pop-up, animations questions, Chronomètre
+- Animation trouble tels que le Pop-up, animations questions/réponses, Chronomètre
 - 
 -
 Tho Romain :

@@ -11,24 +11,20 @@ test.use({
 test('Jouer un quiz démonstration avec toutes les questions', async ({ page }) => {
   // Étape 1 : Accéder à la page de sélection des quiz
   await page.goto(homepage);
-  await page.click('button.btn-liste');;
+  await page.click('button.btn-liste');
 
   const quizName = 'Astérix';
 
-await page.$$eval('li.quizz-item', (listItems, name) => {
-  for (const listItem of listItems) {
-    const h2Element = listItem.querySelector('h2');
-    if (h2Element && h2Element.textContent === name) {
-      const button = listItem.querySelector('button');
-      button?.click();
-      break;
+  await page.$$eval('li.quizz-item', (listItems, name) => {
+    for (const listItem of listItems) {
+      const h2Element = listItem.querySelector('h2');
+      if (h2Element && h2Element.textContent === name) {
+        const button = listItem.querySelector('button');
+        button?.click();
+        break;
+      }
     }
-  }
-}, quizName);
-
-
-  console.log("étape réussie");
-
+  }, quizName);
 
   // Étape 3 : Jouer toutes les questions du quiz
   let currentUrl = await page.url();

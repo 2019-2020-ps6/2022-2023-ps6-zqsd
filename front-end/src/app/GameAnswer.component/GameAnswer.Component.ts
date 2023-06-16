@@ -17,6 +17,7 @@ export class GameAnswerComponent implements OnInit {
   public questionType : string="";
   public visuelRightAnswer : boolean = true;
   public visuelFalseAnswer : boolean = true;
+  public selectedTime : number = 1000;
 
   selectedFont : string="";
 
@@ -32,7 +33,7 @@ export class GameAnswerComponent implements OnInit {
       } else {
         this.answerEvent.emit(false);
       }
-    }, 1000);
+    }, this.selectedTime);
   }
 
   ngOnInit(): void {
@@ -53,8 +54,12 @@ export class GameAnswerComponent implements OnInit {
     this.advPService.getSelectedFont().subscribe((font) => {
       this.selectedFont = font;
     })
+    this.advPService.getSelectedTime().subscribe((time) => {
+      this.selectedTime = time;
+    });
   }
   applyGreenBorder() {
+    console.log(this.selectedTime)
     let bool = false;
     if(this.currentAnswer?.isCorrect != undefined){
       bool = this.currentAnswer.isCorrect;
@@ -66,7 +71,7 @@ export class GameAnswerComponent implements OnInit {
 
       setTimeout(() => {
         this.renderer.removeStyle(buttonElement, 'border');
-      }, 1000);
+      }, this.selectedTime);
     }
   }
   applyRedBorder() {
@@ -81,7 +86,7 @@ export class GameAnswerComponent implements OnInit {
 
       setTimeout(() => {
         this.renderer.removeStyle(buttonElement, 'border');
-      }, 1000);
+      }, this.selectedTime);
     }
   }
 
