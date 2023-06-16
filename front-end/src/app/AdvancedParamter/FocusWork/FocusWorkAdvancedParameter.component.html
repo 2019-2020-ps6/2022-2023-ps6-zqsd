@@ -41,7 +41,7 @@
       <span [ngClass]="{'white-text': svgActif, 'black-text': !svgActif}" class="textButton">
         Police du texte
       </span>
-      <select class="menu-deroulant"  [(ngModel)]="selectedFont" (change)="onFontChange(selectedFont)">
+      <select id="policeSelector" class="menu-deroulant"  [(ngModel)]="selectedFont" (change)="onFontChange(selectedFont)">
         <option *ngFor="let font of fonts" [value]="font">{{ font }}</option>
       </select>
     </div>

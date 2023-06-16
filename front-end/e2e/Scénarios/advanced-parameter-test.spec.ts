@@ -172,6 +172,94 @@ if (answer) {
 }
 });
 
+test('Tester texte majuscule', async ({ page }) => {
+  await page.goto(homepage);
+  const parametres = await page.$('span:has-text("Paramètres")');
+  if (parametres) {
+    await parametres.click();
+  } else {
+    console.log("Le span contenant le texte Paramètres n'a pas été trouvé.");
+  }
+  await page.getByRole('button', { name: 'Paramètres Avancés' }).click();
+  await page.getByRole('button', { name: 'ATTENTION' }).click();
+  await page.locator('#uppercase_button').getByRole('button', { name: 'Activer' }).click();
+  expect(page.locator('#uppercase_button').getByRole('button', { name: 'Désactiver' })).toBeVisible();
+  const accueil = await page.$('span:has-text("Accueil")');
+  if (accueil) {
+    await accueil.click();
+  }
+  await page.click('button.btn-liste');
+  const quizName = 'Astérix';
+
+  await page.$$eval('li.quizz-item', (listItems, name) => {
+    for (const listItem of listItems) {
+      const h2Element = listItem.querySelector('h2');
+      if (h2Element && h2Element.textContent === name) {
+        const button = listItem.querySelector('button');
+        button?.click();
+        break;
+      }
+    }
+  }, quizName);
+
+  const answer = await page.getByRole('button', { name: 'Gragas' });
+if (answer) {
+  const upperCase = await answer.evaluate((element) => {
+    return window.getComputedStyle(element).getPropertyValue("text-transform");
+  });
+  console.log(upperCase);
+  await expect(upperCase).toBe("uppercase");
+
+} else {
+  console.log('Le bouton avec le texte "Gragas" n\'a pas été trouvé.');
+}
+});
+
+test('Tester police texte', async ({ page }) => {
+  await page.goto(homepage);
+  const parametres = await page.$('span:has-text("Paramètres")');
+  if (parametres) {
+    await parametres.click();
+  } else {
+    console.log("Le span contenant le texte Paramètres n'a pas été trouvé.");
+  }
+  await page.getByRole('button', { name: 'Paramètres Avancés' }).click();
+  await page.getByRole('button', { name: 'ATTENTION' }).click();
+  await page.selectOption("#policeSelector","Times New Roman");
+  const accueil = await page.$('span:has-text("Accueil")');
+  if (accueil) {
+    await accueil.click();
+  }
+  await page.click('button.btn-liste');
+  const quizName = 'Astérix';
+
+  await page.$$eval('li.quizz-item', (listItems, name) => {
+    for (const listItem of listItems) {
+      const h2Element = listItem.querySelector('h2');
+      if (h2Element && h2Element.textContent === name) {
+        const button = listItem.querySelector('button');
+        button?.click();
+        break;
+      }
+    }
+  }, quizName);
+
+  const answer = await page.getByRole('button', { name: 'Gragas' });
+if (answer) {
+  const police = await answer.evaluate((element) => {
+    return window.getComputedStyle(element).getPropertyValue("font-family");
+  });
+  console.log(police);
+  await expect(police).toBe("\"Times New Roman\"");
+
+} else {
+  console.log('Le bouton avec le texte "Gragas" n\'a pas été trouvé.');
+}
+});
+
+
+
+
 
 
 
