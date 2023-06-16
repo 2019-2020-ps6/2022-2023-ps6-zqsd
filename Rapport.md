@@ -16,7 +16,7 @@ ___
 Pierre est un ancien travailleur du bâtiment. A de nombreuse reprise, par le passé, il à 
 travailler en heure supplémentaire afin de rattraper les différents retards des projets. 
     Ces différentes  heures  supplémentaires  ont  causé  de  multiple  AVC  et  entrainé  une 
-démence vasculaire. Pierre souffre donc d’une perte de quelques fonctions cognitives. 
+démence vasculaire. Pierre souffre donc d’une perte de quelques fonctions cognitives.
 ___
 #### Relation  à  la  technologie  :
 Pierre  n’a  pas  de  connaissance  dans  les  domaines  technologiques.  Les concepts de connexion, site web, périphériques sont assez abstraits pour lui. 
@@ -41,7 +41,7 @@ ___
 Age: 80 ans. 
 ___
 #### Présentation :
-ancien prof d'histoire géographie au collège, maintenant à la retraite. Suite  à un AVC survenu 4 ans plus tôt, André souffre de  démence vasculaire. Même s'il souffre d'une légère perte de mémoire, ses principaux symptômes sont un trouble majeur de l'attention ainsi qu'une capacité de réflexion ralentie.
+ancien prof de musique au collège, maintenant à la retraite. Suite  à un AVC survenu 4 ans plus tôt, André souffre de  démence vasculaire. Même s'il souffre d'une légère perte de mémoire, ses principaux symptômes sont un trouble majeur de l'attention ainsi qu'une capacité de réflexion ralentie.
 ___
 #### Relation à la technologie
 André avait un ordinateur chez lui et sa famille lui avait offert une tablette pour qu'il puisse prendre des photos et les regarder. il est donc plutôt à l'aise avec la technologie et en particulier les tablettes.
@@ -71,14 +71,14 @@ ___
 Joelle veux se connecter à son compte. Cependant, lorsqu'elle rentré son mot de passe, elle se rends compte que ce n'est pas le bon. Elle veut donc le retrouver pour pouvoir se connecter. Une fois connecté, elle va vouloir créer un quiz composé uniquement de question Classiques, un autre composé de questions chronologique et classique, et un uniquement composé de questions analyse.
 ___
 ### Scénario 2 : 
--Pierre veut jouer un quiz spécifique qu'il avait vu auparavant, il va dans la sélection de quiz et il choisit le quiz de culture générale "Connaissances Globales".
+-Pierre veut jouer un quiz spécifique qu'il avait vu auparavant, il va dans la sélection de quiz et il choisit le quiz "Astérix" car il est aime les BD.
 ___
 ### Scénario 3 :
-André ne veut pas se prendre la tête, il veut juste jouer un quiz aléatoire sans se prendre la tête.
+André joue un quiz au hasard, puis se rend compte qu'il n'y a pas de musique, et que le texte est trop petit. Il va donc configurer les paramètres et aller rejouer le quiz.
 ___
 ### Scénario 4 :
 Alice, fille de Leonel Gomez veut crée le compte pour son père. Elle va ensuite tester que ses identifiants fonctionnent bien. 
-Elle souhaite personnaliser les paramètres pour son père, et va tester cela en jouant un quiz aléatoire.
+Elle souhaite personnaliser les paramètres avancés pour son père, et va tester cela en jouant un quiz aléatoire.
 ___
 # Partie 2 : Scénario de tests et mise en place
 
