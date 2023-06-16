@@ -191,6 +191,7 @@ Liste des sites consultés :
 - https://lms.univ-cotedazur.fr/2022/course
 - https://github.com/NablaT/ps6-correction-td1-td2-v2
 - https://github.com/NablaT/starter-ps6-full-stack
--
--
--
+- https://www.msdmanuals.com/fr/accueil/troubles-du-cerveau,-de-la-moelle-%C3%A9pini%C3%A8re-et-des-nerfs/syndrome-confusionnel-et-d%C3%A9mence/d%C3%A9mence-vasculaire
+- https://www.msdmanuals.com/fr/professional/troubles-neurologiques/syndrome-confusionnel-et-d%C3%A9mence/troubles-cognitifs-et-d%C3%A9mence-vasculaires
+- https://autonome-a-domicile.com/demence-vasculaire/
+- https://swissheart.ch/fr/maladies-et-urgences/maladies-de-c%C5%93ur-et-attaque-c%C3%A9r%C3%A9brale/d%C3%A9mence-vasculaire
