@@ -117,25 +117,25 @@ export const AnswerPuzzle1: Answer[] = [
         label: "puzzle",
         value: "assets/Puzzle/Github/image_part_001.jpg",
         isCorrect:false,
-        order : 1
+        order : 0
     },
     {
         label: "puzzle",
         value: "assets/Puzzle/Github/image_part_002.jpg",
         isCorrect:false,
-        order : 2
+        order : 1
     },
     {
         label: "puzzle",
         value: "assets/Puzzle/Github/image_part_003.jpg",
         isCorrect:false,
-        order : 3
+        order : 2
     },
     {
         label: "puzzle",
         value: "assets/Puzzle/Github/image_part_004.jpg",
         isCorrect:true,
-        order : 4
+        order : 3
     }
 ];
 

@@ -82,7 +82,7 @@
       <workItem from="1685428264939" duration="9494000" />
       <workItem from="1686733679865" duration="10514000" />
       <workItem from="1686813570953" duration="27574000" />
-      <workItem from="1686900998135" duration="11962000" />
+      <workItem from="1686900998135" duration="16328000" />
     </task>
     <task id="LOCAL-00001" summary="S1 - Merge Master into Parameter #9">
       <created>1680262725544</created>
@@ -413,7 +413,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686913277799</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="S5 - Add mock in QuizList #59">
+      <created>1686913838630</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1686913838630</updated>
+    </task>
+    <task id="LOCAL-00049" summary="S5 - Fix bug in puzzle mock #59">
+      <created>1686916718243</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1686916718243</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +444,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/Jouer" />
+                        <option value="Rapport" />
                       </list>
                     </value>
                   </entry>
@@ -446,6 +460,11 @@
         <entry key="Branch">
           <value>
             <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="Rapport" />
+                </option>
+              </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="origin/Jouer" />
@@ -499,7 +518,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="S5 - Fix bug in scss of connexion #21" />
     <MESSAGE value="S5 - Update warning message for id #21" />
     <MESSAGE value="S5 - setup forgetpassword #23" />
     <MESSAGE value="S5 - fix bug in inscription with refactoring #23" />
@@ -524,6 +542,7 @@
     <MESSAGE value="S5 - Add question in puzzle #53" />
     <MESSAGE value="S5 - Fix bug due to the question #53" />
     <MESSAGE value="S5 - Add mock in QuizList #59" />
-    <option name="LAST_COMMIT_MESSAGE" value="S5 - Add mock in QuizList #59" />
+    <MESSAGE value="S5 - Fix bug in puzzle mock #59" />
+    <option name="LAST_COMMIT_MESSAGE" value="S5 - Fix bug in puzzle mock #59" />
   </component>
 </project>

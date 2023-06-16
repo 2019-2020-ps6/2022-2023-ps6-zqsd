@@ -25,7 +25,9 @@ export class GamepageComponent implements OnInit, OnDestroy {
     public musicEnabled: boolean = true;
     public audio: HTMLAudioElement | null = null;
 
-    constructor(private gameService: GameService, public dialog: MatDialog, private displayService : DisplayService, private parameterService : ParameterService) { }
+    constructor(private gameService: GameService,
+                public dialog: MatDialog, private displayService : DisplayService,
+                private parameterService : ParameterService) { }
 
     ngOnInit(): void {
         // Récupère l'élément HTML pour afficher le compte à rebours
