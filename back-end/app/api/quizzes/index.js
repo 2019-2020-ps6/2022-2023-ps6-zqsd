@@ -60,8 +60,13 @@ router.put('/:quizId', (req, res) => {
   }
 })
 
+
+//also delete the questions of the quiz
 router.delete('/:quizId', (req, res) => {
   try {
+    const quiz = Quiz.getById(req.params.quizId);
+    const questions = quiz.questionIds.map((questionId) => Question.getById(questionId));
+    questions.forEach((question) => Question.delete(question.id));
     Quiz.delete(req.params.quizId)
     res.status(204).end()
   } catch (err) {
