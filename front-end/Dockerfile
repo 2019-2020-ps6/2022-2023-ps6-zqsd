@@ -1,7 +1,7 @@
 FROM node:20-alpine3.17 as install-step
 USER node
 WORKDIR /app
-ARG  PROD_URL
+ARG PROD_URL
 ARG TEST_URL
 ARG ENV
 
