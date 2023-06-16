@@ -6,15 +6,9 @@ import {QuestionQuizz3} from './question.mock'
 export const QuizExample: Quiz[] = [
     {
         id: "1",
-        name: "Démonstration",
-        theme : "Oral PS6",
+        name: "Connaissances globales",
+        theme : "Général",
         questions: QuestionQuizz
-    },
-    {
-      id:"2",
-      name:"Connaissances globales",
-      theme:"Général",
-      questions:QuestionQuizz2
     },
 ];
 

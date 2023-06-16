@@ -28,8 +28,7 @@ export class QuizzListComponent {
 
 
   jouerQuizz(id: number) {
-    this.gameService.currentQuiz=this.QuizzList[Number(id)]
-
+    this.gameService.setCurrentQuiz(this.QuizzList[id]);
   }
 
   deleteQuizz(id: number) {

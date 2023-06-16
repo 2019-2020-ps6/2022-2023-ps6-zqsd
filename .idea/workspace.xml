@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Add question in puzzle #53">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleGrid/PuzzleGrid.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleGrid/PuzzleGrid.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Add mock in QuizList #59" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,7 +10,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="superuser" />
+        <entry key="$PROJECT_DIR$" value="fixpuzzlebackend" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,7 +67,7 @@
       <workItem from="1685428264939" duration="9494000" />
       <workItem from="1686733679865" duration="10514000" />
       <workItem from="1686813570953" duration="27574000" />
-      <workItem from="1686900998135" duration="4576000" />
+      <workItem from="1686900998135" duration="11962000" />
     </task>
     <task id="LOCAL-00001" summary="S1 - Merge Master into Parameter #9">
       <created>1680262725544</created>
@@ -376,7 +370,35 @@
       <option name="project" value="LOCAL" />
       <updated>1686905176270</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="S5 - Fix bug due to the question #53">
+      <created>1686905943266</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1686905943266</updated>
+    </task>
+    <task id="LOCAL-00045" summary="S5 - Fix bug due to the question #53">
+      <created>1686908305537</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1686908305537</updated>
+    </task>
+    <task id="LOCAL-00046" summary="S5 - Add mock in QuizList #59">
+      <created>1686912741310</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1686912741310</updated>
+    </task>
+    <task id="LOCAL-00047" summary="S5 - Add mock in QuizList #59">
+      <created>1686913277799</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1686913277799</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,8 +484,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="S5 - Add picture to hide/show password #18" />
-    <MESSAGE value="S5 - CReate Inscription #21" />
     <MESSAGE value="S5 - Fix bug in scss of connexion #21" />
     <MESSAGE value="S5 - Update warning message for id #21" />
     <MESSAGE value="S5 - setup forgetpassword #23" />
@@ -487,6 +507,8 @@
     <MESSAGE value="S5 - Fix bug in createQuestion #53" />
     <MESSAGE value="S5 - Fix bug in puzzle 9 part #53" />
     <MESSAGE value="S5 - Add question in puzzle #53" />
-    <option name="LAST_COMMIT_MESSAGE" value="S5 - Add question in puzzle #53" />
+    <MESSAGE value="S5 - Fix bug due to the question #53" />
+    <MESSAGE value="S5 - Add mock in QuizList #59" />
+    <option name="LAST_COMMIT_MESSAGE" value="S5 - Add mock in QuizList #59" />
   </component>
 </project>

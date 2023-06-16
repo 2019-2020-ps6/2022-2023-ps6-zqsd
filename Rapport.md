@@ -79,8 +79,8 @@ ___
 ### Scénario 4 :
 Alice, fille de Leonel Gomez veut crée le compte pour son père. Elle va ensuite tester que ses identifiants fonctionnent bien. 
 Elle souhaite personnaliser les paramètres pour son père, et va tester cela en jouant un quiz aléatoire.
-___
-# Partie 2 : Scénario de tests et mise en place
+
+# Partie 2 : Scénario de tests, mise en place et pertinence
 
 ## Tests automatiques
 
@@ -99,8 +99,13 @@ On va ensuite vérifier dans la liste des quizz que le quiz est bien ajouté pui
 
 
 - Paramétrer pour un utilisateur : Scénario 5; Alice personnalise les paramètres, cela change certaines fonctionnalités du quiz que nous allons vérifier après en jouant à un quiz aléatoire et en vérifiant que cela a bien été appliqué. On va par exemple désactiver l'animation liée aux questions puis vérifier cela en localisant la question.
-___
-### Pour résumer :
+
+### Pertinence : 
+
+
+
+
+### Pour résumer
 
 Nous avons décidé en priorité de tester la prise en compte de trouble c'est à dire le changement qu'effectuent nos paramètres avancés sur les quiz que nous jouons.
 
@@ -130,8 +135,8 @@ IL FAut REGARDER LA DIAPO ET NE UTILISER LES TERMES TECHNIQUES
 Nous avons eu plusieurs retours à propos de l'apparence de notre site. Ainsi, nous avons décidé de changer plusieurs éléments que nous avions pensé pour la maquette pour les raisons suivantes :
 - Changement du Fond : Choix entre fond clair et fond sombre selon la préférence de l'utilisateur
 - Changement de Police : Implémentation du choix de la police 
-- Boutons Activer/Désaciver : 
-- Refactor de l'anglais au français :
+- Boutons Activer/Désaciver : Afin d'être plus explicit sur le status actuel et le prochain status lors de l'activation du bouton
+- Refactor de l'anglais au français
 - Changement du Pop-up d'inactivité : Implémentation des 3 boutons Réessayer/Passer/Quitter
 - 
 - A méditer ?
@@ -145,26 +150,26 @@ Nous avons eu plusieurs retours à propos de l'apparence de notre site. Ainsi, n
 
 Guillaume Arrigoni:
 - Logique pour questions de type puzzle
-- Système de connexion
+- Système de connexion/inscription
 - Paramètres avancés et logique appliqués au quiz
-- Deletion de quiz ou d'utilisateurs
--
--
--
--
+- Deletion de quiz et d'utilisateurs
+- Page des paramètres
+
+
 Drid Loris :
 - SCSS global
 - Implémentation et prise en compte des retours
 - Test paramètres/jeux/création quiz
 - Animation trouble tels que le Pop-up, animations questions/réponses, Chronomètre
-- 
--
+
+
 Tho Romain :
 - Formulaire de création de quiz et de questions
 - API back-end
 - Tests connexion/inscription
 - Lien front/back-end
 - Jouer quiz/résultats
+
 
 Benziane Swann :
 - Lien front/back-end
@@ -185,6 +190,7 @@ Liste des sites consultés :
 - https://lms.univ-cotedazur.fr/2022/course
 - https://github.com/NablaT/ps6-correction-td1-td2-v2
 - https://github.com/NablaT/starter-ps6-full-stack
--
--
--
+- https://www.msdmanuals.com/fr/accueil/troubles-du-cerveau,-de-la-moelle-%C3%A9pini%C3%A8re-et-des-nerfs/syndrome-confusionnel-et-d%C3%A9mence/d%C3%A9mence-vasculaire
+- https://www.msdmanuals.com/fr/professional/troubles-neurologiques/syndrome-confusionnel-et-d%C3%A9mence/troubles-cognitifs-et-d%C3%A9mence-vasculaires
+- https://autonome-a-domicile.com/demence-vasculaire/
+- https://swissheart.ch/fr/maladies-et-urgences/maladies-de-c%C5%93ur-et-attaque-c%C3%A9r%C3%A9brale/d%C3%A9mence-vasculaire
