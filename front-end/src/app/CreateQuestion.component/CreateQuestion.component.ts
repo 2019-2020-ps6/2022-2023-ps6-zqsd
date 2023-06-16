@@ -198,7 +198,8 @@ export class CreateQuestion implements OnInit, AfterViewInit{
         for (let i = 1; i <= 4; i++) {
           answers.push({
             label: 'searching',
-            value: this.questionForm.value[`answer${i}`]
+            value: this.questionForm.value[`answer${i}`],
+            isCorrect: this.questionForm.value[`isCorrect${i}`]
           });
 
         }
