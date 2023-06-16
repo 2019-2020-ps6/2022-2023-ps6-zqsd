@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Fix bug in createQuestion #53">
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Add question in puzzle #53">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleGrid/PuzzleGrid.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleGrid/PuzzleGrid.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +73,7 @@
       <workItem from="1685428264939" duration="9494000" />
       <workItem from="1686733679865" duration="10514000" />
       <workItem from="1686813570953" duration="27574000" />
-      <workItem from="1686900998135" duration="1618000" />
+      <workItem from="1686900998135" duration="4576000" />
     </task>
     <task id="LOCAL-00001" summary="S1 - Merge Master into Parameter #9">
       <created>1680262725544</created>
@@ -359,7 +362,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686902156607</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="S5 - Fix bug in puzzle 9 part #53">
+      <created>1686903014431</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1686903014431</updated>
+    </task>
+    <task id="LOCAL-00043" summary="S5 - Add question in puzzle #53">
+      <created>1686905176270</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1686905176270</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,8 +462,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="S5 - Create Connexion page" />
-    <MESSAGE value="S5 - Add warning msg #18" />
     <MESSAGE value="S5 - Add picture to hide/show password #18" />
     <MESSAGE value="S5 - CReate Inscription #21" />
     <MESSAGE value="S5 - Fix bug in scss of connexion #21" />
@@ -470,6 +485,8 @@
     <MESSAGE value="S5 - Fix bug in puzzle order #53" />
     <MESSAGE value="S5 - Fix bug in result #53" />
     <MESSAGE value="S5 - Fix bug in createQuestion #53" />
-    <option name="LAST_COMMIT_MESSAGE" value="S5 - Fix bug in createQuestion #53" />
+    <MESSAGE value="S5 - Fix bug in puzzle 9 part #53" />
+    <MESSAGE value="S5 - Add question in puzzle #53" />
+    <option name="LAST_COMMIT_MESSAGE" value="S5 - Add question in puzzle #53" />
   </component>
 </project>

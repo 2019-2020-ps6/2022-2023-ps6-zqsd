@@ -1,10 +1,11 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, Output} from '@angular/core';
 import {PuzzleResult} from "../PuzzleAnswer/PuzzleAnswer-Interface.component";
 import {Answer, Question} from "../../../models/Question.model";
 import {AnswerPuzzle1} from "../../../mocks/question.mock";
 import {DisplayService} from "../../../services/DisplayService";
 import * as _ from "underscore";
 import {GameService} from "../../../services/GameService";
+import {AdvancedParameterService} from "../../../services/Parameter/AdvancedParameterService";
 
 interface MyDictionary extends Record<number, number> {}
 
@@ -37,7 +38,10 @@ export class MainPuzzleComponent {
   public dictUnique : MyDictionary = {0 : 0, 1 : 0, 2 : 0, 3 : 0};
   public dictChecking : MyDictionary = {0 : 0, 1 : 0, 2 : 0, 3 : 0}; //0 false, 1 true
 
-  constructor(public displayService : DisplayService, private gameService : GameService) {
+  public enableAnimationQuestion : boolean = true;
+  selectedFont : string="";
+
+  constructor(public displayService : DisplayService, private gameService : GameService, public advPService : AdvancedParameterService, public elementRef: ElementRef) {
     this.setSize();
     this.generateCoordAvailable();
     this.setupPuzzle();
@@ -75,6 +79,12 @@ export class MainPuzzleComponent {
     this.generateCoordAvailable();
     this.setupPuzzle();
     this.setupDictionary();
+    this.advPService.getCurrentQuestionAnimationOBS().subscribe((enable) => {
+      this.enableAnimationQuestion = enable;
+    })
+    this.advPService.getSelectedFont().subscribe((font) => {
+      this.selectedFont = font;
+    })
   }
 
   ngAfterViewInit(): void {
@@ -93,6 +103,7 @@ export class MainPuzzleComponent {
     this.generateCoordAvailable();
     this.setupPuzzle();
     this.setupDictionary();
+    document.documentElement.style.setProperty('--puzzleGridHeight', (this.puzzleGridHeight) + 'px');
   }
 
 
@@ -144,7 +155,7 @@ export class MainPuzzleComponent {
 
   generateFirstPositionXY(): number[] {
     var w = window.innerWidth - this.spaceLeft - this.puzzleGridHeight;
-    var h = this.headerHeight + this.spaceTop;
+    var h = 50 + 30 ;
     return [w, h];
   }
 
@@ -168,7 +179,7 @@ export class MainPuzzleComponent {
     var Y = [];
     var X = [];
     for (let i = 0; i < Math.sqrt(this.numberOfPicture); i++) {
-      Y.push(this.spaceTop + this.headerHeight + this.puzzlePieceHeight * i);
+      Y.push(50 + 30 + this.puzzlePieceHeight * i);
       X.push(this.spaceLeft + this.puzzlePieceHeight * i);
     }
     coord.push(X)
@@ -244,6 +255,10 @@ export class MainPuzzleComponent {
     var x : number = Math.floor((id - y) / 100000);
 
     return [x,y];
+  }
+
+  getSelectedFont(){
+    return this.selectedFont;
   }
 
 }
