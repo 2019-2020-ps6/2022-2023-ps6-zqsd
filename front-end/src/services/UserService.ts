@@ -65,10 +65,16 @@ export class UserService {
   }
 
   deleteUser(user: User) {
+    var deleteInDatabase : boolean = false;
     this._httpClient.delete<User>(serverUrl+"/users/"+user.id).subscribe(x =>{
+      deleteInDatabase = true;
       delete this.allUSerDict[user.identifiant]
       this.allUserDict$.next(this.allUSerDict)
     })
+    if (!deleteInDatabase) {
+      delete this.allUSerDict[user.identifiant]
+      this.allUserDict$.next(this.allUSerDict)
+    }
   }
 
 

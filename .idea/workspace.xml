@@ -2,8 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Fix bug due to the question #53">
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/e/1e82a20b3ea46acba4697c35f8dbcda5a7fcb113" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/e/2e738a8963976ae6ab9d160c5734f53e686fb6ac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/3280729f29dd7550f3056615fbf58220534ad91e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/4/3490f40e7502a1952afd702717a0a1347c0b2b53" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/2/425be914fbeeddb06c6a5a294509e0ad2d2c4af6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/d/5d358699fd57984984c733c17465562f65f84160" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/1/71edebada5fbe547b57e1d4f49f25a6a6459df9a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/2/72e46fd8b5c0a7c103370d369b3e1ff87a7a50ea" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/8/a8109282c5041fa1b46c7a3df47b83c8522a2350" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/f/af6e239e7c890d849a73046bba768c15eb2d3115" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/4/d4689baf9573606ae305eb56221b21d1d63f42dc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/e/1e82a20b3ea46acba4697c35f8dbcda5a7fcb113" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/e/2e738a8963976ae6ab9d160c5734f53e686fb6ac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/2/3280729f29dd7550f3056615fbf58220534ad91e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/4/3490f40e7502a1952afd702717a0a1347c0b2b53" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/2/425be914fbeeddb06c6a5a294509e0ad2d2c4af6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/d/5d358699fd57984984c733c17465562f65f84160" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/1/71edebada5fbe547b57e1d4f49f25a6a6459df9a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/2/72e46fd8b5c0a7c103370d369b3e1ff87a7a50ea" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/8/a8109282c5041fa1b46c7a3df47b83c8522a2350" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/f/af6e239e7c890d849a73046bba768c15eb2d3115" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/4/d4689baf9573606ae305eb56221b21d1d63f42dc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rapport.md" beforeDir="false" afterPath="$PROJECT_DIR$/Rapport.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/mocks/quizz.mock.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/mocks/quizz.mock.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/services/GameService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/GameService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/services/QuizService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/QuizService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/services/UserService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/UserService.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +40,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="superuser" />
+        <entry key="$PROJECT_DIR$" value="fixpuzzlebackend" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -70,7 +97,7 @@
       <workItem from="1685428264939" duration="9494000" />
       <workItem from="1686733679865" duration="10514000" />
       <workItem from="1686813570953" duration="27574000" />
-      <workItem from="1686900998135" duration="6001000" />
+      <workItem from="1686900998135" duration="10855000" />
     </task>
     <task id="LOCAL-00001" summary="S1 - Merge Master into Parameter #9">
       <created>1680262725544</created>
@@ -380,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686905943266</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="S5 - Fix bug due to the question #53">
+      <created>1686908305537</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1686908305537</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

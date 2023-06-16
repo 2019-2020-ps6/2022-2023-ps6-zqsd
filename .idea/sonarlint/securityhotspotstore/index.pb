@@ -41,8 +41,6 @@ r
 Bfront-end/src/app/RetrievePassword/RetrievePassword.component.html,e\3\e32f221ecfba8e6f2a6d10e83b11de1876f91c84
 ~
 Nfront-end/src/app/Parameter/ParameterPage.component/ParameterPage.component.ts,d\c\dc45c60117c55ff37a36d785c29d3e632d268727
-Q
-!front-end/src/mocks/quizz.mock.ts,4\2\425be914fbeeddb06c6a5a294509e0ad2d2c4af6
 Z
 *front-end/src/app/PopUp/PopUp.component.ts,3\4\340454be9e3a3b21db9b2273fb1f99a16e99ed63
 \
@@ -78,26 +76,14 @@ f
 6front-end/src/app/Inscription/Inscription.component.ts,d\c\dca94ad8e941159c3e0628ae45ff6131a9f457d5
 d
 4front-end/src/app/Connexion/Connexion.component.html,9\c\9c2084373e49a1bd7fbabee2aa0b2fc01e5c7fa7
-U
-%front-end/src/services/QuizService.ts,7\1\71edebada5fbe547b57e1d4f49f25a6a6459df9a
 V
 &front-end/src/configs/server.config.ts,e\8\e8ea971730e44567bfc8f55f5aea121a15c1f659
-O
-back-end/app/api/users/index.js,a\f\af6e239e7c890d849a73046bba768c15eb2d3115
-d
-4front-end/src/app/quizz-list/quizz-list.component.ts,1\e\1e82a20b3ea46acba4697c35f8dbcda5a7fcb113
-f
-6front-end/src/app/quizz-list/quizz-list.component.html,d\4\d4689baf9573606ae305eb56221b21d1d63f42dc
 P
  front-end/src/mocks/user.mock.ts,6\8\680ecd6786cb1b574e63e2d67a9bb6117ec90862
 R
 "front-end/src/models/user.model.ts,6\b\6b31b78fd7c4c95375cfd7f65608d08a7ee55032
 b
 2front-end/src/app/listUser/listUser.component.html,2\3\23f0b17e1d0c5a51e8a9631b7516de695d69026d
-`
-0front-end/src/app/listUser/listUser.component.ts,3\2\3280729f29dd7550f3056615fbf58220534ad91e
-U
-%front-end/src/services/UserService.ts,a\8\a8109282c5041fa1b46c7a3df47b83c8522a2350
 b
 2front-end/src/app/listUser/listUser.component.scss,9\9\99792cb1e48a9f3cccf15c3581c0327deffeda45
 b
@@ -122,12 +108,8 @@ l
 <front-end/src/app/Gamepage.component/GamePage.Component.html,9\8\980a078d82fbecc1c8f94341d868834ae590021e
 l
 <front-end/src/app/Gamepage.component/GamePage.Component.scss,8\5\85809bd00d51c7a00c3956a79c4a53c7b301868b
-Q
-!back-end/app/api/quizzes/index.js,5\d\5d358699fd57984984c733c17465562f65f84160
 S
 #back-end/app/api/questions/index.js,f\6\f65e3163e0a43b6686fa848407b3c7ed9fe88b56
-R
-"front-end/src/models/quiz.model.ts,7\2\72e46fd8b5c0a7c103370d369b3e1ff87a7a50ea
 U
 %back-end/app/models/question.model.js,2\2\225b99f6a1aba78ca7f5aeb26bd7fba06f10b3d9
 Y
@@ -136,8 +118,6 @@ y
 Ifront-end/src/app/Puzzle/PuzzleAnswer/PuzzleAnswer-Interface.component.ts,6\5\654f566e4ed02cc4ffa861fe16d946722f95043d
 V
 &front-end/src/models/Question.model.ts,1\3\13ff5f2df81db841c71589de0a636c5204947354
-T
-$front-end/src/mocks/question.mock.ts,3\4\3490f40e7502a1952afd702717a0a1347c0b2b53
 l
 <front-end/src/app/GameQuiz.component/GameQuiz.component.html,6\5\6502aaf06be4a21694c080be5eb39c505c971a55
 `
@@ -148,8 +128,6 @@ l
 Lfront-end/src/app/GameQuestionOrder.component/GameQuestionOrder.component.ts,e\0\e07c24b79aab04de5e9f87fe2641ffee127aa265
 †
 Vfront-end/src/app/GameQuestionSearching.component/GameQuestionSearching.Component.html,1\c\1c482a083839d404a83e7b0f89eafa828a806c96
-U
-%front-end/src/services/GameService.ts,2\e\2e738a8963976ae6ab9d160c5734f53e686fb6ac
 „
 Tfront-end/src/app/GameQuestionSearching.component/GameQuestionSearching.Component.ts,1\8\18461b91621a624e958329c2c612ab76c3d91c3f
 j

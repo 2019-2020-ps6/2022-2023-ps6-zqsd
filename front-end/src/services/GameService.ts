@@ -9,6 +9,8 @@ import { QuizExample } from '../mocks/quizz.mock';
 import { Quiz } from '../models/quiz.model';
 import { Question,Answer } from 'src/models/Question.model';
 import { AdvancedParameterService } from './Parameter/AdvancedParameterService';
+import {User} from "../models/user.model";
+import {Users} from "../mocks/user.mock";
 
 
 
@@ -20,9 +22,13 @@ export class GameService {
   retryEvent: Subject<void> = new Subject<void>();
   skipEvent: Subject<void> = new Subject<void>();
 
-  public _quizList$: Observable<Quiz[]>= this._httpClient.get<Quiz[]>(serverUrl+"/quizzes");
-  public quizList$: BehaviorSubject<Quiz[]> = new BehaviorSubject<Quiz[]>([]);
+  allQuiz: Record<string, Quiz> = {
+    "1": QuizExample[0],
+  };
+
   public quizList: Quiz[] = QuizExample;
+  public _quizList$: Observable<Quiz[]>= this._httpClient.get<Quiz[]>(serverUrl+"/quizzes");
+  public quizList$: BehaviorSubject<Quiz[]> = new BehaviorSubject<Quiz[]>(this.quizList);
   public answerResult : boolean|undefined= true;
   currentQuiz: Quiz= QuizExample[0];
   public currentQuiz$: BehaviorSubject<Quiz> = new BehaviorSubject(this.currentQuiz);
@@ -188,10 +194,8 @@ export class GameService {
     console.log("event triggered")
   }
 
-  updateQuizList(): void {
-    this._httpClient.get<Quiz[]>(serverUrl+"/quizzes").subscribe(data => {
-      this.quizList$.next(data);
-    });
+  updateQuizList(quizList : Quiz[]): void {
+    this.quizList$.next(quizList);
   }
 
 }
