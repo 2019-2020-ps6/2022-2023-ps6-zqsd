@@ -2,7 +2,7 @@
 
 # ZQSD : Soutien interactif pour la démence vasculaire
 
-ZQSD est un site web dédié au soutien des patients atteints de démence vasculaire. Il offre une variété d'activités basées sur quatre types de questions : Classique, Analyse, Puzzle et Chronologique. Les utilisateurs peuvent se connecter, jouer à des quiz aléatoires ou spécifiques, ainsi que créer leurs propres quiz.
+ZQSD est un site web dédié au soutien des patients atteints de démence vasculaire, qui a pour conséquences des problèmes de mémoire, de concentration et de capacités de raisonnement. Le site offre une variété d'activités basées sur quatre types de questions : Classique, Analyse, Puzzle et Chronologique. Les utilisateurs peuvent se connecter, jouer à des quiz aléatoires ou spécifiques, ainsi que créer leurs propres quiz.
 
 Le site propose des paramètres avancés qui permettent d'adapter l'expérience utilisateur en fonction des besoins et des handicaps de chaque individu. Ces paramètres permettent de personnaliser différentes caractéristiques du site.
 
@@ -13,10 +13,10 @@ Le site propose des paramètres avancés qui permettent d'adapter l'expérience 
 ___
 
 #### Présentation :
-Pierre est un ancien travailleur du bâtiment. A de nombreuse reprise, par le passé, il à 
-travailler en heure supplémentaire afin de rattraper les différents retards des projets. 
+Pierre est un ancien travailleur du bâtiment. A de nombreuse reprise, par le passé, il a 
+travaillé en heure supplémentaire afin de rattraper les différents retards des projets. 
     Ces différentes  heures  supplémentaires  ont  causé  de  multiple  AVC  et  entrainé  une 
-démence vasculaire. Pierre souffre donc d’une perte de quelques fonctions cognitives. 
+démence vasculaire. Pierre souffre donc d’une perte de quelques fonctions cognitives.
 ___
 #### Relation  à  la  technologie  :
 Pierre  n’a  pas  de  connaissance  dans  les  domaines  technologiques.  Les concepts de connexion, site web, périphériques sont assez abstraits pour lui. 
@@ -41,7 +41,7 @@ ___
 Age: 80 ans. 
 ___
 #### Présentation :
-ancien prof d'histoire géographie au collège, maintenant à la retraite. Suite  à un AVC survenu 4 ans plus tôt, André souffre de  démence vasculaire. Même s'il souffre d'une légère perte de mémoire, ses principaux symptômes sont un trouble majeur de l'attention ainsi qu'une capacité de réflexion ralentie.
+ancien prof de musique au collège, maintenant à la retraite. Suite  à un AVC survenu 4 ans plus tôt, André souffre de  démence vasculaire. Même s'il souffre d'une légère perte de mémoire, ses principaux symptômes sont un trouble majeur de l'attention ainsi qu'une capacité de réflexion ralentie.
 ___
 #### Relation à la technologie
 André avait un ordinateur chez lui et sa famille lui avait offert une tablette pour qu'il puisse prendre des photos et les regarder. il est donc plutôt à l'aise avec la technologie et en particulier les tablettes.
@@ -68,17 +68,17 @@ ___
 Les scénarios suivants sont numérotés dans l'ordre d'exécution. Certains sont nécessaires afin que d'autres marchent comme par exemple crée un certain quizz qu'un autre persona jouera derrière. Cela évite des problèmes comme un quiz ou un utilisateur n'étant pas dans la base de donnéee.
 ___
 ### Scénario 1 : 
-Joelle veux se connecter à son compte. Cependant, lorsqu'elle rentré son mot de passe, elle se rends compte que ce n'est pas le bon. Elle veut donc le retrouver pour pouvoir se connecter. Une fois connecté, elle va vouloir créer un quiz composé uniquement de question Classiques et Order.
+Joelle veux se connecter à son compte. Cependant, lorsqu'elle rentré son mot de passe, elle se rends compte que ce n'est pas le bon. Elle veut donc le retrouver pour pouvoir se connecter. Une fois connecté, elle va vouloir créer un quiz composé uniquement de question Classiques, un autre composé de questions chronologique et classique, et un uniquement composé de questions analyse.
 ___
 ### Scénario 2 : 
--Pierre veut jouer un quiz spécifique qu'il avait vu auparavant, il va dans la sélection de quiz et il choisit le quiz de culture générale "Connaissances Globales".
+-Pierre veut jouer un quiz spécifique qu'il avait vu auparavant, il va dans la sélection de quiz et il choisit le quiz "Astérix" car il est aime les BD.
 ___
 ### Scénario 3 :
-André ne veut pas se prendre la tête, il veut juste jouer un quiz aléatoire sans se prendre la tête.
+André joue un quiz au hasard, puis se rend compte qu'il n'y a pas de musique, et que le texte est trop petit. Il va donc configurer les paramètres et aller rejouer le quiz.
 ___
 ### Scénario 4 :
-Alice, fille de Leonel Gomez veut crée le compte pour son père. Elle va ensuite tester que ses identifiants fonctionnent bien. 
-Elle souhaite personnaliser les paramètres pour son père, et va tester cela en jouant un quiz aléatoire.
+Alice, fille de Leonel Gomez veut créer le compte pour son père. Elle va ensuite tester que ses identifiants fonctionnent bien. 
+Elle souhaite personnaliser les paramètres avancés pour son père, et va tester cela en jouant un quiz aléatoire.
 ___
 # Partie 2 : Scénario de tests et mise en place
 
@@ -100,11 +100,16 @@ On va ensuite vérifier dans la liste des quizz que le quiz est bien ajouté pui
 
 - Paramétrer pour un utilisateur : Scénario 5; Alice personnalise les paramètres, cela change certaines fonctionnalités du quiz que nous allons vérifier après en jouant à un quiz aléatoire et en vérifiant que cela a bien été appliqué. On va par exemple désactiver l'animation liée aux questions puis vérifier cela en localisant la question.
 ___
-### Pour résumer :
+### Pertinance des tests :
+Dans tous les tests effectués, nous nous assurons de vérifier la pertinence et le bon fonctionnement des fonctionnalités testées dans des scénarios end-to-end. Cela garantit que les modifications apportées à ces fonctionnalités ne compromettent pas leur bon fonctionnement lorsqu'elles sont utilisées dans le contexte réel de l'application.
 
-Nous avons décidé en priorité de tester la prise en compte de trouble c'est à dire le changement qu'effectuent nos paramètres avancés sur les quiz que nous jouons.
+Par exemple, prenons le test où nous activons le texte en majuscule. Après avoir activé l'option dans les paramètres, nous jouons un quiz pour vérifier si le texte est réellement en majuscule lorsqu'il est affiché à l'utilisateur. Cette approche de test end-to-end nous permet de valider le bon fonctionnement de la fonctionnalité dans le contexte global de l'application.
 
-Cependant, pour cela il nous fallait d'abord crée un quiz afin de bien pouvoir le tester. Une fois que nous avons pu effectuer ces tests, nous avons fini par implémneter les tests de connexions afin de bien vérifier que cette partie du site marche.
+En incluant ces tests end-to-end dans notre processus de test, nous nous assurons que les fonctionnalités répondent aux exigences fonctionnelles et offrent une expérience utilisateur cohérente. Cela renforce la qualité et la fiabilité de l'application, en garantissant que les fonctionnalités ne se limitent pas à une validation unitaire isolée, mais sont testées dans des conditions réelles d'utilisation.
+
+Cependant, il y a quand même quelques tests qui posent problème pour cette vérification end-to-end, notamment la musique car c'est assez compliqué de vérifier si la musique est joué car on a pas accès aux variable dans les services qui pourraient indiquer que le quiz est bien joué.
+
+
 ___
 ### Recul :
 
@@ -123,18 +128,21 @@ ___
 
 ### Retours et analyse
 
-IL FAut REGARDER LA DIAPO ET NE UTILISER LES TERMES TECHNIQUES
+
 
 #### Retours : 
 
-Nous avons eu plusieurs retours à propos de l'apparence de notre site. Ainsi, nous avons décidé de changer plusieurs éléments que nous avions pensé pour la maquette pour les raisons suivantes :
-- Changement du Fond : Choix entre fond clair et fond sombre selon la préférence de l'utilisateur
-- Changement de Police : Implémentation du choix de la police 
-- Boutons Activer/Désaciver : 
-- Refactor de l'anglais au français :
-- Changement du Pop-up d'inactivité : Implémentation des 3 boutons Réessayer/Passer/Quitter
+Nous avons eu plusieurs retours lors de l'évaluation croisée faite par Virginie. Grâce à cela, nous avons pu améliorer plusieurs éléments :
+- Couleur du texte adaptative: En fonction du mode sombre ou clair du fond d'écran, le texte des paramètres est affiché avec une couleur qui vient contraster avec le fond pour plus de lisibilité.
+- Changement de Police : Implémentation du choix de la police, qui est appliquée dans les questions et le texte des réponses. 
+- Changement de Police : Implémentation du choix de la police, qui est appliquée dans les questions et le texte des réponses.
+- Boutons Activer/Désactiver : Originalement les boutons n'étaient pas clair car il était marqué "Activer/Désactiver". Maintenant le texte des boutons indiquent l'action qui sera executée lorsque le bouton sera cliqué.
+- Refactor de l'anglais au français : Certains boutons étaient en anglais, ils ont été passés en français pour plus de cohérence.
+- Changement du Pop-up d'inactivité : Au lieu d'avoir simplement un pop-up qui demande si l'utilisateur est toujours présent, il propose désormais soit de quitter le quiz et donc de revenir au menu, soit d'essayer à nouveau la question ce qui réinitialise le compte à rebours, ou alors de passer à la question suivante.
 - 
 - A méditer ?
+
+#### Analyse : 
 
 # Partie 4 : Conclusion 
 
@@ -147,30 +155,28 @@ Guillaume Arrigoni:
 - Logique pour questions de type puzzle
 - Système de connexion
 - Paramètres avancés et logique appliqués au quiz
-- Deletion de quiz ou d'utilisateurs
--
--
--
+- Semaine à plein temps : Suppression de quiz ou d'utilisateurs 
+- 
 -
 Drid Loris :
 - SCSS global
-- Implémentation et prise en compte des retours
-- Test paramètres/jeux/création quiz
-- Animation trouble tels que le Pop-up, animations questions/réponses, Chronomètre
-- 
+- Implémentation des retours fais à la suite de la vidéo, et après l'évaluation croisée.
+- Traitement des trouble de l'attention avec le Pop-up, animations questions/réponses, Chronomètre
+- Semaine à plein temps : Tests paramètres/jeux/création quiz, explication de la pertinance des tests dans le rapport
 -
 Tho Romain :
 - Formulaire de création de quiz et de questions
 - API back-end
-- Tests connexion/inscription
 - Lien front/back-end
 - Jouer quiz/résultats
+- Semaine à plein temps : Tests connexion/inscription, majeure partie du rapport
 
 Benziane Swann :
 - Lien front/back-end
 - Docker
 - Logique pour questions de type Chronologique/analyse
 - Jouer quiz
+- Semaine à plein temps : Docker
 
 Le reste du projet a été développé en collaboration, en incluant des aspects tels que la logique de jeu, le routing et l'architecture générale. Ces éléments ont été créés conjointement en utilisant une approche collaborative pour assurer une mise en œuvre cohérente et efficace du site ZQSD.
 
@@ -185,6 +191,7 @@ Liste des sites consultés :
 - https://lms.univ-cotedazur.fr/2022/course
 - https://github.com/NablaT/ps6-correction-td1-td2-v2
 - https://github.com/NablaT/starter-ps6-full-stack
--
--
--
+- https://www.msdmanuals.com/fr/accueil/troubles-du-cerveau,-de-la-moelle-%C3%A9pini%C3%A8re-et-des-nerfs/syndrome-confusionnel-et-d%C3%A9mence/d%C3%A9mence-vasculaire
+- https://www.msdmanuals.com/fr/professional/troubles-neurologiques/syndrome-confusionnel-et-d%C3%A9mence/troubles-cognitifs-et-d%C3%A9mence-vasculaires
+- https://autonome-a-domicile.com/demence-vasculaire/
+- https://swissheart.ch/fr/maladies-et-urgences/maladies-de-c%C5%93ur-et-attaque-c%C3%A9r%C3%A9brale/d%C3%A9mence-vasculaire

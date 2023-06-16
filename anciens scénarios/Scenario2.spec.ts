@@ -2,13 +2,9 @@ import { test, expect } from '@playwright/test';
 import { homepage,testURL } from 'e2e/e2e.config';
 import { QuizzListComponent } from 'src/app/quizz-list/quizz-list.component';
 
-const BASE_URL = 'http://localhost:4200';
 
-test.use({
-  baseURL: BASE_URL,
-});
 
-test('Jouer un quiz démonstration avec toutes les questions', async ({ page }) => {
+test('Jouer le quiz astérix', async ({ page }) => {
   // Étape 1 : Accéder à la page de sélection des quiz
   await page.goto(homepage);
   await page.click('button.btn-liste');

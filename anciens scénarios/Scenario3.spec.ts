@@ -3,11 +3,7 @@ import { homepage,testURL } from 'e2e/e2e.config';
 import { QuizzListComponent } from 'src/app/quizz-list/quizz-list.component';
 import { ParameterService } from 'src/services/Parameter/ParameterService';
 
-const BASE_URL = 'http://localhost:4200';
 
-test.use({
-  baseURL: BASE_URL
-});
 
 test('Tester la musique activée', async ({ page }) => {
   await page.goto(homepage);
@@ -49,7 +45,7 @@ test('Tester la musique désactivée', async ({ page }) => {
   const optionValue = 'Musique 4';
   await page.selectOption('select', optionValue);
   const image = await page.waitForSelector('img[src="assets/Parameter/Son_Enable.png"]');
- // Sélectionnez l'élément de l'image
+  // Sélectionnez l'élément de l'image
   if (image) {
     await image.click(); // Cliquez sur l'image
   } else {
@@ -88,10 +84,10 @@ test('Tester la police', async ({ page }) => {
   await page.waitForTimeout(1000);
   let fontSize;
   const texte = await page.$('span:has-text("Ceci est un texte pour tester la taille.")');
-    fontSize = await texte?.evaluate((element) => {
-      const styles = window.getComputedStyle(element);
-      return styles.fontSize;
-    });
+  fontSize = await texte?.evaluate((element) => {
+    const styles = window.getComputedStyle(element);
+    return styles.fontSize;
+  });
   console.log("font : " + fontSize)
   expect(fontSize).toBe('28px');
 });
