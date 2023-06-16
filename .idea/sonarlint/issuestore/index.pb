@@ -128,5 +128,3 @@ Vfront-end/src/app/GameQuestionSearching.component/GameQuestionSearching.Compone
 0front-end/src/app/results/results.component.html,e\7\e7c0f394fab6f32039e2f1a38754d87670b08371
 „
 Tfront-end/src/app/GameQuestionSearching.component/GameQuestionSearching.Component.ts,1\8\18461b91621a624e958329c2c612ab76c3d91c3f
-j
-:front-end/src/app/GameQuiz.component/GameQuiz.component.ts,a\1\a1b4496a91f774688d03250987cbcf9c518d7461
