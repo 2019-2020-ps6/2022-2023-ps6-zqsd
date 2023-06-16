@@ -13,7 +13,6 @@ import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
 
 
-
 @Component({
   selector: 'app-CreateQuestion',
   templateUrl: './CreateQuestion.component.html',
