@@ -195,7 +195,10 @@ export class GameService {
   }
 
   updateQuizList(quizList : Quiz[]): void {
+    console.log("update quiz list")
+    console.log(quizList)
     this.quizList$.next(quizList);
+    console.log(this.quizList$)
   }
 
 }

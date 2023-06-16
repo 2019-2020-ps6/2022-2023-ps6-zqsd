@@ -96,8 +96,6 @@ n
 >front-end/src/app/popUpDeleteQuiz/popUpDeleteQuiz.component.ts,8\c\8ca8243169a2bf391c77408ff71baf2a557ef60f
 P
  front-end/src/mocks/user.mock.ts,6\8\680ecd6786cb1b574e63e2d67a9bb6117ec90862
-R
-"front-end/src/models/user.model.ts,6\b\6b31b78fd7c4c95375cfd7f65608d08a7ee55032
 t
 Dfront-end/src/app/GameQuestion.component/GameQuestion.Component.html,f\0\f0b52b779af404a94e528ae272ed2101ff580ead
 r

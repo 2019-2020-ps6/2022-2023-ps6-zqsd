@@ -56,7 +56,7 @@ export class QuizService {
     // You need here to update the list of quiz and then update our observable (Subject) with the new list
     // More info: https://angular.io/tutorial/toh-pt6#the-searchterms-rxjs-subject
     //todo get the ids from the questions,
-    return this._httpClient.post<Quiz>(serverUrl+"/quizzes",quiz).subscribe(quiz => {
+    this._httpClient.post<Quiz>(serverUrl+"/quizzes",quiz).subscribe(quiz => {
       console.log("quiz subscribed");
       console.log(quiz);
       this.allQuiz[quiz.id]=quiz
@@ -67,7 +67,7 @@ export class QuizService {
 
   deleteQuiz(quiz: Quiz) {
     var deleteInDatabase : boolean = false;
-    return this._httpClient.delete<Quiz>(serverUrl+"/quizzes/"+quiz.id).subscribe(quiz => {
+    this._httpClient.delete<Quiz>(serverUrl+"/quizzes/"+quiz.id).subscribe(quiz => {
       console.log("quiz deleted");
       deleteInDatabase = true;
       delete this.allQuiz[quiz.id]

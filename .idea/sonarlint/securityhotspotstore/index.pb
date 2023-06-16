@@ -80,8 +80,6 @@ V
 &front-end/src/configs/server.config.ts,e\8\e8ea971730e44567bfc8f55f5aea121a15c1f659
 P
  front-end/src/mocks/user.mock.ts,6\8\680ecd6786cb1b574e63e2d67a9bb6117ec90862
-R
-"front-end/src/models/user.model.ts,6\b\6b31b78fd7c4c95375cfd7f65608d08a7ee55032
 b
 2front-end/src/app/listUser/listUser.component.html,2\3\23f0b17e1d0c5a51e8a9631b7516de695d69026d
 b
