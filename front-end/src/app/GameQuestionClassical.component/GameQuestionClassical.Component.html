@@ -1,21 +1,22 @@
 <div *ngIf="currentQuestion!=undefined" class="question-container">
   <div id="question" style="margin-top: 15px; margin-bottom: 15px; font-size: calc(var(--currentSize) + 5px);" [style.fontFamily]="getSelectedFont()" [ngClass]="{'questionTitle': enableAnimationQuestion, 'uppercase-text': advPService.isUpperCase}">{{currentQuestion.value}}</div>
-    <div class="answers-container">
-        <div class="answer-row">
-            <div class="answer-option">
-              <app-GameAnswer [currentAnswer]="currentQuestion.answers[0]" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
-            </div>
-            <div class="answer-option">
-              <app-GameAnswer [currentAnswer]="currentQuestion.answers[1]" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
-            </div>
+  <div class="answers-container">
+      <div class="answer-row">
+          <div class="answer-option">
+            <app-GameAnswer [currentAnswer]="currentQuestion.answers[0]" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
           </div>
-        <div class="answer-row">
-            <div class="answer-option">
-              <app-GameAnswer [currentAnswer]="currentQuestion.answers[2]" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
-            </div>
-            <div class="answer-option">
-              <app-GameAnswer [currentAnswer]="currentQuestion.answers[3]" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
-            </div>
+          <div class="answer-option">
+            <app-GameAnswer [currentAnswer]="currentQuestion.answers[1]" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
+          </div>
         </div>
+      <div class="answer-row">
+          <div class="answer-option">
+            <app-GameAnswer [currentAnswer]="currentQuestion.answers[2]" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
+          </div>
+          <div class="answer-option">
+            <app-GameAnswer [currentAnswer]="currentQuestion.answers[3]" (answerEvent)="questionAnswered($event)"> </app-GameAnswer>
+          </div>
+      </div>
+  </div>
 </div>
 
