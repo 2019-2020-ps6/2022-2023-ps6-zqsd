@@ -80,7 +80,7 @@ ___
 Alice, fille de Leonel Gomez veut crée le compte pour son père. Elle va ensuite tester que ses identifiants fonctionnent bien. 
 Elle souhaite personnaliser les paramètres pour son père, et va tester cela en jouant un quiz aléatoire.
 ___
-# Partie 2 : Scénario de tests et mise en place
+# Partie 2 : Scénario de tests, mise en place et pertinence
 
 ## Tests automatiques
 
@@ -151,10 +151,11 @@ Nous avons eu plusieurs retours lors de l'évaluation croisée faite par Virgini
 
 
 Guillaume Arrigoni:
+- Page des paramètres
 - Logique pour questions de type puzzle
-- Système de connexion
+- Système de connexion/inscription
 - Paramètres avancés et logique appliqués au quiz
-- Semaine à plein temps : Suppression de quiz ou d'utilisateurs 
+- Semaine à plein temps : Option suppression de quiz et d'utilisateurs 
 - 
 -
 Drid Loris :

@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Fix bug in puzzle mock #59">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/494085b38348db40222619556387f6860a67c640" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/8/680ecd6786cb1b574e63e2d67a9bb6117ec90862" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/3/7367f805a7a4680d6a87af3f9778d0f271a296c1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/6/c6203e64169b9933adfd6c9c8fea57f35f6a14ca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/f/ff24ac66ef5311f22554a3a760bf2a2a2bd3ad7f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/9/494085b38348db40222619556387f6860a67c640" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/8/680ecd6786cb1b574e63e2d67a9bb6117ec90862" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/3/7367f805a7a4680d6a87af3f9778d0f271a296c1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/6/c6203e64169b9933adfd6c9c8fea57f35f6a14ca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/f/ff24ac66ef5311f22554a3a760bf2a2a2bd3ad7f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/services/QuizService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/services/QuizService.ts" afterDir="false" />
-    </list>
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Fix bug in createquiz #59" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,7 +10,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Jouer" />
+        <entry key="$PROJECT_DIR$" value="a568f61c198f05cc31740e29eb9ee8708e67ea35" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -413,21 +398,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686913277799</updated>
     </task>
-    <task id="LOCAL-00048" summary="S5 - Add mock in QuizList #59">
-      <created>1686913838630</created>
+    <task id="LOCAL-00048" summary="S5 - Fix bug in createquiz #59">
+      <created>1686922660637</created>
       <option name="number" value="00048" />
       <option name="presentableId" value="LOCAL-00048" />
       <option name="project" value="LOCAL" />
-      <updated>1686913838630</updated>
+      <updated>1686922660637</updated>
     </task>
-    <task id="LOCAL-00049" summary="S5 - Fix bug in puzzle mock #59">
-      <created>1686916718243</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1686916718243</updated>
-    </task>
-    <option name="localTasksCounter" value="50" />
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
