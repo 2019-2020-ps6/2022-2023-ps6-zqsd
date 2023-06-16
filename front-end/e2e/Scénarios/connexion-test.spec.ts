@@ -10,7 +10,7 @@ test.describe('test the connexion system', () => {
     await page.locator("#connexion-name").fill("Admin");
     await page.locator("#connexion-password").fill("Admin");
     await page.getByRole('button', { name: "Connexion" }).click();
-    await page.getByRole('button', { name: 'Gestion des utilisateurs' }).click();
+    await page.getByRole('button', { name: "Gestion des utilisateurs" }).click();
 
     const deleteButton = page
       .getByRole('listitem')
@@ -19,7 +19,6 @@ test.describe('test the connexion system', () => {
 
     if (await deleteButton.isVisible()) {
       await deleteButton.click();
-      await page.getByRole('button', { name: 'Confirmer' }).click();
     } else {
       await page.goto(homepage); // Return to the homepage if the delete button is not visible
     }
