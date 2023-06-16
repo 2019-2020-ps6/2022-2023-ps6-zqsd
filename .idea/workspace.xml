@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Fix bug in result #53">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+    <list default="true" id="86645480-06b9-4bf2-a0ab-5b1fda583848" name="Changes" comment="S5 - Fix bug in createQuestion #53">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/app/CreateQuestion.component/CreateQuestion.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/CreateQuestion.component/CreateQuestion.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/app/Puzzle/PuzzleMain/PuzzleMain.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +70,7 @@
       <workItem from="1685428264939" duration="9494000" />
       <workItem from="1686733679865" duration="10514000" />
       <workItem from="1686813570953" duration="27574000" />
-      <workItem from="1686900998135" duration="771000" />
+      <workItem from="1686900998135" duration="1618000" />
     </task>
     <task id="LOCAL-00001" summary="S1 - Merge Master into Parameter #9">
       <created>1680262725544</created>
@@ -354,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686845607424</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="S5 - Fix bug in createQuestion #53">
+      <created>1686902156607</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1686902156607</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,7 +376,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/fixpuzzlebackend" />
+                        <option value="origin/Jouer" />
                       </list>
                     </value>
                   </entry>
@@ -389,12 +394,12 @@
             <list>
               <RecentGroup>
                 <option name="FILTER_VALUES">
-                  <option value="origin/fixpuzzlebackend" />
+                  <option value="origin/Jouer" />
                 </option>
               </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
-                  <option value="origin/Jouer" />
+                  <option value="origin/fixpuzzlebackend" />
                 </option>
               </RecentGroup>
               <RecentGroup>
@@ -440,7 +445,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="S5 - Fix part of bug by skipping question" />
     <MESSAGE value="S5 - Create Connexion page" />
     <MESSAGE value="S5 - Add warning msg #18" />
     <MESSAGE value="S5 - Add picture to hide/show password #18" />
@@ -465,6 +469,7 @@
     <MESSAGE value="S5 - Fix bug in puzzle #53" />
     <MESSAGE value="S5 - Fix bug in puzzle order #53" />
     <MESSAGE value="S5 - Fix bug in result #53" />
-    <option name="LAST_COMMIT_MESSAGE" value="S5 - Fix bug in result #53" />
+    <MESSAGE value="S5 - Fix bug in createQuestion #53" />
+    <option name="LAST_COMMIT_MESSAGE" value="S5 - Fix bug in createQuestion #53" />
   </component>
 </project>
