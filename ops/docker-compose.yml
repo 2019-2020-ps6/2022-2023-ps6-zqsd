@@ -1,0 +1,29 @@
+version: "2.4"
+services:
+  front-end:
+    build: 
+      context: ./../front-end
+      args: 
+       - PROD_URL=http://localhost:8000
+    image: front-end:2.6
+    ports:
+      - "8080:80"
+    healthcheck:
+          test: [ "CMD-SHELL", "curl -f http://localhost:8080/ || exit 1" ]
+          interval: 30s
+          timeout: 10s
+          retries: 3
+    depends_on:
+      - back-end
+  back-end:
+    build: ./back-end
+    image: back-end:2.2
+    ports:
+      - "8000:9428"
+    volumes:
+      - ./../back-end/database:/app/database:rw
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:9428/ || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
