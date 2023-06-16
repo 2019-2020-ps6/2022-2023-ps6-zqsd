@@ -5,6 +5,8 @@ services:
       context: ./../front-end
       args: 
        - PROD_URL=http://localhost:8000
+       - ENV=production
+       - TEST_URL= jaj
     image: front-end:2.6
     ports:
       - "8080:80"
@@ -16,7 +18,7 @@ services:
     depends_on:
       - back-end
   back-end:
-    build: ./back-end
+    build: ./../back-end
     image: back-end:2.2
     ports:
       - "8000:9428"

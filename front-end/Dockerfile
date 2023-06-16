@@ -2,6 +2,8 @@ FROM node:20-alpine3.17 as install-step
 USER node
 WORKDIR /app
 ARG  PROD_URL
+ARG TEST_URL
+ARG ENV
 
 COPY --chown=node:node  ./package*.json .
 RUN npm install
@@ -9,10 +11,10 @@ RUN npm install
 COPY --chown=node:node  . .
 
 
-## RUN sed -i "s|<TEST_URL>|$TEST_URL|g" ./src/environments/environment.e2e.ts
+RUN sed -i "s|<TEST_URL>|$TEST_URL|g" ./src/environments/environment.e2e.ts
 RUN sed -i "s|<PROD_URL>|$PROD_URL|g" ./src/environments/environment.prod.ts
 
-RUN npm run build:production
+RUN npm run build:$ENV
 
 
 
