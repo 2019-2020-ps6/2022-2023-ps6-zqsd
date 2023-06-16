@@ -6,8 +6,8 @@ import { AdvancedParameterService } from 'src/services/Parameter/AdvancedParamet
 
 @Component({
   selector: 'app-game-question-classical',
-  templateUrl: './GameQuestionClassical.component.html',
-  styleUrls: ['./GameQuestionClassical.component.scss']
+  templateUrl: './GameQuestionClassical.Component.html',
+  styleUrls: ['./GameQuestionClassical.Component.scss']
 })
 export class GameQuestionComponent implements OnInit{
 

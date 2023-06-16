@@ -7,8 +7,8 @@ import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-game-question-searching',
-  templateUrl: './GameQuestionSearching.component.html',
-  styleUrls: ['./GameQuestionSearching.component.scss']
+  templateUrl: './GameQuestionSearching.Component.html',
+  styleUrls: ['./GameQuestionSearching.Component.scss']
 })
 
 

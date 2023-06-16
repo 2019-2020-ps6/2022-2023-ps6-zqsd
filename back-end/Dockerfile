@@ -1,7 +1,6 @@
 FROM node:20-alpine3.17 
 
-
-RUN mkdir -p /app
+USER node
 WORKDIR /app
 
 COPY --chown=node:node  ./package*.json .
