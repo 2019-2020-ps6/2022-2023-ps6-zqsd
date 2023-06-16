@@ -44,7 +44,7 @@ test.describe('test the connexion system', () => {
     await page.waitForTimeout(3000)
   })
 
-  test('Créer un quiz démonstration avec toutes les questions', async ({ page }) => {
+  test('Créer un quiz Astérix', async ({ page }) => {
     await page.goto(homepage);
     await page.click('button.btn-liste');;
 
