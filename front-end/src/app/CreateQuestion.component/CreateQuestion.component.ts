@@ -203,76 +203,76 @@ export class CreateQuestion implements OnInit, AfterViewInit{
 
         }
         if (this.questionType === 'searching' && this.questionForm.value.imageUrl !== '') {
-            const questionS: Question = {
-                    value: this.questionForm.value.question,
-                    label: "searching",
-                    id: this.id.toString(),
-                    answers: answers,
-                    imageSearching: this.questionForm.value.imageUrl.toString(),
-                  };
-                  console.log(questionS);
-                  this.questionService.addQuestion(questionS);
-                }
+          const questionS: Question = {
+            value: this.questionForm.value.question,
+            label: "searching",
+            id: this.id.toString(),
+            answers: answers,
+            imageSearching: this.questionForm.value.imageUrl.toString(),
+          };
+          console.log(questionS);
+          this.questionService.addQuestion(questionS);
+        }
         else {
           console.log("ajouter une image")
         };
         break;
-    case 'puzzle':
-      if (this.puzzleSplitNumber > 1 && this.selectedImage) {
-        console.log('puzzle');
-        const largeurPartie: number = this.selectedImage.width / this.puzzleSplitNumber;
-        const hauteurPartie: number = this.selectedImage.height / this.puzzleSplitNumber;
-        const partiesImage: string[] = [];
-        for (let i = 0; i < this.puzzleSplitNumber; i++) {
-          for (let j = 0; j < this.puzzleSplitNumber; j++) {
-            const canvas = document.createElement('canvas');
-            canvas.width = largeurPartie;
-            canvas.height = hauteurPartie;
-            const context = canvas.getContext('2d');
-            if (context) {
-              context.drawImage(
-                this.selectedImage,
-                i * largeurPartie,
-                j * hauteurPartie,
-                largeurPartie,
-                hauteurPartie,
-                0,
-                0,
-                largeurPartie,
-                hauteurPartie
-              );
+      case 'puzzle':
+        if (this.puzzleSplitNumber > 1 && this.selectedImage) {
+          console.log('puzzle');
+          const largeurPartie: number = this.selectedImage.width / this.puzzleSplitNumber;
+          const hauteurPartie: number = this.selectedImage.height / this.puzzleSplitNumber;
+          const partiesImage: string[] = [];
+          for (let i = 0; i < this.puzzleSplitNumber; i++) {
+            for (let j = 0; j < this.puzzleSplitNumber; j++) {
+              const canvas = document.createElement('canvas');
+              canvas.width = largeurPartie;
+              canvas.height = hauteurPartie;
+              const context = canvas.getContext('2d');
+              if (context) {
+                context.drawImage(
+                  this.selectedImage,
+                  i * largeurPartie,
+                  j * hauteurPartie,
+                  largeurPartie,
+                  hauteurPartie,
+                  0,
+                  0,
+                  largeurPartie,
+                  hauteurPartie
+                );
+              }
+              const base64 = canvas.toDataURL('image/jpeg', 0.8); // Utilisation de la compression PNG sans perte
+              partiesImage.push(base64);
+              console.log(i + j*this.puzzleSplitNumber);
+              console.log(base64);
+              answers.push({
+                label: "puzzle",
+                value: "1",
+                isCorrect:false,
+                order : i + j*this.puzzleSplitNumber,
+                picture: partiesImage[partiesImage.length - 1],
+              });
             }
-            const base64 = canvas.toDataURL('image/jpeg', 0.8); // Utilisation de la compression PNG sans perte
-            partiesImage.push(base64);
-            console.log(i + j*this.puzzleSplitNumber);
-            console.log(base64);
-            answers.push({
-              label: "puzzle",
-              value: "1",
-              isCorrect:false,
-              order : i + j*this.puzzleSplitNumber,
-              picture: partiesImage[partiesImage.length - 1],
-            });
           }
+          const questionS: Question = {
+            value: "a",
+            label: "puzzle",
+            id: this.id.toString(),
+            answers: answers,
+          };
+          this.questionService.addQuestion(questionS);
         }
-        const questionS: Question = {
-          value: "a",
-          label: "puzzle",
-          id: this.id.toString(),
-          answers: answers,
-        };
-        this.questionService.addQuestion(questionS);
-      }
-      break;
-    default:
-      break;
-  }
-  this.questionForm.reset();
-  console.log('question ajoutée');
-  this.showClassicSection = false;
-  this.showSearchingSection = false;
-  this.showPuzzleSection = false;
-  this.showChronologicalSection = false;
+        break;
+      default:
+        break;
+    }
+    this.questionForm.reset();
+    console.log('question ajoutée');
+    this.showClassicSection = false;
+    this.showSearchingSection = false;
+    this.showPuzzleSection = false;
+    this.showChronologicalSection = false;
 
   }
 
