@@ -2,7 +2,7 @@
 
 # ZQSD : Soutien interactif pour la démence vasculaire
 
-ZQSD est un site web dédié au soutien des patients atteints de démence vasculaire. Il offre une variété d'activités basées sur quatre types de questions : Classique, Analyse, Puzzle et Chronologique. Les utilisateurs peuvent se connecter, jouer à des quiz aléatoires ou spécifiques, ainsi que créer leurs propres quiz.
+ZQSD est un site web dédié au soutien des patients atteints de démence vasculaire, qui a pour conséquences des problèmes de mémoire, de concentration et de capacités de raisonnement. Le site offre une variété d'activités basées sur quatre types de questions : Classique, Analyse, Puzzle et Chronologique. Les utilisateurs peuvent se connecter, jouer à des quiz aléatoires ou spécifiques, ainsi que créer leurs propres quiz.
 
 Le site propose des paramètres avancés qui permettent d'adapter l'expérience utilisateur en fonction des besoins et des handicaps de chaque individu. Ces paramètres permettent de personnaliser différentes caractéristiques du site.
 
@@ -13,10 +13,10 @@ Le site propose des paramètres avancés qui permettent d'adapter l'expérience 
 ___
 
 #### Présentation :
-Pierre est un ancien travailleur du bâtiment. A de nombreuse reprise, par le passé, il à 
-travailler en heure supplémentaire afin de rattraper les différents retards des projets. 
+Pierre est un ancien travailleur du bâtiment. A de nombreuse reprise, par le passé, il a 
+travaillé en heure supplémentaire afin de rattraper les différents retards des projets. 
     Ces différentes  heures  supplémentaires  ont  causé  de  multiple  AVC  et  entrainé  une 
-démence vasculaire. Pierre souffre donc d’une perte de quelques fonctions cognitives. 
+démence vasculaire. Pierre souffre donc d’une perte de quelques fonctions cognitives.
 ___
 #### Relation  à  la  technologie  :
 Pierre  n’a  pas  de  connaissance  dans  les  domaines  technologiques.  Les concepts de connexion, site web, périphériques sont assez abstraits pour lui. 
@@ -41,7 +41,7 @@ ___
 Age: 80 ans. 
 ___
 #### Présentation :
-ancien prof d'histoire géographie au collège, maintenant à la retraite. Suite  à un AVC survenu 4 ans plus tôt, André souffre de  démence vasculaire. Même s'il souffre d'une légère perte de mémoire, ses principaux symptômes sont un trouble majeur de l'attention ainsi qu'une capacité de réflexion ralentie.
+ancien prof de musique au collège, maintenant à la retraite. Suite  à un AVC survenu 4 ans plus tôt, André souffre de  démence vasculaire. Même s'il souffre d'une légère perte de mémoire, ses principaux symptômes sont un trouble majeur de l'attention ainsi qu'une capacité de réflexion ralentie.
 ___
 #### Relation à la technologie
 André avait un ordinateur chez lui et sa famille lui avait offert une tablette pour qu'il puisse prendre des photos et les regarder. il est donc plutôt à l'aise avec la technologie et en particulier les tablettes.
@@ -68,17 +68,17 @@ ___
 Les scénarios suivants sont numérotés dans l'ordre d'exécution. Certains sont nécessaires afin que d'autres marchent comme par exemple crée un certain quizz qu'un autre persona jouera derrière. Cela évite des problèmes comme un quiz ou un utilisateur n'étant pas dans la base de donnéee.
 ___
 ### Scénario 1 : 
-Joelle veux se connecter à son compte. Cependant, lorsqu'elle rentré son mot de passe, elle se rends compte que ce n'est pas le bon. Elle veut donc le retrouver pour pouvoir se connecter. Une fois connecté, elle va vouloir créer un quiz composé uniquement de question Classiques et Order.
+Joelle veux se connecter à son compte. Cependant, lorsqu'elle rentré son mot de passe, elle se rends compte que ce n'est pas le bon. Elle veut donc le retrouver pour pouvoir se connecter. Une fois connecté, elle va vouloir créer un quiz composé uniquement de question Classiques, un autre composé de questions chronologique et classique, et un uniquement composé de questions analyse.
 ___
 ### Scénario 2 : 
--Pierre veut jouer un quiz spécifique qu'il avait vu auparavant, il va dans la sélection de quiz et il choisit le quiz de culture générale "Connaissances Globales".
+-Pierre veut jouer un quiz spécifique qu'il avait vu auparavant, il va dans la sélection de quiz et il choisit le quiz "Astérix" car il est aime les BD.
 ___
 ### Scénario 3 :
-André ne veut pas se prendre la tête, il veut juste jouer un quiz aléatoire sans se prendre la tête.
+André joue un quiz au hasard, puis se rend compte qu'il n'y a pas de musique, et que le texte est trop petit. Il va donc configurer les paramètres et aller rejouer le quiz.
 ___
 ### Scénario 4 :
-Alice, fille de Leonel Gomez veut crée le compte pour son père. Elle va ensuite tester que ses identifiants fonctionnent bien. 
-Elle souhaite personnaliser les paramètres pour son père, et va tester cela en jouant un quiz aléatoire.
+Alice, fille de Leonel Gomez veut créer le compte pour son père. Elle va ensuite tester que ses identifiants fonctionnent bien. 
+Elle souhaite personnaliser les paramètres avancés pour son père, et va tester cela en jouant un quiz aléatoire.
 ___
 # Partie 2 : Scénario de tests, mise en place et pertinence
 
@@ -135,9 +135,10 @@ ___
 Nous avons eu plusieurs retours lors de l'évaluation croisée faite par Virginie. Grâce à cela, nous avons pu améliorer plusieurs éléments :
 - Couleur du texte adaptative: En fonction du mode sombre ou clair du fond d'écran, le texte des paramètres est affiché avec une couleur qui vient contraster avec le fond pour plus de lisibilité.
 - Changement de Police : Implémentation du choix de la police, qui est appliquée dans les questions et le texte des réponses. 
+- Changement de Police : Implémentation du choix de la police, qui est appliquée dans les questions et le texte des réponses.
 - Boutons Activer/Désactiver : Originalement les boutons n'étaient pas clair car il était marqué "Activer/Désactiver". Maintenant le texte des boutons indiquent l'action qui sera executée lorsque le bouton sera cliqué.
-- Refactor de l'anglais au français : Certains boutons étaient en anglais, ils ont été passés en français pour 
-- Changement du Pop-up d'inactivité : Implémentation des 3 boutons Réessayer/Passer/Quitter
+- Refactor de l'anglais au français : Certains boutons étaient en anglais, ils ont été passés en français pour plus de cohérence.
+- Changement du Pop-up d'inactivité : Au lieu d'avoir simplement un pop-up qui demande si l'utilisateur est toujours présent, il propose désormais soit de quitter le quiz et donc de revenir au menu, soit d'essayer à nouveau la question ce qui réinitialise le compte à rebours, ou alors de passer à la question suivante.
 - 
 - A méditer ?
 
@@ -160,8 +161,8 @@ Guillaume Arrigoni:
 -
 Drid Loris :
 - SCSS global
-- Implémentation et prise en compte des retours
-- Animation trouble tels que le Pop-up, animations questions/réponses, Chronomètre
+- Implémentation des retours fais à la suite de la vidéo, et après l'évaluation croisée.
+- Traitement des trouble de l'attention avec le Pop-up, animations questions/réponses, Chronomètre
 - Semaine à plein temps : Tests paramètres/jeux/création quiz, explication de la pertinance des tests dans le rapport
 -
 Tho Romain :
