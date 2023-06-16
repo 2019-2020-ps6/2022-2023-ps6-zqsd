@@ -3,11 +3,7 @@ import { homepage,testURL } from 'e2e/e2e.config';
 import { QuizzListComponent } from 'src/app/quizz-list/quizz-list.component';
 import { ParameterService } from 'src/services/Parameter/ParameterService';
 
-const BASE_URL = 'http://localhost:4200';
 
-test.use({
-  baseURL: BASE_URL
-});
 
 test('Tester la musique activée', async ({ page }) => {
   await page.goto(homepage);

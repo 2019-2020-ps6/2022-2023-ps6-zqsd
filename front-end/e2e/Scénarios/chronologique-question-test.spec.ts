@@ -3,11 +3,11 @@ import { homepage,testURL } from 'e2e/e2e.config';
 import { QuizzListComponent } from 'src/app/quizz-list/quizz-list.component';
 
 
-test('Jouer un quiz démonstration avec toutes les questions', async ({ page }) => {
+test('Jouer un quiz démonstration avec questions chrnologiques', async ({ page }) => {
   await page.goto(homepage);
   await page.click('button.btn-liste');;
 
-  const quizName = "Astérix";
+  const quizName = "Organisation";
   const quizItems = await page.$$('li.quizz-item');
   for (const quizItem of quizItems) {
     const h2Element = await quizItem.$('h2');
@@ -15,7 +15,7 @@ test('Jouer un quiz démonstration avec toutes les questions', async ({ page }) 
       const h2Text = await h2Element.textContent();
       if (h2Text === quizName) {
         console.log("Quiz déjà existant");
-        await page.getByRole('listitem').filter({ hasText: 'AstérixThème: FilmJouerSupprimer' }).getByRole('button', { name: 'Supprimer' }).click();
+        await page.getByRole('listitem').filter({ hasText: 'OrganisationThème: AutreJouerSupprimer' }).getByRole('button', { name: 'Supprimer' }).click();
         await page.getByRole('button', { name: 'Confirmer' }).click();
         console.log("Quiz supprimé")
 
@@ -40,47 +40,47 @@ test('Jouer un quiz démonstration avec toutes les questions', async ({ page }) 
 
 
 
-  const question1 = "Qui est le compagnon d'Astérix ?";
-  const question2 = "Comment s'appelle le chien d'Astérix ?";
-  const question3 = "Quel est le nom du druide du village ?";
+  const question1 = " Remettez dans l'ordre les étapes";
+  const question2 = " Remettez dans l'ordre les étapes";
+  const question3 = " Remettez dans l'ordre les étapes";
 
-  const answer1_1 = "Jules César";
-  const answer1_2 = "Gragas";
-  const answer1_3 = "Obélix";
-  const answer1_4 = "Astérix";
-  const answer2_1 = "Milou";
-  const answer2_2 = "Idéfix";
-  const answer2_3 = "Bill";
-  const answer2_4 = "Rex";
-  const answer3_1 = "Panoramix";
-  const answer3_2 = "Kirkis";
-  const answer3_3 = "Dumbledore";
-  const answer3_4 = "Gandalf";
+  const answer1_1 = "Petit déjeuné";
+  const answer1_2 = "Déjeuné";
+  const answer1_3 = "Goûter";
+  const answer1_4 = "Dîner";
+
+  const answer2_1 = "Mélanger les ingrédients";
+  const answer2_2 = "Préchauffer le four";
+  const answer2_3 = "Enfourner le gâteau";
+  const answer2_4 = "Décorer le gâteau";
+
+  const answer3_1 = "Envoyer les invitations";
+  const answer3_2 = "Préparer les décorations";
+  const answer3_3 = "Faire les courses";
+  const answer3_4 = "Accueillir les invités";
 
   const inputQuizName = await page.$('#name');
   await inputQuizName?.type(quizName);
   const inputValue = await inputQuizName?.inputValue();
   expect(inputValue).toBe(quizName);
-  const themeOption = "Film";
+  const themeOption = "Autre";
   await page.selectOption('select[formControlName="theme"]',themeOption);
   await page.selectOption('#numberOfQuestions',"3");
-  const typeSelector = 'button:has-text("Classique")';
+  const typeSelector = 'button:has-text("Chronologique")';
   const typeButton = await page.$(typeSelector);
   await typeButton?.click();
 
-  const inputQuestionName = await page.getByLabel('Question :');
-  const inputAnswer1 = await page.locator('app-createquestion form div').filter({ hasText: 'Réponse 1 : Vrai Faux' }).getByRole('textbox');
-  const inputAnswer2 = await page.locator('app-createquestion form div').filter({ hasText: 'Réponse 2 : Vrai Faux' }).getByRole('textbox');
-  const inputAnswer3 = await page.locator('app-createquestion form div').filter({ hasText: 'Réponse 3 : Vrai Faux' }).getByRole('textbox');
-  const inputAnswer4 = await page.locator('app-createquestion form div').filter({ hasText: 'Réponse 4 : Vrai Faux' }).getByRole('textbox');
-  const buttonVrai1 = await page.locator('app-createquestion form div').filter({ hasText: 'Réponse 1 : Vrai Faux' }).getByRole('button', { name: 'Vrai' });
-  const buttonVrai2 = await page.locator('app-createquestion form div').filter({ hasText: 'Réponse 2 : Vrai Faux' }).getByRole('button', { name: 'Vrai' });
-  const buttonVrai3 = await page.locator('app-createquestion form div').filter({ hasText: 'Réponse 3 : Vrai Faux' }).getByRole('button', { name: 'Vrai' });
-  const buttonVrai4 = await page.locator('app-createquestion form div').filter({ hasText: 'Réponse 4 : Vrai Faux' }).getByRole('button', { name: 'Vrai' });
-  const buttonFaux1 = await page.locator('app-createquestion form div').filter({ hasText: 'Réponse 1 : Vrai Faux' }).getByRole('button', { name: 'Faux' });
-  const buttonFaux2 = await page.locator('app-createquestion form div').filter({ hasText: 'Réponse 2 : Vrai Faux' }).getByRole('button', { name: 'Faux' });
-  const buttonFaux3 = await page.locator('app-createquestion form div').filter({ hasText: 'Réponse 3 : Vrai Faux' }).getByRole('button', { name: 'Faux' });
-  const buttonFaux4 = await page.locator('app-createquestion form div').filter({ hasText: 'Réponse 4 : Vrai Faux' }).getByRole('button', { name: 'Faux' });
+  const inputQuestionName = await page.locator('#questionChronological');
+  const inputURL = await page.getByPlaceholder('Enter image URL');
+  const inputAnswer1 = await page.locator('app-createquestion').getByRole('textbox').nth(1);
+  const inputAnswer2 = await page.locator('div').filter({ hasText: /^Réponses 2 :1234$/ }).getByRole('textbox');
+  const inputAnswer3 = await page.locator('div').filter({ hasText: /^Réponses 3 :1234$/ }).getByRole('textbox');
+  const inputAnswer4 = await page.locator('div').filter({ hasText: /^Réponses 4 :1234$/ }).getByRole('textbox');
+  const answer1Order = await page.locator('app-createquestion').getByRole('combobox').first();
+  const answer2Order = await page.locator('div').filter({ hasText: /^Réponses 2 :1234$/ }).getByRole('combobox');
+  const answer3Order = await page.locator('div').filter({ hasText: /^Réponses 3 :1234$/ }).getByRole('combobox');
+  const answer4Order = await page.locator('div').filter({ hasText: /^Réponses 4 :1234$/ }).getByRole('combobox');
+
   const addQuestionSelector = 'button:has-text("Ajouter la question")';
   const nextQuestionSelector = 'button:has-text("Prochaine question")';
   const createQuizSelector = 'button:has-text("Créer le quiz")';
@@ -93,10 +93,10 @@ test('Jouer un quiz démonstration avec toutes les questions', async ({ page }) 
   await inputAnswer2?.type(answer1_2);
   await inputAnswer3?.type(answer1_3);
   await inputAnswer4?.type(answer1_4);
-  await buttonFaux1?.click();
-  await buttonFaux2?.click();
-  await buttonVrai3?.click();
-  await buttonFaux4?.click();
+  await answer1Order?.selectOption("1");
+  await answer2Order?.selectOption("2");
+  await answer3Order?.selectOption("3");
+  await answer4Order?.selectOption("4");
   await page.waitForTimeout(1000);
   await addQuestionButton?.click();
   await nextQuestionButton?.click();
@@ -107,10 +107,10 @@ test('Jouer un quiz démonstration avec toutes les questions', async ({ page }) 
   await inputAnswer2?.type(answer2_2);
   await inputAnswer3?.type(answer2_3);
   await inputAnswer4?.type(answer2_4);
-  await buttonFaux1?.click();
-  await buttonVrai2?.click();
-  await buttonFaux3?.click();
-  await buttonFaux4?.click();
+  await answer1Order?.selectOption("1");
+  await answer2Order?.selectOption("2");
+  await answer3Order?.selectOption("3");
+  await answer4Order?.selectOption("4");
   await page.waitForTimeout(1000);
   await addQuestionButton?.click();
   await nextQuestionButton?.click();
@@ -121,10 +121,10 @@ test('Jouer un quiz démonstration avec toutes les questions', async ({ page }) 
   await inputAnswer2?.type(answer3_2);
   await inputAnswer3?.type(answer3_3);
   await inputAnswer4?.type(answer3_4);
-  await buttonVrai1?.click();
-  await buttonFaux2?.click();
-  await buttonFaux3?.click();
-  await buttonFaux4?.click();
+  await answer1Order?.selectOption("1");
+  await answer2Order?.selectOption("2");
+  await answer3Order?.selectOption("3");
+  await answer4Order?.selectOption("4");
   await page.waitForTimeout(1000);
   await addQuestionButton?.click();
   await createQuizButton?.click();

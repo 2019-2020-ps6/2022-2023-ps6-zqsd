@@ -3,11 +3,6 @@ import { test, expect } from '@playwright/test';
 import { homepage,testURL } from 'e2e/e2e.config';
 
 
-const BASE_URL = 'http://localhost:4200';
-
-test.use({
-  baseURL: BASE_URL
-});
 
 test('Tester le fond', async ({ page }) => {
   await page.goto(homepage);
