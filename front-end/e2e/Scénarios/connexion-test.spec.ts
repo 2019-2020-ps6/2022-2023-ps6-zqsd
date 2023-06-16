@@ -19,6 +19,7 @@ test.describe('test the connexion system', () => {
 
     if (await deleteButton.isVisible()) {
       await deleteButton.click();
+      await page.getByRole('button', { name: 'Confirmer' }).click();
     } else {
       await page.goto(homepage); // Return to the homepage if the delete button is not visible
     }
