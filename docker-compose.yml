@@ -1,12 +1,12 @@
 version: "2.4"
 services:
   front-end:
-    build: ./../front-end
-    image: front-end:2.1
+    build: ./front-end
+    image: front-end:2.3
     ports:
       - "8080:80"
   back-end:
-    build: ./../back-end
+    build: ./back-end
     image: back-end:2.O
     ports:
-      - "9428:9428"
+      - "8000:9428"

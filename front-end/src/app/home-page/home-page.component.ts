@@ -5,6 +5,7 @@ import * as _ from 'underscore' ;
 
 import { GameService } from 'src/services/GameService';
 import { Quiz } from 'src/models/quiz.model';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home-page',
