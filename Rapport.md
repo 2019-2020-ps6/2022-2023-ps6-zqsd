@@ -13,65 +13,62 @@ Le site propose des paramètres avancés qui permettent d'adapter l'expérience 
 ___
 
 #### Présentation :
-Pierre est un ancien travailleur du bâtiment. A de nombreuse reprise, par le passé, il a 
-travaillé en heure supplémentaire afin de rattraper les différents retards des projets. 
-    Ces différentes  heures  supplémentaires  ont  causé  de  multiple  AVC  et  entrainé  une 
-démence vasculaire. Pierre souffre donc d’une perte de quelques fonctions cognitives.
+Pierre est un ancien travailleur du bâtiment. À de nombreuse reprises il a fait des heures supplémentaires afin de rattraper les différents retards des projets, ce qui lui a  causé  de  multiple  AVC  et  entrainé  une démence vasculaire. Pierre souffre donc d’une perte de quelques fonctions cognitives.
 ___
 #### Relation  à  la  technologie  :
-Pierre  n’a  pas  de  connaissance  dans  les  domaines  technologiques.  Les concepts de connexion, site web, périphériques sont assez abstraits pour lui. 
+Pierre  n’a  pas  de  connaissances  dans  les  domaines  technologiques.  Les concepts de connexion, site web, périphériques sont assez abstraits pour lui. 
 ___
 #### Tâches avec l’application :
-Pierre  souhaiterais  limiter  la  perte  des  capacités  cognitives  dans  le  futur voire essayer de retrouver des capacités perdu. Le quizz est dès lors un moyen d’entrainer les 
-capacités  cognitives  de  Pierre  tout  en  s’amusant.  De plus,  la  personnalisation  des  questions  permet de renforcer l’efficacité du quizz en stimulant des souvenirs forts.
+Pierre  souhaiterait  limiter  la  perte  des  capacités  cognitives  dans  le  futur voire essayer de retrouver des capacités perdues. Le quiz est donc un moyen d’entrainer les 
+capacités  cognitives  de  Pierre  tout  en  s’amusant.  De plus,  la  personnalisation  des  questions  permet de renforcer l’efficacité du quiz en stimulant des souvenirs forts.
 ____
 ### Persona 2 : Alice Gomez
 Age : 32 ans. 
 ___ 
 #### Présentation  : 
-Alice est enseignante en école primaire et elle aime  bien  aider  son  prochain. En tant qu’enseignante, elle est bienveillante, sociable et sait s’occuper des enfants. Elle est la fille d'un patient. Lors  d’un  repas  de  famille,  le  père  d’Alice eut  un  AVC.  Il  souffre maintenant d’une démence vasculaire. Il a donc principalement des troubles de mémoire qui lui posent  problème  pour  la  vie  quotidienne
+Alice est enseignante en école primaire et elle aime aider  son  prochain. En tant qu’enseignante, elle est bienveillante, sociable et sait s’occuper des enfants. Elle est la fille d'un patient. Lors  d’un  repas  de  famille,  le  père  d’Alice eut  un  AVC.  Il  souffre maintenant d’une démence vasculaire. Il a donc principalement des troubles de mémoire qui lui posent  problème  pour  la  vie  quotidienne.
 ___
 #### Relation à la technologie : 
 Alice est capable d’utiliser un ordinateur correctement comme la plupart des  gens  de  son  âge.  Elle  possède  des  connaissances  basiques  pour  une  utilisation  journalière  et pratique de la technologie. 
 ___
 #### Tâches avec  l’application  :
-Alice  rends visite à son père pendant son  temps  libre et l’aide à combattre sa maladie en lui faisant travailler par exemple sa mémoire. Le quizz est par conséquent une activité ludique qu’ils peuvent faire ensemble et qui aide le père à combattre sa maladie.
+Alice  rend visite à son père pendant son  temps  libre et l’aide à combattre sa maladie en lui faisant travailler par exemple sa mémoire. Le quiz est par conséquent une activité ludique qu’ils peuvent faire ensemble et qui aide le père à combattre sa maladie.
 ___
 ### Persona 3 : André Bouchard
 Age: 80 ans. 
 ___
 #### Présentation :
-ancien prof de musique au collège, maintenant à la retraite. Suite  à un AVC survenu 4 ans plus tôt, André souffre de  démence vasculaire. Même s'il souffre d'une légère perte de mémoire, ses principaux symptômes sont un trouble majeur de l'attention ainsi qu'une capacité de réflexion ralentie.
+Ancien prof de musique au collège, maintenant à la retraite. Suite à un AVC survenu 4 ans plus tôt, André souffre de  démence vasculaire. Même s'il souffre d'une légère perte de mémoire, ses principaux symptômes sont un trouble majeur de l'attention ainsi qu'une capacité de réflexion ralentie.
 ___
 #### Relation à la technologie
 André avait un ordinateur chez lui et sa famille lui avait offert une tablette pour qu'il puisse prendre des photos et les regarder. il est donc plutôt à l'aise avec la technologie et en particulier les tablettes.
 ___
 #### Tache avec l'application
 
-André  aimerait pouvoir faire travailler son cerveau pour que ses capacités cognitives ne chutent pas.
+André  aimerait pouvoir faire travailler son cerveau pour que ses capacités cognitives ne chutent pas. Il veut pouvoir jouer en essayant de rester concentré le plus possible.
 ___
 ### Persona 4 : Joelle Boekhe
 Age: 30 ans 
 ___
 #### Présentation:
-Joelle est une aide qui travaille dans un EHPAD. elle veut soigner ses patients du mieux possible et elle est trés motivée. Ceci étant dit elle est aussi trés fatigué. 
+Joelle est une aide qui travaille dans un EHPAD. elle veut soigner ses patients du mieux possible et elle est très motivée. Ceci étant dit elle est aussi trés fatiguée. 
 ___
 #### Relation à la technologie 
-Joelle est une femme qui vit avec son temps elle est trés à l'aise avec la technologie, elle a un smartphone depuis 2012. et elle a été entrainée pendant ses études à utiliser les outils informatiques 
+Joelle est une femme qui vit avec son temps elle est très à l'aise avec la technologie, elle a un smartphone depuis 2012. et elle a été entrainée pendant ses études à utiliser les outils informatiques.
 ___
 #### Tache avec l'application
-Joelle voudrait pouvoir permettre a ses patients de faire une chose ludique, adaptée à leurs problème. 
+Joelle voudrait pouvoir permettre a ses patients de faire des exercices ludique, adaptés à leurs symptomes. 
 
 ___
 ## Scenarios :
 
-Les scénarios suivants sont numérotés dans l'ordre d'exécution. Certains sont nécessaires afin que d'autres marchent comme par exemple crée un certain quizz qu'un autre persona jouera derrière. Cela évite des problèmes comme un quiz ou un utilisateur n'étant pas dans la base de donnéee.
+Les scénarios suivants sont numérotés dans l'ordre d'exécution. Certains sont nécessaires afin que d'autres marchent comme par exemple créer un certain quiz qu'un autre persona jouera derrière. Cela évite des problèmes comme un quiz ou un utilisateur n'étant pas dans la base de donnéee.
 ___
 ### Scénario 1 : 
 Joelle veux se connecter à son compte. Cependant, lorsqu'elle rentré son mot de passe, elle se rends compte que ce n'est pas le bon. Elle veut donc le retrouver pour pouvoir se connecter. Une fois connecté, elle va vouloir créer un quiz composé uniquement de question Classiques, un autre composé de questions chronologique et classique, et un uniquement composé de questions analyse.
 ___
 ### Scénario 2 : 
--Pierre veut jouer un quiz spécifique qu'il avait vu auparavant, il va dans la sélection de quiz et il choisit le quiz "Astérix" car il est aime les BD.
+Pierre veut jouer un quiz spécifique qu'il avait vu auparavant, il va dans la sélection de quiz et il choisit le quiz "Astérix" car il est aime les BD.
 ___
 ### Scénario 3 :
 André joue un quiz au hasard, puis se rend compte qu'il n'y a pas de musique, et que le texte est trop petit. Il va donc configurer les paramètres et aller rejouer le quiz.
@@ -88,17 +85,17 @@ ___
 
 Nous avons décidé d'effectuer plusieurs tests afin de couvrir les différentes fonctionnalités que nous avons implémenté. Voici nos fonctionnalités ainsi que les tests qui correspondent :
 
-- Connexion : Scénario 1; Joelle, aide soignante veut se connecter afin de pouvoir créer un quiz personnalisé pour son patient. Elle se trompe de mot de passe et veut le retrouver. On test donc ici la connexion avec un mauvais mot de passe ainsi que la récupération d'un mot de passe. Une fois le mot de passe récupéré, Joelle réussira à se connecter et pourra vérifier qu'elle est bien sur son compte à l'accueil en lisant le message "Bienvenue JoelleB"
+- Connexion : Scénario 1. Joelle, aide soignante veut se connecter afin de pouvoir créer un quiz personnalisé pour son patient. Elle se trompe de mot de passe et veut le retrouver. On test donc ici la connexion avec un mauvais mot de passe ainsi que la récupération d'un mot de passe. Une fois le mot de passe récupéré, Joelle réussira à se connecter et pourra vérifier qu'elle est bien sur son compte à l'accueil en lisant le message "Bienvenue JoelleB".
 
-- Inscription : Scénario 4, Alice inscrit son père sur le site. Ce test est important car il permet de tester si on peut bien ajouter un utilisateur à notre base de données. On va tester cette création par la suite en se connectant avec l'identifiant et le mot de passe utilisé. Si tout se passe bien, on se retrouve normalement sur la page d'accueil avec un message d'accueil "Bienvenue LeonelG" 
+- Créer un quiz : Scénario 1. Après s'être connectée, Joelle va créer un quiz composé de questions classiques et order. (Test des questions analyse et puzzle non implémenté car non fonctionnelle avec le lien du back à cause du stockage d'image). On va ensuite vérifier dans la liste des quiz que le quiz est bien ajouté. 
 
-- Jouer un quiz : Scénario 2,3; On test ici les différentes questions que nous avons implémenté ainsi que les bonnes et mauvaises réponses. On attends un certains score selon le quiz effectué pour bien vérifier par exemple que le score sera le même.  
+- Jouer un quiz : Scénario 2. On lance un quiz parmis la liste des quiz, on joue les différentes questions et on vérifie lors des résultats que le score affiché correspond bien au score qu'on est supposé avoir par rapport aux réponses sélectionnées lorsque le quiz est joué.
 
-- Créer un quiz : Scénario 2; après s'être connectée, Joelle va crée un quiz composé de questions classiques et order. (Test des questions analyse et puzzle non implémenté car non fonctionnelle avec le lien du back à cause du stockage d'image)
-On va ensuite vérifier dans la liste des quizz que le quiz est bien ajouté puis le jouer afin de vérifier que les questions sont bien les bonnes avec les réponses correctes. On va par exemple vérifier que la bonne réponse est bien entourée en vert ou l'inverse pour une réponse fausse. On définit certaines réponses juste et fausses et on attends un score précis qu'on vérifie.
+- Paramètres : Scénario 3. On lance un quiz au hasard, puis on va dans les paramètres pour changer par exemple la musique ou encore la taille du texte. On retourne sur le quiz joué et on vérifie que les changements dans les paramètres sont bien effectifs.
 
+- Inscription : Scénario 4. Alice inscrit son père sur le site. Ce test est important car il permet de tester si on peut bien ajouter un utilisateur à notre base de données. On va tester cette création par la suite en se connectant avec l'identifiant et le mot de passe utilisé. Si tout se passe bien, on se retrouve normalement sur la page d'accueil avec un message d'accueil "Bienvenue LeonelG".
 
-- Paramétrer pour un utilisateur : Scénario 5; Alice personnalise les paramètres, cela change certaines fonctionnalités du quiz que nous allons vérifier après en jouant à un quiz aléatoire et en vérifiant que cela a bien été appliqué. On va par exemple désactiver l'animation liée aux questions puis vérifier cela en localisant la question.
+- Paramètres avancés: Scénario 4. Alice personnalise les paramètres, cela change certaines fonctionnalités du quiz que nous allons vérifier après en jouant à un quiz aléatoire et en vérifiant que cela a bien été appliqué. On va par exemple activer l'animation liée aux questions, ou aux réponses, changer la police ou encore mettre le texte en majuscule, puis vérifier que ces changements sont bien effectifs quand un quiz est joué.
 ___
 ### Pertinance des tests :
 Dans tous les tests effectués, nous nous assurons de vérifier la pertinence et le bon fonctionnement des fonctionnalités testées dans des scénarios end-to-end. Cela garantit que les modifications apportées à ces fonctionnalités ne compromettent pas leur bon fonctionnement lorsqu'elles sont utilisées dans le contexte réel de l'application.
@@ -120,6 +117,8 @@ On peut citer par exemple :
 - Création de questions puzzle : On importe un fichier local mais dur à tester car les fichiers locaux dépendent donc de la machine sur laquelle le test est effectué
 
 Ce sont des tests qu'il aurait été important d'implémenter car ce sont les questions les plus difficiles à coder et donc les plus à même à rencontrer des problèmes. Cependant par manque de temps et de maîtrise technique, il nous a été conseillé d'abandonner de tester ces fonctionnalités.
+
+Enfin, nous nous sommes aperçus bien trop tard que même si nos tests automatiques fonctionnaient tous quand on les lancaient de manière isolée, il y avait un problème lorsque on a rassemblé ces tests pour en faire les scénarios définis auparavant. En effet, nos tests ne sont pas entièrement indépendants, par exemple un test créé dans le scénario 1 est joué dans le scénario 2, le problème étant que quand les tests des scénarios sont lancés, ils sont exécutés en parallèle donc le quiz censé être joué dans le scénario 2 n'existe pas encore car il est en train d'être créé dans le scénario 1. Par manque de temps, nous avons donc choisi de rassembler les 4 scénarios test dans un gros test, pour qu'ils puissent s'executer les uns après les autres.
 ___
 
 # Partie 3 : Présentation de l'évaluation coopérative
@@ -140,7 +139,7 @@ Nous avons eu plusieurs retours lors de l'évaluation croisée faite par Virgini
 - Refactor de l'anglais au français : Certains boutons étaient en anglais, ils ont été passés en français pour plus de cohérence.
 - Changement du Pop-up d'inactivité : Au lieu d'avoir simplement un pop-up qui demande si l'utilisateur est toujours présent, il propose désormais soit de quitter le quiz et donc de revenir au menu, soit d'essayer à nouveau la question ce qui réinitialise le compte à rebours, ou alors de passer à la question suivante.
 - 
-- A méditer ?
+- Bien sur, d'autres fonctionnalités ont été ajouté sans avoir été mentionées dans les retours, par exemple le fait d'avoir une possiblité de lancer une démonstration de la musique sélectionnée en restant dans les paramètres, les phrases de la page résulat qui s'adaptent en fonction du score, ou encore l'ajout de texte cliquable en plus des émoticones pour la barre de navigation après avoir observé une certaine tendance à vouloir par exemple cliquer d'abord sur le texte "Paramètres" plutôt que sur l'émoticone des paramètres lors de l'évaluation croisée. Pour résumer, beaucoup de retours ont été implémentés, ces retours sont certes dans la majorités des cas des détails et non des réels problèmes, mais ils permettent de fluidifier l'expérience utilisateur sur le site et de dissiper certains doutes potentiels lors de l'utilisation.
 
 #### Analyse : 
 
@@ -151,7 +150,7 @@ Nous avons eu plusieurs retours lors de l'évaluation croisée faite par Virgini
 ## Répartition des tâches 
 
 
-Guillaume Arrigoni:
+Arrigoni Guillaume:
 - Logique pour questions de type puzzle
 - Système de connexion
 - Paramètres avancés et logique appliqués au quiz
@@ -161,7 +160,7 @@ Guillaume Arrigoni:
 Drid Loris :
 - SCSS global
 - Implémentation des retours fais à la suite de la vidéo, et après l'évaluation croisée.
-- Traitement des trouble de l'attention avec le Pop-up, animations questions/réponses, Chronomètre
+- Traitement des trouble de l'attention avec le Pop-up, animations questions/réponses, chronomètre, musique.
 - Semaine à plein temps : Tests paramètres/jeux/création quiz, explication de la pertinance des tests dans le rapport
 -
 Tho Romain :
@@ -178,8 +177,7 @@ Benziane Swann :
 - Jouer quiz
 - Semaine à plein temps : Docker
 
-Le reste du projet a été développé en collaboration, en incluant des aspects tels que la logique de jeu, le routing et l'architecture générale. Ces éléments ont été créés conjointement en utilisant une approche collaborative pour assurer une mise en œuvre cohérente et efficace du site ZQSD.
-
+Le reste du projet a été développé en collaboration, en incluant des aspects tels que la logique de jeu, le routing et l'architecture générale.
 ___
 ## Bibliographie
 

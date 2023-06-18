@@ -1,4 +1,4 @@
-import {expect, test} from "@playwright/test";
+/*import {expect, test} from "@playwright/test";
 import {connexionPage, homepage} from "../e2e.config";
 import {times} from "underscore";
 
@@ -308,4 +308,4 @@ test('Tester police texte', async ({ page }) => {
   } else {
     console.log('Le bouton avec le texte "Gragas" n\'a pas été trouvé.');
   }
-});
+});*/
