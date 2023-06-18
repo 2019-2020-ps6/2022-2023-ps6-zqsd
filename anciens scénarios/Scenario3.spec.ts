@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+/*import { test, expect } from '@playwright/test';
 import { homepage,testURL } from 'e2e/e2e.config';
 import { QuizzListComponent } from 'src/app/quizz-list/quizz-list.component';
 import { ParameterService } from 'src/services/Parameter/ParameterService';
@@ -24,12 +24,6 @@ test('Tester la musique activée', async ({ page }) => {
     console.log("Le span contenant le texte Retour n'a pas été trouvé.");
   }
   await page.waitForTimeout(5000);
-  /*const musicOn = await page.evaluate(() => {
-    const parameterService = (window as any).ng.getService('ParameterService');
-    return parameterService.getCurrentMusic();
-  });
-  console.log("musicOn : " + musicOn)
-  expect(musicOn).toBe('true');*/
 });
 
 test('Tester la musique désactivée', async ({ page }) => {
@@ -59,12 +53,6 @@ test('Tester la musique désactivée', async ({ page }) => {
     console.log("Le span contenant le texte Retour n'a pas été trouvé.");
   }
   await page.waitForTimeout(5000);
-  /*const musicOn = await page.evaluate(() => {
-    const parameterService = (window as any).ng.getService('ParameterService');
-    return parameterService.getCurrentMusic();
-  });
-
-  expect(musicOn).toBe(false);*/
 });
 test('Tester la police', async ({ page }) => {
   await page.goto(homepage);
@@ -90,5 +78,5 @@ test('Tester la police', async ({ page }) => {
   });
   console.log("font : " + fontSize)
   expect(fontSize).toBe('28px');
-});
+});*/
 

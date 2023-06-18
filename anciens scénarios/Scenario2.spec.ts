@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+/*import { test, expect } from '@playwright/test';
 import { homepage,testURL } from 'e2e/e2e.config';
 import { QuizzListComponent } from 'src/app/quizz-list/quizz-list.component';
 
@@ -48,4 +48,4 @@ test('Jouer le quiz astérix', async ({ page }) => {
 
   // Vérifier si le texte correspond à "2/3"
   expect(paragraphText).toBe('1/3');
-});
+});*/

@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+/*import { test, expect } from '@playwright/test';
 import {connexionPage, homepage} from 'e2e/e2e.config';
 
 test.describe('test the connexion system', () => {
@@ -453,4 +453,4 @@ test.describe('test the connexion system', () => {
   });
 
 
-})
+});*/
