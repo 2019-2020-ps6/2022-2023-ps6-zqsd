@@ -8,4 +8,4 @@ RUN npm install
 USER node
 COPY --chown=node:node  . .
 EXPOSE 9428
-CMD ["npm", "run","${ENV_VAR}"]
+CMD ["npm", "run","start${ENV_VAR}"]

@@ -21,7 +21,7 @@ services:
     build: 
       context: ./../back-end
       args: 
-        - ENV=start:e2e
+        - ENV=:e2e
 
     image: back-end:test3.0
     ports:
@@ -43,4 +43,4 @@ services:
       context: ./../front-end/
       dockerfile: Dockerfile-e2e
     environment:
-      - FRONT_URL=http://front-end  
+      - FRONT_URL=http://front-end:8580

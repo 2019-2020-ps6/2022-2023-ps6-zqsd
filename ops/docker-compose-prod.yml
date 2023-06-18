@@ -20,8 +20,6 @@ services:
   back-end:
     build:
       context: ./../back-end
-      args: 
-        - ENV=start
     image: back-end:2.2
     ports:
       - "8000:9428"
