@@ -1,3 +1,8 @@
+
+L'objectif de ce projet était de créer un jeu pour permettre a des patients en Hepad souffrant de certains problèmes liés à l'age (dans notre cas la démence vasculaire) d'avoir un moment ludique en adaptant les jeux à leur maladie. 
+le projet a été terminé mais nous avions après tenté de le dockerisé et avons eu des problèmes dans ce travail. 
+
+
 # Votre Readme doit au minimun contenir:
 
 ## Le statut lors de la livraison :
